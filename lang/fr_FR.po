@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shprinkone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-16 22:44+0100\n"
+"PO-Revision-Date: 2013-01-16 22:44+0100\n"
+"Last-Translator: shprink <contact@julienrenaux.fr>\n"
+"Language-Team: shprink <contact@julienrenaux.fr>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: category.php:16
+msgid "Category"
+msgstr "Categorie"
+
+#: loop_home.php:35
+#: loop_home.php:80
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: loop_home.php:72
+#: loop.php:59
+msgid "Leave a comment"
+msgstr "Laissez un commentaire"
+
+#: loop_home.php:72
+#: loop.php:59
+msgid "1 Comment"
+msgstr "1 Commentaire"
+
+#: loop_home.php:72
+#: loop.php:59
+msgid "% Comments"
+msgstr "% Commentaires"
+
+#: single.php:36
+#, php-format
+msgid "About %s"
+msgstr "A propos de %s"
+
+#: single.php:39
+#, php-format
+msgid "View all posts by %s"
+msgstr "Voir tous les articles de %s"
+
+#: footer.php:36
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: 404.php:15
+msgid "404... Oups something went wrong..."
+msgstr ""
+
+#: 404.php:16
+msgid "We are sorry but we cannot reach the page you are looking for... Perhaps you should try to:"
+msgstr ""
+
+#: 404.php:24
+msgid "Search for it: "
+msgstr ""
+
+#: 404.php:32
+msgid "Check Out The "
+msgstr ""
+
+#: 404.php:37
+msgid "Check Out The Most Used Categories"
+msgstr ""
+
+#: tag.php:15
+msgid "Tag"
+msgstr "Tag"
+
+#: functions.php:20
+#: functions.php:24
+msgid "Sidebar Widget Top"
+msgstr ""
+
+#: functions.php:29
+#: functions.php:33
+msgid "Sidebar Widget Middle"
+msgstr ""
+
+#: functions.php:38
+#: functions.php:42
+msgid "Sidebar Widget Bottom"
+msgstr ""
+
+#: functions.php:47
+#: functions.php:51
+msgid "Footer Widget Left"
+msgstr ""
+
+#: functions.php:56
+#: functions.php:60
+msgid "Footer Widget Middle Left"
+msgstr ""
+
+#: functions.php:65
+#: functions.php:69
+msgid "Footer Widget Middle Right"
+msgstr ""
+
+#: functions.php:74
+#: functions.php:78
+msgid "Footer Widget Right"
+msgstr ""
+
+#: functions.php:83
+#: functions.php:87
+msgid "Footer Widget Bottom"
+msgstr ""
+
+#: functions.php:104
+msgid "Header Menu Left"
+msgstr ""
+
+#: functions.php:105
+msgid "Header Menu Right"
+msgstr ""
+
+#: functions.php:106
+msgid "Header Menu Visible On Mobile"
+msgstr ""
+
+#: functions.php:107
+msgid "Sidebar Menu Top"
+msgstr ""
+
+#: functions.php:108
+msgid "Sidebar Menu Middle"
+msgstr ""
+
+#: functions.php:109
+msgid "Sidebar Menu Bottom"
+msgstr ""
+
+#: functions.php:258
+#, fuzzy, php-format
+msgid "Posts by %s"
+msgstr "Voir tous les articles de %s"
+
+#: functions.php:260
+#, php-format
+msgid "By: %s"
+msgstr ""
+
+#: functions.php:266
+#, php-format
+msgid "%d Comments"
+msgstr "%d Commentaires"
+
+#: functions.php:268
+#, fuzzy, php-format
+msgid "%d Comment"
+msgstr "%d Commentaires"
+
+#: functions.php:282
+#, fuzzy, php-format
+msgid "Category: %s"
+msgstr "Categories: %s"
+
+#: functions.php:286
+msgid "Tag: "
+msgstr ""
+
+#: functions.php:336
+msgid "Default Layout"
+msgstr "Structure pas default"
+
+#: functions.php:343
+#: functions.php:344
+msgid "Theme Options"
+msgstr "Options du Theme"
+
+#: functions.php:360
+#, php-format
+msgid "%s Theme Options"
+msgstr "%s Options du Theme"
+
+#: functions.php:402
+msgid "Content on left"
+msgstr "Contenu à gauche"
+
+#: functions.php:407
+msgid "Content on right"
+msgstr "Contenu à droite"
+
+#: functions.php:412
+msgid "One-column, no sidebar"
+msgstr "Contenu seul (pas de menu sur le côté)"
+
+#~ msgid "By"
+#~ msgstr "Par"
