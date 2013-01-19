@@ -8,9 +8,9 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="container"><!-- container start -->
+<div class="container"><!-- container start -->
 	<div class="row">
-		<div class="span12">
+		<div id="content" class="span12">
 			<div class="hero-unit">
 				<h1><?php echo __('404... Oups something went wrong...', 'shprinkone') ?></h1>
 				<p><?php echo __('We are sorry but we cannot reach the page you are looking for... Perhaps you should try to:', 'shprinkone') ?></p>

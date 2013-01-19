@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-16 22:44+0100\n"
-"PO-Revision-Date: 2013-01-16 22:44+0100\n"
+"POT-Creation-Date: 2013-01-19 15:36+0100\n"
+"PO-Revision-Date: 2013-01-19 15:37+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: \n"
@@ -19,25 +19,38 @@ msgstr ""
 msgid "Category"
 msgstr "Categorie"
 
-#: loop_home.php:35
-#: loop_home.php:80
-msgid "Sorry, no posts matched your criteria."
+#: loop_home.php:27
+#, php-format
+msgid "Permanent Link to %s"
 msgstr ""
 
-#: loop_home.php:72
-#: loop.php:59
+#: loop_home.php:31
+#: loop_home.php:61
+#: loop.php:29
 msgid "Leave a comment"
 msgstr "Laissez un commentaire"
 
-#: loop_home.php:72
-#: loop.php:59
+#: loop_home.php:31
+#: loop_home.php:61
+#: loop.php:29
 msgid "1 Comment"
 msgstr "1 Commentaire"
 
-#: loop_home.php:72
-#: loop.php:59
+#: loop_home.php:31
+#: loop_home.php:61
+#: loop.php:29
 msgid "% Comments"
 msgstr "% Commentaires"
+
+#: loop_home.php:66
+#: loop.php:34
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: loop_home.php:104
+#: loop.php:72
+msgid "No more pages to load."
+msgstr ""
 
 #: single.php:36
 #, php-format
@@ -45,9 +58,19 @@ msgid "About %s"
 msgstr "A propos de %s"
 
 #: single.php:39
+#: author.php:47
 #, php-format
 msgid "View all posts by %s"
 msgstr "Voir tous les articles de %s"
+
+#: author.php:34
+#, fuzzy, php-format
+msgid "Posts by %s"
+msgstr "Voir tous les articles de %s"
+
+#: author.php:38
+msgid "Website:"
+msgstr "Site Web:"
 
 #: footer.php:36
 #, php-format
@@ -142,11 +165,6 @@ msgstr ""
 msgid "Sidebar Menu Bottom"
 msgstr ""
 
-#: functions.php:258
-#, fuzzy, php-format
-msgid "Posts by %s"
-msgstr "Voir tous les articles de %s"
-
 #: functions.php:260
 #, php-format
 msgid "By: %s"
@@ -162,38 +180,38 @@ msgstr "%d Commentaires"
 msgid "%d Comment"
 msgstr "%d Commentaires"
 
-#: functions.php:282
+#: functions.php:280
 #, fuzzy, php-format
 msgid "Category: %s"
 msgstr "Categories: %s"
 
-#: functions.php:286
+#: functions.php:283
 msgid "Tag: "
 msgstr ""
 
-#: functions.php:336
+#: functions.php:333
 msgid "Default Layout"
 msgstr "Structure pas default"
 
-#: functions.php:343
-#: functions.php:344
+#: functions.php:340
+#: functions.php:341
 msgid "Theme Options"
 msgstr "Options du Theme"
 
-#: functions.php:360
+#: functions.php:357
 #, php-format
 msgid "%s Theme Options"
 msgstr "%s Options du Theme"
 
-#: functions.php:402
+#: functions.php:399
 msgid "Content on left"
 msgstr "Contenu à gauche"
 
-#: functions.php:407
+#: functions.php:404
 msgid "Content on right"
 msgstr "Contenu à droite"
 
-#: functions.php:412
+#: functions.php:409
 msgid "One-column, no sidebar"
 msgstr "Contenu seul (pas de menu sur le côté)"
 

@@ -5,7 +5,7 @@ Description:
 Author: shprink
 Author URI: http://julienrenaux.fr
 Version: 1.0
-Tags: masonry, bootstrap, custom-menu (optional)
+Tags: masonry, bootstrap, custom-menu (optional), microformat
 
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -70,10 +70,6 @@ body{
 /* CONTENT */
 
 #content{
-}
-
-#post-container{
-
 }
 
 #slideshow,

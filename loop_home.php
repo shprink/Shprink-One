@@ -39,7 +39,7 @@ $i = 1;
 		<a class="carousel-control right" href="#slideshow" data-slide="next">&rsaquo;</a>
 	</div>
 <?php endif; ?>
-<div id="masonry" class="clearfix row">
+<div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" class="box">
@@ -120,7 +120,7 @@ $i = 1;
 			onAfterLoaded();
 
 			// If the disqus plugin is enabled
-			if (DISQUSWIDGETS)
+			if (typeof DISQUSWIDGETS != 'undefined')
 			{
 				// Set the disqus hash
 				var nodes = document.getElementsByTagName('span');

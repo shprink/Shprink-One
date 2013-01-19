@@ -22,7 +22,7 @@
 								</div>
 							<?php endif; ?>
 							<h2 class="post-title"><?php the_title(); ?></h2>
-							<?php echo shprinkone_get_post_meta() ?>
+							<?php echo shprinkone_get_post_meta(true) ?>
 							<hr/>
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
