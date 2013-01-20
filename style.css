@@ -95,6 +95,16 @@ body{
 	color: #FFFFFF;
 }
 
+#slideshow .carousel-caption{
+	font-size: 10px;
+}
+
+#slideshow hr{
+	margin-top:2px;
+	margin-bottom: 2px;
+	border-top: 0px;
+}
+
 #masonry{
 
 }

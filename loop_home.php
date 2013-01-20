@@ -63,7 +63,7 @@ $i = 1;
 			</div>
 		<?php endwhile; ?>
 	<?php else: ?>
-		<p><?php echo __('Sorry, no posts matched your criteria.'); ?></p>
+		<?php echo shprinkone_get_no_result();  ?>
 	<?php endif; ?>
 </div>
 <div id="page-nav" style="display: none;">

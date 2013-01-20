@@ -12,7 +12,11 @@
 	<div class="row">
 		<?php shprinkone_get_sidebar('left'); ?>
 		<div id="content" class="<?php echo shprinkone_get_contentspan(); ?>">
-			<h1><?php echo __( 'Tag', 'shprinkone') . ': ' . single_tag_title( '', false ); ?></h1>
+			<section>
+				<header class="page-header">
+					<h1 class="page-title"><?php echo __('Tag', 'shprinkone') . ': ' . single_tag_title('', false); ?></h1>
+				</header>
+			</section>
 			<?php get_template_part('loop'); ?>
 		</div >
 		<?php shprinkone_get_sidebar('right'); ?>

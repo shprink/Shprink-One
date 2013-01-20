@@ -81,7 +81,6 @@ bloginfo('name');
 								<li class="divider-vertical"></li>
 								<li>
 									<?php get_search_form(); ?>
-
 								</li>
 							</ul>
 						</div>

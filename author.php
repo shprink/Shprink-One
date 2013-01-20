@@ -34,6 +34,21 @@
 									<?php echo __('AIM:', 'shprinkone') ?> <?php the_author_meta('aim'); ?>
 								</li>
 							<?php endif; ?>
+								<?php if (get_the_author_meta('yim')): ?>
+								<li>
+									<?php echo __('Yahoo IM:', 'shprinkone') ?> <?php the_author_meta('yim'); ?>
+								</li>
+							<?php endif; ?>
+								<?php if (get_the_author_meta('jabber')): ?>
+								<li>
+									<?php echo __('Jabber / Google Talk:', 'shprinkone') ?> <?php the_author_meta('jabber'); ?>
+								</li>
+							<?php endif; ?>
+								<?php if (get_the_author_meta('googleplus')): ?>
+								<li>
+									<?php echo __('Google+:', 'shprinkone') ?> <a href="<?php echo get_the_author_meta('googleplus') ?>" target="_blank" title="<?php echo sprintf(__('%s on Google+'), get_the_author()); ?>"><?php echo sprintf(__('%s on Google+'), get_the_author()); ?></a>
+								</li>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>
