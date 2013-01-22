@@ -389,7 +389,7 @@ function shprinkone_setup() {
 			$condition1 = ($side == 'left' && $layout == 'sidebar-content');
 			$condition2 = ($side == 'right' && $layout == 'content-sidebar');
 			if ($condition1 || $condition2) {
-				echo '<div id="sidebar" class="span3"><div class="sidebar-inner well">';
+				echo '<div id="sidebar" class="span3"><div class="sidebar-inner">';
 				get_sidebar();
 				echo '</div></div>';
 			}

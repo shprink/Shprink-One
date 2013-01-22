@@ -55,8 +55,6 @@ body{
 
 }
 #sidebar .sidebar-inner{
-
-	background-color: #fff;
 }
 
 #sidebar h1,
@@ -70,6 +68,12 @@ body{
 /* CONTENT */
 
 #content{
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	margin: 0 -20px;
+	padding: 20px;
 }
 
 #slideshow,
@@ -226,7 +230,6 @@ footer .credit {
 }
 
 .well {
-	background-color: #FFFFFF;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
