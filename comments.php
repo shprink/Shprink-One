@@ -55,6 +55,6 @@ else : // or, if we don't have comments:
 
 <?php endif; // end have_comments() ?>
 
-<?php comment_form(); ?>
+<?php shprinkone_comment_form(); ?>
 
 </div><!-- #comments -->
