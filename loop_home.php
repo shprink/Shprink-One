@@ -18,7 +18,7 @@ $i = 1;
 					<?php if (has_post_thumbnail()): ?>
 						<div class="post-thumbnail img-polaroid">
 							<?php shprinkone_get_calendar(); ?>
-							<?php the_post_thumbnail('post-image-slideshow'); ?>
+							<?php the_post_thumbnail('post-image-slideshow-' . shprinkone_get_imagespan()); ?>
 						</div>
 					<?php else: ?>
 						<img src="<?php bloginfo('stylesheet_directory'); ?>/img/iPhoto.png" class="no-photo" />
