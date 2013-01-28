@@ -11,27 +11,29 @@
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" class="box">
-				<div class="well">
+				<div class="thumbnail">
+					<?php shprinkone_get_calendar(false); ?>
 					<?php if (has_post_thumbnail()): ?>
-						<div class="post-thumbnail img-polaroid">
-							<?php shprinkone_get_calendar(); ?>
-							<?php the_post_thumbnail('post-image-mansory'); ?>
-						</div>
+						<a href="<?php the_permalink() ?>">
+							<div class="post-thumbnail">
+
+								<?php the_post_thumbnail('post-image-mansory'); ?>
+							</div>
+						</a>
 					<?php endif; ?>
-					<h2 class="post-title">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-					</h2>
-					<div class="post-content">
-						<?php the_excerpt(); ?>
+					<div class="caption">
+						<h2 class="post-title"><a href="<?php the_permalink() ?>"  title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+						<hr/>
+						<div class="post-content">
+							<?php the_excerpt(); ?>
+						</div>
 					</div>
-					<?php echo shprinkone_get_post_meta() ?>
-					<hr/>
-					<p><i class="icon-comment"></i> <?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?></p>
+					<a class="post-more btn btn-info btn-block" href="<?php the_permalink() ?>"><i class="icon-chevron-down icon-white"> </i> <?php _e('Read more', 'shprinkone') ?></a>
 				</div>
 			</div>
 		<?php endwhile; ?>
 	<?php else: ?>
-		<?php echo shprinkone_get_no_result();  ?>
+		<?php echo shprinkone_get_no_result(); ?>
 	<?php endif; ?>
 </div>
 <div id="page-nav" style="display: none;">

@@ -17,13 +17,13 @@
 						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<?php if (has_post_thumbnail()): ?>
 								<div class="post-thumbnail img-polaroid">
-									<?php shprinkone_get_calendar(); ?>
 									<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
 								</div>
 							<?php endif; ?>
-							<h1 class="post-title"><?php the_title(); ?></h1>
-							<?php echo shprinkone_get_post_meta(true) ?>
-							<hr/>
+							<div class="page-header">
+								<h1 class="post-title"><?php the_title(); ?></h1>
+								<?php echo shprinkone_get_post_meta(true, false, false, true) ?>
+							</div>
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
 

@@ -20,8 +20,9 @@
 									<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
 								</div>
 							<?php endif; ?>
-							<h1 class="post-title"><?php the_title(); ?></h1>
-							<hr/>
+							<div class="page-header">
+								<h1 class="post-title"><?php the_title(); ?></h1>
+							</div>
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
 							<?php comments_template('', true); ?>

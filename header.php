@@ -41,7 +41,7 @@ bloginfo('name');
 			<div class="navbar navbar-header navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
-						<a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo bloginfo('name'); ?></a>
+						<a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><i class="icon-home icon-white"> </i> <?php echo bloginfo('name'); ?></a>
 						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
@@ -50,7 +50,6 @@ bloginfo('name');
 						</a>
 						<!-- Everything you want hidden at 940px or less, place within here -->
 						<div class="nav-collapse collapse">
-
 							<?php if (has_nav_menu('header-menu-left')): ?>
 								<?php
 								$args = array(
@@ -82,7 +81,13 @@ bloginfo('name');
 								<li>
 									<?php get_search_form(); ?>
 								</li>
+								<li>
+									<a href="<?php echo esc_url(home_url('/feed')); ?>">
+										<img src="<?php bloginfo('stylesheet_directory'); ?>/img/rss.png" title="<?php _e('Subscribe to the RSS feed', 'shprinkone') ?>" alt="rss feed"/>
+									</a>
+								</li>
 							</ul>
+
 						</div>
 					</div>
 				</div>
@@ -91,6 +96,8 @@ bloginfo('name');
 				$(function(){
 					// Add Bootstrap class to lists within the sidebar
 					$('#sidebar .widget ul').addClass('nav nav-tabs nav-stacked');
+					
+					$('footer .widget ul').addClass('nav nav-tabs nav-stacked');
 				});
 			</script>
 		</header>

@@ -45,8 +45,8 @@ function shprinkone_widgets_init() {
 	register_sidebar(array(
 		'name' => __('Footer Widget Left', 'shprinkone'),
 		'id' => 'footer-widget-left',
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>\n",
 		'description' => __('Footer Widget Left', 'shprinkone'),
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
@@ -54,8 +54,8 @@ function shprinkone_widgets_init() {
 	register_sidebar(array(
 		'name' => __('Footer Widget Middle Left', 'shprinkone'),
 		'id' => 'footer-widget-middle-left',
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>\n",
 		'description' => __('Footer Widget Middle Left', 'shprinkone'),
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
@@ -63,8 +63,8 @@ function shprinkone_widgets_init() {
 	register_sidebar(array(
 		'name' => __('Footer Widget Middle Right', 'shprinkone'),
 		'id' => 'footer-widget-middle-right',
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>\n",
 		'description' => __('Footer Widget Middle Right', 'shprinkone'),
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
@@ -72,8 +72,8 @@ function shprinkone_widgets_init() {
 	register_sidebar(array(
 		'name' => __('Footer Widget Right', 'shprinkone'),
 		'id' => 'footer-widget-right',
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>\n",
 		'description' => __('Footer Widget Right', 'shprinkone'),
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
@@ -81,8 +81,8 @@ function shprinkone_widgets_init() {
 	register_sidebar(array(
 		'name' => __('Footer Widget Bottom', 'shprinkone'),
 		'id' => 'footer-widget-bottom',
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>\n",
 		'description' => __('Footer Widget Bottom', 'shprinkone'),
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
@@ -130,7 +130,7 @@ add_action('init', 'shprinkone_menus_init');
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
- * @since Twenty Ten 1.0
+ * @since  1.0
  */
 function shprinkone_setup() {
 
@@ -144,7 +144,7 @@ function shprinkone_setup() {
 	add_theme_support('automatic-feed-links');
 
 // Image size
-	add_image_size('post-image-mansory', 172, 172, true);
+	add_image_size('post-image-mansory', 268, 268, true);
 	add_image_size('post-image-width9', 860, 200, true);
 	add_image_size('post-image-width12', 1170, 200, true);
 	add_image_size('post-image-slideshow-width9', 860, 400, true);
@@ -163,7 +163,7 @@ function shprinkone_setup() {
 		}
 
 		function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-
+			
 			$indent = ( $depth ) ? str_repeat("\t", $depth) : '';
 
 			$li_attributes = '';
@@ -337,8 +337,7 @@ function shprinkone_setup() {
 		add_action('after_setup_theme', 'shprinkone_setup');
 
 		function shprinkone_get_calendar() {
-			printf('<div class="calendar"><div class="calendar-month"> %1$s %2$s</div><div class="calendar-day"><i class="icon-calendar"></i> %3$s</div></div>', get_the_date('M'), get_the_date('Y'), get_the_date('d')
-			);
+			printf('<div class="calendar-outer btn-inverse"><div class="calendar-inner"><div class="calendar-date"><i class="icon-calendar icon-white"></i> %s</div></div></div>', get_the_date(__('M d, Y', 'shprinkone')));
 		}
 
 		function shprinkone_get_the_author_posts_link() {
@@ -357,13 +356,18 @@ function shprinkone_setup() {
 			}
 		}
 
-		function shprinkone_get_post_meta($inline = false, $white = false) {
+		function shprinkone_get_post_meta($inline = false, $white = false, $author = true, $date = false) {
 			$iconClass = ($white) ? 'icon-white' : '';
 			$postClass = ($white) ? 'post-meta-white' : '';
 			$inline = ($inline) ? "inline" : "unstyled";
 			$html = '<div class = "post-meta ' . $postClass . '">';
 			$html .= '<ul class = "' . $inline . '">';
-			$html .= '<li class = "post-author"><i class = "icon-user ' . $iconClass . '"></i> ' . shprinkone_get_the_author_posts_link() . '</li>';
+			if ($date) {
+				$html .= '<li class = "post-date"><i class = "icon-calendar ' . $iconClass . '"></i> ' . get_the_date(__('M d, Y', 'shprinkone')) . '</li>';
+			}
+			if ($author) {
+				$html .= '<li class = "post-author"><i class = "icon-user ' . $iconClass . '"></i> ' . shprinkone_get_the_author_posts_link() . '</li>';
+			}
 			if (has_category()):
 				$html .= '<li class="post-category"><i class="icon-folder-open ' . $iconClass . '"></i> ' . sprintf(__('Category: %s', 'shprinkone'), get_the_category_list(' ', '', false)) . '</li>';
 			endif;

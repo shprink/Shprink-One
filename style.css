@@ -5,13 +5,14 @@ Description:
 Author: shprink
 Author URI: http://julienrenaux.fr
 Version: 1.0
-Tags: masonry, bootstrap, custom-menu (optional), microformat
+Tags: masonry, bootstrap, custom-menu (optional), one-column, two-columns, white, gray, fixed-width, custom-menu, featured-image-header, featured-images, microformats, theme-options, threaded-comments, translation-ready
 
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
 General comments (optional).
 */
+
 @import url('css/bootstrap.min.css');
 
 @import url('css/bootstrap-responsive.min.css');
@@ -68,12 +69,25 @@ body{
 /* CONTENT */
 
 #content{
+}
+
+.knoll{
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 10px;
 	background-color: #FFFFFF;
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	margin: 0 -20px;
-	padding: 20px;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+
+	-webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+#masonry .knoll{
+	margin-bottom: 0px;
 }
 
 #slideshow,
@@ -113,6 +127,47 @@ body{
 
 }
 
+
+#masonry .thumbnail{
+	background-color: #FFFFFF;
+	padding: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+#masonry .thumbnail:hover{
+	border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+	outline: thin dotted \9;
+	/* IE6-9 */
+
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+#masonry .caption{
+	padding-top: 0px;
+}
+
+#masonry .post-more{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: none;
+}
+
+#masonry .img-polaroid{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	padding: 0px;
+}
+
 .masonry{
 	font-size: 11px;
 }
@@ -120,11 +175,7 @@ body{
 .masonry .post-meta{
 	display: block;
 }
-/*
-body.blog .masonry .post-meta{
-	display: none;
-}
-*/
+
 .masonry p.post-content{
 	font-size: 12px;
 	text-align: justify;
@@ -159,33 +210,30 @@ body.blog .masonry .post-meta{
 	margin: 5px 0;
 }
 
-
-
-.calendar {
-    background-color: #333;
-    color: #FFFFFF;
-    font-family: Arial,Helvetica,sans-serif;
-    padding: 0 4px 4px 4px;
-    text-align: center;
-    text-transform: uppercase;
-    width: 60px;
-    position: absolute;
+.calendar-outer {
+	position: relative;
 }
-.calendar .calendar-day .icon-calendar {
-	margin-top: 4px;
+.calendar-inner {
+	background-color: #333;  background-color: #1b1b1b;
+	background-image: -moz-linear-gradient(top, #222222, #111111);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #222222, #111111);
+	background-repeat: repeat-x;
+	border-color: #252525;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+	color: #FFFFFF;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	width: 100%;
 }
-.calendar .calendar-day{
-    color: #333333;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px;
-    text-decoration: none;
 
-    background-color: white;
-}
-.calendar .calendar-month {
-    font-size: 9px;
-    font-weight: bold;
+.calendar-date {
+	padding: 5px 0;
 }
 
 .navbar-search .search-query{
@@ -215,7 +263,7 @@ body.blog .masonry .post-meta{
 footer {
 	background-color: #F5F5F5;
 	border-top: 1px solid #E5E5E5;
-	margin-top: 40px;
+	margin-top: 30px;
 	padding: 10px 0;
 }
 
@@ -230,6 +278,7 @@ footer .credit {
 }
 
 .well {
+	background-color: #FFFFFF;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -294,16 +343,30 @@ footer .credit {
 	left: auto;
 }
 
-
-@media (max-width: 979px) {
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
 	body {
 		padding-top: 0;
 	}
-	.masonry .box {
+	.span9 .masonry .box {
 		width: 259px;
 		margin-left: 20px;
 	}
+	.span12 .masonry .box {
+		width: 228px;
+		margin-left: 20px;
+	}
 }
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* Tablet
+------------------------- */
 @media (max-width: 767px) {
 	body {
 		padding-top: 0;
@@ -317,11 +380,15 @@ footer .credit {
 	.navbar .btn-navbar {
 		display: block;
 	}
-	.masonry .box {
+	.span9 .masonry .box,
+	.span12 .masonry .box{
 		width: 100%;
 		margin-left: 0px;
 	}
 }
+
+/* Landscape phones
+------------------------- */
 @media (max-width: 480px) {
 
 }
@@ -329,14 +396,22 @@ footer .credit {
 	body {
 		padding-top: 50px;
 	}
-	.masonry .box {
+	.span9 .masonry .box {
+		width: 220px;
+		margin-left: 20px;
+	}
+	.span12  .masonry .box {
 		width: 220px;
 		margin-left: 20px;
 	}
 
 }
 @media (min-width: 1200px) {
-	.masonry .box {
+	.span9 .masonry .box {
+		width: 270px;
+		margin-left: 30px;
+	}
+	.span12  .masonry .box {
 		width: 270px;
 		margin-left: 30px;
 	}
