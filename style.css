@@ -23,6 +23,7 @@ body{
 	font-size: 12px;
 	background-color: #F7F7F7;
 	height:100%;
+	background: url("img/billie_holiday.png") repeat scroll 0 0 transparent;
 }
 
 /* HEADER */
@@ -261,16 +262,39 @@ body{
 
 /* FOOTER */
 footer {
-	background-color: #F5F5F5;
-	border-top: 1px solid #E5E5E5;
+	background: url("img/debut_dark.png") repeat scroll 0 0 transparent;
+	background-color: #383838;
+	border-top: 1px solid #373737;
 	margin-top: 30px;
+	color : #FFFFFF;
+}
+
+footer .footer-inner{
+	border-top: 1px solid #545353;
 	padding: 10px 0;
 }
 
-footer .credit {
-	text-align: center;
+footer h4{
+
 }
 
+#credit {
+	background: url("img/noisy_net.png") repeat scroll 0 0 transparent;
+	background-color: #181D22;
+	text-align: center;
+	border-top: 1px solid #161616;
+	color : #FFFFFF;
+}
+
+#credit .credit-inner{
+	padding: 5px;
+	border-top: 1px solid #2B2B2B;
+}
+
+#credit ul.inline{
+	margin-bottom: 0px;
+}
+	
 /* Bootstrap Overwrite */
 .nav-tabs.nav-stacked > li > a{
 	border: none;
