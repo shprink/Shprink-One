@@ -23,7 +23,7 @@ body{
 	font-size: 12px;
 	background-color: #F7F7F7;
 	height:100%;
-	background: url("img/billie_holiday.png") repeat scroll 0 0 transparent;
+	background-color: #FFFFFF;
 }
 
 /* HEADER */
@@ -67,29 +67,17 @@ body{
 	border-bottom: 1px solid #CCC;
 }
 
-/* CONTENT */
+/* CONTENT 
 
 #content{
-}
-
-.knoll{
-	min-height: 20px;
-	padding: 19px;
-	margin-bottom: 10px;
 	background-color: #FFFFFF;
-	border: 1px solid #e3e3e3;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-
-	-webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	margin: 0 -20px;
+	padding: 20px;
 }
-
-#masonry .knoll{
-	margin-bottom: 0px;
-}
+*/
 
 #slideshow,
 #slideshow .item{
@@ -302,7 +290,6 @@ footer h4{
 }
 
 .well {
-	background-color: #FFFFFF;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
