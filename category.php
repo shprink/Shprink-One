@@ -26,3 +26,4 @@ $category_description = category_description();
 		</div>
 	</div>
 </div><!-- container end -->
+<?php get_footer(); ?>

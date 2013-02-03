@@ -35,7 +35,6 @@ bloginfo('name');
 		src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.infinitescroll.min.js"></script>
 		<?php wp_head(); ?>
 	</head>
-
 	<body <?php body_class(); ?>>
 		<header id="header">
 			<div class="navbar navbar-header navbar-inverse navbar-fixed-top">
@@ -82,7 +81,7 @@ bloginfo('name');
 									<?php get_search_form(); ?>
 								</li>
 								<li>
-									<a href="<?php echo esc_url(home_url('/feed')); ?>">
+									<a href="<?php echo esc_url(home_url('?feed=rss2')); ?>">
 										<img src="<?php bloginfo('stylesheet_directory'); ?>/img/rss.png" title="<?php _e('Subscribe to the RSS feed', 'shprinkone') ?>" alt="rss feed"/>
 									</a>
 								</li>
@@ -97,7 +96,7 @@ bloginfo('name');
 					// Add Bootstrap class to lists within the sidebar
 					$('#sidebar .widget ul').addClass('nav nav-tabs nav-stacked');
 					
-					$('footer .widget ul').addClass('nav nav-tabs nav-stacked');
+					$('footer .widget ul').addClass('nav nav-pills nav-stacked');
 				});
 			</script>
 		</header>

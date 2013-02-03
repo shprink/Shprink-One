@@ -19,3 +19,4 @@
 		</div>
 	</div>
 </div><!-- container end -->
+<?php get_footer(); ?>
