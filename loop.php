@@ -10,30 +10,36 @@
 <div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" class="box">
-				<div class="thumbnail">
-					<?php shprinkone_get_calendar(false); ?>
-					<?php if (has_post_thumbnail()): ?>
-						<a href="<?php the_permalink() ?>">
-							<div class="post-thumbnail">
-
-								<?php the_post_thumbnail('post-image-mansory'); ?>
-							</div>
-						</a>
-					<?php endif; ?>
-					<div class="caption">
-						<h2 class="post-title"><a href="<?php the_permalink() ?>"  title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-						<hr/>
-						<div class="post-content">
-							<?php the_excerpt(); ?>
-						</div>
-					</div>
-					<a class="post-more btn btn-info btn-block" href="<?php the_permalink() ?>"><i class="icon-chevron-down icon-white"> </i> <?php _e('Read more', 'shprinkone') ?></a>
+	<div id="post-<?php the_ID(); ?>" class="box">
+		<div class="thumbnail">
+			<?php shprinkone_get_calendar(false); ?>
+			<?php if (has_post_thumbnail()): ?>
+			<a href="<?php the_permalink() ?>">
+				<div class="post-thumbnail">
+					<?php the_post_thumbnail('post-image-mansory'); ?>
+				</div>
+			</a>
+			<?php endif; ?>
+			<div class="caption">
+				<h2 class="post-title">
+					<a href="<?php the_permalink() ?>"
+						title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
+					</a>
+				</h2>
+				<hr />
+				<div class="post-content">
+					<?php the_excerpt(); ?>
 				</div>
 			</div>
-		<?php endwhile; ?>
+			<a class="post-more btn btn-info btn-block"
+				href="<?php the_permalink() ?>"><i
+				class="icon-chevron-down icon-white"> </i> <?php _e('Read more', 'shprinkone') ?>
+			</a>
+		</div>
+	</div>
+	<?php endwhile; ?>
 	<?php else: ?>
-		<?php echo shprinkone_get_no_result(); ?>
+	<?php echo shprinkone_get_no_result(); ?>
 	<?php endif; ?>
 </div>
 <div id="page-nav" style="display: none;">
@@ -41,9 +47,6 @@
 </div>
 <script>
 	$(function(){
-		
-		/* Slideshow */
-		$('#slideshow').carousel();
 		
 		/* Masonry */
 		var $container = $('#masonry');

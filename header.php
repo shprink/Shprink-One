@@ -49,18 +49,16 @@ bloginfo('name');
 						</a>
 						<!-- Everything you want hidden at 940px or less, place within here -->
 						<div class="nav-collapse collapse">
-							<?php if (has_nav_menu('header-menu-left')): ?>
-								<?php
-								$args = array(
-									'theme_location' => 'header-menu-left',
-									'depth' => 2,
-									'container' => false,
-									'menu_class' => 'nav',
-									'walker' => new Bootstrap_Walker_Nav_Menu()
-								);
-								wp_nav_menu($args);
-								?>
-							<?php endif; ?>
+							<?php
+							// Primary menu
+							$args = array(
+								'depth' => 2,
+								'container' => false,
+								'menu_class' => 'nav',
+								'walker' => new Bootstrap_Walker_Nav_Menu()
+							);
+							wp_nav_menu($args);
+							?>
 							<ul class="nav pull-right">
 								<?php if (has_nav_menu('header-menu-right')): ?>
 									<li>
