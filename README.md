@@ -1,0 +1,1 @@
+# Shprink One Theme for Wordpress
