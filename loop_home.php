@@ -38,7 +38,7 @@ $i = 1;
 		<a class="carousel-control right" href="#slideshow" data-slide="next">&rsaquo;</a>
 	</div>
 <?php endif; ?>
-<?php get_template_part('loop'); ?>
+
 <script>
 	$(function(){
 		/* Slideshow */

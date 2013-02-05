@@ -9,12 +9,20 @@
  */
 ?>
 <?php get_header(); ?>
+<div style="background-color: #CCC;">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<?php get_template_part('loop_home'); ?>
+			</div>
+		</div>
+	</div></div>
 <div class="container"><!-- container start -->
 	<div id="content">
 		<div class="row">
 			<?php shprinkone_get_sidebar('left'); ?>
-			<div class="<?php echo shprinkone_get_contentspan(); ?>">	
-				<?php get_template_part('loop_home'); ?>
+			<div class="<?php echo shprinkone_get_contentspan(); ?>">
+				<?php get_template_part('loop'); ?>
 			</div>
 			<?php shprinkone_get_sidebar('right'); ?>
 		</div>
