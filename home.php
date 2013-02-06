@@ -9,14 +9,15 @@
  */
 ?>
 <?php get_header(); ?>
-<div style="background-color: #CCC;">
+<div class="container-slideshow">
 	<div class="container">
 		<div class="row">
 			<div class="span12">
 				<?php get_template_part('loop_home'); ?>
 			</div>
 		</div>
-	</div></div>
+	</div>
+</div>
 <div class="container"><!-- container start -->
 	<div id="content">
 		<div class="row">

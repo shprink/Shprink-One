@@ -22,7 +22,7 @@ $i = 1;
 					<?php else: ?>
 						<img src="<?php bloginfo('stylesheet_directory'); ?>/img/iPhoto.png" class="no-photo" />
 					<?php endif; ?>
-					<div class="carousel-caption">
+					<div class="carousel-caption span3">
 						<h4 class="post-title"><a href="<?php the_permalink() ?>" title="<?php echo sprintf(__('Permanent Link to %s'), the_title_attribute()); ?>"><?php the_title(); ?></a></h4>
 						<?php echo shprinkone_get_post_meta(true, true, true, true) ?>
 						<?php the_excerpt(); ?>

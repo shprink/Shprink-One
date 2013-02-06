@@ -73,6 +73,14 @@ header .navbar a.brand:hover {
 	padding: 20px;
 }
 */
+.container-slideshow {
+	background-color: #CCCCCC;
+	padding-top: 50px;
+	margin-top: -50px;
+	margin-bottom: 20px;
+	background: url("img/creampaper.png") repeat scroll 0 0 transparent;
+}
+
 #slideshow,#slideshow .item {
 	min-height: 400px;
 }
@@ -97,6 +105,9 @@ header .navbar a.brand:hover {
 
 #slideshow .carousel-caption {
 	font-size: 10px;
+	right: 0px;
+	left: auto;
+	top: 0px;
 }
 
 #slideshow hr {
@@ -328,7 +339,7 @@ footer .footer-inner {
 .dropdown-menu {
 	border-top: none;
 	margin: 0;
-	*border-right-width: 0px*border-bottom-width:                0px;
+	*border-right-width: 0px; *border-bottom-width : 0px ;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -346,32 +357,16 @@ footer .footer-inner {
 }
 
 .carousel-control {
-	position: absolute;
-	top: 160px;
-	left: -5px;
-	width: 40px;
+	background-color: transparent;
+	border: 0 none;
+	font-size: 120px;
 	height: 40px;
-	font-size: 60px;
-	font-weight: 100;
-	line-height: 30px;
-	color: #ffffff;
-	text-align: center;
-	background: #222222;
-	border: 1px solid #333;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-	opacity: 0.8;
-	filter: alpha(opacity =                             80);
-	margin-top: 0px;
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	margin-top: 0;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-.carousel-control.right {
-	right: -5px;
-	left: auto;
+#slideshow a.carousel-control {
+	color: #FFFFFF;
 }
 
 /* Desktop
