@@ -96,7 +96,7 @@ bloginfo('name');
 					
 					$('footer .widget ul').addClass('nav nav-pills nav-stacked');
 
-					$('footer .widget_recent_comments ul').removeClass('nav nav-pills nav-stacked');
+					$('.widget_recent_comments ul').removeClass('nav nav-tabs nav-pills nav-stacked').addClass('unstyled');
 				});
 			</script>
 		</header>

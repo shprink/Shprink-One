@@ -73,13 +73,14 @@ header .navbar a.brand:hover {
 	padding: 20px;
 }
 */
-
 .alignleft {
 	float: left;
 }
+
 .alignright {
 	float: right;
 }
+
 .aligncenter {
 	display: block;
 	margin-left: auto;
@@ -94,8 +95,7 @@ header .navbar a.brand:hover {
 	background: url("img/creampaper.png") repeat scroll 0 0 transparent;
 }
 
-#slideshow,
-#slideshow .item {
+#slideshow,#slideshow .item {
 	min-height: 397px;
 }
 
@@ -288,6 +288,10 @@ header .navbar a.brand:hover {
 	border-radius: 10px;
 }
 
+#comments .comment {
+	padding-top: 30px;
+}
+
 /* FOOTER */
 footer {
 	background: url("img/debut_dark.png") repeat scroll 0 0 transparent;
@@ -300,7 +304,8 @@ footer,footer a,footer a:hover,footer h1,footer h2,footer h3,footer h4,footer h5
 	{
 	color: #FFFFFF;
 }
-footer .nav a:hover{
+
+footer .nav a:hover {
 	color: #005580;
 }
 
@@ -356,7 +361,8 @@ footer .footer-inner {
 .dropdown-menu {
 	border-top: none;
 	margin: 0;
-	*border-right-width: 0px; *border-bottom-width : 0px ;
+	*border-right-width: 0px;
+	*border-bottom-width: 0px;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -400,6 +406,13 @@ footer .footer-inner {
 		width: 228px;
 		margin-left: 20px;
 	}
+	.container-slideshow {
+		background-color: #CCCCCC;
+		padding-top: 20px;
+		margin-top: -20px;
+		margin-bottom: 20px;
+		background: url("img/creampaper.png") repeat scroll 0 0 transparent;
+	}
 }
 
 /* Tablet to desktop
@@ -425,6 +438,12 @@ footer .footer-inner {
 	.span9 .masonry .box,.span12 .masonry .box {
 		width: 100%;
 		margin-left: 0px;
+	}
+	.container-slideshow {
+		background: none;
+		padding-top: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 }
 
