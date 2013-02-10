@@ -17,7 +17,7 @@ $i = 1;
 				<div class="item <?php if ($i === 1) echo 'active'; ?>">
 					<?php if (has_post_thumbnail()): ?>
 						<div class="post-thumbnail">
-							<?php the_post_thumbnail('post-image-slideshow-' . shprinkone_get_imagespan()); ?>
+							<?php the_post_thumbnail('post-image-slideshow'); ?>
 						</div>
 					<?php else: ?>
 						<img src="<?php bloginfo('stylesheet_directory'); ?>/img/iPhoto.png" class="no-photo" />

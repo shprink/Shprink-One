@@ -95,6 +95,8 @@ bloginfo('name');
 					$('#sidebar .widget ul').addClass('nav nav-tabs nav-stacked');
 					
 					$('footer .widget ul').addClass('nav nav-pills nav-stacked');
+
+					$('footer .widget_recent_comments ul').removeClass('nav nav-pills nav-stacked');
 				});
 			</script>
 		</header>

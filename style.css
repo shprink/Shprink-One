@@ -73,6 +73,19 @@ header .navbar a.brand:hover {
 	padding: 20px;
 }
 */
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .container-slideshow {
 	background-color: #CCCCCC;
 	padding-top: 50px;
@@ -81,13 +94,14 @@ header .navbar a.brand:hover {
 	background: url("img/creampaper.png") repeat scroll 0 0 transparent;
 }
 
-#slideshow,#slideshow .item {
-	min-height: 400px;
+#slideshow,
+#slideshow .item {
+	min-height: 397px;
 }
 
 #slideshow img.no-photo {
 	position: absolute;
-	left: 45%;
+	left: 526px;
 	top: 136px;
 }
 
@@ -282,9 +296,12 @@ footer {
 	margin-top: 30px;
 }
 
-footer,footer a,footer h1,footer h2,footer h3,footer h4,footer h5,footer h6,footer p
+footer,footer a,footer a:hover,footer h1,footer h2,footer h3,footer h4,footer h5,footer h6,footer p
 	{
 	color: #FFFFFF;
+}
+footer .nav a:hover{
+	color: #005580;
 }
 
 footer .footer-inner {
