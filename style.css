@@ -288,8 +288,27 @@ header .navbar a.brand:hover {
 	border-radius: 10px;
 }
 
-#comments .comment {
-	padding-top: 30px;
+#comments{
+	padding-top: 40px;
+}
+#comments .comment,
+#comments .trackback,
+#comments .pingback {
+	padding: 50px;
+}
+
+.comment.thread-odd.depth-1,
+.trackback.thread-odd.depth-1,
+.pingback.thread-odd.depth-1 {
+	background-color: #f9f9f9;
+	margin-top: 0px;
+}
+
+.comment.thread-even.depth-1,
+.trackback.thread-even.depth-1,
+.pingback.thread-even.depth-1 {
+	background-color: #FFFFFF;
+	margin-top: 0px;
 }
 
 /* FOOTER */
