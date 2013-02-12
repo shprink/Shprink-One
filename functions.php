@@ -429,12 +429,31 @@ function shprinkone_get_sidebar($side) {
 }
 
 /**
+ * Is sidebar active
+ *
+ * @return  string
+ * @since   1.0
+ */
+function shprinkone_is_sidebar_active(){
+	$bool = has_nav_menu('sidebar-menu-top') ||
+	is_active_sidebar('sidebar-widget-top') ||
+	has_nav_menu('sidebar-menu-middle') ||
+	is_active_sidebar('sidebar-widget-middle') ||
+	has_nav_menu('sidebar-menu-bottom') ||
+	is_active_sidebar('sidebar-widget-bottom');
+	return $bool;
+}
+
+/**
  * Get the columns width
  *
  * @return  string
  * @since   1.0
  */
 function shprinkone_get_contentspan() {
+	if(!shprinkone_is_sidebar_active()){
+		return 'span12';
+	}
 	$options = shprinkone_get_theme_options();
 	return ($options['theme_layout'] == 'content') ? 'span12' : 'span9';
 }
@@ -446,6 +465,9 @@ function shprinkone_get_contentspan() {
  * @since   1.0
  */
 function shprinkone_get_imagespan() {
+	if(!shprinkone_is_sidebar_active()){
+		return 'width12';
+	}
 	$options = shprinkone_get_theme_options();
 	return ($options['theme_layout'] == 'content') ? 'width12' : 'width9';
 }

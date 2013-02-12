@@ -18,7 +18,8 @@
 		</div>
 	</div>
 </div>
-<div class="container"><!-- container start -->
+<div class="container">
+	<!-- container start -->
 	<div id="content">
 		<div class="row">
 			<?php shprinkone_get_sidebar('left'); ?>
@@ -28,5 +29,6 @@
 			<?php shprinkone_get_sidebar('right'); ?>
 		</div>
 	</div>
-</div><!-- container end -->
+</div>
+<!-- container end -->
 <?php get_footer(); ?>

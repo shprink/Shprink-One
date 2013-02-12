@@ -8,12 +8,17 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container"><!-- container start -->
+<div class="container">
+	<!-- container start -->
 	<div class="row">
 		<div id="content" class="span12">
 			<div class="hero-unit">
-				<h1><?php echo __('404... Oups something went wrong...', 'shprinkone') ?></h1>
-				<p><?php echo __('We are sorry but we cannot reach the page you are looking for... Perhaps you should try to:', 'shprinkone') ?></p>
+				<h1>
+					<?php echo __('404... Oups something went wrong...', 'shprinkone') ?>
+				</h1>
+				<p>
+					<?php echo __('We are sorry but we cannot reach the page you are looking for... Perhaps you should try to:', 'shprinkone') ?>
+				</p>
 
 			</div>
 		</div>
@@ -21,10 +26,11 @@
 	<div class="row">
 		<div class="span4">
 			<div class="well">
-				<h4><?php echo __('Search for it: ', 'shprinkone') ?></h4>
+				<h4>
+					<?php echo __('Search for it: ', 'shprinkone') ?>
+				</h4>
 				<?php get_search_form(); ?>
-				<br/>
-				<br/>
+				<br /> <br />
 			</div>
 		</div>
 		<div class="span4">
@@ -34,12 +40,15 @@
 		</div>
 		<div class="span4">
 			<div class="well">
-				<h4><?php echo __('Check Out The Most Used Categories', 'shprinkone'); ?></h4>
+				<h4>
+					<?php echo __('Check Out The Most Used Categories', 'shprinkone'); ?>
+				</h4>
 				<ul>
 					<?php wp_list_categories(array('orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 5)); ?>
 				</ul>
 			</div>
 		</div>
 	</div>
-</div><!-- container end -->
+</div>
+<!-- container end -->
 <?php get_footer(); ?>
