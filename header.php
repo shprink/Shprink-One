@@ -23,6 +23,7 @@ wp_title('|', true, 'right');
 bloginfo('name');
 ?>
 </title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all"
 	href="<?php bloginfo('stylesheet_url'); ?>" />
 <script type="text/javascript"

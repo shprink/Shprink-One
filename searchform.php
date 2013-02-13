@@ -9,6 +9,5 @@
 ?>
 <form class="navbar-search pull-left" method="get"
 	action="<?php echo esc_url(home_url('/')); ?>">
-	<input type="text" class="search-query" placeholder="Search" name="s"
-		value="<?php echo $_GET["s"] ?>">
+	<input type="text" class="search-query" placeholder="Search" name="s"/>
 </form>

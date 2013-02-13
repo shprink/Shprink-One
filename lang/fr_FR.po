@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-13 21:39+0100\n"
-"PO-Revision-Date: 2013-02-13 22:10+0100\n"
+"PO-Revision-Date: 2013-02-13 23:03+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: \n"
@@ -272,7 +272,7 @@ msgstr "Annulé la réponse"
 
 #: functions.php:533
 msgid "Post Comment"
-msgstr "1 Commentaire"
+msgstr "Commentez"
 
 #: functions.php:614
 msgid "Default Layout"
