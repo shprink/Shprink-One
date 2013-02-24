@@ -73,10 +73,6 @@ header .navbar a.brand:hover {
 	padding: 20px;
 }
 */
-.affix {
-	top: 60px;
-}
-
 .alignleft {
 	float: left;
 }
@@ -438,6 +434,9 @@ footer .footer-inner {
 /* Tablet to desktop
 ------------------------- */
 @media ( min-width : 768px) and (max-width: 979px) {
+	.affix {
+		top: 0px;
+	}
 }
 
 /* Tablet
@@ -465,6 +464,9 @@ footer .footer-inner {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
+	.affix {
+		top: 0px;
+	}
 }
 
 /* Landscape phones
@@ -483,6 +485,9 @@ footer .footer-inner {
 	.span12  .masonry .box {
 		width: 220px;
 		margin-left: 20px;
+	}
+	.affix {
+		top: 45px;
 	}
 }
 

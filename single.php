@@ -22,7 +22,7 @@
 					</div>
 					<?php endif; ?>
 					<div class="page-header">
-						<h1 class="post-title">
+						<h1 id="post-title" class="post-title">
 							<?php the_title(); ?>
 						</h1>
 						<?php echo shprinkone_get_post_meta(true, false, false, true) ?>

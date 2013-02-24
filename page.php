@@ -22,7 +22,7 @@
 					</div>
 					<?php endif; ?>
 					<div class="page-header">
-						<h1 class="post-title">
+						<h1 id="page-title" class="post-title">
 							<?php the_title(); ?>
 						</h1>
 					</div>

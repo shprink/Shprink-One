@@ -36,7 +36,7 @@ bloginfo('name');
 	src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.infinitescroll.min.js"></script>
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
 	<header id="header">
 		<div class="navbar navbar-header navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
