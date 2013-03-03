@@ -11,32 +11,37 @@ $i = 1;
 <?php if (have_posts() && get_query_var('paged') < 2) : ?>
 <div id="slideshow"
 	class="carousel slide">
+	<ol class="carousel-indicators">
+		<li data-target="#slideshow" data-slide-to="0" class="active"></li>
+		<li data-target="#slideshow" data-slide-to="1"></li>
+		<li data-target="#slideshow" data-slide-to="2"></li>
+	</ol>
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<!-- Start the Loop. -->
 		<?php while (have_posts() && $i <= 3) : the_post(); ?>
 		<div class="item <?php if ($i === 1) echo 'active'; ?>">
-			<?php if (has_post_thumbnail()): ?>
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail('post-image-slideshow'); ?>
-			</div>
-			<?php else: ?>
-			<img src="<?php bloginfo('stylesheet_directory'); ?>/img/iPhoto.png"
-				class="no-photo" />
-			<?php endif; ?>
-			<div class="carousel-caption span3">
-				<h4 class="post-title">
-					<a href="<?php the_permalink() ?>"
-						title="<?php echo sprintf(__('Permanent Link to %s'), the_title_attribute()); ?>"><?php the_title(); ?>
-					</a>
-				</h4>
-				<?php echo shprinkone_get_post_meta(true, true, true, true) ?>
-				<?php the_excerpt(); ?>
-				<hr />
-				<p>
-					<i class="icon-comment icon-white"></i>
-					<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
-				</p>
+			<div class="media">
+				<?php if (has_post_thumbnail()): ?>
+				<a class="pull-left post-thumbnail span3" href="<?php the_permalink() ?>"> <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
+				</a>
+				<?php endif; ?>
+				<div class="media-body">
+					<h2 class="post-title">
+						<a href="<?php the_permalink() ?>"
+							title="<?php echo sprintf(__('Permanent Link to %s'), the_title_attribute()); ?>"><?php the_title(); ?>
+						</a>
+					</h2>
+					<?php echo shprinkone_get_post_meta(true, false, true, true) ?>
+					<?php the_excerpt(); ?>
+					<div class="btn-group">
+						<a class="post-more btn btn-large btn-primary"
+							href="<?php the_permalink() ?>"><i
+							class="icon-chevron-down icon-white"> </i> <?php _e('Read more', 'shprinkone') ?>
+						</a>
+						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone'), 'btn btn-large'); ?>
+					</div>
+				</div>
 			</div>
 		</div>
 		<?php $i++; ?>
