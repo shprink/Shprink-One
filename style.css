@@ -145,7 +145,7 @@ header .navbar a.brand:hover {
 #slideshow .carousel-indicators{
 	top: auto;
 	bottom: 0px;
-	left: 45%;
+	left: 48%;
 }
 
 #slideshow .carousel-control {
@@ -158,7 +158,7 @@ header .navbar a.brand:hover {
 }
 
 #slideshow a.carousel-control {
-	color: #FFFFFF;
+	color: #333;
 }
 
 #slideshow a.carousel-control.left {

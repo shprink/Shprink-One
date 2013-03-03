@@ -35,9 +35,8 @@ $i = 1;
 					<?php echo shprinkone_get_post_meta(true, false, true, true) ?>
 					<?php the_excerpt(); ?>
 					<div class="btn-group">
-						<a class="post-more btn btn-large btn-primary"
-							href="<?php the_permalink() ?>"><i
-							class="icon-chevron-down icon-white"> </i> <?php _e('Read more', 'shprinkone') ?>
+						<a class="post-more btn btn-large btn-primary" href="<?php the_permalink() ?>">
+							<?php _e('Read more', 'shprinkone') ?>
 						</a>
 						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone'), 'btn btn-large'); ?>
 					</div>
