@@ -26,9 +26,11 @@
 						title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
 					</a>
 				</h2>
+				<?php echo shprinkone_get_post_meta(false, false, false) ?>
 				<hr />
 				<div class="post-content">
 					<?php the_excerpt(); ?>
+					<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
 				</div>
 			</div>
 			<a class="post-more btn btn-info btn-block"
