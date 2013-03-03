@@ -131,7 +131,6 @@ function shprinkone_setup() {
 	add_image_size('post-image-mansory', 268, 268, true);
 	add_image_size('post-image-width9', 860, 200, true);
 	add_image_size('post-image-width12', 1170, 200, true);
-	add_image_size('post-image-slideshow', 1180, 400, true);
 
 	// Translation
 	load_theme_textdomain('shprinkone', get_template_directory() . '/lang');
