@@ -12,42 +12,14 @@ License URI: http://opensource.org/licenses/MIT
 
 General comments (optional).
 */
-@import url('css/bootstrap.min.css');
+@import url('css/cosmo.bootswatch.min.css');
 
 @import url('css/bootstrap-responsive.min.css');
 
+@import url('css/font-awesome.min.css');
+
 @CHARSET "UTF-8";
 
-body {
-	font-size: 12px;
-	background-color: #F7F7F7;
-	height: 100%;
-	background-color: #FFFFFF;
-}
-
-/* HEADER */
-header .navbar {
-	border-bottom: 1px solid #161616;
-	padding-top: 2px;
-}
-
-header .navbar .navbar-inner {
-	background: none;
-	border-bottom: 1px solid #2B2B2B;
-	color: #FFFFFF;
-}
-
-header .navbar .brand i.icon-home {
-	margin-top: 6px;
-}
-
-header .navbar a.brand {
-	color: #FFFFFF;
-}
-
-header .navbar a.brand:hover {
-	background-color: #111111;
-}
 
 /* SIDEBAR */
 #sidebar {
@@ -228,6 +200,7 @@ header .navbar a.brand:hover {
 
 .masonry {
 	font-size: 11px;
+	color: #333;
 }
 
 .masonry .post-meta {
@@ -381,51 +354,6 @@ footer .footer-inner {
 
 #credit ul.inline {
 	margin-bottom: 0px;
-}
-
-/* Bootstrap Overwrite */
-.navbar .brand {
-	padding: 6px 20px 9px 20px;
-}
-
-.nav-tabs.nav-stacked>li>a {
-	border: none;
-	border-bottom: 1px solid #ddd;
-}
-
-.well {
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-}
-
-.navbar .nav>li>.dropdown-menu:before {
-	border: none;
-}
-
-.navbar .nav>li>.dropdown-menu:after {
-	border: none;
-}
-
-.dropdown-menu {
-	border-top: none;
-	margin: 0;
-	*border-right-width: 0px;
-	*border-bottom-width: 0px;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-.navbar-inverse .nav li.dropdown.open>.dropdown-toggle,.navbar-inverse .nav li.dropdown.active>.dropdown-toggle,.navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle
-	{
-	color: #111111;
-	background-color: #ffffff;
-	border-left: 1px solid black;
-	text-shadow: none;
 }
 
 /* Desktop

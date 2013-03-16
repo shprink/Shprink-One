@@ -39,7 +39,7 @@ bloginfo('name');
 </head>
 <body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
 	<header id="header">
-		<div class="navbar navbar-header navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-header navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
 					<a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><i

@@ -33,7 +33,7 @@
 					<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
 				</div>
 			</div>
-			<a class="post-more btn btn-info btn-block"
+			<a class="post-more btn btn-primary btn-block"
 				href="<?php the_permalink() ?>"><i
 				class="icon-chevron-down icon-white"> </i> <?php _e('Read more', 'shprinkone') ?>
 			</a>
