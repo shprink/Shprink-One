@@ -39,7 +39,7 @@ bloginfo('name');
 </head>
 <body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
 	<header id="header">
-		<div class="navbar navbar-header navbar-fixed-top">
+		<div class="navbar navbar-inverse navbar-header navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
 					<a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><i
@@ -80,10 +80,9 @@ bloginfo('name');
 							<li class="divider-vertical"></li>
 							<li><?php get_search_form(); ?>
 							</li>
-							<li><a href="<?php echo esc_url(home_url('?feed=rss2')); ?>"> <img
-									src="<?php bloginfo('stylesheet_directory'); ?>/img/rss.png"
-									title="<?php _e('Subscribe to the RSS feed', 'shprinkone') ?>"
-									alt="rss feed" />
+							<li><a href="<?php echo esc_url(home_url('?feed=rss2')); ?>"
+								title="<?php _e('Subscribe to the RSS feed', 'shprinkone') ?>">
+									<i class="icon-rss"> </i>
 							</a>
 							</li>
 						</ul>
@@ -95,10 +94,8 @@ bloginfo('name');
 		<script>
 				$(function(){
 					// Add Bootstrap class to lists within the sidebar
-					$('#sidebar .widget ul').addClass('nav nav-tabs nav-stacked');
-					
+					$('#sidebar .widget ul').addClass('nav nav-pills nav-stacked');
 					$('footer .widget ul').addClass('nav nav-pills nav-stacked');
-
 					$('.widget_recent_comments ul').removeClass('nav nav-tabs nav-pills nav-stacked').addClass('unstyled');
 				});
 			</script>

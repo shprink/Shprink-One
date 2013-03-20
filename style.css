@@ -12,14 +12,13 @@ License URI: http://opensource.org/licenses/MIT
 
 General comments (optional).
 */
-@import url('css/cosmo.bootswatch.min.css');
+@import url('css/cerulean.bootswatch.min.css');
 
 @import url('css/bootstrap-responsive.min.css');
 
 @import url('css/font-awesome.min.css');
 
 @CHARSET "UTF-8";
-
 
 /* SIDEBAR */
 #sidebar {
@@ -67,54 +66,20 @@ General comments (optional).
 	background: url("img/creampaper.png") repeat scroll 0 0 transparent;
 }
 
-#slideshow{
-	font-size: 18px;
-	font-weight: 200;
+#slideshow {
 	line-height: 30px;
 	color: inherit;
-}
-
-#slideshow,#slideshow .item {
-	min-height: 278px;
-}
-
-#slideshow .carousel-inner{
-}
-
-#slideshow a {
-}
-
-#slideshow p{
-	font-size: 12px;
-}
-
-#slideshow .post-meta {
-	font-size: 12px;
-}
-
-#slideshow hr {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	border-top: 0px;
-}
-
-#slideshow h2{
-  margin-bottom: 0;
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: -1px;
-  color: inherit;
 }
 
 #slideshow .item {
 	padding: 20px;
 }
 
-#slideshow .post-thumbnail{
+#slideshow .post-thumbnail {
 	margin-right: 30px;
 }
 
-#slideshow .carousel-indicators{
+#slideshow .carousel-indicators {
 	top: auto;
 	bottom: 0px;
 	left: 48%;
@@ -141,19 +106,15 @@ General comments (optional).
 	right: -20px;
 }
 
-#slideshow .carousel-indicators li{
+#slideshow .carousel-indicators li {
 	background-color: #333;
 	opacity: 0.3;
 	cursor: pointer;
 }
 
-#slideshow .carousel-indicators li.active{
+#slideshow .carousel-indicators li.active {
 	background-color: #333;
 	opacity: 1;
-}
-
-#masonry {
-	
 }
 
 #masonry .thumbnail {
@@ -199,8 +160,7 @@ General comments (optional).
 }
 
 .masonry {
-	font-size: 11px;
-	color: #333;
+	
 }
 
 .masonry .post-meta {
@@ -314,42 +274,28 @@ General comments (optional).
 	margin-top: 0px;
 }
 
-/* FOOTER */
-footer {
-	background: url("img/debut_dark.png") repeat scroll 0 0 transparent;
-	background-color: #383838;
-	border-top: 1px solid #373737;
-	margin-top: 30px;
-}
-
-footer,footer a,footer a:hover,footer h1,footer h2,footer h3,footer h4,footer h5,footer h6,footer p
-	{
-	color: #FFFFFF;
-}
-
-footer .nav a:hover {
-	color: #005580;
-}
-
-footer .footer-inner {
-	border-top: 1px solid #2B2B2B;
-	padding: 10px 0;
-}
-
+/* CREDIT */
 #credit {
 	text-align: center;
-	border-top: 1px solid #161616;
-	color: #FFFFFF;
+	color: #CCC;
+	font-size: 12px;
+	background-color: #1b1b1b;
+	background-image: -moz-linear-gradient(top, #222222, #111111);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222),
+		to(#111111) );
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #222222, #111111);
+	background-repeat: repeat-x;
 }
 
-#credit,header .navbar {
-	background: url("img/noisy_net.png") repeat scroll 0 0 transparent;
-	background-color: #181D22;
+#credit a {
+	color: #FFFFFF;
+	font-size: 12px;
 }
 
 #credit .credit-inner {
 	padding: 5px;
-	border-top: 1px solid #2B2B2B;
 }
 
 #credit ul.inline {
