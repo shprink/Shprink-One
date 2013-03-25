@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-13 21:39+0100\n"
-"PO-Revision-Date: 2013-02-13 23:03+0100\n"
+"POT-Creation-Date: 2013-03-24 18:04+0100\n"
+"PO-Revision-Date: 2013-03-24 19:42+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: \n"
@@ -19,11 +19,27 @@ msgstr ""
 msgid "Tag"
 msgstr "Tag"
 
-#: loop.php:36
+#: loop.php:33
+#: loop_home.php:41
+msgid "Leave a comment"
+msgstr "Laissez un commentaire"
+
+#: loop.php:33
+#: loop_home.php:41
+msgid "1 Comment"
+msgstr "1 Commentaire"
+
+#: loop.php:33
+#: loop_home.php:41
+msgid "% Comments"
+msgstr "% Commentaires"
+
+#: loop.php:38
+#: loop_home.php:39
 msgid "Read more"
 msgstr "Voir plus"
 
-#: loop.php:77
+#: loop.php:79
 msgid "No more pages to load."
 msgstr "Plus de pages à charger."
 
@@ -87,22 +103,10 @@ msgstr "Regarder les catégories les plus utilisés"
 msgid "Category"
 msgstr "Categorie"
 
-#: loop_home.php:30
+#: loop_home.php:32
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Lien permanent à %s"
-
-#: loop_home.php:38
-msgid "Leave a comment"
-msgstr "Laissez un commentaire"
-
-#: loop_home.php:38
-msgid "1 Comment"
-msgstr "1 Commentaire"
-
-#: loop_home.php:38
-msgid "% Comments"
-msgstr "% Commentaires"
 
 #: footer.php:50
 msgid "All rights reserved."
@@ -113,192 +117,166 @@ msgstr "Tous droits réservés."
 msgid "Search Results for: %s"
 msgstr "Résultat pour: %s"
 
-#: functions.php:19
-#: functions.php:23
+#: functions.php:21
+#: functions.php:25
 msgid "Sidebar Widget Top"
 msgstr "Widget  barre latérale haut"
 
-#: functions.php:28
-#: functions.php:32
+#: functions.php:30
+#: functions.php:34
 msgid "Sidebar Widget Middle"
 msgstr "Widget  barre latérale milieu"
 
-#: functions.php:37
-#: functions.php:41
+#: functions.php:39
+#: functions.php:43
 msgid "Sidebar Widget Bottom"
 msgstr "Widget barre latérale bas"
 
-#: functions.php:46
-#: functions.php:50
+#: functions.php:48
+#: functions.php:52
 msgid "Footer Widget Left"
 msgstr "Widget bas de page gauche"
 
-#: functions.php:55
-#: functions.php:59
+#: functions.php:57
+#: functions.php:61
 msgid "Footer Widget Middle Left"
 msgstr "Widget bas de page milieu gauche"
 
-#: functions.php:64
-#: functions.php:68
+#: functions.php:66
+#: functions.php:70
 msgid "Footer Widget Middle Right"
 msgstr "Widget bas de page milieu droite"
 
-#: functions.php:73
-#: functions.php:77
+#: functions.php:75
+#: functions.php:79
 msgid "Footer Widget Right"
 msgstr "Widget bas de page droite"
 
-#: functions.php:82
-#: functions.php:86
+#: functions.php:84
+#: functions.php:88
 msgid "Footer Widget Bottom"
 msgstr "Widget bas de page"
 
-#: functions.php:103
+#: functions.php:105
 msgid "Header Menu Right"
 msgstr "Haut de page droite"
 
-#: functions.php:104
+#: functions.php:106
 msgid "Sidebar Menu Top"
 msgstr " Menu barre latérale haut"
 
-#: functions.php:105
+#: functions.php:107
 msgid "Sidebar Menu Middle"
 msgstr " Menu barre latérale milieu"
 
-#: functions.php:106
+#: functions.php:108
 msgid "Sidebar Menu Bottom"
 msgstr " Menu barre latérale bas"
 
-#: functions.php:278
+#: functions.php:279
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">dit:</span>"
 
-#: functions.php:281
+#: functions.php:282
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de validation."
 
-#: functions.php:290
+#: functions.php:291
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: functions.php:293
+#: functions.php:294
 msgid "(Edit)"
 msgstr "(Editer)"
 
-#: functions.php:337
-#: functions.php:382
+#: functions.php:338
+#: functions.php:383
 msgid "M d, Y"
 msgstr "d M, Y"
 
-#: functions.php:349
+#: functions.php:350
 #: author.php:24
 #, php-format
 msgid "Posts by %s"
 msgstr "Voir tous les articles de %s"
 
-#: functions.php:351
+#: functions.php:352
 #, php-format
 msgid "By: %s"
 msgstr "Par: %s"
 
-#: functions.php:363
+#: functions.php:364
 #, php-format
 msgid "%d Comments"
 msgstr "%d Commentaires"
 
-#: functions.php:365
+#: functions.php:366
 #, php-format
 msgid "%d Comment"
 msgstr "%d Commentaires"
 
-#: functions.php:388
+#: functions.php:389
 #, php-format
 msgid "Category: %s"
 msgstr "Categories: %s"
 
-#: functions.php:391
+#: functions.php:392
 msgid "Tag: "
 msgstr "Tag:"
 
-#: functions.php:484
+#: functions.php:485
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, aucun résultat de correspond à votre recherche."
 
-#: functions.php:512
+#: functions.php:513
 msgid "Name"
 msgstr "Nom"
 
-#: functions.php:514
+#: functions.php:515
 msgid "Email"
 msgstr "Couriel"
 
-#: functions.php:516
+#: functions.php:517
 msgid "Website"
 msgstr "Site Web:"
 
-#: functions.php:520
+#: functions.php:521
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Les champs requis sont marqué par %s"
 
-#: functions.php:524
+#: functions.php:525
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Vous devez être <a href=\"%s\">connecté</a> pour commenter."
 
-#: functions.php:525
+#: functions.php:526
 #, php-format
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
 msgstr "Connecté en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se deconnecter\">Se deconnecter?</a>"
 
-#: functions.php:526
+#: functions.php:527
 msgid "Your email address will not be published."
 msgstr "Votre adresse de couriel ne sera pas publié."
 
-#: functions.php:530
+#: functions.php:531
 msgid "Leave a Reply"
 msgstr "Laissez un commentaire"
 
-#: functions.php:531
+#: functions.php:532
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Répondre à %s"
 
-#: functions.php:532
+#: functions.php:533
 msgid "Cancel reply"
 msgstr "Annulé la réponse"
 
-#: functions.php:533
+#: functions.php:534
 msgid "Post Comment"
 msgstr "Commentez"
-
-#: functions.php:614
-msgid "Default Layout"
-msgstr "Structure pas default"
-
-#: functions.php:627
-#: functions.php:628
-msgid "Theme Options"
-msgstr "Options du Theme"
-
-#: functions.php:650
-#, php-format
-msgid "%s Theme Options"
-msgstr "%s Options du Theme"
-
-#: functions.php:715
-msgid "Content on left"
-msgstr "Contenu à gauche"
-
-#: functions.php:720
-msgid "Content on right"
-msgstr "Contenu à droite"
-
-#: functions.php:725
-msgid "One-column, no sidebar"
-msgstr "Contenu seul (pas de menu sur le côté)"
 
 #: author.php:35
 msgid "Website:"
@@ -325,9 +303,52 @@ msgstr "Google+:"
 msgid "%s on Google+"
 msgstr "%s sur Google+"
 
-#: header.php:83
+#: header.php:91
 msgid "Subscribe to the RSS feed"
 msgstr "S'abonner au flux RSS"
+
+#: admin/functions.php:27
+msgid "Default Layout"
+msgstr "Structure par default"
+
+#: admin/functions.php:28
+msgid "Default Template"
+msgstr "Template par default"
+
+#: admin/functions.php:41
+#: admin/functions.php:42
+msgid "Theme Options"
+msgstr "Options du Theme"
+
+#: admin/functions.php:64
+#, php-format
+msgid "%s Theme Options"
+msgstr "%s Options du Theme"
+
+#: admin/functions.php:84
+#: admin/functions.php:126
+msgid "Thumbnail"
+msgstr "Aperçu"
+
+#: admin/functions.php:85
+msgid "Position"
+msgstr "Position"
+
+#: admin/functions.php:128
+msgid "Author"
+msgstr "Auteur"
+
+#: admin/functions.php:181
+msgid "Content on left"
+msgstr "Contenu à gauche"
+
+#: admin/functions.php:186
+msgid "Content on right"
+msgstr "Contenu à droite"
+
+#: admin/functions.php:191
+msgid "One-column, no sidebar"
+msgstr "Contenu seul (pas de menu sur le côté)"
 
 #~ msgid "By"
 #~ msgstr "Par"

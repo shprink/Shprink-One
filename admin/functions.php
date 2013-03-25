@@ -25,6 +25,7 @@ function shprinkone_theme_options_init() {
 	);
 
 	add_settings_field('layout', __('Default Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'general');
+	add_settings_field('template', __('Default Template', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'general');
 }
 
 add_action('admin_init', 'shprinkone_theme_options_init');
@@ -76,16 +77,72 @@ function shprinkone_theme_options_render() {
  */
 function shprinkone_settings_field_layout() {
 	$options = shprinkone_get_theme_options();
-	foreach (shprinkone_layouts() as $layout) {
-		$checked = ($options['theme_layout'] == $layout['value']) ? 'checked="checked"' : '';
-		$html = '<div class="layout image-radio-option theme-layout">';
-		$html .= '<label class="description"> <input type="radio" name="shprinkone_theme_options[theme_layout]"';
-		$html .= 'value="' . esc_attr($layout['value']) . '" ' . $checked . ' /> <span>';
-		$html .= '<img src="' . esc_url($layout['thumbnail']) . '" width="136" height="122" alt="" />';
-		$html .= $layout['label'];
-		$html .= '</span></label></div>';
-		echo $html;
+
+	echo '<table class="widefat">';
+	echo '<thead><tr>';
+	echo '<th style="width:10px;"></th>';
+	echo '<th>' . __('Thumbnail', 'shprinkone') . '</th>';
+	echo '<th>' . __('Position', 'shprinkone') . '</th>';
+	echo '</tr></thead>';
+	echo '<tbody>';
+
+	$i = 0;
+	foreach (shprinkone_layouts() as $key => $layout) {
+		$checked = ($options['theme_layout'] == $key) ? 'checked="checked"' : '';
+		echo ($i %2 == 0)?  '<tr>' : '<tr class="alternate">';
+		echo '<td><input type="radio" name="shprinkone_theme_options[theme_layout]" value="'.$layout['value'].'" ' . $checked . '></td>';
+		echo '<td><img src="' . esc_url($layout['thumbnail']) . '" width="80" height="80" alt="" /></td>';
+		echo '<td>' . $layout['label'] .'</td>';
+		echo '</tr>';
+		$i++;
 	}
+	echo '<tbody>';
+	echo '</table>';
+}
+/**
+ * Set field template
+ *
+ * @return  void
+ * @since   1.0
+ */
+function shprinkone_settings_field_template() {
+	$options = shprinkone_get_theme_options();
+	// Template selection
+	echo '<table class="widefat">';
+	echo '<thead><tr>';
+	echo '<th style="width:10px;"></th>';
+	echo '<th>' . __('Thumbnail', 'shprinkone') . '</th>';
+	echo '<th>' . __('Name', 'shprinkone') . '</th>';
+	echo '<th>' . __('Author', 'shprinkone') . '</th>';
+	echo '</tr></thead>';
+	echo '<tbody>';
+	$i = 0;
+	foreach (shprinkone_get_theme_templates() as $key => $template) {
+		$checked = ($options['theme_template'] == $key) ? 'checked="checked"' : '';
+		echo ($i %2 == 0)?  '<tr>' : '<tr class="alternate">';
+		echo '<td><input type="radio" name="shprinkone_theme_options[theme_template]" value="'.$template['value'].'" ' . $checked . '></td>';
+		//echo '<td><img src="' . esc_url($template['thumbnail']) . '" width="136" height="122" alt="" /></td>';
+		echo '<td>' . shprinkone_format_template_colors($template['colors']) .'</td>';
+		echo '<td>' . $template['name'] .'</td>';
+		echo '<td>' . $template['author'] .'</td>';
+		echo '</tr>';
+		$i++;
+	}
+	echo '<tbody>';
+	echo '</table>';
+}
+
+function shprinkone_format_template_colors($colors){
+	$html = '';
+	if (!is_array($colors)){
+		return $html;
+	}
+	$html .= '<table><tbody><tr>';
+	foreach ($colors as $color){
+		$html .= '<td style="height: 5px; width: 5px; background-color:'. $color .';"></td>';
+	}
+	$html .= '</tbody></tr></table>';
+	return $html;
 }
 
 /**
@@ -106,11 +163,9 @@ function shprinkone_get_theme_options() {
  */
 function shprinkone_get_default_theme_options() {
 	$default_theme_options = array(
-		'theme_layout' => 'content-sidebar',
+			'theme_layout' => 'content-sidebar',
+			'theme_template' => 'cerulean'
 	);
-
-	if (is_rtl())
-		$default_theme_options['theme_layout'] = 'sidebar-content';
 
 	return apply_filters('shprinkone_default_theme_options', $default_theme_options);
 }
@@ -122,24 +177,22 @@ function shprinkone_get_default_theme_options() {
  * @since   1.0
  */
 function shprinkone_layouts() {
-	$layout_options = array(
-		'content-sidebar' => array(
+	$layout_options = array();
+	$layout_options['content-sidebar'] = array(
 			'value' => 'content-sidebar',
 			'label' => __('Content on left', 'shprinkone'),
 			'thumbnail' => get_template_directory_uri() . '/img/content-sidebar.png',
-		),
-		'sidebar-content' => array(
+	);
+	$layout_options['sidebar-content'] = array(
 			'value' => 'sidebar-content',
 			'label' => __('Content on right', 'shprinkone'),
 			'thumbnail' => get_template_directory_uri() . '/img/sidebar-content.png',
-		),
-		'content' => array(
+	);
+	$layout_options['content'] = array(
 			'value' => 'content',
 			'label' => __('One-column, no sidebar', 'shprinkone'),
 			'thumbnail' => get_template_directory_uri() . '/img/content.png',
-		),
 	);
-
 	return apply_filters('shprinkone_layouts', $layout_options);
 }
 
@@ -149,42 +202,113 @@ function shprinkone_layouts() {
  * @return  mixed
  * @since   1.0
  */
-function shprinkone_templates() {
-	$templateList = array(
-		'cerulean' => array(
-			'name'=> 'cerulean',
-			'path' =>get_template_directory_uri() . '/css/cerulean.bootswatch.min.css',
-		),
-		'cosmo' => array(
-			'name'=> 'cosmo',
-			'path' =>get_template_directory_uri() . '/css/cosmo.bootswatch.min.css',
-		),
-		'cyborg' => array(
-			'name'=> 'cyborg',
-			'path' =>get_template_directory_uri() . '/css/cyborg.bootswatch.min.css',
-		),
-		'amelia' => array(
-			'name'=> 'amelia',
-			'path' =>get_template_directory_uri() . '/css/amelia.bootswatch.min.css',
-		),
-		'readable' => array(
-			'name'=> 'readable',
-			'path' =>get_template_directory_uri() . '/css/readable.bootswatch.min.css',
-		),
-		'slate' => array(
-			'name'=> 'slate',
-			'path' =>get_template_directory_uri() . '/css/slate.bootswatch.min.css',
-		),
-		'united' => array(
-			'name'=> 'united',
-			'path' =>get_template_directory_uri() . '/css/united.bootswatch.min.css',
-		),
-		'custom' => array(
-			'name'=> 'custom',
-			'path' =>get_template_directory_uri() . '/css/custom.css',
-		),
+function shprinkone_get_theme_templates() {
+	$templateList = array();
+	$templateList['bootstrap'] = array(
+			'name'=> 'Bootstrap classic',
+			'value'=> 'bootstrap',
+			'author'=> 'http://twitter.github.com/bootstrap/',
+			'path' =>'/css/bootstrap.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_bootstrap.png',
+			'colors' => array()
 	);
-	return apply_filters('shprinkone_templates', $templateList);
+	$templateList['cerulean'] = array(
+			'name'=> 'Cerulean',
+			'value' => 'cerulean',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/cerulean.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_cerulean.png',
+			'colors' => array('#2FA4E7','#033C73','#73A839','#C71C22','#F7B42C','#DD5600','#F49AC1','#9760B3')
+	);
+	$templateList['cosmo'] = array(
+			'name'=> 'Cosmo',
+			'value'=> 'cosmo',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/cosmo.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_cosmo.png',
+			'colors' => array()
+	);
+	$templateList['cyborg'] = array(
+			'name'=> 'Cyborg',
+			'value'=> 'cyborg',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/cyborg.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_cyborg.png',
+			'colors' => array('#33B5E5','#0099CC','#669900','#CC0000','#ECBB13','#FF8800','#FF4444','#9933CC')
+	);
+	$templateList['amelia'] = array(
+			'name'=> 'Amelia',
+			'value'=> 'amelia',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/amelia.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_amelia.png',
+			'colors' => array()
+	);
+	$templateList['readable'] = array(
+			'name'=> 'Readable',
+			'value'=> 'readable',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/readable.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_readable.png',
+			'colors' => array()
+	);
+	$templateList['slate'] = array(
+			'name'=> 'Slate',
+			'value'=> 'slate',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/slate.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_slate.png',
+			'colors' => array()
+	);
+	$templateList['united'] = array(
+			'name'=> 'United',
+			'value'=> 'united',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/united.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_united.png',
+			'colors' => array()
+	);
+	$templateList['spacelab'] = array(
+			'name'=> 'Spacelab',
+			'value'=> 'spacelab',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/spacelab.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_spacelab.png',
+			'colors' => array()
+	);
+	$templateList['spruce'] = array(
+			'name'=> 'Spruce',
+			'value'=> 'spruce',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/spruce.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_spruce.png',
+			'colors' => array()
+	);
+	$templateList['simplex'] = array(
+			'name'=> 'Simplex',
+			'value'=> 'simplex',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/simplex.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_simplex.png',
+			'colors' => array()
+	);
+	$templateList['journal'] = array(
+			'name'=> 'Journal',
+			'value'=> 'journal',
+			'author'=> 'http://bootswatch.com/',
+			'path' =>'/css/journal.bootswatch.min.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_journal.png',
+			'colors' => array()
+	);
+	$templateList['custom'] = array(
+			'name'=> 'Custom',
+			'value'=> 'custom',
+			'author'=> 'none',
+			'path' =>'/css/custom.css',
+			'thumbnail' => get_template_directory_uri() . '/img/template_custom.png',
+			'colors' => array()
+	);
+	return apply_filters('shprinkone_get_theme_templates', $templateList);
 }
 
 /**
@@ -199,6 +323,9 @@ function shprinkone_theme_options_validate($input) {
 	// Theme layout must be in our array of theme layout options
 	if (isset($input['theme_layout']) && array_key_exists($input['theme_layout'], shprinkone_layouts()))
 		$output['theme_layout'] = $input['theme_layout'];
+
+	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates()))
+		$output['theme_template'] = $input['theme_template'];
 
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);
 }

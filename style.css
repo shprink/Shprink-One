@@ -12,7 +12,6 @@ License URI: http://opensource.org/licenses/MIT
 
 General comments (optional).
 */
-@import url('css/cerulean.bootswatch.min.css');
 
 @import url('css/bootstrap-responsive.min.css');
 
@@ -59,11 +58,7 @@ General comments (optional).
 }
 
 .container-slideshow {
-	background-color: #CCCCCC;
-	padding-top: 50px;
-	margin-top: -50px;
 	margin-bottom: 20px;
-	background: url("img/creampaper.png") repeat scroll 0 0 transparent;
 }
 
 #slideshow {
@@ -95,7 +90,7 @@ General comments (optional).
 }
 
 #slideshow a.carousel-control {
-	color: #333;
+	
 }
 
 #slideshow a.carousel-control.left {
@@ -107,26 +102,20 @@ General comments (optional).
 }
 
 #slideshow .carousel-indicators li {
-	background-color: #333;
 	opacity: 0.3;
 	cursor: pointer;
 }
 
 #slideshow .carousel-indicators li.active {
-	background-color: #333;
 	opacity: 1;
 }
 
 #masonry .thumbnail {
-	background-color: #FFFFFF;
 	padding: 0px;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
+	border: none;
 }
 
 #masonry .thumbnail:hover {
-	border-color: rgba(82, 168, 236, 0.8);
 	outline: 0;
 	outline: thin dotted \9;
 	/* IE6-9 */
@@ -179,10 +168,6 @@ General comments (optional).
 	border-radius: 0px;
 }
 
-.masonry .box .well {
-	margin: 0px;
-}
-
 .masonry .box.hover .post-thumbnail,.masonry .box.hover .post-content {
 	display: none;
 }
@@ -190,6 +175,7 @@ General comments (optional).
 .masonry .box h2 {
 	font-size: 14px;
 	line-height: 20px;
+	text-shadow: none;
 }
 
 .masonry .box img {

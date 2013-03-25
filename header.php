@@ -6,6 +6,10 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
+
+$options = shprinkone_get_theme_options();
+$templates = shprinkone_get_theme_templates();
+$selectedTemplate = $templates[$options['theme_template']];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -25,6 +29,8 @@ bloginfo('name');
 ?>
 </title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css"
+	href="<?php echo bloginfo('stylesheet_directory') . $selectedTemplate['path']; ?>">
 <link rel="stylesheet" type="text/css" media="all"
 	href="<?php bloginfo('stylesheet_url'); ?>" />
 <script type="text/javascript"
@@ -35,6 +41,7 @@ bloginfo('name');
 	src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.masonry.min.js"></script>
 <script type="text/javascript"
 	src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.infinitescroll.min.js"></script>
+
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
