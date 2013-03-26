@@ -303,11 +303,7 @@ General comments (optional).
 		margin-left: 20px;
 	}
 	.container-slideshow {
-		background-color: #CCCCCC;
-		padding-top: 20px;
-		margin-top: -20px;
 		margin-bottom: 20px;
-		background: url("img/creampaper.png") repeat scroll 0 0 transparent;
 	}
 }
 
@@ -339,9 +335,6 @@ General comments (optional).
 		margin-left: 0px;
 	}
 	.container-slideshow {
-		background: none;
-		padding-top: 0px;
-		margin-top: 0px;
 		margin-bottom: 0px;
 	}
 	.affix {
