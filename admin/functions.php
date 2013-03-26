@@ -111,7 +111,7 @@ function shprinkone_settings_field_template() {
 	echo '<table class="widefat">';
 	echo '<thead><tr>';
 	echo '<th style="width:10px;"></th>';
-	echo '<th>' . __('Thumbnail', 'shprinkone') . '</th>';
+	echo '<th>' . __('Thumbnail', 'shprinkone') . '<br/>[@navbarBackground, @bodyBackground, @linkColor, @textColor]</th>';
 	echo '<th>' . __('Name', 'shprinkone') . '</th>';
 	echo '<th>' . __('Author', 'shprinkone') . '</th>';
 	echo '</tr></thead>';
@@ -218,7 +218,7 @@ function shprinkone_get_theme_templates() {
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/cerulean.bootswatch.min.css',
 			'thumbnail' => get_template_directory_uri() . '/img/template_cerulean.png',
-			'colors' => array('#2FA4E7','#033C73','#73A839','#C71C22','#F7B42C','#DD5600','#F49AC1','#9760B3')
+			'colors' => array('#2FA4E7','#FFFFFF','#2FA4E7','#555555')
 	);
 	$templateList['cosmo'] = array(
 			'name'=> 'Cosmo',
@@ -234,7 +234,7 @@ function shprinkone_get_theme_templates() {
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/cyborg.bootswatch.min.css',
 			'thumbnail' => get_template_directory_uri() . '/img/template_cyborg.png',
-			'colors' => array('#33B5E5','#0099CC','#669900','#CC0000','#ECBB13','#FF8800','#FF4444','#9933CC')
+			'colors' => array('#020202','#060606','#33B5E5','#999999')
 	);
 	$templateList['amelia'] = array(
 			'name'=> 'Amelia',
@@ -242,7 +242,7 @@ function shprinkone_get_theme_templates() {
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/amelia.bootswatch.min.css',
 			'thumbnail' => get_template_directory_uri() . '/img/template_amelia.png',
-			'colors' => array()
+			'colors' => array('#AD1D28','#003F4D','#DEBB27','#FFFFFF')
 	);
 	$templateList['readable'] = array(
 			'name'=> 'Readable',
