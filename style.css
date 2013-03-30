@@ -12,7 +12,6 @@ License URI: http://opensource.org/licenses/MIT
 
 General comments (optional).
 */
-
 @import url('css/bootstrap-responsive.min.css');
 
 @import url('css/font-awesome.min.css');
@@ -58,7 +57,16 @@ General comments (optional).
 }
 
 .container-slideshow {
+	padding-top: 50px;
+	margin-top: -50px;
 	margin-bottom: 20px;
+  border: none;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
 }
 
 #slideshow {
@@ -67,7 +75,7 @@ General comments (optional).
 }
 
 #slideshow .item {
-	padding: 20px;
+	padding: 20px 0px;
 }
 
 #slideshow .post-thumbnail {
@@ -94,11 +102,11 @@ General comments (optional).
 }
 
 #slideshow a.carousel-control.left {
-	left: -20px;
+	left: -50px;
 }
 
 #slideshow a.carousel-control.right {
-	right: -20px;
+	right: -50px;
 }
 
 #slideshow .carousel-indicators li {
@@ -304,6 +312,8 @@ General comments (optional).
 	}
 	.container-slideshow {
 		margin-bottom: 20px;
+		padding-top: 20px;
+		margin-top: -20px; 
 	}
 }
 
@@ -336,6 +346,9 @@ General comments (optional).
 	}
 	.container-slideshow {
 		margin-bottom: 0px;
+		background: none;
+		padding-top: 0px;
+		margin-top: 0px; 
 	}
 	.affix {
 		top: 0px;

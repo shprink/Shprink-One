@@ -9,7 +9,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container-slideshow">
+<div class="container-slideshow well">
 	<div class="container">
 		<div class="row">
 			<div class="span12">

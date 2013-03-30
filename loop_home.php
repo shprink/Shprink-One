@@ -23,7 +23,7 @@ $i = 1;
 		<div class="item <?php if ($i === 1) echo 'active'; ?>">
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
-				<a class="pull-left post-thumbnail span3" href="<?php the_permalink() ?>"> <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
+				<a class="pull-left post-thumbnail" href="<?php the_permalink() ?>"> <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
 				</a>
 				<?php endif; ?>
 				<div class="media-body">
