@@ -60,13 +60,13 @@ General comments (optional).
 	padding-top: 50px;
 	margin-top: -50px;
 	margin-bottom: 20px;
-  border: none;
-  -webkit-border-radius: 0px;
-     -moz-border-radius: 0px;
-          border-radius: 0px;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 #slideshow {
@@ -253,18 +253,16 @@ General comments (optional).
 }
 
 #comments .comment,#comments .trackback,#comments .pingback {
-	padding: 50px;
+	padding-top: 60px;
 }
 
 .comment.thread-odd.depth-1,.trackback.thread-odd.depth-1,.pingback.thread-odd.depth-1
 	{
-	background-color: #f9f9f9;
 	margin-top: 0px;
 }
 
 .comment.thread-even.depth-1,.trackback.thread-even.depth-1,.pingback.thread-even.depth-1
 	{
-	background-color: #FFFFFF;
 	margin-top: 0px;
 }
 
@@ -313,7 +311,7 @@ General comments (optional).
 	.container-slideshow {
 		margin-bottom: 20px;
 		padding-top: 20px;
-		margin-top: -20px; 
+		margin-top: -20px;
 	}
 }
 
@@ -348,7 +346,7 @@ General comments (optional).
 		margin-bottom: 0px;
 		background: none;
 		padding-top: 0px;
-		margin-top: 0px; 
+		margin-top: 0px;
 	}
 	.affix {
 		top: 0px;
