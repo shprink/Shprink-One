@@ -82,6 +82,11 @@ General comments (optional).
 	margin-right: 30px;
 }
 
+#slideshow.carousel {
+	margin-bottom: 5px;
+	height: 330px;
+}
+
 #slideshow .carousel-indicators {
 	top: auto;
 	bottom: 0px;
@@ -102,11 +107,11 @@ General comments (optional).
 }
 
 #slideshow a.carousel-control.left {
-	left: -50px;
+	left: -40px;
 }
 
 #slideshow a.carousel-control.right {
-	right: -50px;
+	right: -40px;
 }
 
 #slideshow .carousel-indicators li {
@@ -312,6 +317,9 @@ General comments (optional).
 		margin-bottom: 20px;
 		padding-top: 20px;
 		margin-top: -20px;
+	}
+	#slideshow.carousel {
+		height: auto;
 	}
 }
 
