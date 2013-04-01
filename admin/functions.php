@@ -58,7 +58,7 @@ add_action('admin_menu', 'shprinkone_add_theme_page');
  * @since   1.0
 */
 function shprinkone_theme_options_render() {
-	$theme_name = function_exists('wp_get_theme') ? wp_get_theme() : get_current_theme();
+	$theme_name = wp_get_theme();
 	echo '<div class="wrap">';
 	screen_icon();
 	echo '<h2>' . sprintf(__('%s Theme Options', 'shprinkone'), $theme_name) . '</h2>';
