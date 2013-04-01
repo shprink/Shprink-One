@@ -28,7 +28,7 @@
 						<?php echo shprinkone_get_post_meta(true, false, false, true) ?>
 					</div>
 					<?php the_content(); ?>
-					<?php wp_link_pages(); ?>
+					<?php shprinkone_link_pages(); ?>
 
 					<?php if (get_the_author_meta('description')) : // If a user has filled out their description, show a bio on their entries  ?>
 					<div class="media well">

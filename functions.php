@@ -15,7 +15,7 @@ require( get_template_directory() . '/admin/functions.php' );
  *
  * @return  void
  * @since   1.0
- */
+*/
 function shprinkone_widgets_init() {
 	register_sidebar(array(
 	'name' => __('Sidebar Widget Top', 'shprinkone'),
@@ -586,4 +586,64 @@ function shprinkone_comment_form($args = array(), $post_id = null) {
 		<?php do_action('comment_form_comments_closed'); ?>
 		<?php endif; ?>
 		<?php
+}
+
+function shprinkone_link_pages($args = '') {
+	$defaults = array(
+			'before' => '<div class="pagination pagination-centered"><ul>',
+			'after' => '</ul></div>',
+			'link_before' => '',
+			'link_after' => '',
+			'next_or_number' => 'number',
+			'nextpagelink' => __('Next page'),
+			'previouspagelink' => __('Previous page'), 'pagelink' => '%',
+			'echo' => 1
+	);
+
+	$r = wp_parse_args( $args, $defaults );
+	$r = apply_filters( 'wp_link_pages_args', $r );
+	extract( $r, EXTR_SKIP );
+
+	global $page, $numpages, $multipage, $more, $pagenow;
+
+	$output = '';
+	if ( $multipage ) {
+		if ( 'number' == $next_or_number ) {
+			$output .= $before;
+			for ( $i = 1; $i < ($numpages+1); $i = $i + 1 ) {
+				$j = str_replace('%',$i,$pagelink);
+				if ( ($i != $page) || ((!$more) && ($page==1)) ) {
+					$output .= ' <li>';
+					$output .= _wp_link_page($i);
+				}
+				else{
+					$output .= ' <li class="active">';
+					$output .= '<a href="#">';
+				}
+				$output .= $link_before . $j . $link_after;
+				$output .= '</a></li>';
+			}
+			$output .= $after;
+		} else {
+			if ( $more ) {
+				$output .= $before;
+				$i = $page - 1;
+				if ( $i && $more ) {
+					$output .= '<li>' . _wp_link_page($i);
+					$output .= $link_before. $previouspagelink . $link_after . '</a></li>';
+				}
+				$i = $page + 1;
+				if ( $i <= $numpages && $more ) {
+					$output .= '<li>' . _wp_link_page($i);
+					$output .= $link_before. $nextpagelink . $link_after . '</a></li>';
+				}
+				$output .= $after;
+			}
+		}
+	}
+
+	if ( $echo )
+		echo $output;
+
+	return $output;
 }

@@ -15,7 +15,7 @@
 			<?php shprinkone_get_sidebar('left'); ?>
 			<div class="<?php echo shprinkone_get_contentspan(); ?>">
 				<?php if (have_posts()) while (have_posts()) : the_post(); ?>
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div id="page-<?php the_ID(); ?>">
 					<?php if (has_post_thumbnail()): ?>
 					<div class="post-thumbnail img-polaroid">
 						<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
@@ -27,7 +27,7 @@
 						</h1>
 					</div>
 					<?php the_content(); ?>
-					<?php wp_link_pages(); ?>
+					<?php shprinkone_link_pages(); ?>
 					<?php comments_template('', true); ?>
 				</div>
 				<?php endwhile; // end of the loop. ?>
