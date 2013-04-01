@@ -28,7 +28,6 @@ wp_title('|', true, 'right');
 bloginfo('name');
 ?>
 </title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css"
 	href="<?php echo bloginfo('stylesheet_directory') . $selectedTemplate['path']; ?>">
 <link rel="stylesheet" type="text/css" media="all"

@@ -1,16 +1,13 @@
 /*
 Theme Name: Shprink One
 Theme URI: http://julienrenaux.fr/shprinkone
-Description: Shprink One is a reponsive theme that can feet any screen (Mobile phone, tablet, laptop, desktop). It has been designed to make full use of large post images. Features a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget and Menu positions, multi language support and is Open Source!
+Description: ShprinkOne is a responsive theme that can feet any screen (Mobile phone, tablet, laptop, desktop). Features a theme picker (more then 10 choices), a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget and Menu positions and multi language support. ShprinkOne is an Open Source project that can be forked on GitHub https://github.com/shprink/Shprink-One 
 Author: shprink
 Author URI: http://julienrenaux.fr
 Version: 1.0
 Tags: masonry, bootstrap, custom-menu (optional), one-column, two-columns, white, gray, fixed-width, custom-menu, featured-image-header, featured-images, microformats, theme-options, threaded-comments, translation-ready
-
 License: MIT
 License URI: http://opensource.org/licenses/MIT
-
-General comments (optional).
 */
 @import url('css/bootstrap-responsive.min.css');
 
@@ -42,20 +39,6 @@ General comments (optional).
 	padding: 20px;
 }
 */
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
-}
-
-.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .container-slideshow {
 	padding-top: 50px;
 	margin-top: -50px;
@@ -84,7 +67,7 @@ General comments (optional).
 
 #slideshow.carousel {
 	margin-bottom: 5px;
-	height: 330px;
+	min-height: 330px;
 }
 
 #slideshow .carousel-indicators {
@@ -392,4 +375,104 @@ General comments (optional).
 		width: 270px;
 		margin-left: 30px;
 	}
+}
+
+/* WP mendatory styles */
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Images */
+.wp-caption {
+	background: #eee;
+	border: none;
+	margin-bottom: 1.625em;
+	max-width: 96%;
+	padding: 9px;
+}
+
+.wp-caption img {
+	display: block;
+	margin: 5px auto 0 !important;
+	max-width: 98%;
+	border-color: #eee;
+}
+
+.wp-caption .wp-caption-text,.wp-caption-dd {
+	color: #666;
+	font-family: Georgia, serif !important;
+	font-size: 12px;
+	margin: 0 0 0.6em 0 !important;
+	padding: 0 0 5px 40px;
+	position: relative;
+	text-align: left;
+}
+
+.wp-caption .wp-caption-text:before {
+	color: #666;
+	content: '\2014';
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	margin-right: 5px;
+	position: absolute;
+	left: 10px;
+	top: 7px;
+}
+
+a:focus img[class*="wp-image-"],a:hover img[class*="wp-image-"],a:active img[class*="wp-image-"]
+	{
+	background: #eee;
+	border-color: #bbb;
+}
+
+.wp-caption a:focus img,.wp-caption a:active img,.wp-caption a:hover img
+	{
+	background: #fff;
+	border-color: #ddd;
+}
+
+.gallery-item a,.gallery-caption {
+	width: 90%;
+}
+
+.gallery-item a {
+	display: block;
+}
+
+.gallery-caption a {
+	display: inline;
+}
+
+.gallery-columns-1 .gallery-item a {
+	max-width: 100%;
+	width: auto;
+}
+
+.gallery .gallery-icon img {
+	height: auto;
+	max-width: 90%;
+	padding: 5%;
+}
+
+.gallery-columns-1 .gallery-icon img {
+	padding: 3%;
+}
+
+.sticky{
+
+}
+
+.bypostauthor{
+	
 }
