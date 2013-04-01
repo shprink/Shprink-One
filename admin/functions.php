@@ -111,8 +111,9 @@ function shprinkone_settings_field_template() {
 	echo '<table class="widefat">';
 	echo '<thead><tr>';
 	echo '<th style="width:10px;"></th>';
-	echo '<th>' . __('Thumbnail', 'shprinkone') . '<br/>[@navbarBackground, @bodyBackground, @linkColor, @textColor]</th>';
+	echo '<th>' . __('Colors', 'shprinkone') . '<br/>[@navbarBackground, @bodyBackground, @linkColor, @textColor]</th>';
 	echo '<th>' . __('Name', 'shprinkone') . '</th>';
+	echo '<th>' . __('Description', 'shprinkone') . '</th>';
 	echo '<th>' . __('Author', 'shprinkone') . '</th>';
 	echo '</tr></thead>';
 	echo '<tbody>';
@@ -121,9 +122,9 @@ function shprinkone_settings_field_template() {
 		$checked = ($options['theme_template'] == $key) ? 'checked="checked"' : '';
 		echo ($i %2 == 0)?  '<tr>' : '<tr class="alternate">';
 		echo '<td><input type="radio" name="shprinkone_theme_options[theme_template]" value="'.$template['value'].'" ' . $checked . '></td>';
-		//echo '<td><img src="' . esc_url($template['thumbnail']) . '" width="136" height="122" alt="" /></td>';
 		echo '<td>' . shprinkone_format_template_colors($template['colors']) .'</td>';
 		echo '<td>' . $template['name'] .'</td>';
+		echo '<td>' . $template['description'] .'</td>';
 		echo '<td>' . $template['author'] .'</td>';
 		echo '</tr>';
 		$i++;
@@ -139,7 +140,7 @@ function shprinkone_format_template_colors($colors){
 	}
 	$html .= '<table><tbody><tr>';
 	foreach ($colors as $color){
-		$html .= '<td style="height: 5px; width: 5px; background-color:'. $color .';"></td>';
+		$html .= '<td style="height: 5px; width: 5px; background-color:'. $color .'; border:none;"></td>';
 	}
 	$html .= '</tbody></tr></table>';
 	return $html;
@@ -209,104 +210,104 @@ function shprinkone_get_theme_templates() {
 			'value'=> 'bootstrap',
 			'author'=> 'http://twitter.github.com/bootstrap/',
 			'path' =>'/css/bootstrap.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_bootstrap.png',
-			'colors' => array()
+			'colors' => array(),
+			'description' => __('Sleek, intuitive, and powerful front-end framework for faster and easier web development.', 'shprinkone')
 	);
 	$templateList['cerulean'] = array(
 			'name'=> 'Cerulean',
 			'value' => 'cerulean',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/cerulean.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_cerulean.png',
-			'colors' => array('#2FA4E7','#FFFFFF','#2FA4E7','#555555')
+			'colors' => array('#2FA4E7','#FFFFFF','#2FA4E7','#555555'),
+			'description' => __('A calm, blue sky.', 'shprinkone')
 	);
 	$templateList['cosmo'] = array(
 			'name'=> 'Cosmo',
 			'value'=> 'cosmo',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/cosmo.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_cosmo.png',
-			'colors' => array()
+			'colors' => array('#080808','#FFFFFF', '#007FFF', '#555555'),
+			'description' => __('An ode to Metro.', 'shprinkone')
 	);
 	$templateList['cyborg'] = array(
 			'name'=> 'Cyborg',
 			'value'=> 'cyborg',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/cyborg.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_cyborg.png',
-			'colors' => array('#020202','#060606','#33B5E5','#999999')
+			'colors' => array('#020202','#060606','#33B5E5','#999999'),
+			'description' => __('Jet black and electric blue.', 'shprinkone')
 	);
 	$templateList['amelia'] = array(
 			'name'=> 'Amelia',
 			'value'=> 'amelia',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/amelia.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_amelia.png',
-			'colors' => array('#AD1D28','#003F4D','#DEBB27','#FFFFFF')
+			'colors' => array('#AD1D28','#003F4D','#DEBB27','#FFFFFF'),
+			'description' => __('Sweet and cheery.', 'shprinkone')
 	);
 	$templateList['readable'] = array(
 			'name'=> 'Readable',
 			'value'=> 'readable',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/readable.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_readable.png',
-			'colors' => array()
+			'colors' => array('#F6F6F6', '#F6F6F6', '#E78B24' , '#333333'),
+			'description' => __('Optimized for legibility.', 'shprinkone')
 	);
 	$templateList['slate'] = array(
 			'name'=> 'Slate',
 			'value'=> 'slate',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/slate.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_slate.png',
-			'colors' => array()
+			'colors' => array('#272B30', '#272B30','#FFFFFF', '#C8C8C8'),
+			'description' => __('Shades of gunmetal gray.', 'shprinkone')
 	);
 	$templateList['united'] = array(
 			'name'=> 'United',
 			'value'=> 'united',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/united.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_united.png',
-			'colors' => array()
+			'colors' => array('#DD4814', '#FFFFFF', '#DD4814', '#333333'),
+			'description' => __('Ubuntu orange and unique font.', 'shprinkone')
 	);
 	$templateList['spacelab'] = array(
 			'name'=> 'Spacelab',
 			'value'=> 'spacelab',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/spacelab.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_spacelab.png',
-			'colors' => array()
+			'colors' => array('#EEEEEE', '#FFFFFF', '#09d', '#666666'),
+			'description' => __('Silvery and sleek.', 'shprinkone')
 	);
 	$templateList['spruce'] = array(
 			'name'=> 'Spruce',
 			'value'=> 'spruce',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/spruce.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_spruce.png',
-			'colors' => array()
+			'colors' => array('#013435', '#FFFFFF', '#015B4E', '#555555'),
+			'description' => __('Camping in the woods.', 'shprinkone')
 	);
 	$templateList['simplex'] = array(
 			'name'=> 'Simplex',
 			'value'=> 'simplex',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/simplex.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_simplex.png',
-			'colors' => array()
+			'colors' => array('#fefefe', '#F7F7F7', '#D9230F', '#555555'),
+			'description' => __('Mini and minimalist.', 'shprinkone')
 	);
 	$templateList['journal'] = array(
 			'name'=> 'Journal',
 			'value'=> 'journal',
 			'author'=> 'http://bootswatch.com/',
 			'path' =>'/css/journal.bootswatch.min.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_journal.png',
-			'colors' => array()
+			'colors' => array('#FFFFFF', '#FFFFFF', '#777777', '#777777'),
+			'description' => __('Crisp like a new sheet of paper.', 'shprinkone')
 	);
 	$templateList['custom'] = array(
 			'name'=> 'Custom',
 			'value'=> 'custom',
 			'author'=> 'none',
 			'path' =>'/css/custom.css',
-			'thumbnail' => get_template_directory_uri() . '/img/template_custom.png',
-			'colors' => array()
+			'colors' => array(),
+			'description' => __('An empty CSS file that you can modify as you like.', 'shprinkone')
 	);
 	return apply_filters('shprinkone_get_theme_templates', $templateList);
 }
