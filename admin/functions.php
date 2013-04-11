@@ -210,7 +210,7 @@ function shprinkone_get_theme_templates() {
 			'value' => 'bootstrap',
 			'author' => 'http://twitter.github.com/bootstrap/',
 			'path' => '/css/bootstrap.min.css',
-			'colors' => array(),
+			'colors' => array( '#EEEEEE', '#FFFFFF', '#08c', '#333333' ),
 			'description' => __( 'Sleek, intuitive, and powerful front-end framework for faster and easier web development.', 'shprinkone' )
 	);
 	$templateList['cerulean'] = array(
@@ -300,6 +300,14 @@ function shprinkone_get_theme_templates() {
 			'path' => '/css/journal.bootswatch.min.css',
 			'colors' => array( '#FFFFFF', '#FFFFFF', '#777777', '#777777' ),
 			'description' => __( 'Crisp like a new sheet of paper.', 'shprinkone' )
+	);
+	$templateList['geo'] = array(
+			'name' => 'Geo',
+			'value' => 'geo',
+			'author' => 'http://divshot.github.io/geo-bootstrap/',
+			'path' => '/css/geo.bootstrap.min.css',
+			'colors' => array( '#000000', '#0000ff', '#00EEEE', '#ffff00' ),
+			'description' => __( 'A special theme for April Fools\' Day', 'shprinkone' )
 	);
 	$templateList['custom'] = array(
 			'name' => 'Custom',
