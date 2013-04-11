@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 12:57+0100\n"
-"PO-Revision-Date: 2013-04-11 13:08+0100\n"
+"POT-Creation-Date: 2013-04-11 13:14+0100\n"
+"PO-Revision-Date: 2013-04-11 13:14+0100\n"
 "Last-Translator: Julien Renaux <julien.renaux@gmail.com>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: \n"
@@ -320,8 +320,8 @@ msgid "Default Layout"
 msgstr "Structure par default"
 
 #: admin/functions.php:28
-msgid "Default Template"
-msgstr "Template par default"
+msgid "Default Theme"
+msgstr "Theme par default"
 
 #: admin/functions.php:41
 #: admin/functions.php:42

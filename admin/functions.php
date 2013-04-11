@@ -25,7 +25,7 @@ function shprinkone_theme_options_init() {
 	);
 
 	add_settings_field( 'layout', __( 'Default Layout', 'shprinkone' ), 'shprinkone_settings_field_layout', 'theme_options', 'general' );
-	add_settings_field( 'template', __( 'Default Template', 'shprinkone' ), 'shprinkone_settings_field_template', 'theme_options', 'general' );
+	add_settings_field( 'template', __( 'Default Theme', 'shprinkone' ), 'shprinkone_settings_field_template', 'theme_options', 'general' );
 }
 
 add_action( 'admin_init', 'shprinkone_theme_options_init' );
