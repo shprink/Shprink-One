@@ -143,7 +143,8 @@ add_action( 'init', 'shprinkone_menus_init' );
 function shprinkone_setup() {
 
 	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status', 'video' ) );
+	// TODO
+	// add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status', 'video' ) );
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
