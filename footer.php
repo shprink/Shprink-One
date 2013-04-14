@@ -63,11 +63,6 @@ $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('foot
 		</div>
 	</div>
 </section>
-<script>
-	$(function(){
-		// TODO
-	});
-</script>
 <?php wp_footer(); ?>
 </body>
 </html>

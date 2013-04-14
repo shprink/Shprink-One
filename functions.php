@@ -11,6 +11,12 @@
 require( get_template_directory() . '/admin/functions.php' );
 
 /**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 940;
+
+/**
  * Register widget location within the template
  *
  * @return  void
