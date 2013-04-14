@@ -368,7 +368,7 @@ function shprinkone_get_calendar() {
  */
 function shprinkone_get_the_author_posts_link() {
 	$format = '<a href="%1$s" title="%2$s" rel="author">%3$s</a>';
-	$link   = sprintf( $format, get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nicename' ) ), esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ), get_the_author() );
+	$link   = sprintf( $format, get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nicename' ) ), esc_attr( sprintf( __( 'Posts by %s', 'shprinkone' ), get_the_author() ) ), get_the_author() );
 
 	return sprintf( __( 'By: %s', 'shprinkone' ), $link );
 }
@@ -537,18 +537,18 @@ function shprinkone_comment_form( $args = array(), $post_id = null ) {
 	$aria_req = $req ? " aria-required='true'" : '';
 
 	$fields = array(
-		'author' => '<p class="comment-form-author"><label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'email' => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url' => '<p class="comment-form-url"><label for="url">' . __( 'Website' ) . '</label><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+		'author' => '<p class="comment-form-author"><label for="author">' . __( 'Name', 'shprinkone' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
+		'email' => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'shprinkone' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
+		'url' => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'shprinkone' ) . '</label><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 	);
 
-	$required_text = sprintf( ' ' . __( 'Required fields are marked %s' ), '<span class="required">*</span>' );
+	$required_text = sprintf( ' ' . __( 'Required fields are marked %s', 'shprinkone' ), '<span class="required">*</span>' );
 	$defaults = array(
 		'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" class="input-xxlarge" aria-required="true"></textarea></p>',
-		'must_log_in' => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-		'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
+		'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'shprinkone' ) . '</label><textarea id="comment" name="comment" class="input-xxlarge" aria-required="true"></textarea></p>',
+		'must_log_in' => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'shprinkone' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'shprinkone' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+		'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.', 'shprinkone' ) . ( $req ? $required_text : '' ) . '</p>',
 		'comment_notes_after' => null,
 		'id_form' => 'commentform',
 		'id_submit' => 'submit',
@@ -619,8 +619,8 @@ function shprinkone_link_pages( $args = '' ) {
 			'link_before' => '',
 			'link_after' => '',
 			'next_or_number' => 'number',
-			'nextpagelink' => __( 'Next page' ),
-			'previouspagelink' => __( 'Previous page' ), 'pagelink' => '%',
+			'nextpagelink' => __( 'Next page', 'shprinkone' ),
+			'previouspagelink' => __( 'Previous page', 'shprinkone' ), 'pagelink' => '%',
 			'echo' => 1,
 	);
 

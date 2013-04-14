@@ -53,7 +53,7 @@
 							<li><?php echo __('Google+:', 'shprinkone') ?> <a
 								href="<?php echo get_the_author_meta('googleplus') ?>"
 								target="_blank"
-								title="<?php echo sprintf(__('%s on Google+'), get_the_author()); ?>"><?php echo sprintf(__('%s on Google+'), get_the_author()); ?>
+								title="<?php echo sprintf(__('%s on Google+', 'shprinkone'), get_the_author()); ?>"><?php echo sprintf(__('%s on Google+', 'shprinkone'), get_the_author()); ?>
 							</a>
 							</li>
 							<?php endif; ?>

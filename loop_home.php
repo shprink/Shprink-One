@@ -29,7 +29,7 @@ $i = 1;
 				<div class="media-body">
 					<h2 class="post-title">
 						<a href="<?php the_permalink() ?>"
-							title="<?php echo sprintf(__('Permanent Link to %s'), the_title_attribute()); ?>"><?php the_title(); ?>
+							title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
 						</a>
 					</h2>
 					<?php echo shprinkone_get_post_meta(true, false, true, true) ?>

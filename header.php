@@ -29,17 +29,17 @@ bloginfo('name');
 ?>
 </title>
 <link rel="stylesheet" type="text/css"
-	href="<?php echo bloginfo('stylesheet_directory') . $selectedTemplate['path']; ?>">
+	href="<?php echo get_stylesheet_directory_uri() . $selectedTemplate['path']; ?>">
 <link rel="stylesheet" type="text/css" media="all"
-	href="<?php bloginfo('stylesheet_url'); ?>" />
+	href="<?php echo get_stylesheet_directory_uri(); ?>" />
 <script type="text/javascript"
-	src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.8.3.min.js"></script>
+	src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript"
-	src="<?php bloginfo('stylesheet_directory'); ?>/js/bootstrap.min.js"></script>
+	src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script type="text/javascript"
-	src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.masonry.min.js"></script>
+	src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
 <script type="text/javascript"
-	src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.infinitescroll.min.js"></script>
+	src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.infinitescroll.min.js"></script>
 
 <?php
 	/* We add some JavaScript to pages with the comment form

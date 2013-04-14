@@ -77,7 +77,7 @@
 			itemSelector : '.box',     // selector for all items you'll retrieve
 			loading: {
 				finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
-				img: '<?php bloginfo('stylesheet_directory'); ?>/img/loading.gif'
+				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif'
 			}
 		},
 		// trigger Masonry as a callback

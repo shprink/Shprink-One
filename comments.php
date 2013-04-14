@@ -56,7 +56,7 @@ else : // or, if we don't have comments:
 if (!comments_open()) :
 ?>
 <p class="nocomments">
-	<?php _e('Comments are closed.', 'twentyten'); ?>
+	<?php _e('Comments are closed.', 'shprinkone'); ?>
 </p>
 <?php endif; // end ! comments_open() ?>
 

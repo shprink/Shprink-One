@@ -47,7 +47,7 @@ $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('foot
 						&copy;
 						<?php echo date("Y"); ?>
 						<?php bloginfo('name'); ?>
-						<? _e('All rights reserved.', 'shprinkone') ?>
+						<?php _e('All rights reserved.', 'shprinkone') ?>
 						| Powered by <a href="http://wordpress.org/">WordPress</a>
 					</div>
 
