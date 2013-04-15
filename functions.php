@@ -20,7 +20,7 @@ if ( ! isset( $content_width ) )
  * Add the selected CSS to the TinyMCE visual editor
  *
  * @return  void
- * @since   1.0.1
+ * @since   1.0.2
  */
 function shprinkone_add_editor_styles() {
 	$selectedTemplate = shprinkone_get_selected_template();
@@ -32,7 +32,7 @@ add_action( 'init', 'shprinkone_add_editor_styles' );
  * Get the selected template meta data
  *
  * @return  array  selected template meta data
- * @since   1.0.1
+ * @since   1.0.2
 */
 function shprinkone_get_selected_template(){
 	$options = shprinkone_get_theme_options();
