@@ -12,16 +12,40 @@ require( get_template_directory() . '/admin/functions.php' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
- */
+*/
 if ( ! isset( $content_width ) )
 	$content_width = 940;
+
+/**
+ * Add the selected CSS to the TinyMCE visual editor
+ *
+ * @return  void
+ * @since   1.0.1
+ */
+function shprinkone_add_editor_styles() {
+	$selectedTemplate = shprinkone_get_selected_template();
+	add_editor_style( $selectedTemplate['path'] );
+}
+add_action( 'init', 'shprinkone_add_editor_styles' );
+
+/**
+ * Get the selected template meta data
+ *
+ * @return  array  selected template meta data
+ * @since   1.0.1
+*/
+function shprinkone_get_selected_template(){
+	$options = shprinkone_get_theme_options();
+	$templates = shprinkone_get_theme_templates();
+	return $templates[$options['theme_template']];
+}
 
 /**
  * Register widget location within the template
  *
  * @return  void
  * @since   1.0
-*/
+ */
 function shprinkone_widgets_init() {
 	register_sidebar(
 	array(

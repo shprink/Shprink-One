@@ -6,10 +6,7 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-
-$options = shprinkone_get_theme_options();
-$templates = shprinkone_get_theme_templates();
-$selectedTemplate = $templates[$options['theme_template']];
+$selectedTemplate = shprinkone_get_selected_template();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -31,7 +28,7 @@ bloginfo('name');
 <link rel="stylesheet" type="text/css"
 	href="<?php echo get_stylesheet_directory_uri() . $selectedTemplate['path']; ?>">
 <link rel="stylesheet" type="text/css" media="all"
-	href="<?php echo get_stylesheet_directory_uri(); ?>" />
+	href="<?php bloginfo('stylesheet_url'); ?>" />
 <script type="text/javascript"
 	src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript"
