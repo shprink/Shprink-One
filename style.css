@@ -476,3 +476,17 @@ a:focus img[class*="wp-image-"],a:hover img[class*="wp-image-"],a:active img[cla
 .bypostauthor{
 	
 }
+
+/* syntaxhighlighter plugin fix */
+body .syntaxhighlighter a, 
+body .syntaxhighlighter div, 
+body .syntaxhighlighter code, 
+body .syntaxhighlighter table, 
+body .syntaxhighlighter table td, 
+body .syntaxhighlighter table tr, 
+body .syntaxhighlighter table tbody, 
+body .syntaxhighlighter table thead, 
+body .syntaxhighlighter table caption, 
+body .syntaxhighlighter textarea{
+	vertical-align: top !important;
+}
