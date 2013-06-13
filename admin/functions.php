@@ -213,6 +213,14 @@ function shprinkone_get_theme_templates() {
 			'colors' => array( '#EEEEEE', '#FFFFFF', '#08c', '#333333' ),
 			'description' => __( 'Sleek, intuitive, and powerful front-end framework for faster and easier web development.', 'shprinkone' )
 	);
+	$templateList['flaty'] = array(
+			'name' => 'Flaty',
+			'value' => 'flaty',
+			'author' => 'http://bootswatch.com/',
+			'path' => '/css/flaty.bootswatch.min.css',
+			'colors' => array( '#2C3E50', '#FFFFFF', '#1ABC9C', '#2C3E50' ),
+			'description' => __( 'Flat and clean.', 'shprinkone' )
+	);
 	$templateList['cerulean'] = array(
 			'name' => 'Cerulean',
 			'value' => 'cerulean',
