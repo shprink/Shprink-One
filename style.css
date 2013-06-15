@@ -15,6 +15,12 @@ License URI: http://opensource.org/licenses/MIT
 
 @CHARSET "UTF-8";
 
+/* HEADER */
+
+body.admin-bar .navbar-fixed-top{
+	top: 28px;
+}
+
 /* SIDEBAR */
 #sidebar {
 	
