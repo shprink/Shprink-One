@@ -29,12 +29,13 @@
 						&nbsp;<span class="label label-info"><?php _e( 'Featured', 'shprinkone' ) ?></span>
 					<?php endif ?>
 				</h2>
-				<?php echo shprinkone_get_post_meta(false, false, false) ?>
-				<hr />
+				<?php echo shprinkone_get_post_meta(false, true, false, false, false) ?>
 				<div class="post-content">
 					<?php the_excerpt(); ?>
-					<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
 				</div>
+				<hr />
+				<?php echo shprinkone_get_post_meta(false, false) ?>
+				<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
 			</div>
 			<a class="post-more btn btn-primary btn-block"
 				href="<?php the_permalink() ?>"><i

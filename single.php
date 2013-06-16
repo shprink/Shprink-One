@@ -25,15 +25,18 @@
 						<h1 id="post-title" class="post-title">
 							<?php the_title(); ?>
 						</h1>
-						<?php echo shprinkone_get_post_meta(true, false, false, true) ?>
+						<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
 					</div>
-					<?php the_content(); ?>
+					<div class="post-content">
+						<?php the_content(); ?>
+					</div>
 					<?php 
 						// cheat to pass theme review
 						wp_link_pages( array('echo' => 0) ); 
 					?>
 					<?php shprinkone_link_pages(); ?>
-
+					<hr />
+					<?php echo shprinkone_get_post_meta(false, false) ?>
 					<?php if (get_the_author_meta('description')) : // If a user has filled out their description, show a bio on their entries  ?>
 					<div class="media well">
 						<a class="pull-left" href="#"> <?php echo get_avatar(get_the_author_meta('user_email')); ?>

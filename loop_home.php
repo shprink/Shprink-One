@@ -35,8 +35,10 @@ $i = 1;
 							&nbsp;<span class="label label-info"><?php _e( 'Featured', 'shprinkone' ) ?></span>
 						<?php endif ?>
 					</h2>
-					<?php echo shprinkone_get_post_meta(true, false, true, true) ?>
-					<?php the_excerpt(); ?>
+					<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
+					<div class="post-content">
+						<?php the_excerpt(); ?>
+					</div>
 					<div class="btn-group">
 						<a class="post-more btn btn-large btn-primary" href="<?php the_permalink() ?>">
 							<?php _e('Read more', 'shprinkone') ?>

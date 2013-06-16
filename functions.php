@@ -418,24 +418,26 @@ function shprinkone_get_comments_number() {
  * @return  string
  * @since   1.0
  */
-function shprinkone_get_post_meta( $inline = false, $white = false, $author = true, $date = false ) {
-	$iconClass = ($white) ? 'icon-white' : '';
-	$postClass = ($white) ? 'post-meta-white' : '';
+function shprinkone_get_post_meta( $inline = false, $author = true, $date = false, $category = true, $tag = true) {
 	$inline    = ($inline) ? 'inline' : 'unstyled';
-	$html      = '<div class = "post-meta ' . $postClass . '">';
+	$html      = '<div class = "post-meta">';
 	$html     .= '<ul class = "' . $inline . '">';
 	if ( $date ) {
-		$html .= '<li class = "post-date"><i class = "icon-calendar ' . $iconClass . '"></i> ' . get_the_date( __( 'M d, Y', 'shprinkone' ) ) . '</li>';
+		$html .= '<li class = "post-date"><i class = "icon-calendar"></i> ' . get_the_date( __( 'M d, Y', 'shprinkone' ) ) . '</li>';
 	}
 	if ( $author ) {
-		$html .= '<li class = "post-author"><i class = "icon-user ' . $iconClass . '"></i> ' . shprinkone_get_the_author_posts_link() . '</li>';
+		$html .= '<li class = "post-author"><i class = "icon-user"></i> ' . shprinkone_get_the_author_posts_link() . '</li>';
 	}
-	if (has_category()):
-	$html .= '<li class="post-category"><i class="icon-folder-open ' . $iconClass . '"></i> ' . sprintf( __( 'Category: %s', 'shprinkone' ), get_the_category_list( ' ', '', false ) ) . '</li>';
-	endif;
-	if (has_tag()):
-	$html .= '<li class="post-tags"><i class="icon-tags ' . $iconClass . '"></i> ' . get_the_tag_list( __( 'Tag: ', 'shprinkone' ), ' ' ) . '</li>';
-	endif;
+	if ( $category ) {
+		if (has_category()):
+		$html .= '<li class="post-category"><i class="icon-folder-open"></i> ' . sprintf( __( 'Category: %s', 'shprinkone' ), get_the_category_list( ' ', '', false ) ) . '</li>';
+		endif;
+	}
+	if ( $tag ) {
+		if (has_tag()):
+		$html .= '<li class="post-tags"><i class="icon-tags"></i> ' . get_the_tag_list( __( 'Tag:  ', 'shprinkone' ), ' ' ) . '</li>';
+		endif;
+	}
 	$html .= '</ul>';
 	$html .= '</div>';
 	return $html;
