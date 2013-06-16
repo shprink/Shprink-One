@@ -9,7 +9,7 @@
 $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('footer-widget-middle-left') || is_active_sidebar('footer-widget-middle-right') || is_active_sidebar('footer-widget-right');
 ?>
 <?php if ($condition) : ?>
-<footer id="footer">
+<footer id="footer" class="well well-small">
 	<div class="footer-inner">
 		<div class="container">
 			<div class="row">

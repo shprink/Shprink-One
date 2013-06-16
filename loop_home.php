@@ -20,7 +20,7 @@ $i = 1;
 	<div class="carousel-inner">
 		<!-- Start the Loop. -->
 		<?php while (have_posts() && $i <= 3) : the_post(); ?>
-		<div class="item <?php if ($i === 1) echo 'active'; ?>">
+		<div <?php $classes = 'item'; if ($i === 1) $classes .= ' active' ; post_class($classes) ?>>
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
 				<a class="pull-left post-thumbnail" href="<?php the_permalink() ?>"> <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
@@ -31,6 +31,9 @@ $i = 1;
 						<a href="<?php the_permalink() ?>"
 							title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
 						</a>
+						<?php if (is_sticky()): ?>
+							&nbsp;<span class="label label-info"><?php _e( 'Featured', 'shprinkone' ) ?></span>
+						<?php endif ?>
 					</h2>
 					<?php echo shprinkone_get_post_meta(true, false, true, true) ?>
 					<?php the_excerpt(); ?>

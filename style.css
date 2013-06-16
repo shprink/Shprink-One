@@ -260,6 +260,19 @@ body.admin-bar .navbar-fixed-top{
 	margin-top: 0px;
 }
 
+/* FOOTER */
+#footer{
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+
 /* CREDIT */
 #credit {
 	text-align: center;
@@ -476,7 +489,6 @@ a:focus img[class*="wp-image-"],a:hover img[class*="wp-image-"],a:active img[cla
 }
 
 .sticky{
-
 }
 
 .bypostauthor{
