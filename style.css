@@ -50,6 +50,19 @@ body.admin-bar .navbar-fixed-top{
 	hyphens: auto;
 }
 
+ul.pager li.next{
+    direction:rtl;
+}
+
+ul.pager li a span{
+	text-overflow:ellipsis;
+	display: block;
+	overflow: hidden;
+	margin-left: 0px;
+    text-align:left;white-space: nowrap;                   
+	overflow: hidden;  
+}
+
 .container-slideshow {
 	padding-top: 50px;
 	margin-top: -50px;
@@ -348,6 +361,9 @@ body.admin-bar .navbar-fixed-top{
 	}
 	.affix {
 		top: 0px;
+	}
+	ul.pager li a span{
+		width: 200px;
 	}
 }
 
