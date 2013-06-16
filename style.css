@@ -50,8 +50,9 @@ body.admin-bar .navbar-fixed-top{
 	hyphens: auto;
 }
 
-ul.pager li.next{
+ul.pager li.next a span{
     direction:rtl;
+    text-align:right;
 }
 
 ul.pager li a span{
@@ -59,7 +60,8 @@ ul.pager li a span{
 	display: block;
 	overflow: hidden;
 	margin-left: 0px;
-    text-align:left;white-space: nowrap;                   
+    text-align:left;
+	white-space: nowrap;                   
 	overflow: hidden;  
 }
 

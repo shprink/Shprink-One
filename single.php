@@ -35,13 +35,11 @@
 							wp_link_pages(array('echo' => 0));
 							?>
 							<?php shprinkone_link_pages(); ?>
-							<?php $previous_post = get_adjacent_post(false, '', true) ?>
-							<?php $next_post = get_adjacent_post(false, '', false) ?>
 							<ul class="pager">
-								<li class="previous" title="<?php echo $previous_post->post_title ?>">
+								<li class="previous">
 									<?php previous_post_link('%link', '<span class="span3"><i class="icon-chevron-left"></i> %title</span>'); ?>
 								</li>
-								<li class="next" title="<?php echo $next_post->post_title ?>">
+								<li class="next">
 									<?php next_post_link('%link', '<span class="span3"><i class="icon-chevron-right"></i> %title</span>'); ?>
 								</li>
 							</ul>
