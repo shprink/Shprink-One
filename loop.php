@@ -10,7 +10,7 @@
 <div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<div id="post-<?php the_ID(); ?>" <? post_class('box') ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class('box') ?>>
 		<div class="thumbnail">
 			<?php shprinkone_get_calendar(false); ?>
 			<?php if (has_post_thumbnail()): ?>
