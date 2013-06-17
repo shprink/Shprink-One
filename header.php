@@ -71,7 +71,7 @@ bloginfo('name');
 						<?php
 						// Primary menu
 						$args = array(
-								'depth' => 2,
+								'depth' => 3,
 								'container' => false,
 								'menu_class' => 'nav',
 								'walker' => new Bootstrap_Walker_Nav_Menu(),
@@ -84,7 +84,7 @@ bloginfo('name');
 							<li><?php
 							$args = array(
 											'theme_location' => 'header-menu-right',
-											'depth' => 2,
+											'depth' => 3,
 											'container' => false,
 											'menu_class' => 'nav',
 											'walker' => new Bootstrap_Walker_Nav_Menu()
