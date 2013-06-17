@@ -165,7 +165,7 @@ function shprinkone_get_theme_options() {
 function shprinkone_get_default_theme_options() {
 	$default_theme_options = array(
 			'theme_layout' => 'content-sidebar',
-			'theme_template' => 'cerulean',
+			'theme_template' => 'flaty',
 	);
 
 	return apply_filters( 'shprinkone_default_theme_options', $default_theme_options );
