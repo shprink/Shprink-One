@@ -9,6 +9,7 @@
  */
 ?>
 <?php get_header(); ?>
+<?php if (have_posts()) : ?>
 <div class="container-slideshow well well-small">
 	<div class="container">
 		<div class="row">
@@ -18,6 +19,7 @@
 		</div>
 	</div>
 </div>
+<?php endif; ?>
 <div class="container">
 	<!-- container start -->
 	<div id="content">
