@@ -6,6 +6,11 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
+if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
+	for ($index = 0; $index < DISPLAYEDONSLIDESHOW; $index++) {
+		$wp_query->next_post();
+	}
+}
 ?>
 <div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->

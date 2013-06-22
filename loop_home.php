@@ -6,7 +6,7 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-$i = 1;
+$displayedOnSlideshow = 0;
 ?>
 <?php if (have_posts() && get_query_var('paged') < 2) : ?>
 <div id="slideshow"
@@ -19,8 +19,8 @@ $i = 1;
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<!-- Start the Loop. -->
-		<?php while (have_posts() && $i <= 3) : the_post(); ?>
-		<div <?php $classes = 'item'; if ($i === 1) $classes .= ' active' ; post_class($classes) ?>>
+		<?php while (have_posts() && $displayedOnSlideshow < 3) : the_post(); ?>
+		<div <?php $classes = 'item'; if ($displayedOnSlideshow === 0) $classes .= ' active' ; post_class($classes) ?>>
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
 				<a class="pull-left post-thumbnail" href="<?php the_permalink() ?>"> <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
@@ -48,7 +48,7 @@ $i = 1;
 				</div>
 			</div>
 		</div>
-		<?php $i++; ?>
+		<?php $displayedOnSlideshow++; ?>
 		<?php endwhile; ?>
 	</div>
 	<!-- Carousel nav -->
@@ -56,7 +56,7 @@ $i = 1;
 	<a class="carousel-control right" href="#slideshow" data-slide="next">&rsaquo;</a>
 </div>
 <?php endif; ?>
-
+<?php define('DISPLAYEDONSLIDESHOW', $displayedOnSlideshow) ?>
 <script>
 	$(function(){
 		/* Slideshow */
