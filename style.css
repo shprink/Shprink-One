@@ -514,3 +514,28 @@ body .syntaxhighlighter table caption,
 body .syntaxhighlighter textarea{
 	vertical-align: top !important;
 }
+
+.widget.widget_twitter ul li{
+	margin-bottom: 10px;
+}
+
+.widget.widget_twitter .entry-content,
+.widget.widget_twitter .entry-meta,
+.widget.widget_twitter .intent-meta{
+	display: block;
+}
+
+.widget.widget_twitter .entry-content{
+	padding:0 0 0 15px;
+	margin:0 0 5px;
+	border-left:5px solid #eee
+}
+
+.widget.widget_twitter .entry-meta,
+.widget.widget_twitter .intent-meta{
+	font-size: 0.8em;
+}
+
+.widget.widget_twitter .intent-meta a{
+	margin-right: 5px;
+}
