@@ -420,6 +420,11 @@ function shprinkone_get_comments_number() {
 /**
  * Get post meta(date, categories, tags etc.)
  *
+ * @param   boolean  $inline
+ * @param   boolean  $author
+ * @param   boolean  $date
+ * @param   boolean  $category
+ * @param   boolean  $tag
  * @return  string
  * @since   1.0
  */
