@@ -7,19 +7,22 @@
  * @since       1.0
  */
 $displayedOnSlideshow = 0;
+$options    = shprinkone_get_theme_options();
 ?>
 <?php if (have_posts() && get_query_var('paged') < 2) : ?>
 <div id="slideshow"
 	class="carousel slide">
+	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
 	<ol class="carousel-indicators">
-		<li data-target="#slideshow" data-slide-to="0" class="active"></li>
-		<li data-target="#slideshow" data-slide-to="1"></li>
-		<li data-target="#slideshow" data-slide-to="2"></li>
+		<?php for ($index = 0; $index < $options['theme_slideshow']['posts']; $index++): ?>
+		<li data-target="#slideshow" data-slide-to="<?php echo $index ?>" class="<?php echo ($index === 0)? 'active' : '' ?>"></li>
+		<?php endfor; ?>
 	</ol>
+	<?php endif; ?>
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<!-- Start the Loop. -->
-		<?php while (have_posts() && $displayedOnSlideshow < 3) : the_post(); ?>
+		<?php while (have_posts() && $displayedOnSlideshow < $options['theme_slideshow']['posts']) : the_post(); ?>
 		<div <?php $classes = 'item'; if ($displayedOnSlideshow === 0) $classes .= ' active' ; post_class($classes) ?>>
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
@@ -51,9 +54,11 @@ $displayedOnSlideshow = 0;
 		<?php $displayedOnSlideshow++; ?>
 		<?php endwhile; ?>
 	</div>
+	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
 	<!-- Carousel nav -->
 	<a class="carousel-control left" href="#slideshow" data-slide="prev">&lsaquo;</a>
 	<a class="carousel-control right" href="#slideshow" data-slide="next">&rsaquo;</a>
+	<?php endif; ?>
 </div>
 <?php endif; ?>
 <?php define('DISPLAYEDONSLIDESHOW', $displayedOnSlideshow) ?>

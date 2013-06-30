@@ -68,7 +68,7 @@ ul.pager li a span{
 .container-slideshow {
 	padding-top: 50px;
 	margin-top: -50px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border: none;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
@@ -132,6 +132,10 @@ ul.pager li a span{
 	opacity: 1;
 }
 
+#masonry {
+	margin-top: 20px;
+}
+
 #masonry .caption {
 	padding-top: 0px;
 }
@@ -141,10 +145,6 @@ ul.pager li a span{
 	-moz-box-shadow: none;
 	box-shadow: none;
 	padding: 0px;
-}
-
-.masonry {
-	
 }
 
 .masonry .post-meta {
