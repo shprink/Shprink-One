@@ -16,7 +16,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('box') ?>>
-				<div class="thumbnail modal-backdrop fade">
+				<div class="thumbnail modal-backdrop fade" style="display: none;">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
@@ -78,7 +78,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 			//$container.find('[rel="tag"]').addClass('label label-info');
 
 			el.on('mouseenter', function() {
-				$(this).find('.modal-backdrop').addClass('in');
+				$(this).find('.modal-backdrop').show().addClass('in');
 			}).on('mouseleave', function() {
 				$(this).find('.modal-backdrop').removeClass('in');
 			});
