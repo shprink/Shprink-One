@@ -23,11 +23,11 @@ body.admin-bar .navbar-fixed-top{
 
 /* SIDEBAR */
 #sidebar {
-	
+
 }
 
 #sidebar .sidebar-inner {
-	
+
 }
 
 #sidebar h1,#sidebar h2,#sidebar h3,#sidebar h4,#sidebar h5 {
@@ -112,7 +112,7 @@ ul.pager li a span{
 }
 
 #slideshow a.carousel-control {
-	
+
 }
 
 #slideshow a.carousel-control.left {
@@ -163,19 +163,42 @@ ul.pager li a span{
 	border-radius: 0px;
 }
 
-.masonry .modal-backdrop{
+.masonry .box .modal-backdrop {
 	position: absolute;
 	z-index: 10;
 	color: #FFFFFF;
 	overflow: hidden;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000000;
 }
 
-.masonry .modal-backdrop a{
+.masonry .box .modal-backdrop a{
 	color: #FFFFFF;
+}
+
+.masonry .box .modal-backdrop ul{
+	color: #b5b5b5;
+}
+
+.masonry .box .modal-backdrop.fade {
+  opacity: 0;
+}
+
+.masonry .box .modal-backdrop,
+.masonry .box .modal-backdrop.fade.in {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
 .masonry .box.hover .post-thumbnail,.masonry .box.hover .post-content {
 	display: none;
+}
+
+.masonry .box .caption{
+	min-height: 200px;
 }
 
 .masonry .box .post-title {
@@ -255,12 +278,12 @@ ul.pager li a span{
 }
 
 .comment.thread-odd.depth-1,.trackback.thread-odd.depth-1,.pingback.thread-odd.depth-1
-	{
+{
 	margin-top: 0px;
 }
 
 .comment.thread-even.depth-1,.trackback.thread-even.depth-1,.pingback.thread-even.depth-1
-	{
+{
 	margin-top: 0px;
 }
 
@@ -457,13 +480,13 @@ ul.pager li a span{
 }
 
 a:focus img[class*="wp-image-"],a:hover img[class*="wp-image-"],a:active img[class*="wp-image-"]
-	{
+{
 	background: #eee;
 	border-color: #bbb;
 }
 
 .wp-caption a:focus img,.wp-caption a:active img,.wp-caption a:hover img
-	{
+{
 	background: #fff;
 	border-color: #ddd;
 }
@@ -499,7 +522,7 @@ a:focus img[class*="wp-image-"],a:hover img[class*="wp-image-"],a:active img[cla
 }
 
 .bypostauthor{
-	
+
 }
 
 /* syntaxhighlighter plugin fix */
