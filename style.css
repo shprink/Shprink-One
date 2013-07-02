@@ -124,13 +124,16 @@ ul.pager li a span{
 }
 
 #slideshow .carousel-indicators li {
-	opacity: 0.3;
+	opacity: 1;
 	cursor: pointer;
+	border: 1px solid #e2e2e2;
 }
 
 #slideshow .carousel-indicators li.active {
 	opacity: 1;
 }
+
+
 
 #masonry {
 	margin-top: 20px;

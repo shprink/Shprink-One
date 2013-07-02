@@ -6,10 +6,16 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
+
+$options    = shprinkone_get_theme_options();
 if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	for ($index = 0; $index < DISPLAYEDONSLIDESHOW; $index++) {
 		$wp_query->next_post();
 	}
+}
+
+if(isset($options['theme_slideshow']['copy_within_content'])){
+	$wp_query->rewind_posts();
 }
 ?>
 <div id="masonry" class="masonry clearfix row">

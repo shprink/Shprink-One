@@ -12,13 +12,6 @@ $options    = shprinkone_get_theme_options();
 <?php if (have_posts() && get_query_var('paged') < 2) : ?>
 <div id="slideshow"
 	class="carousel slide">
-	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
-	<ol class="carousel-indicators">
-		<?php for ($index = 0; $index < $options['theme_slideshow']['posts']; $index++): ?>
-		<li data-target="#slideshow" data-slide-to="<?php echo $index ?>" class="<?php echo ($index === 0)? 'active' : '' ?>"></li>
-		<?php endfor; ?>
-	</ol>
-	<?php endif; ?>
 	<!-- Carousel items -->
 	<div class="carousel-inner">
 		<!-- Start the Loop. -->
@@ -54,6 +47,14 @@ $options    = shprinkone_get_theme_options();
 		<?php $displayedOnSlideshow++; ?>
 		<?php endwhile; ?>
 	</div>
+	
+	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
+	<ol class="carousel-indicators">
+		<?php for ($index = 0; $index < $displayedOnSlideshow; $index++): ?>
+		<li data-target="#slideshow" data-slide-to="<?php echo $index ?>" class="<?php echo ($index === 0)? 'active' : '' ?>"></li>
+		<?php endfor; ?>
+	</ol>
+	<?php endif; ?>
 	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
 	<!-- Carousel nav -->
 	<a class="carousel-control left" href="#slideshow" data-slide="prev">&lsaquo;</a>
