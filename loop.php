@@ -14,7 +14,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	}
 }
 
-if(isset($options['theme_slideshow']['copy_within_content'])){
+if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])){
 	$wp_query->rewind_posts();
 }
 ?>
