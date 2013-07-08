@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-17 22:17+0100\n"
-"PO-Revision-Date: 2013-06-17 22:19+0100\n"
+"POT-Creation-Date: 2013-07-08 22:34+0100\n"
+"PO-Revision-Date: 2013-07-08 22:34+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -19,27 +19,23 @@ msgstr ""
 msgid "Tag"
 msgstr "Tag"
 
-#: loop.php:29 loop_home.php:35
-msgid "Featured"
-msgstr "A la Une"
-
-#: loop.php:38 loop_home.php:46
+#: loop.php:41 loop_home.php:42
 msgid "Leave a comment"
 msgstr "Laissez un commentaire"
 
-#: loop.php:38 loop_home.php:46
+#: loop.php:41 loop_home.php:42
 msgid "1 Comment"
 msgstr "1 Commentaire"
 
-#: loop.php:38 loop_home.php:46
+#: loop.php:41 loop_home.php:42
 msgid "% Comments"
 msgstr "% Commentaires"
 
-#: loop.php:42 loop_home.php:44
-msgid "Read more"
-msgstr "Voir plus"
+#: loop.php:58 loop_home.php:31
+msgid "Featured"
+msgstr "A la Une"
 
-#: loop.php:83
+#: loop.php:110
 msgid "No more pages to load."
 msgstr "Plus de pages à charger."
 
@@ -136,10 +132,14 @@ msgstr "Regarder les catégories les plus utilisés"
 msgid "Category"
 msgstr "Categorie"
 
-#: loop_home.php:32
+#: loop_home.php:28
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Lien permanent à %s"
+
+#: loop_home.php:40
+msgid "Read more"
+msgstr "Voir plus"
 
 #: footer.php:50
 msgid "All rights reserved."
@@ -216,7 +216,7 @@ msgstr "%1$s à %2$s"
 msgid "(Edit)"
 msgstr "(Editer)"
 
-#: functions.php:388 functions.php:431
+#: functions.php:388 functions.php:436
 msgid "M d, Y"
 msgstr "d M, Y"
 
@@ -240,47 +240,47 @@ msgstr "%d Commentaires"
 msgid "%d Comment"
 msgstr "%d Commentaires"
 
-#: functions.php:438
+#: functions.php:443
 #, php-format
 msgid "Category: %s"
 msgstr "Categories: %s"
 
-#: functions.php:443
+#: functions.php:448
 msgid "Tag:  "
 msgstr "Tag:  "
 
-#: functions.php:537
+#: functions.php:542
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, aucun résultat de correspond à votre recherche."
 
-#: functions.php:571 admin/functions.php:115
+#: functions.php:576 admin/functions.php:113
 msgid "Name"
 msgstr "Nom"
 
-#: functions.php:572
+#: functions.php:577
 msgid "Email"
 msgstr "Couriel"
 
-#: functions.php:573
+#: functions.php:578
 msgid "Website"
 msgstr "Site Web:"
 
-#: functions.php:576
+#: functions.php:581
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Les champs requis sont marqué par %s"
 
-#: functions.php:579
+#: functions.php:584
 #, fuzzy
 msgid "Comment"
 msgstr "1 Commentaire"
 
-#: functions.php:580
+#: functions.php:585
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Vous devez être <a href=\"%s\">connecté</a> pour commenter."
 
-#: functions.php:581
+#: functions.php:586
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -289,32 +289,32 @@ msgstr ""
 "Connecté en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se "
 "deconnecter\">Se deconnecter?</a>"
 
-#: functions.php:582
+#: functions.php:587
 msgid "Your email address will not be published."
 msgstr "Votre adresse de couriel ne sera pas publié."
 
-#: functions.php:586
+#: functions.php:591
 msgid "Leave a Reply"
 msgstr "Laissez un commentaire"
 
-#: functions.php:587
+#: functions.php:592
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Répondre à %s"
 
-#: functions.php:588
+#: functions.php:593
 msgid "Cancel reply"
 msgstr "Annulé la réponse"
 
-#: functions.php:589
+#: functions.php:594
 msgid "Post Comment"
 msgstr "Commentez"
 
-#: functions.php:653
+#: functions.php:658
 msgid "Next page"
 msgstr "Page suivante"
 
-#: functions.php:654
+#: functions.php:659
 msgid "Previous page"
 msgstr "Page precedente"
 
@@ -347,56 +347,68 @@ msgstr "%s sur Google+"
 msgid "Subscribe to the RSS feed"
 msgstr "S'abonner au flux RSS"
 
-#: admin/functions.php:27
-msgid "Default Layout"
-msgstr "Structure par default"
+#: admin/functions.php:22
+msgid "Slideshow"
+msgstr "Diaporama"
 
-#: admin/functions.php:28
-msgid "Default Theme"
-msgstr "Theme par default"
+#: admin/functions.php:23
+msgid "Layout"
+msgstr "Structure"
 
-#: admin/functions.php:41 admin/functions.php:42
+#: admin/functions.php:24
+msgid "Theme"
+msgstr "Theme"
+
+#: admin/functions.php:37 admin/functions.php:38
 msgid "Theme Options"
 msgstr "Options du Theme"
 
-#: admin/functions.php:64
+#: admin/functions.php:60
 #, php-format
 msgid "%s Theme Options"
 msgstr "%s Options du Theme"
 
-#: admin/functions.php:84
+#: admin/functions.php:81
 msgid "Thumbnail"
 msgstr "Aperçu"
 
-#: admin/functions.php:85
+#: admin/functions.php:82
 msgid "Position"
 msgstr "Position"
 
-#: admin/functions.php:114
+#: admin/functions.php:112
 msgid "Colors"
 msgstr "Couleurs"
 
-#: admin/functions.php:116
+#: admin/functions.php:114
 msgid "Description"
 msgstr "Description"
 
-#: admin/functions.php:117
+#: admin/functions.php:115
 msgid "Author"
 msgstr "Auteur"
 
-#: admin/functions.php:184
+#: admin/functions.php:143
+msgid "Number of post"
+msgstr "Nombre d'articles"
+
+#: admin/functions.php:150
+msgid "Duplicate slideshow posts within the content"
+msgstr "Dupliquer les articles du diaporama, dans le contenu"
+
+#: admin/functions.php:206
 msgid "Content on left"
 msgstr "Contenu à gauche"
 
-#: admin/functions.php:189
+#: admin/functions.php:211
 msgid "Content on right"
 msgstr "Contenu à droite"
 
-#: admin/functions.php:194
+#: admin/functions.php:216
 msgid "One-column, no sidebar"
 msgstr "Contenu seul (pas de menu sur le côté)"
 
-#: admin/functions.php:214
+#: admin/functions.php:236
 msgid ""
 "Sleek, intuitive, and powerful front-end framework for faster and easier web "
 "development."
@@ -404,61 +416,64 @@ msgstr ""
 "Élégant, intuitif et puissant framework front-end pour un développement web "
 "plus rapide et plus facile."
 
-#: admin/functions.php:222
+#: admin/functions.php:244
 msgid "Flat and clean."
 msgstr "Plat et propre."
 
-#: admin/functions.php:230
+#: admin/functions.php:252
 msgid "A calm, blue sky."
 msgstr "Un ciel bleu et calme."
 
-#: admin/functions.php:238
+#: admin/functions.php:260
 msgid "An ode to Metro."
 msgstr "Une ode au style Metro."
 
-#: admin/functions.php:246
+#: admin/functions.php:268
 msgid "Jet black and electric blue."
 msgstr "Noir et bleu electrique."
 
-#: admin/functions.php:254
+#: admin/functions.php:276
 msgid "Sweet and cheery."
 msgstr "Doux et Joyeux."
 
-#: admin/functions.php:262
+#: admin/functions.php:284
 msgid "Optimized for legibility."
 msgstr "Optimisé pour la lisibilité."
 
-#: admin/functions.php:270
+#: admin/functions.php:292
 msgid "Shades of gunmetal gray."
 msgstr "Nuances de gris métal."
 
-#: admin/functions.php:278
+#: admin/functions.php:300
 msgid "Ubuntu orange and unique font."
 msgstr "Orange Ubuntu et Font unique."
 
-#: admin/functions.php:286
+#: admin/functions.php:308
 msgid "Silvery and sleek."
 msgstr "Argentée et lisse."
 
-#: admin/functions.php:294
+#: admin/functions.php:316
 msgid "Camping in the woods."
 msgstr "Camping dans les bois."
 
-#: admin/functions.php:302
+#: admin/functions.php:324
 msgid "Mini and minimalist."
 msgstr "Mini et minimaliste."
 
-#: admin/functions.php:310
+#: admin/functions.php:332
 msgid "Crisp like a new sheet of paper."
 msgstr "Craquant comme une nouvelle feuille de papier."
 
-#: admin/functions.php:318
+#: admin/functions.php:340
 msgid "A special theme for April Fools' Day"
 msgstr "Un theme spécial pour le 1er Avril!"
 
-#: admin/functions.php:326
+#: admin/functions.php:348
 msgid "An empty CSS file that you can modify as you like."
 msgstr "Feuille CSS vide que vous pouvez modifier a souhait."
+
+#~ msgid "Default Theme"
+#~ msgstr "Theme par default"
 
 #~ msgid "By"
 #~ msgstr "Par"
