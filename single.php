@@ -36,10 +36,10 @@
 							?>
 							<?php shprinkone_link_pages(); ?>
 							<ul class="pager">
-								<li class="previous">
+								<li class="previous" title="<?php echo get_previous_post()->post_title ?>">
 									<?php previous_post_link('%link', '<span class="span3"><i class="icon-chevron-left"></i> %title</span>'); ?>
 								</li>
-								<li class="next">
+								<li class="next" title="<?php echo get_next_post()->post_title ?>">
 									<?php next_post_link('%link', '<span class="span3"><i class="icon-chevron-right"></i> %title</span>'); ?>
 								</li>
 							</ul>

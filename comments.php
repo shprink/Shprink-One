@@ -53,7 +53,7 @@ else : // or, if we don't have comments:
 /* If there are no comments and comments are closed,
  * let's leave a little note, shall we?
 */
-if (!comments_open()) :
+if (!comments_open() && !is_page()) :
 ?>
 <p class="nocomments">
 	<?php _e('Comments are closed.', 'shprinkone'); ?>
