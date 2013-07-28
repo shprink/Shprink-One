@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-08 22:34+0100\n"
-"PO-Revision-Date: 2013-07-08 22:34+0100\n"
+"POT-Creation-Date: 2013-07-28 16:16+0100\n"
+"PO-Revision-Date: 2013-07-28 16:16+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -39,12 +39,12 @@ msgstr "A la Une"
 msgid "No more pages to load."
 msgstr "Plus de pages à charger."
 
-#: single.php:54
+#: single.php:57
 #, php-format
 msgid "About %s"
 msgstr "A propos de %s"
 
-#: single.php:61
+#: single.php:64
 #, php-format
 msgid "View all posts by %s"
 msgstr "Voir tous les articles de %s"
@@ -182,105 +182,113 @@ msgstr "Widget bas de page droite"
 msgid "Footer Widget Bottom"
 msgstr "Widget bas de page"
 
-#: functions.php:151
+#: functions.php:140 functions.php:144
+msgid "Before Content"
+msgstr "Avant le contenu"
+
+#: functions.php:151 functions.php:155
+msgid "After Content"
+msgstr "Après le contenu"
+
+#: functions.php:173
 msgid "Header Menu Right"
 msgstr "Haut de page droite"
 
-#: functions.php:152
+#: functions.php:174
 msgid "Sidebar Menu Top"
 msgstr " Menu barre latérale haut"
 
-#: functions.php:153
+#: functions.php:175
 msgid "Sidebar Menu Middle"
 msgstr " Menu barre latérale milieu"
 
-#: functions.php:154
+#: functions.php:176
 msgid "Sidebar Menu Bottom"
 msgstr " Menu barre latérale bas"
 
-#: functions.php:329
+#: functions.php:351
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">dit:</span>"
 
-#: functions.php:332
+#: functions.php:354
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de validation."
 
-#: functions.php:341
+#: functions.php:363
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: functions.php:344
+#: functions.php:366
 msgid "(Edit)"
 msgstr "(Editer)"
 
-#: functions.php:388 functions.php:436
+#: functions.php:410 functions.php:458
 msgid "M d, Y"
 msgstr "d M, Y"
 
-#: functions.php:400 author.php:24
+#: functions.php:422 author.php:24
 #, php-format
 msgid "Posts by %s"
 msgstr "Voir tous les articles de %s"
 
-#: functions.php:402
+#: functions.php:424
 #, php-format
 msgid "By: %s"
 msgstr "Par: %s"
 
-#: functions.php:414
+#: functions.php:436
 #, php-format
 msgid "%d Comments"
 msgstr "%d Commentaires"
 
-#: functions.php:416
+#: functions.php:438
 #, php-format
 msgid "%d Comment"
 msgstr "%d Commentaires"
 
-#: functions.php:443
+#: functions.php:465
 #, php-format
 msgid "Category: %s"
 msgstr "Categories: %s"
 
-#: functions.php:448
+#: functions.php:470
 msgid "Tag:  "
 msgstr "Tag:  "
 
-#: functions.php:542
+#: functions.php:564
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, aucun résultat de correspond à votre recherche."
 
-#: functions.php:576 admin/functions.php:113
+#: functions.php:598 admin/functions.php:113
 msgid "Name"
 msgstr "Nom"
 
-#: functions.php:577
+#: functions.php:599
 msgid "Email"
 msgstr "Couriel"
 
-#: functions.php:578
+#: functions.php:600
 msgid "Website"
 msgstr "Site Web:"
 
-#: functions.php:581
+#: functions.php:603
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Les champs requis sont marqué par %s"
 
-#: functions.php:584
+#: functions.php:606
 #, fuzzy
 msgid "Comment"
 msgstr "1 Commentaire"
 
-#: functions.php:585
+#: functions.php:607
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Vous devez être <a href=\"%s\">connecté</a> pour commenter."
 
-#: functions.php:586
+#: functions.php:608
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -289,32 +297,32 @@ msgstr ""
 "Connecté en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se "
 "deconnecter\">Se deconnecter?</a>"
 
-#: functions.php:587
+#: functions.php:609
 msgid "Your email address will not be published."
 msgstr "Votre adresse de couriel ne sera pas publié."
 
-#: functions.php:591
+#: functions.php:613
 msgid "Leave a Reply"
 msgstr "Laissez un commentaire"
 
-#: functions.php:592
+#: functions.php:614
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Répondre à %s"
 
-#: functions.php:593
+#: functions.php:615
 msgid "Cancel reply"
 msgstr "Annulé la réponse"
 
-#: functions.php:594
+#: functions.php:616
 msgid "Post Comment"
 msgstr "Commentez"
 
-#: functions.php:658
+#: functions.php:680
 msgid "Next page"
 msgstr "Page suivante"
 
-#: functions.php:659
+#: functions.php:681
 msgid "Previous page"
 msgstr "Page precedente"
 

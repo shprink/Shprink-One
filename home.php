@@ -22,6 +22,9 @@ $options = shprinkone_get_theme_options();
 	</div>
 <?php endif; ?>
 <div class="container">
+	<?php if (is_active_sidebar('before-content-widget')) : ?>
+	<?php dynamic_sidebar('before-content-widget'); ?>
+	<?php endif; ?>
 	<!-- container start -->
 	<div id="content">
 		<div class="row">
@@ -32,6 +35,9 @@ $options = shprinkone_get_theme_options();
 			<?php shprinkone_get_sidebar('right'); ?>
 		</div>
 	</div>
+	<?php if (is_active_sidebar('after-content-widget')) : ?>
+	<?php dynamic_sidebar('after-content-widget'); ?>
+	<?php endif; ?>
 </div>
 <!-- container end -->
 <?php get_footer(); ?>

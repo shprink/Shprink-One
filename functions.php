@@ -135,6 +135,28 @@ function shprinkone_widgets_init() {
 	'after_title' => '</h4>',
 	)
 	);
+	register_sidebar(
+	array(
+	'name' => __( 'Before Content', 'shprinkone' ),
+	'id' => 'before-content-widget',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => "</div>\n",
+	'description' => __( 'Before Content', 'shprinkone' ),
+	'before_title' => '<h4 class="widget-title">',
+	'after_title' => '</h4>',
+	)
+	);
+	register_sidebar(
+	array(
+	'name' => __( 'After Content', 'shprinkone' ),
+	'id' => 'after-content-widget',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => "</div>\n",
+	'description' => __( 'After Content', 'shprinkone' ),
+	'before_title' => '<h4 class="widget-title">',
+	'after_title' => '</h4>',
+	)
+	);
 }
 
 add_action( 'widgets_init', 'shprinkone_widgets_init' );
