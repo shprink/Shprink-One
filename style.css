@@ -422,6 +422,10 @@ ul.pager li a span{
 	#slideshow a.carousel-control.right {
 		right: -50px;
 	}
+	#slideshow h2.post-title{
+		font-size: 24px;
+		line-height: 28px;
+	}
 }
 
 /* Landscape phones

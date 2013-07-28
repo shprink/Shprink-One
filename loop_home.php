@@ -33,14 +33,23 @@ $options    = shprinkone_get_theme_options();
 						<?php endif ?>
 					</h2>
 					<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
-					<div class="post-content">
+					<div class="post-content hidden-phone">
 						<?php the_excerpt(); ?>
 					</div>
-					<div class="btn-group">
+					<div class="post-content visible-phone">
+						<?php $excerpt = get_the_excerpt() ?>
+						<?php echo ( $excerpt != '' )? substr($excerpt, 0, 150) . ' [...]' : '' ?>
+					</div>
+					<div class="btn-group hidden-phone">
 						<a class="post-more btn btn-large btn-primary" href="<?php the_permalink() ?>">
 							<?php _e('Read more', 'shprinkone') ?>
 						</a>
 						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone'), 'btn btn-large'); ?>
+					</div>
+					<div class="btn-group visible-phone text-center">
+						<a class="post-more btn btn-large btn-primary" href="<?php the_permalink() ?>">
+							<?php _e('Read more', 'shprinkone') ?>
+						</a>
 					</div>
 				</div>
 			</div>
