@@ -19,7 +19,8 @@ $options    = shprinkone_get_theme_options();
 		<div <?php $classes = 'item'; if ($displayedOnSlideshow === 0) $classes .= ' active' ; post_class($classes) ?>>
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
-				<a class="pull-left post-thumbnail" href="<?php the_permalink() ?>"> <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
+				<a class="post-thumbnail" href="<?php the_permalink() ?>">
+					<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
 				</a>
 				<?php endif; ?>
 				<div class="media-body">
