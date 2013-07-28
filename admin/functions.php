@@ -74,7 +74,9 @@ function shprinkone_theme_options_render() {
  */
 function shprinkone_settings_field_layout() {
 	$options = shprinkone_get_theme_options();
-
+	if (!isset($options['theme_layout'])){
+		return;
+	}
 	echo '<table class="widefat">';
 	echo '<thead><tr>';
 	echo '<th style="width:10px;"></th>';
@@ -105,6 +107,9 @@ function shprinkone_settings_field_layout() {
  */
 function shprinkone_settings_field_template() {
 	$options = shprinkone_get_theme_options();
+	if (!isset($options['theme_template'])){
+		return;
+	}
 	// Template selection
 	echo '<table class="widefat">';
 	echo '<thead><tr>';
@@ -139,6 +144,9 @@ function shprinkone_settings_field_template() {
  */
 function shprinkone_settings_field_slideshow() {
 	$options = shprinkone_get_theme_options();
+	if (!isset($options['theme_slideshow'])){
+		return;
+	}
 	$slideshow_option = $options['theme_slideshow'];
 	echo '<label for="slideshow_posts">' . __('Number of post', 'shprinkone') . '</label> ';
 	echo '<select id="slideshow_posts" name="shprinkone_theme_options[theme_slideshow][posts]" value="' . $slideshow_option['posts'] . '">';
