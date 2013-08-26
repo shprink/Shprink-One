@@ -108,7 +108,8 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 			itemSelector: '.box', // selector for all items you'll retrieve
 			loading: {
 				finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
-				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif'
+				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif',
+				msgText: '<?php echo __('Loading the next set of posts...', 'shprinkone') ?>'
 			}
 		},
 		// trigger Masonry as a callback

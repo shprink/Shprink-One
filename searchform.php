@@ -7,7 +7,7 @@
  * @since       1.0
  */
 ?>
-<form class="navbar-search pull-left" method="get"
+<form class="navbar-search navbar-form pull-left" method="get"
 	action="<?php echo esc_url(home_url('/')); ?>">
-	<input type="text" class="search-query" placeholder="Search" name="s"/>
+	<input type="text" class="form-control" placeholder="Search" name="s"/>
 </form>

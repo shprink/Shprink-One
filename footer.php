@@ -13,22 +13,22 @@ $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('foot
 	<div class="footer-inner">
 		<div class="container">
 			<div class="row">
-				<div class="span3">
+				<div class="col-md-3 col-lg-3">
 					<?php if (is_active_sidebar('footer-widget-left')) : ?>
 					<?php dynamic_sidebar('footer-widget-left'); ?>
 					<?php endif; ?>
 				</div>
-				<div class="span3">
+				<div class="col-md-3 col-lg-3">
 					<?php if (is_active_sidebar('footer-widget-middle-left')) : ?>
 					<?php dynamic_sidebar('footer-widget-middle-left'); ?>
 					<?php endif; ?>
 				</div>
-				<div class="span3">
+				<div class="col-md-3 col-lg-3">
 					<?php if (is_active_sidebar('footer-widget-middle-right')) : ?>
 					<?php dynamic_sidebar('footer-widget-middle-right'); ?>
 					<?php endif; ?>
 				</div>
-				<div class="span3">
+				<div class="col-md-3 col-lg-3">
 					<?php if (is_active_sidebar('footer-widget-right')) : ?>
 					<?php dynamic_sidebar('footer-widget-right'); ?>
 					<?php endif; ?>
@@ -42,7 +42,7 @@ $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('foot
 	<div class="credit-inner">
 		<div class="container">
 			<div class="row">
-				<div class="span12">
+				<div class="col-md-12 col-lg-12">
 					<div class="pull-left">
 						&copy;
 						<?php echo date("Y"); ?>

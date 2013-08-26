@@ -9,7 +9,6 @@ Tags: one-column, two-columns, white, gray, fixed-width, custom-menu, featured-i
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 */
-@import url('css/bootstrap-responsive.min.css');
 
 @import url('css/font-awesome.min.css');
 
@@ -84,7 +83,7 @@ ul.pager li a span{
 }
 
 #slideshow .item {
-	padding: 20px 0px;
+	padding: 20px;
 }
 
 #slideshow .post-thumbnail {
@@ -96,44 +95,9 @@ ul.pager li a span{
 	min-height: 330px;
 }
 
-#slideshow .carousel-indicators {
-	top: auto;
-	bottom: 0px;
-	left: 48%;
+#slideshow.carousel .carousel-indicators {
+	bottom: -35px;
 }
-
-#slideshow .carousel-control {
-	background-color: transparent;
-	border: 0 none;
-	font-size: 120px;
-	height: 40px;
-	margin-top: 0;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-}
-
-#slideshow a.carousel-control {
-
-}
-
-#slideshow a.carousel-control.left {
-	left: -40px;
-}
-
-#slideshow a.carousel-control.right {
-	right: -40px;
-}
-
-#slideshow .carousel-indicators li {
-	opacity: 1;
-	cursor: pointer;
-	border: 1px solid #e2e2e2;
-}
-
-#slideshow .carousel-indicators li.active {
-	opacity: 1;
-}
-
-
 
 #masonry {
 	margin-top: 20px;
@@ -143,7 +107,7 @@ ul.pager li a span{
 	padding-top: 0px;
 }
 
-#masonry .img-polaroid {
+#masonry .img-thumbnail{
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
@@ -187,13 +151,13 @@ ul.pager li a span{
 }
 
 .masonry .box .modal-backdrop.fade {
-  opacity: 0;
+	opacity: 0;
 }
 
 .masonry .box .modal-backdrop,
 .masonry .box .modal-backdrop.fade.in {
-  opacity: 0.9;
-  filter: alpha(opacity=90);
+	opacity: 0.9;
+	filter: alpha(opacity=90);
 }
 
 .masonry .box.hover .post-thumbnail,.masonry .box.hover .post-content {
@@ -247,12 +211,6 @@ ul.pager li a span{
 
 .calendar-date {
 	padding: 5px 0;
-}
-
-.navbar-search .search-query {
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
 }
 
 /* Infinite Scroll loader */
@@ -338,11 +296,13 @@ ul.pager li a span{
 	body {
 		padding-top: 0;
 	}
-	.span9 .masonry .box {
+	.col-md-9  .masonry .box,
+	.col-lg-9  .masonry .box{
 		width: 259px;
 		margin-left: 20px;
 	}
-	.span12 .masonry .box {
+	.col-md-12  .masonry .box,
+	.col-lg-12  .masonry .box {
 		width: 228px;
 		margin-left: 20px;
 	}
@@ -384,7 +344,10 @@ ul.pager li a span{
 	.navbar .btn-navbar {
 		display: block;
 	}
-	.span9 .masonry .box,.span12 .masonry .box {
+	.col-md-9  .masonry .box,
+	.col-lg-9  .masonry .box,
+	.col-md-12  .masonry .box,
+	.col-lg-12  .masonry .box {
 		width: 100%;
 		margin-left: 0px;
 	}
@@ -409,19 +372,6 @@ ul.pager li a span{
 		display: block;
 		text-align: center;
 	}
-	#slideshow .carousel-control{
-		background-color: grey;
-		padding: 30px 0;		
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-	}
-	#slideshow a.carousel-control.left {
-		left: -50px;
-	}
-	#slideshow a.carousel-control.right {
-		right: -50px;
-	}
 	#slideshow h2.post-title{
 		font-size: 24px;
 		line-height: 28px;
@@ -431,15 +381,17 @@ ul.pager li a span{
 /* Landscape phones
 ------------------------- */
 @media ( max-width : 480px) {
-	
+
 }
 
 @media ( min-width : 980px) {
 	body {
 		padding-top: 60px;
 	}
-	.span9 .masonry .box,
-	.span12  .masonry .box {
+	.col-md-9  .masonry .box,
+	.col-lg-9  .masonry .box,
+	.col-md-12  .masonry .box,
+	.col-lg-12  .masonry .box {
 		width: 220px;
 		margin-left: 20px;
 	}
@@ -452,10 +404,12 @@ ul.pager li a span{
 }
 
 @media ( min-width : 1200px) {
-	.span9 .masonry .box,
-	.span12  .masonry .box {
+	.col-md-9  .masonry .box,
+	.col-lg-9  .masonry .box,
+	.col-md-12  .masonry .box,
+	.col-lg-12  .masonry .box {
 		width: 270px;
-		margin-left: 30px;
+		margin-left: 16px;
 	}
 	#slideshow .post-thumbnail{
 		float: left;

@@ -315,14 +315,6 @@ function shprinkone_get_theme_templates() {
 		'colors' => array('#EEEEEE', '#FFFFFF', '#09d', '#666666'),
 		'description' => __('Silvery and sleek.', 'shprinkone')
 	);
-	$templateList['spruce'] = array(
-		'name' => 'Spruce',
-		'value' => 'spruce',
-		'author' => 'http://bootswatch.com/',
-		'path' => '/css/spruce.bootswatch.min.css',
-		'colors' => array('#013435', '#FFFFFF', '#015B4E', '#555555'),
-		'description' => __('Camping in the woods.', 'shprinkone')
-	);
 	$templateList['simplex'] = array(
 		'name' => 'Simplex',
 		'value' => 'simplex',
@@ -338,14 +330,6 @@ function shprinkone_get_theme_templates() {
 		'path' => '/css/journal.bootswatch.min.css',
 		'colors' => array('#FFFFFF', '#FFFFFF', '#777777', '#777777'),
 		'description' => __('Crisp like a new sheet of paper.', 'shprinkone')
-	);
-	$templateList['geo'] = array(
-		'name' => 'Geo',
-		'value' => 'geo',
-		'author' => 'http://divshot.github.io/geo-bootstrap/',
-		'path' => '/css/geo.bootstrap.min.css',
-		'colors' => array('#000000', '#0000ff', '#00EEEE', '#ffff00'),
-		'description' => __('A special theme for April Fools\' Day', 'shprinkone')
 	);
 	$templateList['custom'] = array(
 		'name' => 'Custom',

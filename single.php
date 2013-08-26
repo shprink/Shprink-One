@@ -20,7 +20,7 @@
 				<?php if (have_posts()) while (have_posts()) : the_post(); ?>
 						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<?php if (has_post_thumbnail()): ?>
-								<div class="post-thumbnail img-polaroid">
+								<div class="post-thumbnail img-thumbnail">
 									<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
 								</div>
 							<?php endif; ?>
@@ -40,10 +40,10 @@
 							<?php shprinkone_link_pages(); ?>
 							<ul class="pager">
 								<li class="previous" title="<?php echo get_previous_post()->post_title ?>">
-									<?php previous_post_link('%link', '<span class="span3"><i class="icon-chevron-left"></i> %title</span>'); ?>
+									<?php previous_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> %title</span>'); ?>
 								</li>
 								<li class="next" title="<?php echo get_next_post()->post_title ?>">
-									<?php next_post_link('%link', '<span class="span3"><i class="icon-chevron-right"></i> %title</span>'); ?>
+									<?php next_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> %title</span>'); ?>
 								</li>
 							</ul>
 							<hr />

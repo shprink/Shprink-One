@@ -17,7 +17,7 @@
 				<?php if (have_posts()) while (have_posts()) : the_post(); ?>
 						<div id="post-<?php the_ID(); ?>" <?php post_class('image-attachment'); ?>>
 							<?php if (has_post_thumbnail()): ?>
-								<div class="post-thumbnail img-polaroid">
+								<div class="post-thumbnail img-thumbnail">
 									<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
 								</div>
 							<?php endif; ?>
@@ -76,10 +76,10 @@
 							<?php shprinkone_link_pages(); ?>
 							<ul class="pager">
 								<li class="previous">
-									<?php previous_image_link(false, __( '<span class="span3"><i class="icon-chevron-left"></i> Previous</span>', 'shprinkone' )); ?>
+									<?php previous_image_link(false, __( '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> Previous</span>', 'shprinkone' )); ?>
 								</li>
 								<li class="next">
-									<?php next_image_link(false, __( '<span class="span3"><i class="icon-chevron-right"></i> Next</span>', 'shprinkone' )); ?>
+									<?php next_image_link(false, __( '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> Next</span>', 'shprinkone' )); ?>
 								</li>
 							</ul>
 							<?php comments_template('', true); ?>

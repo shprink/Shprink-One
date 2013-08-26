@@ -451,7 +451,7 @@ function shprinkone_get_comments_number() {
  * @since   1.0
  */
 function shprinkone_get_post_meta( $inline = false, $author = true, $date = false, $category = true, $tag = true) {
-	$inline    = ($inline) ? 'inline' : 'unstyled';
+	$inline    = ($inline) ? 'list-inline' : 'list-unstyled';
 	$html      = '<div class = "post-meta">';
 	$html     .= '<ul class = "' . $inline . '">';
 	if ( $date ) {
@@ -502,7 +502,7 @@ function shprinkone_get_sidebar( $side ) {
 	$condition1 = ($side == 'left' && $layout == 'sidebar-content');
 	$condition2 = ($side == 'right' && $layout == 'content-sidebar');
 	if ( $condition1 || $condition2 ) {
-		echo '<div id="sidebar" class="span3"><div class="sidebar-inner">';
+		echo '<div id="sidebar" class="col-md-3 col-lg-3"><div class="sidebar-inner">';
 		get_sidebar();
 		echo '</div></div>';
 	}
@@ -532,10 +532,10 @@ function shprinkone_is_sidebar_active(){
  */
 function shprinkone_get_contentspan() {
 	if ( !shprinkone_is_sidebar_active() ){
-		return 'span12';
+		return 'col-md-12 col-lg-12';
 	}
 	$options = shprinkone_get_theme_options();
-	return ($options['theme_layout'] == 'content') ? 'span12' : 'span9';
+	return ($options['theme_layout'] == 'content') ? 'col-md-12 col-lg-12' : 'col-md-9 col-lg-9';
 }
 
 /**

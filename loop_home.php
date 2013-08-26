@@ -20,11 +20,11 @@ $options    = shprinkone_get_theme_options();
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
 				<a class="post-thumbnail" href="<?php the_permalink() ?>">
-					<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-polaroid')); ?>
+					<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail')); ?>
 				</a>
 				<?php endif; ?>
 				<div class="media-body">
-					<h2 class="post-title">
+					<h2 class="post-title media-heading">
 						<a href="<?php the_permalink() ?>"
 							title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
 						</a>
@@ -33,20 +33,20 @@ $options    = shprinkone_get_theme_options();
 						<?php endif ?>
 					</h2>
 					<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
-					<div class="post-content hidden-phone">
+					<div class="post-content hidden-xs">
 						<?php the_excerpt(); ?>
 					</div>
-					<div class="post-content visible-phone">
+					<div class="post-content visible-xs">
 						<?php $excerpt = get_the_excerpt() ?>
 						<?php echo ( $excerpt != '' )? substr($excerpt, 0, 150) . ' [...]' : '' ?>
 					</div>
-					<div class="btn-group hidden-phone">
+					<div class="btn-group hidden-xs">
 						<a class="post-more btn btn-large btn-primary" href="<?php the_permalink() ?>">
 							<?php _e('Read more', 'shprinkone') ?>
 						</a>
-						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone'), 'btn btn-large'); ?>
+						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone'), 'btn btn-default btn-large'); ?>
 					</div>
-					<div class="btn-group visible-phone text-center">
+					<div class="btn-group visible-xs text-center">
 						<a class="post-more btn btn-large btn-primary" href="<?php the_permalink() ?>">
 							<?php _e('Read more', 'shprinkone') ?>
 						</a>
@@ -67,8 +67,8 @@ $options    = shprinkone_get_theme_options();
 	<?php endif; ?>
 	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
 	<!-- Carousel nav -->
-	<a class="carousel-control left" href="#slideshow" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#slideshow" data-slide="next">&rsaquo;</a>
+	<a class="carousel-control left" href="#slideshow" data-slide="prev"><span class="icon-prev"></span></a>
+	<a class="carousel-control right" href="#slideshow" data-slide="next"><span class="icon-next"></span></a>
 	<?php endif; ?>
 </div>
 <?php endif; ?>
