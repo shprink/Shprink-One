@@ -29,14 +29,6 @@ $selectedTemplate = shprinkone_get_selected_template();
 			  href="<?php echo get_stylesheet_directory_uri() . $selectedTemplate['path']; ?>">
 		<link rel="stylesheet" type="text/css" media="all"
 			  href="<?php bloginfo('stylesheet_url'); ?>" />
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.infinitescroll.min.js"></script>
 
 		<?php
 		/* We add some JavaScript to pages with the comment form
@@ -52,6 +44,13 @@ $selectedTemplate = shprinkone_get_selected_template();
 		 */
 		wp_head();
 		?>
+		<script type="text/javascript">
+			var $ = jQuery;
+		</script>
+		<script type="text/javascript"
+		src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
+		<script type="text/javascript"
+		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.infinitescroll.min.js"></script>
 	</head>
 	<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">

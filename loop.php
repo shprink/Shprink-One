@@ -105,7 +105,7 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 		$container.infinitescroll({
 			navSelector: '#page-nav', // selector for the paged navigation
 			nextSelector: '#page-nav a', // selector for the NEXT link (to page 2)
-			itemSelector: '.box', // selector for all items you'll retrieve
+			itemSelector: '.box', // selector for all items you'll retrieve,
 			loading: {
 				finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
 				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif',
