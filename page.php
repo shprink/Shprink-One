@@ -21,7 +21,7 @@
 				<div id="page-<?php the_ID(); ?>">
 					<?php if (has_post_thumbnail()): ?>
 					<div class="post-thumbnail img-thumbnail">
-						<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
+						<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan(), array('class' => 'img-responsive')); ?>
 					</div>
 					<?php endif; ?>
 					<div class="page-header">

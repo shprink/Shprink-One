@@ -20,7 +20,7 @@ $options    = shprinkone_get_theme_options();
 			<div class="media">
 				<?php if (has_post_thumbnail()): ?>
 				<a class="post-thumbnail" href="<?php the_permalink() ?>">
-					<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail')); ?>
+					<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
 				</a>
 				<?php endif; ?>
 				<div class="media-body">

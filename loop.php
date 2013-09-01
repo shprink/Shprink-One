@@ -26,7 +26,7 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('post-image-mansory'); ?>
+								<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-responsive')); ?>
 							</div>
 						</a>
 					<?php endif; ?>
@@ -45,7 +45,7 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('post-image-mansory'); ?>
+								<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-responsive')); ?>
 							</div>
 						</a>
 					<?php endif; ?>
