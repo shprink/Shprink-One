@@ -101,34 +101,6 @@ ul.pager li a span{
 	bottom: -35px;
 }
 
-#slideshow .carousel-control {
-	background-color: transparent;
-	border: 0 none;
-	height: 40px;
-	margin-top: 0;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-}
-
-#slideshow a.carousel-control {
-	width:50px;
-	top: 100px;
-	height: 100px;
-}
-
-#slideshow a.carousel-control.left {
-	left: -50px;
-  -webkit-border-radius: 4px 0 0 4px;
-     -moz-border-radius: 4px 0 0 4px;
-          border-radius: 4px 0 0 4px;
-}
-
-#slideshow a.carousel-control.right {
-	right: -50px;
-  -webkit-border-radius: 0 4px 4px 0;
-     -moz-border-radius: 0 4px 4px 0;
-          border-radius: 0 4px 4px 0;	
-}
-
 #masonry {
 	margin-top: 20px;
 }
@@ -367,12 +339,6 @@ body.admin-bar #comments .comment,#comments .trackback,#comments .pingback {
 		padding-right: 0px;
 		margin-top: -50px;
 		margin-bottom: 10px;
-	}
-	#slideshow a.carousel-control.left{
-		left: -25px;
-	}
-	#slideshow a.carousel-control.right{
-		right: -25px;
 	}
 }
 

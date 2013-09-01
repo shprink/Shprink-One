@@ -81,7 +81,7 @@ $selectedTemplate = shprinkone_get_selected_template();
 						wp_nav_menu($args);
 						?>
 						
-						<ul class="nav navbar-nav pull-right">
+						<ul class="nav navbar-nav navbar-right">
 							<?php if (has_nav_menu('header-menu-right')): ?>
 								<li><?php
 									$args = array(
@@ -106,12 +106,4 @@ $selectedTemplate = shprinkone_get_selected_template();
 					</div>
 				</div>
 			</div>
-			<script>
-				$(function() {
-					// Add Bootstrap class to lists within the sidebar
-					$('#sidebar .widget ul').addClass('nav nav-pills nav-stacked');
-					$('footer .widget ul').addClass('nav nav-pills nav-stacked');
-					$('.widget_recent_comments ul').removeClass('nav nav-tabs nav-pills nav-stacked').addClass('unstyled');
-				});
-			</script>
 		</header>
