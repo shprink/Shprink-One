@@ -52,7 +52,7 @@ $selectedTemplate = shprinkone_get_selected_template();
 		<script type="text/javascript"
 		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.infinitescroll.min.js"></script>
 	</head>
-	<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar">
+	<body <?php body_class('theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">
 			<div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
 				<div class="container">

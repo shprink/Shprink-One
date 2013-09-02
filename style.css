@@ -556,3 +556,36 @@ body .syntaxhighlighter textarea{
 .widget.widget_twitter .intent-meta a{
 	margin-right: 5px;
 }
+
+/*
+Specific style for each theme
+*/
+
+body.theme-bootstrap{}
+body.theme-flaty{}
+body.theme-cerulean{}
+body.theme-cosmo{}
+body.theme-amelia{}
+body.theme-readable{}
+body.theme-slate{}
+body.theme-united{}
+body.theme-spacelab{}
+body.theme-simplex{}
+body.theme-journal{}
+body.theme-custom{}
+
+body.theme-flaty .carousel-control.left {
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.5)), to(rgba(236, 240, 241, 0.0001)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.5) 0), color-stop(rgba(236, 240, 241, 0.0001) 100%));
+  background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
+}
+
+body.theme-flaty .carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.0001)), to(rgba(236, 240, 241, 0.5)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.0001) 0), color-stop(rgba(236, 240, 241, 0.5) 100%));
+  background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
+  background-image: linear-gradient(to right, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
+}
