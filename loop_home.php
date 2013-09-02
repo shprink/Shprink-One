@@ -29,11 +29,12 @@ $options = shprinkone_get_theme_options();
 								<a href="<?php the_permalink() ?>"
 								   title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
 								</a>
-								<?php if (is_sticky()): ?>
-									&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-							<?php endif ?>
 							</h2>
 								<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
+							<?php if (is_sticky()): ?>
+									&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
+							<?php endif ?>
+							<span class="label label-danger"><? echo comments_number( __('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone') ); ?></span>
 							<div class="post-content hidden-xs">
 		<?php the_excerpt(); ?>
 							</div>

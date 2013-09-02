@@ -6,15 +6,14 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-
-$options    = shprinkone_get_theme_options();
+$options = shprinkone_get_theme_options();
 if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	for ($index = 0; $index < DISPLAYEDONSLIDESHOW; $index++) {
 		$wp_query->next_post();
 	}
 }
 
-if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])){
+if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])) {
 	$wp_query->rewind_posts();
 }
 ?>
@@ -37,8 +36,6 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 							</a>
 						</h3>
 						<?php echo shprinkone_get_post_meta(false, true, true) ?>
-						<hr />
-						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
 					</div>
 				</div>
 				<div class="thumbnail">
@@ -54,10 +51,11 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 							<a href="<?php the_permalink() ?>"
 							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
 							</a>
-							<?php if (is_sticky()): ?>
-								&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-							<?php endif ?>
 						</h2>
+						<?php if (is_sticky()): ?>
+							&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
+						<?php endif ?>
+						<span class="label label-danger"><? echo comments_number(__('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?></span>
 						<div class="post-content">
 							<?php the_excerpt(); ?>
 						</div>

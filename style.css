@@ -101,6 +101,29 @@ ul.pager li a span{
 	bottom: -35px;
 }
 
+.carousel-control .icon-prev,
+.carousel-control .icon-next{
+	font-size:8em;
+	margin-top: -100px;
+	text-align:center;
+}
+
+.carousel-control .icon-prev{
+	
+}
+
+.carousel-control .icon-next{
+	
+}
+
+.carousel-control.left{
+	margin-left: -30px
+}
+
+.carousel-control.right{
+	margin-right: -30px
+}
+
 #masonry {
 	margin-top: 20px;
 }
@@ -370,21 +393,34 @@ body.admin-bar #comments .comment,#comments .trackback,#comments .pingback {
 	ul.pager li a span{
 		width: 200px;
 	}
+	#slideshow{
+		font-size: 0.9em;
+	}
 	#slideshow .post-thumbnail{
 		width: 100%;
 		display: block;
 		text-align: center;
 	}
 	#slideshow h2.post-title{
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	#slideshow .post-meta ul{
+		margin-bottom: 0px;
+	}
+	.carousel-control .icon-prev,
+	.carousel-control .icon-next{
+		font-size:5em;
 	}
 }
 
 /* Landscape phones
 ------------------------- */
 @media ( max-width : 480px) {
-
+	.carousel-control .icon-prev,
+	.carousel-control .icon-next{
+		font-size:4em;
+	}
 }
 
 @media ( min-width : 980px) {
@@ -575,17 +611,72 @@ body.theme-journal{}
 body.theme-custom{}
 
 body.theme-flaty .carousel-control.left {
-  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.5)), to(rgba(236, 240, 241, 0.0001)));
-  background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.5) 0), color-stop(rgba(236, 240, 241, 0.0001) 100%));
-  background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
-  background-image: linear-gradient(to right, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.5)), to(rgba(236, 240, 241, 0.0001)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.5) 0), color-stop(rgba(236, 240, 241, 0.0001) 100%));
+	background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
+	background-image: linear-gradient(to right, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
 }
 
+body.theme-journal .carousel-control.left,
+body.theme-simplex .carousel-control.left,
+body.theme-spacelab .carousel-control.left,
+body.theme-united .carousel-control.left,
+body.theme-readable .carousel-control.left,
+body.theme-cosmo .carousel-control.left,
+body.theme-cerulean .carousel-control.left,
+body.theme-bootstrap .carousel-control.left {
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(245, 245, 245, 0.5)), to(rgba(245, 245, 245, 0.0001)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(245, 245, 245, 0.5) 0), color-stop(rgba(245, 245, 245, 0.0001) 100%));
+	background-image: -moz-linear-gradient(left, rgba(245, 245, 245, 0.5) 0, rgba(245, 245, 245, 0.0001) 100%);
+	background-image: linear-gradient(to right, rgba(245, 245, 245, 0.5) 0, rgba(245, 245, 245, 0.0001) 100%);
+}
+
+body.theme-amelia .carousel-control.left {
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(13, 116, 124, 0.5)), to(rgba(13, 116, 124, 0.0001)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(13, 116, 124, 0.5) 0), color-stop(rgba(13, 116, 124, 0.0001) 100%));
+	background-image: -moz-linear-gradient(left, rgba(13, 116, 124, 0.5) 0, rgba(13, 116, 124, 0.0001) 100%);
+	background-image: linear-gradient(to right, rgba(13, 116, 124, 0.5) 0, rgba(13, 116, 124, 0.0001) 100%);
+}
+
+body.theme-slate .carousel-control.left {
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(28, 30, 34, 0.5)), to(rgba(28, 30, 34, 0.0001)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(28, 30, 34, 0.5) 0), color-stop(rgba(28, 30, 34, 0.0001) 100%));
+	background-image: -moz-linear-gradient(left, rgba(28, 30, 34, 0.5) 0, rgba(28, 30, 34, 0.0001) 100%);
+	background-image: linear-gradient(to right, rgba(28, 30, 34, 0.5) 0, rgba(28, 30, 34, 0.0001) 100%);
+}
+
+
 body.theme-flaty .carousel-control.right {
-  right: 0;
-  left: auto;
-  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.0001)), to(rgba(236, 240, 241, 0.5)));
-  background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.0001) 0), color-stop(rgba(236, 240, 241, 0.5) 100%));
-  background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
-  background-image: linear-gradient(to right, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.0001)), to(rgba(236, 240, 241, 0.5)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.0001) 0), color-stop(rgba(236, 240, 241, 0.5) 100%));
+	background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
+	background-image: linear-gradient(to right, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
+}
+
+body.theme-journal .carousel-control.right,
+body.theme-simplex .carousel-control.right,
+body.theme-spacelab .carousel-control.right,
+body.theme-united .carousel-control.right,
+body.theme-readable .carousel-control.right,
+body.theme-cosmo .carousel-control.right,
+body.theme-cerulean .carousel-control.right,
+body.theme-bootstrap .carousel-control.right {
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(245, 245, 245, 0.0001)), to(rgba(245, 245, 245, 0.5)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(245, 245, 245, 0.0001) 0), color-stop(rgba(245, 245, 245, 0.5) 100%));
+	background-image: -moz-linear-gradient(left, rgba(245, 245, 245, 0.0001) 0, rgba(245, 245, 245, 0.5) 100%);
+	background-image: linear-gradient(to right, rgba(245, 245, 245, 0.0001) 0, rgba(245, 245, 245, 0.5) 100%);
+}
+
+body.theme-amelia .carousel-control.right {
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(13, 116, 124, 0.0001)), to(rgba(13, 116, 124, 0.5)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(13, 116, 124, 0.0001) 0), color-stop(rgba(13, 116, 124, 0.5) 100%));
+	background-image: -moz-linear-gradient(left, rgba(13, 116, 124, 0.0001) 0, rgba(13, 116, 124, 0.5) 100%);
+	background-image: linear-gradient(to right, rgba(13, 116, 124, 0.0001) 0, rgba(13, 116, 124, 0.5) 100%);
+}
+
+body.theme-slate .carousel-control.right {
+	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(28, 30, 34, 0.0001)), to(rgba(28, 30, 34, 0.5)));
+	background-image: -webkit-linear-gradient(left, color-stop(rgba(28, 30, 34, 0.0001) 0), color-stop(rgba(28, 30, 34, 0.5) 100%));
+	background-image: -moz-linear-gradient(left, rgba(28, 30, 34, 0.0001) 0, rgba(28, 30, 34, 0.5) 100%);
+	background-image: linear-gradient(to right, rgba(28, 30, 34, 0.0001) 0, rgba(28, 30, 34, 0.5) 100%);
 }
