@@ -101,27 +101,42 @@ ul.pager li a span{
 	bottom: -35px;
 }
 
-.carousel-control .icon-prev,
-.carousel-control .icon-next{
+#slideshow .carousel-control .icon-prev,
+#slideshow .carousel-control .icon-next{
 	font-size:8em;
 	margin-top: -100px;
 	text-align:center;
 }
 
-.carousel-control .icon-prev{
+#slideshow .carousel-control .icon-prev{
 	
 }
 
-.carousel-control .icon-next{
+#slideshow .carousel-control .icon-next{
 	
 }
 
-.carousel-control.left{
+#slideshow .carousel-control.left{
 	margin-left: -30px
 }
 
-.carousel-control.right{
+#slideshow .carousel-control.right{
 	margin-right: -30px
+}
+
+.comment-number{
+	top: -10px;
+	left: -10px;
+	position: absolute;
+	background-color: #e74c3c;
+	color: white;
+	z-index: 11;
+	font-weight: bold;
+	  padding-right: 9px;
+  padding-left: 9px;
+  -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
 }
 
 #masonry {

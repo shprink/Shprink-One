@@ -42,7 +42,7 @@ $options = shprinkone_get_theme_options();
 								<?php $excerpt = get_the_excerpt() ?>
 		<?php echo ( $excerpt != '' ) ? substr($excerpt, 0, 150) . ' [...]' : '' ?>
 							</div>
-							<a class="post-more btn btn-block btn-primary" href="<?php the_permalink() ?>">
+							<a class="post-more btn btn-primary" href="<?php the_permalink() ?>">
 		<?php _e('Read more', 'shprinkone') ?>
 							</a>
 						</div>

@@ -70,6 +70,7 @@ $condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('foote
 		$('#sidebar .widget ul').addClass('nav nav-pills nav-stacked');
 		$('footer .widget ul').addClass('nav nav-pills nav-stacked');
 		$('.widget_recent_comments ul').removeClass('nav nav-tabs nav-pills nav-stacked').addClass('unstyled');
+		$('[data-toggle=tooltip]').tooltip()
 	});
 </script>
 </body>
