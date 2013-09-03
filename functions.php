@@ -677,7 +677,7 @@ function shprinkone_setup() {
 
 		function shprinkone_link_pages($args = '') {
 			$defaults = array(
-				'before' => '<div class="pagination pagination-centered"><ul>',
+				'before' => '<div class="text-center"><ul class="pagination">',
 				'after' => '</ul></div>',
 				'link_before' => '',
 				'link_after' => '',

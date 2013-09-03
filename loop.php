@@ -21,7 +21,6 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('box') ?>>
-				<span class="comment-number" data-toggle="tooltip" title="<? echo comments_number(__('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>"><? echo comments_number(0,1,'%'); ?></span>
 				<div class="thumbnail modal-backdrop fade" style="display: none;">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
@@ -48,17 +47,20 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 						</a>
 					<?php endif; ?>
 					<div class="caption">
-						<h2 class="post-title">
+						<h3 class="post-title">
 							<a href="<?php the_permalink() ?>"
 							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
 							</a>
-						</h2>
-						<?php if (is_sticky()): ?>
-							&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-						<?php endif ?>
+							
+						</h3>
+						
 						<div class="post-content">
 							<?php the_excerpt(); ?>
 						</div>
+						<div class="label label-danger"><? echo comments_number(__('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?></div>
+						<?php if (is_sticky()): ?>
+							&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
+						<?php endif ?>
 					</div>
 				</div>
 				

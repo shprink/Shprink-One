@@ -11,7 +11,7 @@ $options = shprinkone_get_theme_options();
 ?>
 <?php get_header(); ?>
 <?php if (isset($options['theme_slideshow']['posts']) && $options['theme_slideshow']['posts'] > 0 && have_posts()) : ?>
-	<div class="container-slideshow well well-small">
+	<div class="container-slideshow">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-12">

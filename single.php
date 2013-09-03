@@ -10,7 +10,7 @@
 <?php get_header(); ?>
 <div class="container">
 	<?php if (is_active_sidebar('before-content-widget')) : ?>
-	<?php dynamic_sidebar('before-content-widget'); ?>
+		<?php dynamic_sidebar('before-content-widget'); ?>
 	<?php endif; ?>
 	<!-- container start -->
 	<div id="content">
@@ -38,14 +38,6 @@
 							wp_link_pages(array('echo' => 0));
 							?>
 							<?php shprinkone_link_pages(); ?>
-							<ul class="pager">
-								<li class="previous" title="<?php echo get_previous_post()->post_title ?>">
-									<?php previous_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> %title</span>'); ?>
-								</li>
-								<li class="next" title="<?php echo get_next_post()->post_title ?>">
-									<?php next_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> %title</span>'); ?>
-								</li>
-							</ul>
 							<hr />
 							<?php echo shprinkone_get_post_meta(false, false) ?>
 							<?php if (get_the_author_meta('description')) : // If a user has filled out their description, show a bio on their entries  ?>
@@ -67,6 +59,12 @@
 								</div>
 							<?php endif; ?>
 							<?php comments_template('', true); ?>
+							<li id="previous-post" class="btn btn-info btn-lg" title="<?php echo get_previous_post()->post_title ?>">
+								<?php previous_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> %title</span>'); ?>
+							</li>
+							<li id="next-post" class="btn btn-info btn-lg" title="<?php echo get_next_post()->post_title ?>">
+								<?php next_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> %title</span>'); ?>
+							</li>
 						</div>
 					<?php endwhile; // end of the loop. ?>
 			</div>
@@ -74,7 +72,7 @@
 		</div>
 	</div>
 	<?php if (is_active_sidebar('after-content-widget')) : ?>
-	<?php dynamic_sidebar('after-content-widget'); ?>
+		<?php dynamic_sidebar('after-content-widget'); ?>
 	<?php endif; ?>
 </div>
 <!-- container end -->

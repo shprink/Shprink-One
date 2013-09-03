@@ -94,11 +94,7 @@ ul.pager li a span{
 
 #slideshow.carousel {
 	margin-bottom: 5px;
-	min-height: 330px;
-}
-
-#slideshow.carousel .carousel-indicators {
-	bottom: -35px;
+	min-height: 310px;
 }
 
 #slideshow .carousel-control .icon-prev,
@@ -117,26 +113,13 @@ ul.pager li a span{
 }
 
 #slideshow .carousel-control.left{
-	margin-left: -30px
+	margin-left: -30px;
+	background-image: none;
 }
 
 #slideshow .carousel-control.right{
-	margin-right: -30px
-}
-
-.comment-number{
-	top: -10px;
-	left: -10px;
-	position: absolute;
-	background-color: #e74c3c;
-	color: white;
-	z-index: 11;
-	font-weight: bold;
-	  padding-right: 9px;
-  padding-left: 9px;
-  -webkit-border-radius: 9px;
-     -moz-border-radius: 9px;
-          border-radius: 9px;
+	margin-right: -30px;
+	background-image: none;
 }
 
 #masonry {
@@ -164,10 +147,10 @@ ul.pager li a span{
 }
 
 .masonry .box {
-	margin-bottom: 30px;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
+	margin-bottom: 20px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .masonry .box .modal-backdrop {
@@ -206,12 +189,6 @@ ul.pager li a span{
 
 .masonry .box .caption{
 	min-height: 200px;
-}
-
-.masonry .box .post-title {
-	font-size: 18px;
-	line-height: 22px;
-	text-shadow: none;
 }
 
 .masonry .box img {
@@ -625,73 +602,14 @@ body.theme-simplex{}
 body.theme-journal{}
 body.theme-custom{}
 
-body.theme-flaty .carousel-control.left {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.5)), to(rgba(236, 240, 241, 0.0001)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.5) 0), color-stop(rgba(236, 240, 241, 0.0001) 100%));
-	background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
-	background-image: linear-gradient(to right, rgba(236, 240, 241, 0.5) 0, rgba(236, 240, 241, 0.0001) 100%);
-}
+.container-slideshow {
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
 
-body.theme-journal .carousel-control.left,
-body.theme-simplex .carousel-control.left,
-body.theme-spacelab .carousel-control.left,
-body.theme-united .carousel-control.left,
-body.theme-readable .carousel-control.left,
-body.theme-cosmo .carousel-control.left,
-body.theme-cerulean .carousel-control.left,
-body.theme-bootstrap .carousel-control.left {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(245, 245, 245, 0.5)), to(rgba(245, 245, 245, 0.0001)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(245, 245, 245, 0.5) 0), color-stop(rgba(245, 245, 245, 0.0001) 100%));
-	background-image: -moz-linear-gradient(left, rgba(245, 245, 245, 0.5) 0, rgba(245, 245, 245, 0.0001) 100%);
-	background-image: linear-gradient(to right, rgba(245, 245, 245, 0.5) 0, rgba(245, 245, 245, 0.0001) 100%);
-}
-
-body.theme-amelia .carousel-control.left {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(13, 116, 124, 0.5)), to(rgba(13, 116, 124, 0.0001)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(13, 116, 124, 0.5) 0), color-stop(rgba(13, 116, 124, 0.0001) 100%));
-	background-image: -moz-linear-gradient(left, rgba(13, 116, 124, 0.5) 0, rgba(13, 116, 124, 0.0001) 100%);
-	background-image: linear-gradient(to right, rgba(13, 116, 124, 0.5) 0, rgba(13, 116, 124, 0.0001) 100%);
-}
-
-body.theme-slate .carousel-control.left {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(28, 30, 34, 0.5)), to(rgba(28, 30, 34, 0.0001)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(28, 30, 34, 0.5) 0), color-stop(rgba(28, 30, 34, 0.0001) 100%));
-	background-image: -moz-linear-gradient(left, rgba(28, 30, 34, 0.5) 0, rgba(28, 30, 34, 0.0001) 100%);
-	background-image: linear-gradient(to right, rgba(28, 30, 34, 0.5) 0, rgba(28, 30, 34, 0.0001) 100%);
-}
-
-
-body.theme-flaty .carousel-control.right {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(236, 240, 241, 0.0001)), to(rgba(236, 240, 241, 0.5)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(236, 240, 241, 0.0001) 0), color-stop(rgba(236, 240, 241, 0.5) 100%));
-	background-image: -moz-linear-gradient(left, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
-	background-image: linear-gradient(to right, rgba(236, 240, 241, 0.0001) 0, rgba(236, 240, 241, 0.5) 100%);
-}
-
-body.theme-journal .carousel-control.right,
-body.theme-simplex .carousel-control.right,
-body.theme-spacelab .carousel-control.right,
-body.theme-united .carousel-control.right,
-body.theme-readable .carousel-control.right,
-body.theme-cosmo .carousel-control.right,
-body.theme-cerulean .carousel-control.right,
-body.theme-bootstrap .carousel-control.right {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(245, 245, 245, 0.0001)), to(rgba(245, 245, 245, 0.5)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(245, 245, 245, 0.0001) 0), color-stop(rgba(245, 245, 245, 0.5) 100%));
-	background-image: -moz-linear-gradient(left, rgba(245, 245, 245, 0.0001) 0, rgba(245, 245, 245, 0.5) 100%);
-	background-image: linear-gradient(to right, rgba(245, 245, 245, 0.0001) 0, rgba(245, 245, 245, 0.5) 100%);
-}
-
-body.theme-amelia .carousel-control.right {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(13, 116, 124, 0.0001)), to(rgba(13, 116, 124, 0.5)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(13, 116, 124, 0.0001) 0), color-stop(rgba(13, 116, 124, 0.5) 100%));
-	background-image: -moz-linear-gradient(left, rgba(13, 116, 124, 0.0001) 0, rgba(13, 116, 124, 0.5) 100%);
-	background-image: linear-gradient(to right, rgba(13, 116, 124, 0.0001) 0, rgba(13, 116, 124, 0.5) 100%);
-}
-
-body.theme-slate .carousel-control.right {
-	background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(28, 30, 34, 0.0001)), to(rgba(28, 30, 34, 0.5)));
-	background-image: -webkit-linear-gradient(left, color-stop(rgba(28, 30, 34, 0.0001) 0), color-stop(rgba(28, 30, 34, 0.5) 100%));
-	background-image: -moz-linear-gradient(left, rgba(28, 30, 34, 0.0001) 0, rgba(28, 30, 34, 0.5) 100%);
-	background-image: linear-gradient(to right, rgba(28, 30, 34, 0.0001) 0, rgba(28, 30, 34, 0.5) 100%);
 }

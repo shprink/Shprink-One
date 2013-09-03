@@ -29,12 +29,10 @@ $options = shprinkone_get_theme_options();
 								<a href="<?php the_permalink() ?>"
 								   title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
 								</a>
+								
 							</h2>
 								<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
-							<?php if (is_sticky()): ?>
-									&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-							<?php endif ?>
-							<span class="label label-danger"><? echo comments_number( __('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone') ); ?></span>
+						
 							<div class="post-content hidden-xs">
 		<?php the_excerpt(); ?>
 							</div>
@@ -42,9 +40,10 @@ $options = shprinkone_get_theme_options();
 								<?php $excerpt = get_the_excerpt() ?>
 		<?php echo ( $excerpt != '' ) ? substr($excerpt, 0, 150) . ' [...]' : '' ?>
 							</div>
-							<a class="post-more btn btn-primary" href="<?php the_permalink() ?>">
-		<?php _e('Read more', 'shprinkone') ?>
-							</a>
+							<span class="label label-danger"><? echo comments_number( __('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone') ); ?></span>
+							<?php if (is_sticky()): ?>
+								&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
+							<?php endif ?>
 						</div>
 					</div>
 				</div>
