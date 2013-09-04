@@ -20,6 +20,18 @@ body.admin-bar .navbar-fixed-top{
 	top: 28px;
 }
 
+h1 {
+	font-size: 48px;
+	font-weight: 900;
+	line-height: 48px;
+}
+
+h2{
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 36px;
+}
+
 /* SIDEBAR */
 #sidebar {
 
@@ -77,14 +89,15 @@ ul.pager li a span{
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-	background: #f9fcf7; /* Old browsers */
-	background: -moz-linear-gradient(top,  #f9fcf7 0%, #f5f9f0 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9fcf7), color-stop(100%,#f5f9f0)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #f9fcf7 0%,#f5f9f0 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #f9fcf7 0%,#f5f9f0 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #f9fcf7 0%,#f5f9f0 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #f9fcf7 0%,#f5f9f0 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 ); /* IE6-9 */
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top,  #efefef 0%, #e5e5e5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #efefef 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #efefef 0%,#e5e5e5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #efefef 0%,#e5e5e5 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #efefef 0%,#e5e5e5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
 }
 
 #slideshow {
@@ -131,11 +144,15 @@ ul.pager li a span{
 }
 
 #slideshow .carousel-indicators .active{
-	background-color: #bbc4b2;
+	/*background-color: #CCC;*/
 }
 
 #slideshow .carousel-indicators li{
-	border: 1px solid #bbc4b2;
+	/*border: 1px solid #CCC;*/
+}
+
+#slideshow .carousel-indicators {
+	bottom: 0px;
 }
 
 #masonry {
@@ -205,6 +222,13 @@ ul.pager li a span{
 
 .masonry .box .caption{
 	min-height: 200px;
+}
+
+.masonry .box .post-title {
+	font-size: 18px;
+	line-height: 22px;
+	text-shadow: none;
+	font-weight: bold;
 }
 
 .masonry .box img {
@@ -617,6 +641,14 @@ body.theme-spacelab{}
 body.theme-simplex{}
 body.theme-journal{}
 body.theme-custom{}
+
+.thumbnail{
+	border: 1px solid #ddd;
+}
+
+.thumbnail .caption {
+	color: #686868;
+}
 
 .masonry .box.hover .post-content {
 	display: none;

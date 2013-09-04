@@ -8,17 +8,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container">
-	<a id="simple-menu" href="#sidr">Toogle menu</a>
- 
-<div id="sidr">
-  <!-- Your content -->
-  <ul>
-    <li><a href="#">List 1</a></li>
-    <li class="active"><a href="#">List 2</a></li>
-    <li><a href="#">List 3</a></li>
-  </ul>
-</div>
+<div class="container"> 
 	<?php if (is_active_sidebar('before-content-widget')) : ?>
 		<?php dynamic_sidebar('before-content-widget'); ?>
 	<?php endif; ?>
@@ -69,31 +59,46 @@
 								</div>
 							<?php endif; ?>
 							<?php comments_template('', true); ?>
-							
-							<?php $previousPost = get_previous_post(); if (!empty($previousPost)): ?>
-							<li id="previous-post" class="btn btn-info btn-lg" title="<?php echo $previousPost->post_title ?>">
-								<?php previous_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> %title</span>'); ?>
-							</li>
+
+							<?php $previousPost = get_previous_post();
+							if (!empty($previousPost)):
+								?>
+									<a id="previous-post" class="btn btn-info btn-lg" title="<?php echo $previousPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-left"></i></a>
+								<header id="demoheader">
+									<h1><?php previous_post_link('%link', '%title'); ?></h1>
+								</header>
+
+								<div id="demo-content">
+									<p><?php echo substr(strip_tags($previousPost->post_content), 0, 200) . '...'; ?></p>
+								</div>
 							<?php endif; ?>
-							<?php $nextPost = get_next_post(); if (!empty($nextPost)): ?>
-							<li id="next-post" class="btn btn-info btn-lg" title="<?php echo $nextPost->post_title ?>">
-								<?php next_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> %title</span>'); ?>
-							</li>
-							<?php endif; ?>
+							<?php $nextPost = get_next_post();
+							if (!empty($nextPost)):
+								?>
+								<a id="next-post" class="btn btn-info btn-lg pull-right" title="<?php echo $nextPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-right"></i></a>
+						<?php endif; ?>
 						</div>
-					<?php endwhile; // end of the loop. ?>
+				<?php endwhile; // end of the loop. ?>
 			</div>
-			<?php shprinkone_get_sidebar('right'); ?>
+	<?php shprinkone_get_sidebar('right'); ?>
 		</div>
 	</div>
 	<?php if (is_active_sidebar('after-content-widget')) : ?>
-		<?php dynamic_sidebar('after-content-widget'); ?>
-	<?php endif; ?>
+	<?php dynamic_sidebar('after-content-widget'); ?>
+<?php endif; ?>
 </div>
 <script>
-$(document).ready(function() {
-  $('#simple-menu').sidr();
-});
+	$(document).ready(function() {
+		$('#previous-post').sidr({
+			name: 'sidr-existing-content',
+			source: '#demoheader, #demo-content'
+		});
+		$('#next-post').sidr({
+			name: 'sidr-existing-content2',
+			source: '#demoheader, #demo-content',
+			side: 'right'
+		});
+	});
 </script>
 <!-- container end -->
 <?php get_footer(); ?>
