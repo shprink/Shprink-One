@@ -77,6 +77,14 @@ ul.pager li a span{
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+	background: #f9fcf7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f9fcf7 0%, #f5f9f0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9fcf7), color-stop(100%,#f5f9f0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f9fcf7 0%,#f5f9f0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f9fcf7 0%,#f5f9f0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f9fcf7 0%,#f5f9f0 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f9fcf7 0%,#f5f9f0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 ); /* IE6-9 */
 }
 
 #slideshow {
@@ -105,21 +113,29 @@ ul.pager li a span{
 }
 
 #slideshow .carousel-control .icon-prev{
-	
+
 }
 
 #slideshow .carousel-control .icon-next{
-	
+
 }
 
 #slideshow .carousel-control.left{
-	margin-left: -30px;
+	margin-left: -170px;
 	background-image: none;
 }
 
 #slideshow .carousel-control.right{
-	margin-right: -30px;
+	margin-right: -170px;
 	background-image: none;
+}
+
+#slideshow .carousel-indicators .active{
+	background-color: #bbc4b2;
+}
+
+#slideshow .carousel-indicators li{
+	border: 1px solid #bbc4b2;
 }
 
 #masonry {
@@ -141,16 +157,16 @@ ul.pager li a span{
 	display: block;
 }
 
-.masonry p.post-content {
-	font-size: 12px;
+.masonry .post-content p{
 	text-align: justify;
+	font-size: 14px;
 }
 
 .masonry .box {
 	margin-bottom: 20px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .masonry .box .modal-backdrop {
@@ -602,14 +618,8 @@ body.theme-simplex{}
 body.theme-journal{}
 body.theme-custom{}
 
-.container-slideshow {
-background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-
+.masonry .box.hover .post-content {
+	display: none;
 }
+
+

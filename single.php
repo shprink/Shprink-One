@@ -9,6 +9,16 @@
 ?>
 <?php get_header(); ?>
 <div class="container">
+	<a id="simple-menu" href="#sidr">Toogle menu</a>
+ 
+<div id="sidr">
+  <!-- Your content -->
+  <ul>
+    <li><a href="#">List 1</a></li>
+    <li class="active"><a href="#">List 2</a></li>
+    <li><a href="#">List 3</a></li>
+  </ul>
+</div>
 	<?php if (is_active_sidebar('before-content-widget')) : ?>
 		<?php dynamic_sidebar('before-content-widget'); ?>
 	<?php endif; ?>
@@ -59,12 +69,17 @@
 								</div>
 							<?php endif; ?>
 							<?php comments_template('', true); ?>
-							<li id="previous-post" class="btn btn-info btn-lg" title="<?php echo get_previous_post()->post_title ?>">
+							
+							<?php $previousPost = get_previous_post(); if (!empty($previousPost)): ?>
+							<li id="previous-post" class="btn btn-info btn-lg" title="<?php echo $previousPost->post_title ?>">
 								<?php previous_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> %title</span>'); ?>
 							</li>
-							<li id="next-post" class="btn btn-info btn-lg" title="<?php echo get_next_post()->post_title ?>">
+							<?php endif; ?>
+							<?php $nextPost = get_next_post(); if (!empty($nextPost)): ?>
+							<li id="next-post" class="btn btn-info btn-lg" title="<?php echo $nextPost->post_title ?>">
 								<?php next_post_link('%link', '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> %title</span>'); ?>
 							</li>
+							<?php endif; ?>
 						</div>
 					<?php endwhile; // end of the loop. ?>
 			</div>
@@ -75,5 +90,10 @@
 		<?php dynamic_sidebar('after-content-widget'); ?>
 	<?php endif; ?>
 </div>
+<script>
+$(document).ready(function() {
+  $('#simple-menu').sidr();
+});
+</script>
 <!-- container end -->
 <?php get_footer(); ?>

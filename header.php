@@ -27,6 +27,10 @@ $selectedTemplate = shprinkone_get_selected_template();
 		</title>
 		<link rel="stylesheet" type="text/css"
 			  href="<?php echo get_stylesheet_directory_uri() . $selectedTemplate['path']; ?>">
+		<link rel="stylesheet" type="text/css"
+			  href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.sidr.light.css">
+		<link rel="stylesheet" type="text/css"
+			  href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.sidr.light.css">
 		<link rel="stylesheet" type="text/css" media="all"
 			  href="<?php bloginfo('stylesheet_url'); ?>" />
 
@@ -51,6 +55,8 @@ $selectedTemplate = shprinkone_get_selected_template();
 		src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
 		<script type="text/javascript"
 		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.infinitescroll.min.js"></script>
+		<script type="text/javascript"
+		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.sidr.min.js"></script>
 	</head>
 	<body <?php body_class('theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">
