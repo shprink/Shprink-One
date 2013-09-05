@@ -35,7 +35,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 								<?php the_title(); ?>
 							</a>
 						</h3>
-						<?php echo shprinkone_get_post_meta(false, true, true) ?>
+						<?php echo shprinkone_get_post_meta(false, true, true, true, true, true) ?>
 					</div>
 				</div>
 				<div class="panel panel-default">
@@ -51,19 +51,17 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 							<a href="<?php the_permalink() ?>"
 							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
 							</a>
-							
+							<?php if (is_sticky()): ?>
+								&nbsp;<span class="label label-info"><i class = "icon-star"></i> <?php _e('Featured', 'shprinkone') ?></span>
+							<?php endif ?>
 						</h3>
-						
+
 						<div class="post-content">
 							<?php the_excerpt(); ?>
 						</div>
-						<div class="label label-danger"><? echo comments_number(__('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?></div>
-						<?php if (is_sticky()): ?>
-							&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-						<?php endif ?>
 					</div>
 				</div>
-				
+
 			</div>
 		<?php endwhile; ?>
 	<?php else: ?>

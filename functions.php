@@ -456,7 +456,7 @@ function shprinkone_setup() {
 		 * @return  string
 		 * @since   1.0
 		 */
-		function shprinkone_get_post_meta($inline = false, $author = true, $date = false, $category = true, $tag = true) {
+		function shprinkone_get_post_meta($inline = false, $author = true, $date = false, $category = true, $tag = true, $comments = false, $sticky = false) {
 			$inline = ($inline) ? 'list-inline' : 'list-unstyled';
 			$html = '<div class = "post-meta">';
 			$html .= '<ul class = "' . $inline . '">';
@@ -475,6 +475,12 @@ function shprinkone_setup() {
 				if (has_tag()):
 					$html .= '<li class="post-tags"><i class="icon-tags"></i> ' . get_the_tag_list(__('Tag:  ', 'shprinkone'), ' ') . '</li>';
 				endif;
+			}
+			if ($comments) {
+				$html .= '<li class = "post-comments"><i class = "icon-comment"></i> ' . get_comments_number() . '</li>';
+			}
+			if (is_sticky() && $sticky){
+				$html .= '<li class = "post-comments label label-info"><i class = "icon-star"></i> ' . __('Featured', 'shprinkone') . '</li>';
 			}
 			$html .= '</ul>';
 			$html .= '</div>';

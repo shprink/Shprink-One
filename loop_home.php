@@ -36,7 +36,7 @@ $options = shprinkone_get_theme_options();
 										</a>
 
 									</h2>
-		<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
+		<?php echo shprinkone_get_post_meta(true, true, true, false, false, true, true) ?>
 
 									<div class="post-content hidden-xs">
 		<?php the_excerpt(); ?>
@@ -45,10 +45,6 @@ $options = shprinkone_get_theme_options();
 										<?php $excerpt = get_the_excerpt() ?>
 		<?php echo ( $excerpt != '' ) ? substr($excerpt, 0, 150) . ' [...]' : '' ?>
 									</div>
-									<span class="label label-danger"><? echo comments_number(__('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?></span>
-									<?php if (is_sticky()): ?>
-										&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-		<?php endif ?>
 								</div>
 							</div>
 						</div>

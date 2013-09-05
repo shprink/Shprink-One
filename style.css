@@ -380,7 +380,9 @@ body.admin-bar #comments .comment,#comments .trackback,#comments .pingback {
 	.container-slideshow {
 		margin-bottom: 20px;
 		padding-top: 0px;
-		margin-top: 0px;
+		margin-left: -20px;
+		margin-right: -20px;
+		margin-top: -10px;
 	}
 	#slideshow.carousel {
 		height: auto;

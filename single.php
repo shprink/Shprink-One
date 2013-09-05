@@ -28,7 +28,7 @@
 								<h1 id="post-title" class="post-title">
 									<?php the_title(); ?>
 								</h1>
-								<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
+								<?php echo shprinkone_get_post_meta(true, true, true, false, false, true) ?>
 							</div>
 							<div class="post-content">
 								<?php the_content(); ?>
@@ -60,22 +60,28 @@
 							<?php endif; ?>
 							<?php comments_template('', true); ?>
 
-							<?php $previousPost = get_previous_post();
+							<?php
+							$previousPost = get_previous_post();
 							if (!empty($previousPost)):
 								?>
-									<a id="previous-post" class="btn btn-info btn-lg" title="<?php echo $previousPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-left"></i></a>
-								<header id="demoheader">
-									<h1><?php previous_post_link('%link', '%title'); ?></h1>
-								</header>
-
-								<div id="demo-content">
+								<a id="previous-post" class="btn btn-info btn-lg" title="<?php echo $previousPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-left"></i></a>
+								<div id="previous-post-content" style="display: none;">
+									<h2><?php previous_post_link('%link', '%title'); ?></h2>
 									<p><?php echo substr(strip_tags($previousPost->post_content), 0, 200) . '...'; ?></p>
+									<a href="<?php echo $previousPost->guid; ?>" class="btn btn-primary"><?php _e('Read more', 'shprinkone') ?></a>
 								</div>
 							<?php endif; ?>
-							<?php $nextPost = get_next_post();
+							<?php
+							$nextPost = get_next_post();
 							if (!empty($nextPost)):
 								?>
 								<a id="next-post" class="btn btn-info btn-lg pull-right" title="<?php echo $nextPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-right"></i></a>
+
+								<div id="next-post-content" style="display: none;">
+									<h2><?php next_post_link('%link', '%title'); ?></h2>
+									<p><?php echo substr(strip_tags($nextPost->post_content), 0, 200) . '...'; ?></p>
+									<a href="<?php echo $nextPost->guid; ?>" class="btn btn-primary"><?php _e('Read more', 'shprinkone') ?></a>
+								</div>
 						<?php endif; ?>
 						</div>
 				<?php endwhile; // end of the loop. ?>
@@ -91,11 +97,15 @@
 	$(document).ready(function() {
 		$('#previous-post').sidr({
 			name: 'sidr-existing-content',
-			source: '#demoheader, #demo-content'
+			source: function(name) {
+				return $('#previous-post-content').clone().html();
+			}
 		});
 		$('#next-post').sidr({
 			name: 'sidr-existing-content2',
-			source: '#demoheader, #demo-content',
+			source: function(name) {
+				return $('#next-post-content').clone().html();
+			},
 			side: 'right'
 		});
 	});
