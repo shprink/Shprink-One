@@ -16,34 +16,41 @@ $options = shprinkone_get_theme_options();
 		<div class="carousel-inner">
 			<!-- Start the Loop. -->
 			<?php while (have_posts() && $displayedOnSlideshow < $options['theme_slideshow']['posts']) : the_post(); ?>
-				<div <?php $classes = 'item';
-		if ($displayedOnSlideshow === 0) $classes .= ' active'; post_class($classes) ?>>
-					<div class="media">
-							<?php if (has_post_thumbnail()): ?>
-							<a class="post-thumbnail" href="<?php the_permalink() ?>">
-							<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
-							</a>
+				<div <?php
+				$classes = 'item';
+				if ($displayedOnSlideshow === 0)
+					$classes .= ' active'; post_class($classes)
+				?>>
+					<div class="container">
+						<div class="carousel-caption">
+							<div class="media">
+									<?php if (has_post_thumbnail()): ?>
+									<a class="post-thumbnail" href="<?php the_permalink() ?>">
+									<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-circle img-responsive')); ?>
+									</a>
 		<?php endif; ?>
-						<div class="media-body">
-							<h2 class="post-title media-heading">
-								<a href="<?php the_permalink() ?>"
-								   title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
-								</a>
-								
-							</h2>
-								<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
-						
-							<div class="post-content hidden-xs">
+								<div class="media-body">
+									<h2 class="post-title media-heading">
+										<a href="<?php the_permalink() ?>"
+										   title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
+										</a>
+
+									</h2>
+		<?php echo shprinkone_get_post_meta(true, true, true, false, false) ?>
+
+									<div class="post-content hidden-xs">
 		<?php the_excerpt(); ?>
-							</div>
-							<div class="post-content visible-xs">
-								<?php $excerpt = get_the_excerpt() ?>
+									</div>
+									<div class="post-content visible-xs">
+										<?php $excerpt = get_the_excerpt() ?>
 		<?php echo ( $excerpt != '' ) ? substr($excerpt, 0, 150) . ' [...]' : '' ?>
+									</div>
+									<span class="label label-danger"><? echo comments_number(__('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?></span>
+									<?php if (is_sticky()): ?>
+										&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
+		<?php endif ?>
+								</div>
 							</div>
-							<span class="label label-danger"><? echo comments_number( __('0 comment', 'shprinkone'), __('1 comment', 'shprinkone'), __('% Comments', 'shprinkone') ); ?></span>
-							<?php if (is_sticky()): ?>
-								&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
-							<?php endif ?>
 						</div>
 					</div>
 				</div>
@@ -60,8 +67,8 @@ $options = shprinkone_get_theme_options();
 		<?php endif; ?>
 	<?php if ($options['theme_slideshow']['posts'] > 1): ?>
 			<!-- Carousel nav -->
-			<a class="carousel-control left" href="#slideshow" data-slide="prev"><span class="icon-prev"></span></a>
-			<a class="carousel-control right" href="#slideshow" data-slide="next"><span class="icon-next"></span></a>
+			<a class="carousel-control left" href="#slideshow" data-slide="prev"><i class="icon-chevron-left"></i></a>
+			<a class="carousel-control right" href="#slideshow" data-slide="next"><i class="icon-chevron-right"></i></a>
 	<?php endif; ?>
 	</div>
 <?php endif; ?>

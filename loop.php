@@ -21,7 +21,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('box') ?>>
-				<div class="thumbnail modal-backdrop fade" style="display: none;">
+				<div class="panel panel-default modal-backdrop fade" style="display: none;">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
@@ -29,7 +29,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 							</div>
 						</a>
 					<?php endif; ?>
-					<div class="caption">
+					<div class="panel-body">
 						<h3 class="post-title">
 							<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">
 								<?php the_title(); ?>
@@ -38,7 +38,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 						<?php echo shprinkone_get_post_meta(false, true, true) ?>
 					</div>
 				</div>
-				<div class="thumbnail">
+				<div class="panel panel-default">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
@@ -46,7 +46,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 							</div>
 						</a>
 					<?php endif; ?>
-					<div class="caption">
+					<div class="panel-body">
 						<h3 class="post-title">
 							<a href="<?php the_permalink() ?>"
 							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>

@@ -60,7 +60,7 @@ $selectedTemplate = shprinkone_get_selected_template();
 	</head>
 	<body <?php body_class('theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">
-			<div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
