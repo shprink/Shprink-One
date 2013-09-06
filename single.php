@@ -67,9 +67,13 @@
 									?>
 									<a id="previous-post" class="btn btn-info btn-lg" title="<?php echo $previousPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-left"></i></a>
 									<div id="previous-post-content" style="display: none;">
+										<div class="clearfix">
+											<a class="btn btn-danger pull-right" href="javascript:closePreviousSidr();"><i class="icon-remove-sign"></i></a>
+										</div>
+										<?php echo get_the_post_thumbnail($previousPost->ID, 'post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
 										<h2><?php previous_post_link('%link', '%title'); ?></h2>
 										<p><?php echo substr(strip_tags($previousPost->post_content), 0, 200) . '...'; ?></p>
-										<a href="<?php echo $previousPost->guid; ?>" class="btn btn-primary"><?php _e('Read more', 'shprinkone') ?></a>
+										<a href="<?php echo $previousPost->guid; ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
 									</div>
 								<?php endif; ?>
 								<?php
@@ -79,9 +83,13 @@
 									<a id="next-post" class="btn btn-info btn-lg pull-right" title="<?php echo $nextPost->post_title ?>" href="javascript:void(0)"><i class="icon-chevron-right"></i></a>
 
 									<div id="next-post-content" style="display: none;">
+										<div class="clearfix">
+											<a class="btn btn-danger pull-left" href="javascript:closeNextSidr();"><i class="icon-remove-sign"></i></a>
+										</div>
+										<?php echo get_the_post_thumbnail($nextPost->ID, 'post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
 										<h2><?php next_post_link('%link', '%title'); ?></h2>
 										<p><?php echo substr(strip_tags($nextPost->post_content), 0, 200) . '...'; ?></p>
-										<a href="<?php echo $nextPost->guid; ?>" class="btn btn-primary"><?php _e('Read more', 'shprinkone') ?></a>
+										<a href="<?php echo $nextPost->guid; ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -98,19 +106,27 @@
 <script>
 	$(document).ready(function() {
 		$('#previous-post').sidr({
-			name: 'sidr-existing-content',
+			name: 'sidr-previous-post',
 			source: function(name) {
 				return $('#previous-post-content').clone().html();
 			}
 		});
 		$('#next-post').sidr({
-			name: 'sidr-existing-content2',
+			name: 'sidr-next-post',
 			source: function(name) {
 				return $('#next-post-content').clone().html();
 			},
 			side: 'right'
 		});
 	});
+
+	function closePreviousSidr(){
+		$.sidr('close', 'sidr-previous-post')
+	}
+
+	function closeNextSidr(){
+		$.sidr('close', 'sidr-next-post')
+	}
 </script>
 <!-- container end -->
 <?php get_footer(); ?>
