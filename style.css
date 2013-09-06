@@ -16,6 +16,10 @@ License URI: http://opensource.org/licenses/MIT
 
 /* HEADER */
 
+body{
+	background-color: #f7f7f7;
+}
+
 body.admin-bar .navbar-fixed-top{
 	top: 28px;
 }
@@ -248,6 +252,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', end
 
 .masonry hr {
 	margin: 5px 0;
+}
+.masonry .panel{
+	margin-bottom: 0px;
 }
 
 .calendar-outer {
