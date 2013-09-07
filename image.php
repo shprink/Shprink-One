@@ -66,7 +66,7 @@
 								endif;
 								?>
 								<a href="<?php echo esc_url($next_attachment_url); ?>" title="<?php the_title_attribute(); ?>"><?php
-									echo wp_get_attachment_image($post->ID, array(960, 960));
+									echo wp_get_attachment_image($post->ID, array(960, 960), false, array('class' => 'img-responsive'));
 									?></a>
 							</div>
 							<?php
@@ -76,10 +76,10 @@
 							<?php shprinkone_link_pages(); ?>
 							<ul class="pager">
 								<li class="previous">
-									<?php previous_image_link(false, __( '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-left"></i> Previous</span>', 'shprinkone' )); ?>
+									<?php previous_image_link(false, '<i class="icon-chevron-left"></i> ' . __( 'Previous', 'shprinkone' ) . '</span>'); ?>
 								</li>
 								<li class="next">
-									<?php next_image_link(false, __( '<span class="col-sm-3 col-md-3 col-lg-3"><i class="icon-chevron-right"></i> Next</span>', 'shprinkone' )); ?>
+									<?php next_image_link(false, '<i class="icon-chevron-right"></i> ' . __( 'Next', 'shprinkone' ) . '</span>'); ?>
 								</li>
 							</ul>
 							<?php comments_template('', true); ?>
