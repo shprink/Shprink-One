@@ -6,43 +6,43 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-$condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('footer-widget-middle-left') || is_active_sidebar('footer-widget-middle-right') || is_active_sidebar('footer-widget-right');
+$condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('footer-widget-middle-left') || is_active_sidebar('footer-widget-middle-right') || is_active_sidebar('footer-widget-right');
 ?>
 <?php if ($condition) : ?>
-<footer id="footer" class="well well-small">
-	<div class="footer-inner">
-		<div class="container">
-			<div class="row">
-				<div class="span3">
-					<?php if (is_active_sidebar('footer-widget-left')) : ?>
-					<?php dynamic_sidebar('footer-widget-left'); ?>
-					<?php endif; ?>
-				</div>
-				<div class="span3">
-					<?php if (is_active_sidebar('footer-widget-middle-left')) : ?>
-					<?php dynamic_sidebar('footer-widget-middle-left'); ?>
-					<?php endif; ?>
-				</div>
-				<div class="span3">
-					<?php if (is_active_sidebar('footer-widget-middle-right')) : ?>
-					<?php dynamic_sidebar('footer-widget-middle-right'); ?>
-					<?php endif; ?>
-				</div>
-				<div class="span3">
-					<?php if (is_active_sidebar('footer-widget-right')) : ?>
-					<?php dynamic_sidebar('footer-widget-right'); ?>
-					<?php endif; ?>
+	<footer id="footer" class="well well-small">
+		<div class="footer-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-lg-3">
+						<?php if (is_active_sidebar('footer-widget-left')) : ?>
+							<?php dynamic_sidebar('footer-widget-left'); ?>
+						<?php endif; ?>
+					</div>
+					<div class="col-md-3 col-lg-3">
+						<?php if (is_active_sidebar('footer-widget-middle-left')) : ?>
+							<?php dynamic_sidebar('footer-widget-middle-left'); ?>
+						<?php endif; ?>
+					</div>
+					<div class="col-md-3 col-lg-3">
+						<?php if (is_active_sidebar('footer-widget-middle-right')) : ?>
+							<?php dynamic_sidebar('footer-widget-middle-right'); ?>
+						<?php endif; ?>
+					</div>
+					<div class="col-md-3 col-lg-3">
+						<?php if (is_active_sidebar('footer-widget-right')) : ?>
+							<?php dynamic_sidebar('footer-widget-right'); ?>
+						<?php endif; ?>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
 <?php endif; ?>
 <section id="credit">
 	<div class="credit-inner">
 		<div class="container">
 			<div class="row">
-				<div class="span12">
+				<div class="col-md-12 col-lg-12">
 					<div class="pull-left">
 						&copy;
 						<?php echo date("Y"); ?>
@@ -56,7 +56,7 @@ $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('foot
 							href="http://julienrenaux.fr/shprinkone" target="_blank">Shprink.</a>
 					</div>
 					<?php if (is_active_sidebar('footer-widget-bottom')) : ?>
-					<?php dynamic_sidebar('footer-widget-bottom'); ?>
+						<?php dynamic_sidebar('footer-widget-bottom'); ?>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -64,5 +64,14 @@ $condition = is_active_sidebar('footer-widget-left') 	|| is_active_sidebar('foot
 	</div>
 </section>
 <?php wp_footer(); ?>
+<script type="text/javascript">
+	$(function() {
+		// Add Bootstrap class to lists within the sidebar
+		$('#sidebar .widget ul').addClass('nav nav-pills nav-stacked');
+		$('footer .widget ul').addClass('nav nav-pills nav-stacked');
+		$('.widget_recent_comments ul').removeClass('nav nav-tabs nav-pills nav-stacked').addClass('list-unstyled');
+		$('[data-toggle=tooltip]').tooltip()
+	});
+</script>
 </body>
 </html>

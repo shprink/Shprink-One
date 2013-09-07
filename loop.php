@@ -6,15 +6,14 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-
-$options    = shprinkone_get_theme_options();
+$options = shprinkone_get_theme_options();
 if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	for ($index = 0; $index < DISPLAYEDONSLIDESHOW; $index++) {
 		$wp_query->next_post();
 	}
 }
 
-if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])){
+if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])) {
 	$wp_query->rewind_posts();
 }
 ?>
@@ -22,47 +21,47 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('box') ?>>
-				<div class="thumbnail modal-backdrop fade" style="display: none;">
+				<div class="panel panel-default modal-backdrop fade" style="display: none;">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('post-image-mansory'); ?>
+								<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-responsive')); ?>
 							</div>
 						</a>
 					<?php endif; ?>
-					<div class="caption">
+					<div class="panel-body">
 						<h3 class="post-title">
 							<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">
 								<?php the_title(); ?>
 							</a>
 						</h3>
-						<?php echo shprinkone_get_post_meta(false, true, true) ?>
-						<hr />
-						<?php comments_popup_link(__('Leave a comment', 'shprinkone'), __('1 Comment', 'shprinkone'), __('% Comments', 'shprinkone')); ?>
+						<?php echo shprinkone_get_post_meta(false, true, true, true, true, true) ?>
 					</div>
 				</div>
-				<div class="thumbnail">
+				<div class="panel panel-default">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('post-image-mansory'); ?>
+								<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-responsive')); ?>
 							</div>
 						</a>
 					<?php endif; ?>
-					<div class="caption">
-						<h2 class="post-title">
+					<div class="panel-body">
+						<h3 class="post-title">
 							<a href="<?php the_permalink() ?>"
 							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
 							</a>
 							<?php if (is_sticky()): ?>
-								&nbsp;<span class="label label-info"><?php _e('Featured', 'shprinkone') ?></span>
+								&nbsp;<span class="label label-info"><i class = "icon-star"></i> <?php _e('Featured', 'shprinkone') ?></span>
 							<?php endif ?>
-						</h2>
+						</h3>
+
 						<div class="post-content">
 							<?php the_excerpt(); ?>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		<?php endwhile; ?>
 	<?php else: ?>
@@ -105,10 +104,11 @@ if(defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_wi
 		$container.infinitescroll({
 			navSelector: '#page-nav', // selector for the paged navigation
 			nextSelector: '#page-nav a', // selector for the NEXT link (to page 2)
-			itemSelector: '.box', // selector for all items you'll retrieve
+			itemSelector: '.box', // selector for all items you'll retrieve,
 			loading: {
 				finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
-				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif'
+				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif',
+				msgText: '<?php echo __('Loading the next set of posts...', 'shprinkone') ?>'
 			}
 		},
 		// trigger Masonry as a callback

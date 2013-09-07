@@ -20,8 +20,8 @@
 				<?php if (have_posts()) while (have_posts()) : the_post(); ?>
 				<div id="page-<?php the_ID(); ?>">
 					<?php if (has_post_thumbnail()): ?>
-					<div class="post-thumbnail img-polaroid">
-						<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan()); ?>
+					<div class="post-thumbnail img-thumbnail">
+						<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan(), array('class' => 'img-responsive')); ?>
 					</div>
 					<?php endif; ?>
 					<div class="page-header">

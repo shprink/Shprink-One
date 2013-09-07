@@ -11,14 +11,9 @@ $options = shprinkone_get_theme_options();
 ?>
 <?php get_header(); ?>
 <?php if (isset($options['theme_slideshow']['posts']) && $options['theme_slideshow']['posts'] > 0 && have_posts()) : ?>
-	<div class="container-slideshow well well-small">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
+	<div class="container-slideshow">
+		
 					<?php get_template_part('loop_home'); ?>
-				</div>
-			</div>
-		</div>
 	</div>
 <?php endif; ?>
 <div class="container">
