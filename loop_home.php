@@ -26,7 +26,7 @@ $options = shprinkone_get_theme_options();
 							<div class="media">
 									<?php if (has_post_thumbnail()): ?>
 									<a class="post-thumbnail" href="<?php the_permalink() ?>">
-									<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-circle img-responsive')); ?>
+									<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
 									</a>
 		<?php endif; ?>
 								<div class="media-body">
@@ -45,6 +45,7 @@ $options = shprinkone_get_theme_options();
 										<?php $excerpt = get_the_excerpt() ?>
 		<?php echo ( $excerpt != '' ) ? substr($excerpt, 0, 150) . ' [...]' : '' ?>
 									</div>
+									<!--<a href="<?php the_permalink() ?>" class="btn btn-primary"><?php _e('Read more', 'shprinkone') ?></a>-->
 								</div>
 							</div>
 						</div>

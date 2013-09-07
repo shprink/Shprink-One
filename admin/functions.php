@@ -267,14 +267,6 @@ function shprinkone_get_theme_templates() {
 		'colors' => array('#080808', '#FFFFFF', '#007FFF', '#555555'),
 		'description' => __('An ode to Metro.', 'shprinkone')
 	);
-	$templateList['cyborg'] = array(
-		'name' => 'Cyborg',
-		'value' => 'cyborg',
-		'author' => 'http://bootswatch.com/',
-		'path' => '/css/cyborg.bootswatch.min.css',
-		'colors' => array('#020202', '#060606', '#33B5E5', '#999999'),
-		'description' => __('Jet black and electric blue.', 'shprinkone')
-	);
 	$templateList['amelia'] = array(
 		'name' => 'Amelia',
 		'value' => 'amelia',
@@ -290,14 +282,6 @@ function shprinkone_get_theme_templates() {
 		'path' => '/css/readable.bootswatch.min.css',
 		'colors' => array('#F6F6F6', '#F6F6F6', '#E78B24', '#333333'),
 		'description' => __('Optimized for legibility.', 'shprinkone')
-	);
-	$templateList['slate'] = array(
-		'name' => 'Slate',
-		'value' => 'slate',
-		'author' => 'http://bootswatch.com/',
-		'path' => '/css/slate.bootswatch.min.css',
-		'colors' => array('#272B30', '#272B30', '#FFFFFF', '#C8C8C8'),
-		'description' => __('Shades of gunmetal gray.', 'shprinkone')
 	);
 	$templateList['united'] = array(
 		'name' => 'United',

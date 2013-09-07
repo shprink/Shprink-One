@@ -60,7 +60,6 @@
 									</div>
 								<?php endif; ?>
 								<?php comments_template('', true); ?>
-
 								<?php
 								$previousPost = get_previous_post();
 								if (!empty($previousPost)):
@@ -70,10 +69,12 @@
 										<div class="clearfix">
 											<a class="btn btn-danger pull-right" href="javascript:closePreviousSidr();"><i class="icon-remove-sign"></i></a>
 										</div>
-										<?php echo get_the_post_thumbnail($previousPost->ID, 'post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
+										<a href="<?php echo get_permalink($previousPost); ?>">
+											<?php echo get_the_post_thumbnail($previousPost->ID, 'post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
+										</a>
 										<h2><?php previous_post_link('%link', '%title'); ?></h2>
 										<p><?php echo substr(strip_tags($previousPost->post_content), 0, 200) . '...'; ?></p>
-										<a href="<?php echo $previousPost->guid; ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
+										<a href="<?php echo get_permalink($previousPost); ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
 									</div>
 								<?php endif; ?>
 								<?php
@@ -86,10 +87,12 @@
 										<div class="clearfix">
 											<a class="btn btn-danger pull-left" href="javascript:closeNextSidr();"><i class="icon-remove-sign"></i></a>
 										</div>
-										<?php echo get_the_post_thumbnail($nextPost->ID, 'post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
+										<a href="<?php echo get_permalink($nextPost); ?>">
+											<?php echo get_the_post_thumbnail($nextPost->ID, 'post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
+										</a>
 										<h2><?php next_post_link('%link', '%title'); ?></h2>
 										<p><?php echo substr(strip_tags($nextPost->post_content), 0, 200) . '...'; ?></p>
-										<a href="<?php echo $nextPost->guid; ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
+										<a href="<?php echo get_permalink($nextPost); ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -120,11 +123,11 @@
 		});
 	});
 
-	function closePreviousSidr(){
+	function closePreviousSidr() {
 		$.sidr('close', 'sidr-previous-post')
 	}
 
-	function closeNextSidr(){
+	function closeNextSidr() {
 		$.sidr('close', 'sidr-next-post')
 	}
 </script>
