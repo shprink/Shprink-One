@@ -59,7 +59,6 @@
 										</div>
 									</div>
 								<?php endif; ?>
-								<?php comments_template('', true); ?>
 								<?php
 								$previousPost = get_previous_post();
 								if (!empty($previousPost)):
@@ -95,6 +94,7 @@
 										<a href="<?php echo get_permalink($nextPost); ?>" class="btn btn-primary btn-block"><?php _e('Read more', 'shprinkone') ?></a>
 									</div>
 								<?php endif; ?>
+								<?php comments_template('', true); ?>
 							</div>
 						</div>
 					<?php endwhile; // end of the loop. ?>

@@ -8,23 +8,29 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container">
-	<!-- container start -->
-	<div class="row">
-		<div id="content" class="span12">
-			<div class="hero-unit">
-				<h1>
-					<?php echo __('404... Oups something went wrong...', 'shprinkone') ?>
-				</h1>
-				<p>
-					<?php echo __('We are sorry but we cannot reach the page you are looking for... Perhaps you should try to:', 'shprinkone') ?>
-				</p>
+<div class="container-slideshow">
+	<div class="container">
+		<div class="row">
+			<br/>
+			<div id="content" class="col-md-12 col-lg-12">
+				<div class="jumbotron">
+					<h1>
+						<?php echo __('404... Oups something went wrong...', 'shprinkone') ?>
+					</h1>
+					<p>
+						<?php echo __('We are sorry but we cannot reach the page you are looking for... Perhaps you should try to:', 'shprinkone') ?>
+					</p>
 
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="container">
+	<!-- container start -->
+
 	<div class="row">
-		<div class="span4">
+		<div class="col-md-4 col-lg-4">
 			<div class="well">
 				<h4>
 					<?php echo __('Search for it: ', 'shprinkone') ?>
@@ -33,12 +39,12 @@
 				<br /> <br />
 			</div>
 		</div>
-		<div class="span4">
+		<div class="col-md-4 col-lg-4">
 			<div class="well">
 				<?php the_widget('WP_Widget_Recent_Posts', array('number' => 5), array('widget_id' => '404', 'before_title' => '<h4 class="widgettitle">' . __('Check Out The ', 'shprinkone'), 'after_title' => '</h4>')); ?>
 			</div>
 		</div>
-		<div class="span4">
+		<div class="col-md-4 col-lg-4">
 			<div class="well">
 				<h4>
 					<?php echo __('Check Out The Most Used Categories', 'shprinkone'); ?>

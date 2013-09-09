@@ -53,7 +53,9 @@ h2{
 #comments-title,
 .media-heading,
 .comment-body,
-.post-meta{
+.post-meta,
+.sidr a,
+.sidr p{
 	word-wrap: break-word;
 	-ms-word-wrap: break-word;
 	-webkit-hyphens: auto;
@@ -103,6 +105,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', end
 #slideshow {
 	line-height: 30px;
 	color: inherit;
+	padding-top: 35px;
 }
 
 #slideshow a{
