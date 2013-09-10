@@ -1,7 +1,7 @@
 /*
 Theme Name: Shprink One
 Theme URI: http://julienrenaux.fr/shprinkone
-Description: ShprinkOne is a Bootstrap 3 responsive theme that can fit any screen (Mobile phone, tablet, laptop, desktop). Features a theme picker (more then 10 choices), a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget and Menu positions and multi language support. ShprinkOne is an Open Source project that can be forked on GitHub https://github.com/shprink/Shprink-One 
+Description: ShprinkOne is a Bootstrap 3 responsive theme that can fit any screen (mobile phone, tablet, laptop, desktop). Features a theme picker (more then 10 choices), a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget, Menu positions and multi language support. ShprinkOne is an Open Source project that can be forked on GitHub https://github.com/shprink/Shprink-One 
 Author: shprink
 Author URI: http://julienrenaux.fr
 Version: 2.0.0
@@ -91,14 +91,14 @@ ul.pager li a span{
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-background: #3f4c6b; /* Old browsers */
-background: -moz-linear-gradient(top,  #3f4c6b 0%, #3f4c6b 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f4c6b), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #3f4c6b 0%,#3f4c6b 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+	background: #3f4c6b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3f4c6b 0%, #3f4c6b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f4c6b), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3f4c6b 0%,#3f4c6b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
 
 }
 
@@ -261,6 +261,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', end
 .masonry hr {
 	margin: 5px 0;
 }
+
 .masonry .panel{
 	margin-bottom: 0px;
 }
@@ -449,8 +450,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', end
 		line-height: 40px;
 	}
 	#slideshow .carousel-control i{
-/*		right: 0px;
-		margin-right: 10px;*/
+		/*		right: 0px;
+				margin-right: 10px;*/
 	}
 }
 

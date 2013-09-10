@@ -662,7 +662,7 @@ function shprinkone_setup() {
 								<?php echo apply_filters('comment_form_field_comment', $args['comment_field']); ?>
 								<?php echo $args['comment_notes_after']; ?>
 								<p class="form-submit">
-									<button class="btn" name="submit" type="submit"
+									<button class="btn btn-default btn-block" name="submit" type="submit"
 											id="<?php echo esc_attr($args['id_submit']); ?>">
 												<?php echo esc_attr($args['label_submit']); ?>
 									</button>
