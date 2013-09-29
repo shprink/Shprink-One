@@ -37,8 +37,6 @@ bloginfo('name');
 		</title>
 		<link rel="stylesheet" type="text/css"
 			  href="<?php echo get_stylesheet_directory_uri() . $selectedTemplate['path']; ?>">
-		<link rel="stylesheet" type="text/css"
-			  href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.sidr.light.css">
 		<link rel="stylesheet" type="text/css" media="all"
 			  href="<?php bloginfo('stylesheet_url'); ?>" />
 

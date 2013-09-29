@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-29 02:11+0100\n"
-"PO-Revision-Date: 2013-09-29 02:12+0100\n"
+"PO-Revision-Date: 2013-09-29 21:37+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -289,7 +289,7 @@ msgstr "Les champs requis sont marqué par %s"
 
 #: functions.php:657
 msgid "Comment"
-msgstr "1 Commentaire"
+msgstr "Commentaire"
 
 #: functions.php:658
 #, php-format
