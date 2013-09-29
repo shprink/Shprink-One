@@ -20,7 +20,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 <div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-6 col-md-4 col-lg-4 box') ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-6 col-md-6 col-lg-4 box') ?>>
 				<div class="panel panel-default">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
