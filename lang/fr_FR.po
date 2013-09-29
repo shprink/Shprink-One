@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-07 19:16+0100\n"
-"PO-Revision-Date: 2013-09-07 19:17+0100\n"
+"POT-Creation-Date: 2013-09-29 02:11+0100\n"
+"PO-Revision-Date: 2013-09-29 02:12+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -19,15 +19,15 @@ msgstr ""
 msgid "Tag"
 msgstr "Tag"
 
-#: loop.php:55 functions.php:483
-msgid "Featured"
-msgstr "A la Une"
+#: loop.php:36 single.php:76 single.php:94 loop_home.php:48
+msgid "Read more"
+msgstr "Voir plus"
 
-#: loop.php:109
+#: loop.php:91
 msgid "No more pages to load."
 msgstr "Plus de pages à charger."
 
-#: loop.php:111
+#: loop.php:93
 msgid "Loading the next set of posts..."
 msgstr "Chargement des posts..."
 
@@ -40,10 +40,6 @@ msgstr "A propos de %s"
 #, php-format
 msgid "View all posts by %s"
 msgstr "Voir tous les articles de %s"
-
-#: single.php:77 single.php:95 loop_home.php:48
-msgid "Read more"
-msgstr "Voir plus"
 
 #: comments.php:13
 msgid ""
@@ -85,23 +81,23 @@ msgstr ""
 "full-size image\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title=\"Return "
 "to %5$s\" rel=\"gallery\">%6$s</a></div>"
 
-#: image.php:39
+#: image.php:33
 msgid "Edit"
 msgstr "Editer"
 
-#: image.php:79
+#: image.php:73
 msgid "Previous"
 msgstr "Precedent"
 
-#: image.php:82
+#: image.php:76
 msgid "Next"
 msgstr "Suivant"
 
-#: 404.php:17
+#: 404.php:18
 msgid "404... Oups something went wrong..."
 msgstr "404... Oups c'est embarrassant..."
 
-#: 404.php:20
+#: 404.php:21
 msgid ""
 "We are sorry but we cannot reach the page you are looking for... Perhaps you "
 "should try to:"
@@ -109,15 +105,15 @@ msgstr ""
 "Nous sommes désolés mais nous ne pouvons pas charger la page que vous avez "
 "demandée... Vous devriez peu être:"
 
-#: 404.php:30
+#: 404.php:36
 msgid "Search for it: "
 msgstr "La rechercher:"
 
-#: 404.php:38
+#: 404.php:44
 msgid "Check Out The "
 msgstr "Regarder les "
 
-#: 404.php:44
+#: 404.php:50
 msgid "Check Out The Most Used Categories"
 msgstr "Regarder les catégories les plus utilisés"
 
@@ -213,7 +209,7 @@ msgstr "%1$s à %2$s"
 msgid "(Edit)"
 msgstr "(Editer)"
 
-#: functions.php:416 functions.php:464
+#: functions.php:416 functions.php:474
 msgid "M d, Y"
 msgstr "d M, Y"
 
@@ -237,46 +233,70 @@ msgstr "%d Commentaires"
 msgid "%d Comment"
 msgstr "%d Commentaires"
 
-#: functions.php:471
+#: functions.php:468 functions.php:470
+msgid "Featured"
+msgstr "A la Une"
+
+#: functions.php:476
+msgid "Published on"
+msgstr "Publié le"
+
+#: functions.php:484 admin/functions.php:120
+msgid "Author"
+msgstr "Auteur"
+
+#: functions.php:497
+msgid "Categories"
+msgstr "Categories"
+
+#: functions.php:499
 #, php-format
 msgid "Category: %s"
 msgstr "Categories: %s"
 
-#: functions.php:476
+#: functions.php:511
+msgid "Tags"
+msgstr "Tags"
+
+#: functions.php:513
 msgid "Tag:  "
 msgstr "Tag:  "
 
-#: functions.php:576
+#: functions.php:520
+msgid "Comments"
+msgstr "Commentaires"
+
+#: functions.php:616
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, aucun résultat de correspond à votre recherche."
 
-#: functions.php:609 admin/functions.php:118
+#: functions.php:649 admin/functions.php:118
 msgid "Name"
 msgstr "Nom"
 
-#: functions.php:610
+#: functions.php:650
 msgid "Email"
 msgstr "Couriel"
 
-#: functions.php:611
+#: functions.php:651
 msgid "Website"
 msgstr "Site Web:"
 
-#: functions.php:614
+#: functions.php:654
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Les champs requis sont marqué par %s"
 
-#: functions.php:617
+#: functions.php:657
 msgid "Comment"
 msgstr "1 Commentaire"
 
-#: functions.php:618
+#: functions.php:658
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Vous devez être <a href=\"%s\">connecté</a> pour commenter."
 
-#: functions.php:619
+#: functions.php:659
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -285,32 +305,32 @@ msgstr ""
 "Connecté en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se "
 "deconnecter\">Se deconnecter?</a>"
 
-#: functions.php:620
+#: functions.php:660
 msgid "Your email address will not be published."
 msgstr "Votre adresse de couriel ne sera pas publié."
 
-#: functions.php:624
+#: functions.php:664
 msgid "Leave a Reply"
 msgstr "Laissez un commentaire"
 
-#: functions.php:625
+#: functions.php:665
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Répondre à %s"
 
-#: functions.php:626
+#: functions.php:666
 msgid "Cancel reply"
 msgstr "Annulé la réponse"
 
-#: functions.php:627
+#: functions.php:667
 msgid "Post Comment"
 msgstr "Commentez"
 
-#: functions.php:691
+#: functions.php:731
 msgid "Next page"
 msgstr "Page suivante"
 
-#: functions.php:692
+#: functions.php:732
 msgid "Previous page"
 msgstr "Page precedente"
 
@@ -339,7 +359,7 @@ msgstr "Google+:"
 msgid "%s on Google+"
 msgstr "%s sur Google+"
 
-#: header.php:117
+#: header.php:115
 msgid "Subscribe to the RSS feed"
 msgstr "S'abonner au flux RSS"
 
@@ -379,10 +399,6 @@ msgstr "Couleurs"
 #: admin/functions.php:119
 msgid "Description"
 msgstr "Description"
-
-#: admin/functions.php:120
-msgid "Author"
-msgstr "Auteur"
 
 #: admin/functions.php:151
 msgid "Number of post"
