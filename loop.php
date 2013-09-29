@@ -20,24 +20,7 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 <div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class('box') ?>>
-				<div class="panel panel-default modal-backdrop fade" style="display: none;">
-					<?php if (has_post_thumbnail()): ?>
-						<a href="<?php the_permalink() ?>">
-							<div class="post-thumbnail">
-								<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-responsive')); ?>
-							</div>
-						</a>
-					<?php endif; ?>
-					<div class="panel-body">
-						<h3 class="post-title">
-							<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>">
-								<?php the_title(); ?>
-							</a>
-						</h3>
-						<?php echo shprinkone_get_post_meta(false, true, true, true, true, true) ?>
-					</div>
-				</div>
+			<div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-6 col-md-4 col-lg-4 box') ?>>
 				<div class="panel panel-default">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
@@ -48,20 +31,20 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 					<?php endif; ?>
 					<div class="panel-body">
 						<h3 class="post-title">
+							<?php $hasTitle = the_title(null, null, false) !== null ?>
 							<a href="<?php the_permalink() ?>"
-							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?>
+							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php echo $hasTitle? the_title(null, null, true) : __('Read more', 'shprinkone'); ?>
 							</a>
-							<?php if (is_sticky()): ?>
-								&nbsp;<span class="label label-info"><i class = "icon-star"></i> <?php _e('Featured', 'shprinkone') ?></span>
-							<?php endif ?>
 						</h3>
 
 						<div class="post-content">
 							<?php the_excerpt(); ?>
 						</div>
+						<div class="well well-sm">
+							<?php echo shprinkone_get_post_meta(true, true, true, true, true, true, true, true) ?>
+						</div>
 					</div>
 				</div>
-
 			</div>
 		<?php endwhile; ?>
 	<?php else: ?>
@@ -81,11 +64,10 @@ if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_w
 		var onAfterLoaded = function(el) {
 			//$container.find('[rel="category tag"]').addClass('label label-important');
 			//$container.find('[rel="tag"]').addClass('label label-info');
-
-			el.on('mouseenter', function() {
-				$(this).find('.modal-backdrop').show().addClass('in');
-			}).on('mouseleave', function() {
-				$(this).find('.modal-backdrop').removeClass('in');
+			$('#masonry div.post-meta li').popover({
+				trigger: 'hover',
+				placement: 'top',
+				container: 'body'
 			});
 		};
 

@@ -341,7 +341,7 @@ function shprinkone_setup() {
 		 * @param int $depth Depth of comment in reference to parents.
 		 * @param array $args
 		 */
-		function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
+		function start_el(&$output, $comment, $depth = 0, $args = array(), $id = 0) {
 			$depth++;
 			$GLOBALS['comment_depth'] = $depth;
 			$GLOBALS['comment'] = $comment;
@@ -453,34 +453,74 @@ function shprinkone_setup() {
 		 * @param   boolean  $date
 		 * @param   boolean  $category
 		 * @param   boolean  $tag
+		 * @param   boolean  $comments
+		 * @param   boolean  $sticky
+		 * @param   boolean  $tooltip
 		 * @return  string
 		 * @since   1.0
 		 */
-		function shprinkone_get_post_meta($inline = false, $author = true, $date = false, $category = true, $tag = true, $comments = false, $sticky = false) {
+		function shprinkone_get_post_meta($inline = false, $author = true, $date = false, $category = true, $tag = true, $comments = false, $sticky = false, $tooltip = false) {
 			$inline = ($inline) ? 'list-inline' : 'list-unstyled';
 			$html = '<div class = "post-meta">';
 			$html .= '<ul class = "' . $inline . '">';
+			if (is_sticky() && $sticky) {
+				$html .= '<li class = "post-sticky label label-info" ';
+				$html .= ($tooltip) ? 'data-content="' . __('Featured', 'shprinkone') . '"' : '';
+				$html .= '><i class = "icon-star"></i> ';
+				$html .= ($tooltip) ? '' : __('Featured', 'shprinkone');
+				$html .= '</li>';
+			}
 			if ($date) {
-				$html .= '<li class = "post-date"><i class = "icon-calendar"></i> ' . get_the_date(__('M d, Y', 'shprinkone')) . '</li>';
+				$formatedDate = get_the_date(__('M d, Y', 'shprinkone'));
+				$html .= '<li class = "post-date" ';
+				$html .= ($tooltip) ? 'title="' . __('Published on', 'shprinkone') . '" data-content="' . $formatedDate . '"' : '';
+				$html .= '><i class = "icon-calendar"></i> ';
+				$html .= ($tooltip) ? '' : $formatedDate;
+				$html .= '</li>';
 			}
 			if ($author) {
-				$html .= '<li class = "post-author"><i class = "icon-user"></i> ' . shprinkone_get_the_author_posts_link() . '</li>';
+				$authorName = get_the_author();
+				$html .= '<li class = "post-author" ';
+				$html .= ($tooltip) ? 'title="' . __('Author', 'shprinkone') . '" data-content="' . $authorName . '"' : '';
+				$html .= '><i class = "icon-user"></i> ';
+				$html .= ($tooltip) ? '' : shprinkone_get_the_author_posts_link();
+				$html .= '</li>';
 			}
 			if ($category) {
 				if (has_category()):
-					$html .= '<li class="post-category"><i class="icon-folder-open"></i> ' . sprintf(__('Category: %s', 'shprinkone'), get_the_category_list(' ', '', false)) . '</li>';
+					$categories = get_the_category();
+					$categoryList = array();
+					foreach ($categories as $category) {
+						$categoryList[] = $category->cat_name;
+					}
+					$html .= '<li class = "post-category" ';
+					$html .= ($tooltip) ? 'title="' . __('Categories', 'shprinkone') . '" data-content="' . join(", ", $categoryList) . '"' : '';
+					$html .= '><i class = "icon-folder-open"></i> ';
+					$html .= ($tooltip) ? '' : sprintf(__('Category: %s', 'shprinkone'), get_the_category_list(' ', '', false));
+					$html .= '</li>';
 				endif;
 			}
 			if ($tag) {
 				if (has_tag()):
-					$html .= '<li class="post-tags"><i class="icon-tags"></i> ' . get_the_tag_list(__('Tag:  ', 'shprinkone'), ' ') . '</li>';
+					$tags = get_the_tags();
+					$tagList = array();
+					foreach ($tags as $tag) {
+						$tagList[] = $tag->name;
+					}
+					$html .= '<li class = "post-tags" ';
+					$html .= ($tooltip) ? 'title="' . __('Tags', 'shprinkone') . '" data-content="' . join(", ", $tagList) . '"' : '';
+					$html .= '><i class = "icon-tags"></i> ';
+					$html .= ($tooltip) ? '' : get_the_tag_list(__('Tag:  ', 'shprinkone'), ' ');
+					$html .= '</li>';
 				endif;
 			}
 			if ($comments) {
-				$html .= '<li class = "post-comments"><i class = "icon-comment"></i> ' . get_comments_number() . '</li>';
-			}
-			if (is_sticky() && $sticky){
-				$html .= '<li class = "post-comments label label-info"><i class = "icon-star"></i> ' . __('Featured', 'shprinkone') . '</li>';
+				$commentNumber = get_comments_number();
+				$html .= '<li class = "post-comments" ';
+				$html .= ($tooltip) ? 'title="' . __('Comments', 'shprinkone') . '" data-content="' . $commentNumber . '"' : '';
+				$html .= '><i class = "icon-comment"></i> ';
+				$html .= $commentNumber;
+				$html .= '</li>';
 			}
 			$html .= '</ul>';
 			$html .= '</div>';
