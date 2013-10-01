@@ -109,6 +109,10 @@ ul.pager li a span{
 	padding-top: 35px;
 }
 
+#slideshow .carousel-inner{
+	min-height: 360px;
+}
+
 #slideshow a{
 	color: white;
 }
@@ -123,7 +127,6 @@ ul.pager li a span{
 
 #slideshow.carousel {
 	margin-bottom: 5px;
-	min-height: 310px;
 }
 
 #slideshow .carousel-control .icon-prev,
