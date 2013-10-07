@@ -20,6 +20,7 @@ function shprinkone_theme_options_init() {
 	);
 
 	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'general');
+	add_settings_field('posts', __('Posts', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'general');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'general');
 	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'general');
 }
@@ -74,7 +75,7 @@ function shprinkone_theme_options_render() {
  */
 function shprinkone_settings_field_layout() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_layout'])){
+	if (!isset($options['theme_layout'])) {
 		return;
 	}
 	echo '<table class="widefat">';
@@ -107,7 +108,7 @@ function shprinkone_settings_field_layout() {
  */
 function shprinkone_settings_field_template() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_template'])){
+	if (!isset($options['theme_template'])) {
 		return;
 	}
 	// Template selection
@@ -137,6 +138,30 @@ function shprinkone_settings_field_template() {
 }
 
 /**
+ * Set posts loop
+ *
+ * @return  void
+ * @since   2.0
+ */
+function shprinkone_settings_field_posts() {
+	$options = shprinkone_get_theme_options();
+	if (!isset($options['theme_posts'])) {
+		$options = shprinkone_get_theme_default();
+	}
+	$posts_option = $options['theme_posts'];
+	echo '<label for="posts_type">' . __('Blog page post type', 'shprinkone') . '</label> ';
+	echo '<select id="posts_type" name="shprinkone_theme_options[theme_posts][type]" value="' . $posts_option['type'] . '">';
+	foreach (shprinkone_get_theme_posts() as $value => $title) {
+		$selected = ($posts_option['type'] === $value) ? 'selected="selected"' : '';
+		echo '<option value="' . $value . '" ' . $selected . '>' . $title . '</option>';
+	}
+	echo '</select><br/>';
+	echo '<label for="posts_meta">' . __('Adding meta on each post', 'shprinkone') . '</label> ';
+	$checked = (isset($posts_option['meta']) && $posts_option['meta'] == 'on') ? 'checked="checked"' : '';
+	echo '<input id="posts_meta" type="checkbox" name="shprinkone_theme_options[theme_posts][meta]" ' . $checked . '>';
+}
+
+/**
  * Set field slideshow
  *
  * @return  void
@@ -144,7 +169,7 @@ function shprinkone_settings_field_template() {
  */
 function shprinkone_settings_field_slideshow() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_slideshow'])){
+	if (!isset($options['theme_slideshow'])) {
 		return;
 	}
 	$slideshow_option = $options['theme_slideshow'];
@@ -193,6 +218,10 @@ function shprinkone_get_theme_default() {
 	$default_theme_options = array(
 		'theme_layout' => 'content-sidebar',
 		'theme_template' => 'flaty',
+		'theme_posts' => array(
+			'meta' => 'on',
+			'type' => 'ajax_scroll'
+		),
 		'theme_slideshow' => array(
 			'posts' => 3
 		)
@@ -327,6 +356,21 @@ function shprinkone_get_theme_templates() {
 }
 
 /**
+ * Set posts loop options
+ *
+ * @return  mixed
+ * @since   1.0
+ */
+function shprinkone_get_theme_posts() {
+	$posts_options = array(
+		'ajax_scroll' => __('Ajax on scroll down', 'shprinkone'),
+		'ajax_button' => __('Ajax on button clicked', 'shprinkone'),
+		'default' => __('WordPress classic pagination', 'shprinkone')
+	);
+	return apply_filters('shprinkone_get_theme_posts', $posts_options);
+}
+
+/**
  * Validate theme options
  *
  * @return  mixed
@@ -341,9 +385,21 @@ function shprinkone_theme_options_validate($input) {
 
 	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates()))
 		$output['theme_template'] = $input['theme_template'];
-	
+
 	if (isset($input['theme_slideshow']))
 		$output['theme_slideshow'] = $input['theme_slideshow'];
+
+	if (isset($input['theme_posts'])) {
+		if (isset($input['theme_posts']['type']) && array_key_exists($input['theme_posts']['type'], shprinkone_get_theme_posts())) {
+			$output['theme_posts']['type'] = $input['theme_posts']['type'];
+		}
+		if (isset($input['theme_posts']['meta'])) {
+			$output['theme_posts']['meta'] = $input['theme_posts']['meta'];
+		}
+		else{
+			$output['theme_posts']['meta'] = false;
+		}
+	}
 
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);
 }
