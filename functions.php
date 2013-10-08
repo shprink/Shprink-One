@@ -44,6 +44,12 @@ function shprinkone_enqueue_script_and_style() {
 add_action('wp_enqueue_scripts', 'shprinkone_enqueue_script_and_style');
 
 /**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if (!isset($content_width))
+	$content_width = 940;
+
+/**
  * Creates a nicely formatted and more specific title element text for output
  * in head of document, based on current view.
  *
