@@ -19,7 +19,7 @@ $category_description = category_description();
 			<?php shprinkone_get_sidebar('left'); ?>
 			<div class="<?php echo shprinkone_get_contentspan(); ?>">
 				<div class="page-header">
-					<h1 class="page-title">
+					<h1 class="category-title">
 						<?php echo __('Category', 'shprinkone') . ': ' . single_cat_title('', false); ?>
 					</h1>
 				</div>

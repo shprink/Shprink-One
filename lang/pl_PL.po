@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-29 02:12+0100\n"
-"PO-Revision-Date: 2013-09-29 02:13+0100\n"
+"POT-Creation-Date: 2013-10-08 21:14+0100\n"
+"PO-Revision-Date: 2013-10-08 21:15+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -19,17 +19,25 @@ msgstr ""
 msgid "Tag"
 msgstr "Tag"
 
-#: loop.php:36 single.php:76 single.php:94 loop_home.php:48
+#: loop.php:41 single.php:76 single.php:94 loop_home.php:48
 msgid "Read more"
 msgstr "Czytaj dalej"
 
-#: loop.php:91
+#: loop.php:101 loop.php:136
 msgid "No more pages to load."
 msgstr "Załadowano wszystkie strony"
 
-#: loop.php:93
+#: loop.php:103 loop.php:138
 msgid "Loading the next set of posts..."
 msgstr "Ładowanie kolejnych wpisów..."
+
+#: loop.php:129 loop.php:198
+msgid "Older posts"
+msgstr "Starsze wpisy"
+
+#: loop.php:204
+msgid "Newer posts"
+msgstr "Nowsze posty"
 
 #: single.php:50
 #, php-format
@@ -237,12 +245,11 @@ msgstr "Polecane"
 msgid "Published on"
 msgstr "Opublikowany"
 
-#: functions.php:484 admin/functions.php:120
+#: functions.php:484 admin/functions.php:121
 msgid "Author"
 msgstr "Autor"
 
 #: functions.php:497
-#, fuzzy
 msgid "Categories"
 msgstr "Kategoria"
 
@@ -260,7 +267,6 @@ msgid "Tag:  "
 msgstr "Tag:  "
 
 #: functions.php:520
-#, fuzzy
 msgid "Comments"
 msgstr "Komentarz"
 
@@ -268,7 +274,7 @@ msgstr "Komentarz"
 msgid "Sorry, no posts matched your criteria."
 msgstr "Przepraszamy, żaden wpis nie spełnia twoich kryteriów."
 
-#: functions.php:649 admin/functions.php:118
+#: functions.php:649 admin/functions.php:119
 msgid "Name"
 msgstr "Imie:"
 
@@ -357,7 +363,7 @@ msgstr "Google+:"
 msgid "%s on Google+"
 msgstr "%s na Google+"
 
-#: header.php:115
+#: header.php:113
 msgid "Subscribe to the RSS feed"
 msgstr "Subskrybcja RSS"
 
@@ -366,59 +372,71 @@ msgid "Slideshow"
 msgstr "Pokaz slajdów"
 
 #: admin/functions.php:23
+msgid "Post layout on blog, category, tag and author page."
+msgstr "Napisz układ na bloga, kategoria, słowa i strony autora."
+
+#: admin/functions.php:24
 msgid "Layout"
 msgstr "Layout"
 
-#: admin/functions.php:24
+#: admin/functions.php:25
 msgid "Theme"
 msgstr "Theme"
 
-#: admin/functions.php:37 admin/functions.php:38
+#: admin/functions.php:38 admin/functions.php:39
 msgid "Theme Options"
 msgstr "Opcje motywu"
 
-#: admin/functions.php:60
+#: admin/functions.php:61
 #, php-format
 msgid "%s Theme Options"
 msgstr "%s opcje motywu"
 
-#: admin/functions.php:83
+#: admin/functions.php:84
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: admin/functions.php:84
+#: admin/functions.php:85
 msgid "Position"
 msgstr "Pozycja"
 
-#: admin/functions.php:117
+#: admin/functions.php:118
 msgid "Colors"
 msgstr "Kolory"
 
-#: admin/functions.php:119
+#: admin/functions.php:120
 msgid "Description"
 msgstr "Opis"
 
-#: admin/functions.php:151
+#: admin/functions.php:152
+msgid "Posts loading type"
+msgstr "Wiadomości typu ładowania"
+
+#: admin/functions.php:159
+msgid "Adding meta on each post"
+msgstr "Dodawanie meta na każdego posta"
+
+#: admin/functions.php:176
 msgid "Number of post"
 msgstr "Liczba postów"
 
-#: admin/functions.php:158
+#: admin/functions.php:183
 msgid "Duplicate slideshow posts within the content"
 msgstr "Duplikuj posty z treścią"
 
-#: admin/functions.php:214
+#: admin/functions.php:243
 msgid "Content on left"
 msgstr "Zawartość po lewej"
 
-#: admin/functions.php:219
+#: admin/functions.php:248
 msgid "Content on right"
 msgstr "Zawartość po prawej"
 
-#: admin/functions.php:224
+#: admin/functions.php:253
 msgid "One-column, no sidebar"
 msgstr "Jedna kolumna bez sidebar`u"
 
-#: admin/functions.php:244
+#: admin/functions.php:273
 msgid ""
 "Sleek, intuitive, and powerful front-end framework for faster and easier web "
 "development."
@@ -426,45 +444,63 @@ msgstr ""
 "Sleek, intuitive, and powerful front-end framework for faster and easier web "
 "development."
 
-#: admin/functions.php:252
+#: admin/functions.php:281
 msgid "Flat and clean."
 msgstr "Prosty i czytelny"
 
-#: admin/functions.php:260
+#: admin/functions.php:289
 msgid "A calm, blue sky."
 msgstr "czyste niebo"
 
-#: admin/functions.php:268
+#: admin/functions.php:297
 msgid "An ode to Metro."
 msgstr "Metro"
 
-#: admin/functions.php:276
+#: admin/functions.php:305
 msgid "Sweet and cheery."
 msgstr "Słodki i wiśniowy"
 
-#: admin/functions.php:284
+#: admin/functions.php:313
 msgid "Optimized for legibility."
 msgstr "Zoptymalizowany"
 
-#: admin/functions.php:292
+#: admin/functions.php:321
 msgid "Ubuntu orange and unique font."
 msgstr "Ubuntu z oryginalną czcionką"
 
-#: admin/functions.php:300
+#: admin/functions.php:329
 msgid "Silvery and sleek."
 msgstr "Srebrny"
 
-#: admin/functions.php:308
+#: admin/functions.php:337
 msgid "Mini and minimalist."
 msgstr "Minimalistyczny"
 
-#: admin/functions.php:316
+#: admin/functions.php:345
 msgid "Crisp like a new sheet of paper."
 msgstr "Kartka papieru"
 
-#: admin/functions.php:324
+#: admin/functions.php:353
 msgid "An empty CSS file that you can modify as you like."
 msgstr "CSS abyś modyfikował jak lubisz"
+
+#: admin/functions.php:366
+msgid "Ajax on scroll down"
+msgstr "Ajax na przewijać"
+
+#: admin/functions.php:367
+msgid "Ajax on button clicked"
+msgstr "Ajax kliknięciu na przycisk"
+
+#: admin/functions.php:368
+msgid "WordPress classic pagination"
+msgstr "WordPress klasyczny podział na strony"
+
+#~ msgid "Posts"
+#~ msgstr "Postów"
+
+#~ msgid "Blog page post type"
+#~ msgstr "Blog typ wiadomość strona"
 
 #~ msgid "Leave a comment"
 #~ msgstr "Skomentuj"

@@ -17,7 +17,7 @@
 		<?php shprinkone_get_sidebar('left'); ?>
 		<div id="content" class="<?php echo shprinkone_get_contentspan(); ?>">
 			<div class="page-header">
-				<h1 class="page-title">
+				<h1 class="tag-title">
 					<?php echo __('Tag', 'shprinkone') . ': ' . single_tag_title('', false); ?>
 				</h1>
 			</div>
