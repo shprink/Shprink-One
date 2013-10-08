@@ -59,13 +59,13 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 	<?php endif; ?>
 </div>
 <script type="text/javascript">
-	$(function() {
+	jQuery(document).ready(function($) {
 		/* Masonry */
 		var $container = $('#masonry');
 
 		// Callback on After new masonry boxes load
 		window.onAfterLoaded = function(el) {
-			$('#masonry div.post-meta li').popover({
+			el.find('div.post-meta li').popover({
 				trigger: 'hover',
 				placement: 'top',
 				container: 'body'
@@ -90,8 +90,7 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 		<?php if ($wp_query->max_num_pages > 1) next_posts_link(); ?>
 	</div>
 	<script type="text/javascript">
-		$(function() {
-			
+		jQuery(document).ready(function($) {
 			var $container = $('#masonry');
 			$container.infinitescroll({
 				navSelector: '#page-nav', // selector for the paged navigation
@@ -116,28 +115,8 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 					$container.masonry('appended', $newElems, true);
 				});
 				onAfterLoaded($newElems);
-
-				// If the disqus plugin is enabled
-				if (typeof DISQUSWIDGETS != 'undefined')
-				{
-					// Set the disqus hash
-					var nodes = document.getElementsByTagName('span');
-					for (var i = 0, url; i < nodes.length; i++) {
-						if (nodes[i].className.indexOf('dsq-postid') != -1) {
-							nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
-							url = nodes[i].parentNode.href.split('#', 1);
-							if (url.length == 1)
-								url = url[0];
-							else
-								url = url[1]
-							nodes[i].parentNode.href = url + '#disqus_thread';
-						}
-					}
-					DISQUSWIDGETS.getCount();
-				}
 			}
 			);
-
 		});
 	</script>
 <?php elseif (isset($options['theme_posts']['type']) && $options['theme_posts']['type'] === 'ajax_button'): ?>
@@ -145,12 +124,12 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 	<div id="page-nav">
 		<?php
 		if (get_next_posts_link()) {
-			echo '<a class="btn btn-primary btn-large btn-block" href="javascript:void(0)" data-href="' . next_posts($wp_query->max_num_pages, false) . '">' . __('Next page', 'shprinkone') . '</a>';
+			echo '<a class="btn btn-primary btn-large btn-block" href="javascript:void(0)" data-href="' . next_posts($wp_query->max_num_pages, false) . '">' . __('Older posts', 'shprinkone') . '</a>';
 		}
 		?>
 	</div>
 	<script type="text/javascript">
-		$(function() {
+		jQuery(document).ready(function($) {
 			var loading = {
 				finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
 				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif',

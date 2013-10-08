@@ -6,63 +6,30 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-$templateList = shprinkone_get_theme_templates();
-if (isset($_GET["shprinkone-theme"]) && in_array(strtolower($_GET["shprinkone-theme"]), array_keys($templateList))) {
-	$selectedTemplate = $templateList[strtolower($_GET["shprinkone-theme"])];
-	setcookie('shprinkone-theme', strtolower($_GET["shprinkone-theme"]), time() + 86400); // 24 hours
-} else {
-	if (isset($_COOKIE['shprinkone-theme'])) {
-		$selectedTemplate = $templateList[$_COOKIE['shprinkone-theme']];
-	} else {
-		$selectedTemplate = shprinkone_get_selected_template();
-	}
-}
+$selectedTemplate = shprinkone_get_selected_template();
+global $page, $paged;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?php
-/*
- * Print the <title> tag based on what is being viewed.
- */
-global $page, $paged;
+		<title><?php wp_title('|', true, 'right'); ?></title>
 
-wp_title('|', true, 'right');
+		<?php
+		/* We add some JavaScript to pages with the comment form
+		 * to support sites with threaded comments (when in use).
+		 */
+		if (is_singular() && get_option('thread_comments'))
+			wp_enqueue_script('comment-reply');
 
-// Add the blog name.
-bloginfo('name');
-?>
-		</title>
-		<link rel="stylesheet" type="text/css"
-			  href="<?php echo get_stylesheet_directory_uri() . $selectedTemplate['path']; ?>">
-		<link rel="stylesheet" type="text/css" media="all"
-			  href="<?php bloginfo('stylesheet_url'); ?>" />
-
-<?php
-/* We add some JavaScript to pages with the comment form
- * to support sites with threaded comments (when in use).
- */
-if (is_singular() && get_option('thread_comments'))
-	wp_enqueue_script('comment-reply');
-
-/* Always have wp_head() just before the closing </head>
- * tag of your theme, or you will break many plugins, which
- * generally use this hook to add elements to <head> such
- * as styles, scripts, and meta tags.
- */
-wp_head();
-?>
-		<script type="text/javascript">
-			var $ = jQuery;
-		</script>
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.infinitescroll.min.js"></script>
-		<script type="text/javascript"
-		src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.sidr.min.js"></script>
+		/* Always have wp_head() just before the closing </head>
+		 * tag of your theme, or you will break many plugins, which
+		 * generally use this hook to add elements to <head> such
+		 * as styles, scripts, and meta tags.
+		 */
+		wp_head();
+		?>
 	</head>
 	<body <?php body_class('theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">
@@ -81,32 +48,19 @@ wp_head();
 						</a>
 					</div>
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
-<?php
-// Primary menu
-$args = array(
-	'depth' => 3,
-	'container' => false,
-	'menu_class' => 'nav navbar-nav',
-	'walker' => new Bootstrap_Walker_Nav_Menu(),
-	'fallback_cb' => null
-);
-wp_nav_menu($args);
-?>
+						<?php
+						// Primary menu
+						wp_nav_menu(array(
+							'theme_location' => 'primary',
+							'depth' => 3,
+							'container' => false,
+							'menu_class' => 'nav navbar-nav',
+							'walker' => new Bootstrap_Walker_Nav_Menu(),
+							'fallback_cb' => null
+						));
+						?>
 
 						<ul class="nav navbar-nav navbar-right">
-<?php if (has_nav_menu('header-menu-right')): ?>
-								<li><?php
-								$args = array(
-									'theme_location' => 'header-menu-right',
-									'depth' => 3,
-									'container' => false,
-									'menu_class' => 'nav',
-									'walker' => new Bootstrap_Walker_Nav_Menu()
-								);
-								wp_nav_menu($args);
-								?>
-								</li>
-								<?php endif; ?>
 							<li><?php get_search_form(); ?></li>
 							<li>
 								<a href="<?php echo esc_url(home_url('?feed=rss2')); ?>"

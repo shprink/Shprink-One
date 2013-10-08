@@ -12,10 +12,8 @@ $page_on_front = !(!get_option('page_on_front'));
 ?>
 <?php if (!$page_on_front): ?>
 	<?php get_header(); ?>
-	<?php if (isset($options['theme_slideshow']['posts']) && $options['theme_slideshow']['posts'] > 0 && have_posts()) : ?>
-		<div class="container-slideshow">
-			<?php get_template_part('loop_home'); ?>
-		</div>
+	<?php if (isset($options['theme_slideshow']['posts']) && $options['theme_slideshow']['posts'] > 0 && have_posts()) : ?>	
+		<?php get_template_part('loop_home'); ?>
 	<?php endif; ?>
 	<div class="container">
 		<?php if (is_active_sidebar('before-content-widget')) : ?>

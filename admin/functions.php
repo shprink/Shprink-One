@@ -20,7 +20,7 @@ function shprinkone_theme_options_init() {
 	);
 
 	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'general');
-	add_settings_field('posts', __('Posts', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'general');
+	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'general');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'general');
 	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'general');
 }
@@ -149,7 +149,7 @@ function shprinkone_settings_field_posts() {
 		$options = shprinkone_get_theme_default();
 	}
 	$posts_option = $options['theme_posts'];
-	echo '<label for="posts_type">' . __('Blog page post type', 'shprinkone') . '</label> ';
+	echo '<label for="posts_type">' . __('Posts loading type', 'shprinkone') . '</label> ';
 	echo '<select id="posts_type" name="shprinkone_theme_options[theme_posts][type]" value="' . $posts_option['type'] . '">';
 	foreach (shprinkone_get_theme_posts() as $value => $title) {
 		$selected = ($posts_option['type'] === $value) ? 'selected="selected"' : '';

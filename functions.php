@@ -10,17 +10,72 @@
 require( get_template_directory() . '/admin/functions.php' );
 
 function shprinkone_enqueue_script_and_style() {
+	$directory_uri = get_template_directory_uri();
+	$js_path = $directory_uri . '/js/';
+	$selectedTemplate = shprinkone_get_selected_template();
+
+	wp_register_script('bootstrap', $js_path . 'bootstrap.min.js');
+	wp_register_script('infinitescroll', $js_path . 'jquery.infinitescroll.min.js');
+	wp_register_script('sidr', $js_path . 'jquery.sidr.min.js');
+
+	// Customize theme via URL
+	$templateList = shprinkone_get_theme_templates();
+	if (isset($_GET["shprinkone-theme"]) && in_array(strtolower($_GET["shprinkone-theme"]), array_keys($templateList))) {
+		$selectedTemplate = $templateList[strtolower($_GET["shprinkone-theme"])];
+		setcookie('shprinkone-theme', strtolower($_GET["shprinkone-theme"]), time() + 86400); // 24 hours
+	} else {
+		if (isset($_COOKIE['shprinkone-theme'])) {
+			$selectedTemplate = $templateList[$_COOKIE['shprinkone-theme']];
+		} else {
+			$selectedTemplate = shprinkone_get_selected_template();
+		}
+	}
+
+	wp_enqueue_style('shprinkone-theme', $directory_uri . $selectedTemplate['path'], array(), '2013-10-08');
+	wp_enqueue_style('shprinkone-style', get_stylesheet_uri(), array(), '2013-10-08');
+
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('bootstrap');
+	wp_enqueue_script('infinitescroll');
+	wp_enqueue_script('sidr');
 	wp_enqueue_script('jquery-masonry');
 }
 
-add_action('init', 'shprinkone_enqueue_script_and_style');
+add_action('wp_enqueue_scripts', 'shprinkone_enqueue_script_and_style');
 
 /**
- * Set the content width based on the theme's design and stylesheet.
+ * Creates a nicely formatted and more specific title element text for output
+ * in head of document, based on current view.
+ *
+ * @since   Shprinkone 2.0.0
+ *
+ * @param   string  $title Default title text for current view.
+ * @param   string  $sep Optional separator.
+ *
+ * @return  string  The filtered title.
  */
-if (!isset($content_width))
-	$content_width = 940;
+function twentythirteen_wp_title($title, $sep) {
+	global $paged, $page;
+
+	if (is_feed())
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo('name');
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo('description', 'display');
+	if ($site_description && ( is_home() || is_front_page() ))
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ($paged >= 2 || $page >= 2)
+		$title = "$title $sep " . sprintf(__('Page %s', 'shprinkone'), max($paged, $page));
+
+	return $title;
+}
+
+add_filter('wp_title', 'twentythirteen_wp_title', 10, 2);
 
 /**
  * Add the selected CSS to the TinyMCE visual editor
@@ -177,7 +232,7 @@ add_action('widgets_init', 'shprinkone_widgets_init');
 function shprinkone_menus_init() {
 	register_nav_menus(
 			array(
-				'header-menu-right' => __('Header Menu Right', 'shprinkone'),
+				'primary' => __('Menu Top', 'shprinkone'),
 				'sidebar-menu-top' => __('Sidebar Menu Top', 'shprinkone'),
 				'sidebar-menu-middle' => __('Sidebar Menu Middle', 'shprinkone'),
 				'sidebar-menu-bottom' => __('Sidebar Menu Bottom', 'shprinkone')

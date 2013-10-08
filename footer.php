@@ -65,7 +65,7 @@ $condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('foote
 </section>
 <?php wp_footer(); ?>
 <script type="text/javascript">
-	$(function() {
+	jQuery(document).ready(function($) {
 		// Add Bootstrap class to lists within the sidebar
 		$('#sidebar .widget ul').addClass('nav nav-pills nav-stacked');
 		$('footer .widget ul').addClass('nav nav-pills nav-stacked');
@@ -73,9 +73,9 @@ $condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('foote
 		$('[data-toggle=tooltip]').tooltip()
 		$('#header ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
 			// Avoid following the href location when clicking
-			event.preventDefault(); 
+			event.preventDefault();
 			// Avoid having the menu to close when clicking
-			event.stopPropagation(); 
+			event.stopPropagation();
 			// If a menu is already open we close it
 			$('#header ul.dropdown-menu [data-toggle=dropdown]').parent().removeClass('open');
 			// opening the one you clicked on
