@@ -208,6 +208,8 @@ ul.pager li a span{
 
 .masonry .box {
 	margin-bottom: 20px;
+	/* Fix Firefox */
+	margin-left: -1px;
 }
 
 .masonry .box .panel-body .well{
@@ -222,36 +224,6 @@ ul.pager li a span{
 .masonry .box .panel-body .well ul{
 	margin-bottom: 0px;
 	font-size: 15px;
-}
-
-.masonry .box .modal-backdrop {
-	position: absolute;
-	z-index: 10;
-	color: #FFFFFF;
-	overflow: hidden;
-	top: 0;
-	right: 15px;
-	bottom: 0;
-	left: 15px;
-	background-color: #000000;
-}
-
-.masonry .box .modal-backdrop a{
-	color: #FFFFFF;
-}
-
-.masonry .box .modal-backdrop ul{
-	color: #b5b5b5;
-}
-
-.masonry .box .modal-backdrop.fade {
-	opacity: 0;
-}
-
-.masonry .box .modal-backdrop,
-.masonry .box .modal-backdrop.fade.in {
-	opacity: 0.9;
-	filter: alpha(opacity=90);
 }
 
 .masonry .box.hover .post-thumbnail,.masonry .box.hover .post-content {
