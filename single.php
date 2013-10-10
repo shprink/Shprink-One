@@ -107,7 +107,7 @@
 	<?php endif; ?>
 </div>
 <script>
-	$(document).ready(function() {
+	jQuery(document).ready(function($) {
 		$('#previous-post').sidr({
 			name: 'sidr-previous-post',
 			source: function(name) {
@@ -121,15 +121,15 @@
 			},
 			side: 'right'
 		});
+
+		window.closePreviousSidr = function() {
+			$.sidr('close', 'sidr-previous-post')
+		}
+
+		window.closeNextSidr = function() {
+			$.sidr('close', 'sidr-next-post')
+		}
 	});
-
-	function closePreviousSidr() {
-		$.sidr('close', 'sidr-previous-post')
-	}
-
-	function closeNextSidr() {
-		$.sidr('close', 'sidr-next-post')
-	}
 </script>
 <!-- container end -->
 <?php get_footer(); ?>
