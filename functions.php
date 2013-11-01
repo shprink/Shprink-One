@@ -604,6 +604,21 @@ function shprinkone_setup() {
 		}
 
 		/**
+		 * 
+		 * @return  boolean
+		 * @since   2.0.1
+		 */		function shprinkone_has_sidebar(){
+			$options = shprinkone_get_theme_options();
+			$layout = $options['theme_layout'];
+			if ($layout == 'sidebar-content' || $layout == 'content-sidebar') {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+
+		/**
 		 * Display sidebar
 		 *
 		 * @return  void
@@ -649,6 +664,20 @@ function shprinkone_setup() {
 			}
 			$options = shprinkone_get_theme_options();
 			return ($options['theme_layout'] == 'content') ? 'col-sm-12 col-md-12 col-lg-12' : 'col-sm-9 col-md-9 col-lg-9';
+		}
+
+		/**
+		 * Get the right masonry brick width
+		 *
+		 * @return string
+		 * @since   2.0.1
+		 */
+		function shprinkone_get_masonry_brick_width() {
+			if (shprinkone_has_sidebar()) {
+				return 'col-sm-6 col-md-6 col-lg-4';
+			} else {
+				return 'col-sm-6 col-md-4 col-lg-3';
+			}
 		}
 
 		/**

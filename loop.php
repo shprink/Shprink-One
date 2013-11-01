@@ -21,11 +21,12 @@ $displayMeta = false;
 if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 	$displayMeta = true;
 }
+$masonry_brick_width = shprinkone_get_masonry_brick_width()
 ?>
 <div id="masonry" class="masonry clearfix row">
 	<!-- Start the Loop. -->
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-6 col-md-6 col-lg-4 box') ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class($masonry_brick_width . ' box') ?>>
 				<div class="panel panel-default">
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
