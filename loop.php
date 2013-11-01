@@ -77,7 +77,13 @@ $masonry_brick_width = shprinkone_get_masonry_brick_width()
 
 		$container.imagesLoaded(function() {
 			$container.masonry({
-				itemSelector: '.box'
+				itemSelector: '.box',
+				isAnimated: true,
+				animationOptions: {
+				  duration: 400,
+				  easing: 'linear',
+				  queue: false
+				}
 			});
 
 			$(window).resize(function() {
