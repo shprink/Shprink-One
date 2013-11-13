@@ -7,6 +7,7 @@
  * @since       1.0
  */
 $selectedTemplate = shprinkone_get_selected_template();
+$headerOptions = shprinkone_get_header_options();
 global $page, $paged;
 ?>
 <!DOCTYPE html>
@@ -46,8 +47,11 @@ global $page, $paged;
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><i
-								class="icon-home icon-white"> </i> <?php echo bloginfo('name'); ?>
+						<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+							<?php if (isset($headerOptions['icon-home']) && $headerOptions['icon-home'] == true) : ?>
+							<i class="icon-home icon-white"> </i>
+							<?php endif; ?>
+							<?php echo bloginfo('name'); ?>
 						</a>
 					</div>
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -64,13 +68,17 @@ global $page, $paged;
 						?>
 
 						<ul class="nav navbar-nav navbar-right">
+							<?php if (isset($headerOptions['search']) && $headerOptions['search'] == true) : ?>
 							<li><?php get_search_form(); ?></li>
+							<?php endif; ?>
+							<?php if (isset($headerOptions['rss']) && $headerOptions['rss'] == true) : ?>
 							<li>
 								<a href="<?php echo esc_url(home_url('?feed=rss2')); ?>"
 								   title="<?php _e('Subscribe to the RSS feed', 'shprinkone') ?>">
 									<i class="icon-rss"> </i>
 								</a>
 							</li>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>
