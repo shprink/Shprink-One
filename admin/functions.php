@@ -19,6 +19,7 @@ function shprinkone_theme_options_init() {
 			'general', '', '__return_false', 'theme_options'
 	);
 
+	add_settings_field('header', __('Header', 'shprinkone'), 'shprinkone_settings_field_header', 'theme_options', 'general');
 	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'general');
 	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'general');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'general');
@@ -98,6 +99,30 @@ function shprinkone_settings_field_layout() {
 	}
 	echo '<tbody>';
 	echo '</table>';
+}
+
+/**
+ * Set field layout
+ *
+ * @return  void
+ * @since   1.0
+ */
+function shprinkone_settings_field_header() {
+	$options = shprinkone_get_theme_options();
+	if (!isset($options['theme_header'])) {
+		$options = shprinkone_get_theme_default();
+	}
+	$posts_option = $options['theme_header'];
+
+	$checked = (isset($posts_option['rss']) && $posts_option['rss'] == true) ? 'checked="checked"' : '';
+	echo '<input id="theme_header_rss" type="checkbox" name="shprinkone_theme_options[theme_header][rss]" ' . $checked . '>';
+	echo '<label for="theme_header_rss"> ' . __('Display RSS', 'shprinkone') . '</label> ';
+	$checked = (isset($posts_option['search']) && $posts_option['search'] == true) ? 'checked="checked"' : '';
+	echo '<br/><input id="theme_header_search" type="checkbox" name="shprinkone_theme_options[theme_header][search]" ' . $checked . '>';
+	echo '<label for="theme_header_search"> ' . __('Display search box', 'shprinkone') . '</label> ';
+	$checked = (isset($posts_option['icon-home']) && $posts_option['icon-home'] == true) ? 'checked="checked"' : '';
+	echo '<br/><input id="theme_header_icon-home" type="checkbox" name="shprinkone_theme_options[theme_header][icon-home]" ' . $checked . '>';
+	echo '<label for="theme_header_icon-home"> ' . __('Display home icon', 'shprinkone') . '</label> ';
 }
 
 /**
@@ -205,7 +230,12 @@ function shprinkone_format_template_colors($colors) {
  * @since   1.0
  */
 function shprinkone_get_theme_options() {
-	return get_option('shprinkone_theme_options', shprinkone_get_theme_default());
+	if (get_option( 'shprinkone_theme_options')){
+		return array_merge(shprinkone_get_theme_default(), get_option( 'shprinkone_theme_options'));
+	}
+	else{
+		return shprinkone_get_theme_default();
+	}
 }
 
 /**
@@ -224,6 +254,11 @@ function shprinkone_get_theme_default() {
 		),
 		'theme_slideshow' => array(
 			'posts' => 3
+		),
+		'theme_header' => array (
+			'rss' => true,
+			'search' => true,
+			'icon-home' => true
 		)
 	);
 
@@ -388,6 +423,7 @@ function shprinkone_theme_options_validate($input) {
 
 	if (isset($input['theme_slideshow']))
 		$output['theme_slideshow'] = $input['theme_slideshow'];
+	
 
 	if (isset($input['theme_posts'])) {
 		if (isset($input['theme_posts']['type']) && array_key_exists($input['theme_posts']['type'], shprinkone_get_theme_posts())) {
@@ -399,6 +435,25 @@ function shprinkone_theme_options_validate($input) {
 		else{
 			$output['theme_posts']['meta'] = false;
 		}
+	}
+
+	if (isset($input['theme_header']['rss'])) {
+		$output['theme_header']['rss'] = true;
+	}
+	else{
+		$output['theme_header']['rss'] = false;
+	}
+	if (isset($input['theme_header']['search'])) {
+		$output['theme_header']['search'] = true;
+	}
+	else{
+		$output['theme_header']['search'] = false;
+	}
+	if (isset($input['theme_header']['icon-home'])) {
+		$output['theme_header']['icon-home'] = true;
+	}
+	else{
+		$output['theme_header']['icon-home'] = false;
 	}
 
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);

@@ -109,6 +109,17 @@ function shprinkone_get_selected_template() {
 }
 
 /**
+ * Get the selected header options
+ *
+ * @return  array  header options
+ * @since   2.0.1
+ */
+function shprinkone_get_header_options() {
+	$options = shprinkone_get_theme_options();
+	return $options['theme_header'];
+}
+
+/**
  * Register widget location within the template
  *
  * @return  void
