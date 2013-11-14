@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-08 21:14+0100\n"
-"PO-Revision-Date: 2013-10-08 21:15+0100\n"
+"POT-Creation-Date: 2013-11-14 01:18+0100\n"
+"PO-Revision-Date: 2013-11-14 01:18+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -23,19 +23,19 @@ msgstr "Tag"
 msgid "Read more"
 msgstr "Czytaj dalej"
 
-#: loop.php:101 loop.php:136
+#: loop.php:100 loop.php:134
 msgid "No more pages to load."
 msgstr "Załadowano wszystkie strony"
 
-#: loop.php:103 loop.php:138
+#: loop.php:102 loop.php:136
 msgid "Loading the next set of posts..."
 msgstr "Ładowanie kolejnych wpisów..."
 
-#: loop.php:129 loop.php:198
+#: loop.php:127 loop.php:196
 msgid "Older posts"
 msgstr "Starsze wpisy"
 
-#: loop.php:204
+#: loop.php:202
 msgid "Newer posts"
 msgstr "Nowsze posty"
 
@@ -139,168 +139,174 @@ msgstr "Wszelkie prawa zastrzeżone."
 msgid "Search Results for: %s"
 msgstr "Wyniki wyszukiwania dla: %s"
 
-#: functions.php:59 functions.php:63
+#: functions.php:79
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:131 functions.php:135
 msgid "Sidebar Widget Top"
 msgstr "Sidebar Górny Widget"
 
-#: functions.php:70 functions.php:74
+#: functions.php:142 functions.php:146
 msgid "Sidebar Widget Middle"
 msgstr "Sidebar Środkowy Widget"
 
-#: functions.php:81 functions.php:85
+#: functions.php:153 functions.php:157
 msgid "Sidebar Widget Bottom"
 msgstr "Sidebar Dolny Widget"
 
-#: functions.php:92 functions.php:96
+#: functions.php:164 functions.php:168
 msgid "Footer Widget Left"
 msgstr "Stopka lewy widget"
 
-#: functions.php:103 functions.php:107
+#: functions.php:175 functions.php:179
 msgid "Footer Widget Middle Left"
 msgstr "Stopka środkowy lewy widget"
 
-#: functions.php:114 functions.php:118
+#: functions.php:186 functions.php:190
 msgid "Footer Widget Middle Right"
 msgstr "Stopka środkowy prawy widget"
 
-#: functions.php:125 functions.php:129
+#: functions.php:197 functions.php:201
 msgid "Footer Widget Right"
 msgstr "Stopka prawy widget"
 
-#: functions.php:136 functions.php:140
+#: functions.php:208 functions.php:212
 msgid "Footer Widget Bottom"
 msgstr "Stopka dolny widget"
 
-#: functions.php:147 functions.php:151
+#: functions.php:219 functions.php:223
 msgid "Before Content"
 msgstr "Przed tekstem"
 
-#: functions.php:158 functions.php:162
+#: functions.php:230 functions.php:234
 msgid "After Content"
 msgstr "Po tekście"
 
-#: functions.php:180
-msgid "Header Menu Right"
-msgstr "Nagłówek prawe menu"
+#: functions.php:252
+#, fuzzy
+msgid "Menu Top"
+msgstr "Sidebar górne menu"
 
-#: functions.php:181
+#: functions.php:253
 msgid "Sidebar Menu Top"
 msgstr "Sidebar górne menu"
 
-#: functions.php:182
+#: functions.php:254
 msgid "Sidebar Menu Middle"
 msgstr "Sidebar środkowe menu"
 
-#: functions.php:183
+#: functions.php:255
 msgid "Sidebar Menu Bottom"
 msgstr "Sidebar dolne menu"
 
-#: functions.php:357
+#: functions.php:429
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"napisał\">napisał:</span>"
 
-#: functions.php:360
+#: functions.php:432
 msgid "Your comment is awaiting moderation."
 msgstr "Twój komentarz oczekuje na modernizacje."
 
-#: functions.php:369
+#: functions.php:441
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s w %2$s"
 
-#: functions.php:372
+#: functions.php:444
 msgid "(Edit)"
 msgstr "(Edytuj)"
 
-#: functions.php:416 functions.php:474
+#: functions.php:488 functions.php:546
 msgid "M d, Y"
 msgstr "M d, Y"
 
-#: functions.php:428 author.php:27
+#: functions.php:500 author.php:27
 #, php-format
 msgid "Posts by %s"
 msgstr "Autor: %s"
 
-#: functions.php:430
+#: functions.php:502
 #, php-format
 msgid "By: %s"
 msgstr "Przez: %s"
 
-#: functions.php:442
+#: functions.php:514
 #, php-format
 msgid "%d Comments"
 msgstr "%d Komentarze"
 
-#: functions.php:444
+#: functions.php:516
 #, php-format
 msgid "%d Comment"
 msgstr "%d Komentarz"
 
-#: functions.php:468 functions.php:470
+#: functions.php:540 functions.php:542
 msgid "Featured"
 msgstr "Polecane"
 
-#: functions.php:476
+#: functions.php:548
 msgid "Published on"
 msgstr "Opublikowany"
 
-#: functions.php:484 admin/functions.php:121
+#: functions.php:556 admin/functions.php:146
 msgid "Author"
 msgstr "Autor"
 
-#: functions.php:497
+#: functions.php:569
 msgid "Categories"
 msgstr "Kategoria"
 
-#: functions.php:499
+#: functions.php:571
 #, php-format
 msgid "Category: %s"
 msgstr "Kategorie: %s"
 
-#: functions.php:511
+#: functions.php:583
 msgid "Tags"
 msgstr "Tagi"
 
-#: functions.php:513
+#: functions.php:585
 msgid "Tag:  "
 msgstr "Tag:  "
 
-#: functions.php:520
+#: functions.php:592
 msgid "Comments"
 msgstr "Komentarz"
 
-#: functions.php:616
+#: functions.php:688
 msgid "Sorry, no posts matched your criteria."
 msgstr "Przepraszamy, żaden wpis nie spełnia twoich kryteriów."
 
-#: functions.php:649 admin/functions.php:119
+#: functions.php:721 admin/functions.php:144
 msgid "Name"
 msgstr "Imie:"
 
-#: functions.php:650
+#: functions.php:722
 msgid "Email"
 msgstr "Email:"
 
-#: functions.php:651
+#: functions.php:723
 msgid "Website"
 msgstr "Strona WWW:"
 
-#: functions.php:654
+#: functions.php:726
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "Wymagane pola zaznaczono %s"
 
-#: functions.php:657
+#: functions.php:729
 msgid "Comment"
 msgstr "Komentarz"
 
-#: functions.php:658
+#: functions.php:730
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Musisz być <a href=\"%s\">zalogowany</a>, aby dodać komentarz."
 
-#: functions.php:659
+#: functions.php:731
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -309,32 +315,32 @@ msgstr ""
 "Komentujesz jako <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Wyloguj "
 "się\">Wylogować się?</a>"
 
-#: functions.php:660
+#: functions.php:732
 msgid "Your email address will not be published."
 msgstr "Adres email nie będzie widoczny."
 
-#: functions.php:664
+#: functions.php:736
 msgid "Leave a Reply"
 msgstr "Odpowiedz"
 
-#: functions.php:665
+#: functions.php:737
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Odpowiedz na %s"
 
-#: functions.php:666
+#: functions.php:738
 msgid "Cancel reply"
 msgstr "Anuluj"
 
-#: functions.php:667
+#: functions.php:739
 msgid "Post Comment"
 msgstr "Skomentuj"
 
-#: functions.php:731
+#: functions.php:803
 msgid "Next page"
 msgstr "Następna strona"
 
-#: functions.php:732
+#: functions.php:804
 msgid "Previous page"
 msgstr "Wcześniejsza strona"
 
@@ -363,80 +369,96 @@ msgstr "Google+:"
 msgid "%s on Google+"
 msgstr "%s na Google+"
 
-#: header.php:113
+#: header.php:77
 msgid "Subscribe to the RSS feed"
 msgstr "Subskrybcja RSS"
 
 #: admin/functions.php:22
+msgid "Header"
+msgstr ""
+
+#: admin/functions.php:23
 msgid "Slideshow"
 msgstr "Pokaz slajdów"
 
-#: admin/functions.php:23
+#: admin/functions.php:24
 msgid "Post layout on blog, category, tag and author page."
 msgstr "Napisz układ na bloga, kategoria, słowa i strony autora."
 
-#: admin/functions.php:24
+#: admin/functions.php:25
 msgid "Layout"
 msgstr "Layout"
 
-#: admin/functions.php:25
+#: admin/functions.php:26
 msgid "Theme"
 msgstr "Theme"
 
-#: admin/functions.php:38 admin/functions.php:39
+#: admin/functions.php:39 admin/functions.php:40
 msgid "Theme Options"
 msgstr "Opcje motywu"
 
-#: admin/functions.php:61
+#: admin/functions.php:62
 #, php-format
 msgid "%s Theme Options"
 msgstr "%s opcje motywu"
 
-#: admin/functions.php:84
+#: admin/functions.php:85
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: admin/functions.php:85
+#: admin/functions.php:86
 msgid "Position"
 msgstr "Pozycja"
 
-#: admin/functions.php:118
+#: admin/functions.php:119
+msgid "Display RSS"
+msgstr ""
+
+#: admin/functions.php:122
+msgid "Display search box"
+msgstr ""
+
+#: admin/functions.php:125
+msgid "Display home icon"
+msgstr ""
+
+#: admin/functions.php:143
 msgid "Colors"
 msgstr "Kolory"
 
-#: admin/functions.php:120
+#: admin/functions.php:145
 msgid "Description"
 msgstr "Opis"
 
-#: admin/functions.php:152
+#: admin/functions.php:177
 msgid "Posts loading type"
 msgstr "Wiadomości typu ładowania"
 
-#: admin/functions.php:159
+#: admin/functions.php:184
 msgid "Adding meta on each post"
 msgstr "Dodawanie meta na każdego posta"
 
-#: admin/functions.php:176
+#: admin/functions.php:201
 msgid "Number of post"
 msgstr "Liczba postów"
 
-#: admin/functions.php:183
+#: admin/functions.php:208
 msgid "Duplicate slideshow posts within the content"
 msgstr "Duplikuj posty z treścią"
 
-#: admin/functions.php:243
+#: admin/functions.php:278
 msgid "Content on left"
 msgstr "Zawartość po lewej"
 
-#: admin/functions.php:248
+#: admin/functions.php:283
 msgid "Content on right"
 msgstr "Zawartość po prawej"
 
-#: admin/functions.php:253
+#: admin/functions.php:288
 msgid "One-column, no sidebar"
 msgstr "Jedna kolumna bez sidebar`u"
 
-#: admin/functions.php:273
+#: admin/functions.php:308
 msgid ""
 "Sleek, intuitive, and powerful front-end framework for faster and easier web "
 "development."
@@ -444,57 +466,60 @@ msgstr ""
 "Sleek, intuitive, and powerful front-end framework for faster and easier web "
 "development."
 
-#: admin/functions.php:281
+#: admin/functions.php:316
 msgid "Flat and clean."
 msgstr "Prosty i czytelny"
 
-#: admin/functions.php:289
+#: admin/functions.php:324
 msgid "A calm, blue sky."
 msgstr "czyste niebo"
 
-#: admin/functions.php:297
+#: admin/functions.php:332
 msgid "An ode to Metro."
 msgstr "Metro"
 
-#: admin/functions.php:305
+#: admin/functions.php:340
 msgid "Sweet and cheery."
 msgstr "Słodki i wiśniowy"
 
-#: admin/functions.php:313
+#: admin/functions.php:348
 msgid "Optimized for legibility."
 msgstr "Zoptymalizowany"
 
-#: admin/functions.php:321
+#: admin/functions.php:356
 msgid "Ubuntu orange and unique font."
 msgstr "Ubuntu z oryginalną czcionką"
 
-#: admin/functions.php:329
+#: admin/functions.php:364
 msgid "Silvery and sleek."
 msgstr "Srebrny"
 
-#: admin/functions.php:337
+#: admin/functions.php:372
 msgid "Mini and minimalist."
 msgstr "Minimalistyczny"
 
-#: admin/functions.php:345
+#: admin/functions.php:380
 msgid "Crisp like a new sheet of paper."
 msgstr "Kartka papieru"
 
-#: admin/functions.php:353
+#: admin/functions.php:388
 msgid "An empty CSS file that you can modify as you like."
 msgstr "CSS abyś modyfikował jak lubisz"
 
-#: admin/functions.php:366
+#: admin/functions.php:401
 msgid "Ajax on scroll down"
 msgstr "Ajax na przewijać"
 
-#: admin/functions.php:367
+#: admin/functions.php:402
 msgid "Ajax on button clicked"
 msgstr "Ajax kliknięciu na przycisk"
 
-#: admin/functions.php:368
+#: admin/functions.php:403
 msgid "WordPress classic pagination"
 msgstr "WordPress klasyczny podział na strony"
+
+#~ msgid "Header Menu Right"
+#~ msgstr "Nagłówek prawe menu"
 
 #~ msgid "Posts"
 #~ msgstr "Postów"

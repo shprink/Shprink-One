@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 01:19+0100\n"
-"PO-Revision-Date: 2013-11-14 01:21+0100\n"
+"POT-Creation-Date: 2013-11-14 01:12+0100\n"
+"PO-Revision-Date: 2013-11-14 01:15+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -17,66 +17,65 @@ msgstr ""
 
 #: tag.php:21
 msgid "Tag"
-msgstr "Tag"
+msgstr "Таг"
 
 #: loop.php:41 single.php:76 single.php:94 loop_home.php:48
 msgid "Read more"
-msgstr "Voir plus"
+msgstr "Читай далі"
 
 #: loop.php:100 loop.php:134
 msgid "No more pages to load."
-msgstr "Plus de pages à charger."
+msgstr "Завантажено всі сторінки"
 
 #: loop.php:102 loop.php:136
 msgid "Loading the next set of posts..."
-msgstr "Chargement des posts..."
+msgstr "Завантаження наступного збіру публікацій..."
 
 #: loop.php:127 loop.php:196
 msgid "Older posts"
-msgstr "Articles les plus ancients"
+msgstr "Старші публікації"
 
 #: loop.php:202
 msgid "Newer posts"
-msgstr "Articles les plus récents"
+msgstr "Новші публікації"
 
 #: single.php:50
 #, php-format
 msgid "About %s"
-msgstr "A propos de %s"
+msgstr "Більше про %s"
 
 #: single.php:57
 #, php-format
 msgid "View all posts by %s"
-msgstr "Voir tous les articles de %s"
+msgstr "Показати всі пости %s"
 
 #: comments.php:13
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
-"Ce post est protégé par mot de passe. Entrer le mot de passe pour voir les "
-"commentaires."
+"Дана публікація захищена паролем. Введіть пароль щоб прочитати коментарії."
 
 #: comments.php:30
 #, php-format
 msgid "%1$s Responses to <i>%2$s</i>"
-msgstr "%1$s Reponse à <i>%2$s</i>"
+msgstr "%1$s Відповідей на <i>%2$s</i>"
 
 #: comments.php:32
 #, php-format
 msgid "One Response to <i>%s</i>"
-msgstr "Un réponse à <i>%s</i>"
+msgstr "Одна відповідь на <i>%s</i>"
 
 #: comments.php:42
 msgid "<i class=\"icon-chevron-left\"></i> Older Comments"
-msgstr "<i class=\"icon-chevron-left\"></i> Vieux commentaires"
+msgstr "<i class=\"icon-chevron-left\"></i> Попередні коментарі"
 
 #: comments.php:44
 msgid "Newer Comments <i class=\"icon-chevron-right\"></i>"
-msgstr "Commentaires récents <i class=\"icon-chevron-right\"></i>"
+msgstr "Новші коментарі <i class=\"icon-chevron-right\"></i>"
 
 #: comments.php:59
 msgid "Comments are closed."
-msgstr "Les commentaires sont fermés."
+msgstr "Коментарі замкнені."
 
 #: image.php:30
 #, php-format
@@ -85,229 +84,227 @@ msgid ""
 "size image\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title=\"Return to %5$s"
 "\" rel=\"gallery\">%6$s</a></div>"
 msgstr ""
-"<div class=\"post-meta\">Taille réelle: <a href=\"%1$s\" title=\"Link to "
-"full-size image\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title=\"Return "
-"to %5$s\" rel=\"gallery\">%6$s</a></div>"
+"<div class=\"post-meta\">Повний розмір: <a href=\"%1$s\" title=\"Посилання "
+"до справжнього розміру\">%2$s &times; %3$s</a> в <a href=\"%4$s\" title="
+"\"Поверутися до %5$s\" rel=\"gallery\">%6$s</a></div>"
 
 #: image.php:33
 msgid "Edit"
-msgstr "Editer"
+msgstr "Корегуй"
 
 #: image.php:73
 msgid "Previous"
-msgstr "Precedent"
+msgstr "Попередня сторінка"
 
 #: image.php:76
 msgid "Next"
-msgstr "Suivant"
+msgstr "Наступна сторінка"
 
 #: 404.php:18
 msgid "404... Oups something went wrong..."
-msgstr "404... Oups c'est embarrassant..."
+msgstr "Помилка 404... щось пішло не так..."
 
 #: 404.php:21
 msgid ""
 "We are sorry but we cannot reach the page you are looking for... Perhaps you "
 "should try to:"
-msgstr ""
-"Nous sommes désolés mais nous ne pouvons pas charger la page que vous avez "
-"demandée... Vous devriez peu être:"
+msgstr "Вибачте, ми не можемо знайти запитану вами сторінку. Спробуйте:"
 
 #: 404.php:36
 msgid "Search for it: "
-msgstr "La rechercher:"
+msgstr "Шукати"
 
 #: 404.php:44
 msgid "Check Out The "
-msgstr "Regarder les "
+msgstr "Перевір"
 
 #: 404.php:50
 msgid "Check Out The Most Used Categories"
-msgstr "Regarder les catégories les plus utilisés"
+msgstr "Перевір найбільш популярні категорії"
 
 #: category.php:23
 msgid "Category"
-msgstr "Categorie"
+msgstr "Категорія"
 
 #: loop_home.php:35
 #, php-format
 msgid "Permanent Link to %s"
-msgstr "Lien permanent à %s"
+msgstr "Посилання до %s"
 
 #: footer.php:50
 msgid "All rights reserved."
-msgstr "Tous droits réservés."
+msgstr "Всі права захищені."
 
 #: search.php:20
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultat pour: %s"
+msgstr "Результати пошуку для: %s"
 
 #: functions.php:79
 #, php-format
 msgid "Page %s"
-msgstr "Page %s"
+msgstr "Сторінка %s"
 
 #: functions.php:131 functions.php:135
 msgid "Sidebar Widget Top"
-msgstr "Widget  barre latérale haut"
+msgstr "Бокова панель верхній віджет"
 
 #: functions.php:142 functions.php:146
 msgid "Sidebar Widget Middle"
-msgstr "Widget  barre latérale milieu"
+msgstr "Бокова панель середній віджет"
 
 #: functions.php:153 functions.php:157
 msgid "Sidebar Widget Bottom"
-msgstr "Widget barre latérale bas"
+msgstr "Бокова панель нижній віджет"
 
 #: functions.php:164 functions.php:168
 msgid "Footer Widget Left"
-msgstr "Widget bas de page gauche"
+msgstr "Нижня панель лівий віджет"
 
 #: functions.php:175 functions.php:179
 msgid "Footer Widget Middle Left"
-msgstr "Widget bas de page milieu gauche"
+msgstr "Нижня панель середній лівий віджет"
 
 #: functions.php:186 functions.php:190
 msgid "Footer Widget Middle Right"
-msgstr "Widget bas de page milieu droite"
+msgstr "Нижня панель середній правий віджет"
 
 #: functions.php:197 functions.php:201
 msgid "Footer Widget Right"
-msgstr "Widget bas de page droite"
+msgstr "Нижня панель правий віджет"
 
 #: functions.php:208 functions.php:212
 msgid "Footer Widget Bottom"
-msgstr "Widget bas de page"
+msgstr "Нижня панель нижній віджет"
 
 #: functions.php:219 functions.php:223
 msgid "Before Content"
-msgstr "Avant le contenu"
+msgstr "Перед текстом"
 
 #: functions.php:230 functions.php:234
 msgid "After Content"
-msgstr "Après le contenu"
+msgstr "Після тексту"
 
 #: functions.php:252
 msgid "Menu Top"
-msgstr " Menu haut"
+msgstr "Верхнє меню"
 
 #: functions.php:253
 msgid "Sidebar Menu Top"
-msgstr " Menu barre latérale haut"
+msgstr "Бокова панель верхнє меню"
 
 #: functions.php:254
 msgid "Sidebar Menu Middle"
-msgstr " Menu barre latérale milieu"
+msgstr "Бокова панель середнє меню"
 
 #: functions.php:255
 msgid "Sidebar Menu Bottom"
-msgstr " Menu barre latérale bas"
+msgstr "Бокова панель нижнє меню"
 
 #: functions.php:429
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">dit:</span>"
+msgstr "%s <span class=\"says\">написав:</span>"
 
 #: functions.php:432
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de validation."
+msgstr "Ваш коментар в черзі на модерацію."
 
 #: functions.php:441
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s à %2$s"
+msgstr "%1$s в %2$s"
 
 #: functions.php:444
 msgid "(Edit)"
-msgstr "(Editer)"
+msgstr "(Корегуй)"
 
 #: functions.php:488 functions.php:546
 msgid "M d, Y"
-msgstr "d M, Y"
+msgstr "M d, Y"
 
 #: functions.php:500 author.php:27
 #, php-format
 msgid "Posts by %s"
-msgstr "Voir tous les articles de %s"
+msgstr "Автор: %s"
 
 #: functions.php:502
 #, php-format
 msgid "By: %s"
-msgstr "Par: %s"
+msgstr "Через: %s"
 
 #: functions.php:514
 #, php-format
 msgid "%d Comments"
-msgstr "%d Commentaires"
+msgstr "%d Коментарів"
 
 #: functions.php:516
 #, php-format
 msgid "%d Comment"
-msgstr "%d Commentaires"
+msgstr "%d Коментар"
 
 #: functions.php:540 functions.php:542
 msgid "Featured"
-msgstr "A la Une"
+msgstr "Рекомедоване"
 
 #: functions.php:548
 msgid "Published on"
-msgstr "Publié le"
+msgstr "Опублікований"
 
 #: functions.php:556 admin/functions.php:146
 msgid "Author"
-msgstr "Auteur"
+msgstr "Автор"
 
 #: functions.php:569
 msgid "Categories"
-msgstr "Categories"
+msgstr "Категорії"
 
 #: functions.php:571
 #, php-format
 msgid "Category: %s"
-msgstr "Categories: %s"
+msgstr "Категорія: %s"
 
 #: functions.php:583
 msgid "Tags"
-msgstr "Tags"
+msgstr "Теги"
 
 #: functions.php:585
 msgid "Tag:  "
-msgstr "Tag:  "
+msgstr "Тег:  "
 
 #: functions.php:592
 msgid "Comments"
-msgstr "Commentaires"
+msgstr "Коментарі"
 
 #: functions.php:688
 msgid "Sorry, no posts matched your criteria."
-msgstr "Désolé, aucun résultat de correspond à votre recherche."
+msgstr "Вибачте, жодна пубікація не спевня ваших критерій."
 
 #: functions.php:721 admin/functions.php:144
 msgid "Name"
-msgstr "Nom"
+msgstr "Ім'я"
 
 #: functions.php:722
 msgid "Email"
-msgstr "Couriel"
+msgstr "Email"
 
 #: functions.php:723
 msgid "Website"
-msgstr "Site Web:"
+msgstr "Сторінка WWW"
 
 #: functions.php:726
 #, php-format
 msgid "Required fields are marked %s"
-msgstr "Les champs requis sont marqué par %s"
+msgstr "Вимагані поля зазначені %s"
 
 #: functions.php:729
 msgid "Comment"
-msgstr "Commentaire"
+msgstr "Коментар"
 
 #: functions.php:730
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Vous devez être <a href=\"%s\">connecté</a> pour commenter."
+msgstr "Мусиш бути <a href=\"%s\">залогований</a>, щоб додати коментар."
 
 #: functions.php:731
 #, php-format
@@ -315,41 +312,41 @@ msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
-"Connecté en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se "
-"deconnecter\">Se deconnecter?</a>"
+"Залогований як <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Вилогуйся"
+"\">Вилогуватись?</a>"
 
 #: functions.php:732
 msgid "Your email address will not be published."
-msgstr "Votre adresse de couriel ne sera pas publié."
+msgstr "Адреса email не буде опулікована."
 
 #: functions.php:736
 msgid "Leave a Reply"
-msgstr "Laissez un commentaire"
+msgstr "Відповісти"
 
 #: functions.php:737
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "Répondre à %s"
+msgstr "Відповісти на %s"
 
 #: functions.php:738
 msgid "Cancel reply"
-msgstr "Annulé la réponse"
+msgstr "Скасувати"
 
 #: functions.php:739
 msgid "Post Comment"
-msgstr "Commentez"
+msgstr "Залишити коментар"
 
 #: functions.php:803
 msgid "Next page"
-msgstr "Page suivante"
+msgstr "Наступна сторінка"
 
 #: functions.php:804
 msgid "Previous page"
-msgstr "Page precedente"
+msgstr "Попередня сторіка"
 
 #: author.php:38
 msgid "Website:"
-msgstr "Site Web:"
+msgstr "Сторінка WWW:"
 
 #: author.php:44
 msgid "AIM:"
@@ -370,203 +367,199 @@ msgstr "Google+:"
 #: author.php:59
 #, php-format
 msgid "%s on Google+"
-msgstr "%s sur Google+"
+msgstr "%s на Google+"
 
 #: header.php:77
 msgid "Subscribe to the RSS feed"
-msgstr "S'abonner au flux RSS"
+msgstr "Підписатися на RSS"
 
 #: admin/functions.php:22
 msgid "Header"
-msgstr "Entête"
+msgstr ""
 
 #: admin/functions.php:23
 msgid "Slideshow"
-msgstr "Diaporama"
+msgstr "Показ слайдів"
 
 #: admin/functions.php:24
 msgid "Post layout on blog, category, tag and author page."
-msgstr "Agencement des articles sur les pages: blog, categorie, tag et auteur."
+msgstr "Написати структуру для блогу, категорію, теги і сторінку автора."
 
 #: admin/functions.php:25
 msgid "Layout"
-msgstr "Structure"
+msgstr "Структура"
 
 #: admin/functions.php:26
 msgid "Theme"
-msgstr "Theme"
+msgstr "Тема"
 
 #: admin/functions.php:39 admin/functions.php:40
 msgid "Theme Options"
-msgstr "Options du Theme"
+msgstr "Опції теми"
 
 #: admin/functions.php:62
 #, php-format
 msgid "%s Theme Options"
-msgstr "%s Options du Theme"
+msgstr "%s Опції теми"
 
 #: admin/functions.php:85
 msgid "Thumbnail"
-msgstr "Aperçu"
+msgstr "Мініатюра"
 
 #: admin/functions.php:86
 msgid "Position"
-msgstr "Position"
+msgstr "Позиція"
 
 #: admin/functions.php:119
 msgid "Display RSS"
-msgstr "Afficher RSS"
+msgstr ""
 
 #: admin/functions.php:122
 msgid "Display search box"
-msgstr "Afficher le champs de recherche"
+msgstr ""
 
 #: admin/functions.php:125
 msgid "Display home icon"
-msgstr "Afficher le menu home (maison)"
+msgstr ""
 
 #: admin/functions.php:143
 msgid "Colors"
-msgstr "Couleurs"
+msgstr "Кольори"
 
 #: admin/functions.php:145
 msgid "Description"
-msgstr "Description"
+msgstr "Опис"
 
 #: admin/functions.php:177
 msgid "Posts loading type"
-msgstr "Type de chargement des articles"
+msgstr "Тип завантаження публікацій"
 
 #: admin/functions.php:184
 msgid "Adding meta on each post"
-msgstr "Ajout des métadonnées sur chaque post"
+msgstr "Додавання мета для кожної публікації"
 
 #: admin/functions.php:201
 msgid "Number of post"
-msgstr "Nombre d'articles"
+msgstr "Кількість публікацій"
 
 #: admin/functions.php:208
 msgid "Duplicate slideshow posts within the content"
-msgstr "Dupliquer les articles du diaporama, dans le contenu"
+msgstr "Зробити блікат публікацій слайдшо з контентем"
 
 #: admin/functions.php:278
 msgid "Content on left"
-msgstr "Contenu à gauche"
+msgstr "Контент по лівій"
 
 #: admin/functions.php:283
 msgid "Content on right"
-msgstr "Contenu à droite"
+msgstr "Контент о правій"
 
 #: admin/functions.php:288
 msgid "One-column, no sidebar"
-msgstr "Contenu seul (pas de menu sur le côté)"
+msgstr "Одна колонка без бокової панелі"
 
 #: admin/functions.php:308
 msgid ""
 "Sleek, intuitive, and powerful front-end framework for faster and easier web "
 "development."
 msgstr ""
-"Élégant, intuitif et puissant framework front-end pour un développement web "
-"plus rapide et plus facile."
+"Sleek, intuitive, and powerful front-end framework for faster and easier web "
+"development."
 
 #: admin/functions.php:316
 msgid "Flat and clean."
-msgstr "Plat et propre."
+msgstr "Простий і легко читаємий"
 
 #: admin/functions.php:324
 msgid "A calm, blue sky."
-msgstr "Un ciel bleu et calme."
+msgstr "чисте небо"
 
 #: admin/functions.php:332
 msgid "An ode to Metro."
-msgstr "Une ode au style Metro."
+msgstr "Метро"
 
 #: admin/functions.php:340
 msgid "Sweet and cheery."
-msgstr "Doux et Joyeux."
+msgstr "Соодкий вишневий"
 
 #: admin/functions.php:348
 msgid "Optimized for legibility."
-msgstr "Optimisé pour la lisibilité."
+msgstr "Оптимальний"
 
 #: admin/functions.php:356
 msgid "Ubuntu orange and unique font."
-msgstr "Orange Ubuntu et Font unique."
+msgstr "Ubuntu з оригінальним шрифтом"
 
 #: admin/functions.php:364
 msgid "Silvery and sleek."
-msgstr "Argentée et lisse."
+msgstr "Срібний"
 
 #: admin/functions.php:372
 msgid "Mini and minimalist."
-msgstr "Mini et minimaliste."
+msgstr "Мінімалістичний"
 
 #: admin/functions.php:380
 msgid "Crisp like a new sheet of paper."
-msgstr "Craquant comme une nouvelle feuille de papier."
+msgstr "Лист паперу"
 
 #: admin/functions.php:388
 msgid "An empty CSS file that you can modify as you like."
-msgstr "Feuille CSS vide que vous pouvez modifier a souhait."
+msgstr "CSS щоб змінити як забажаєш"
 
 #: admin/functions.php:401
 msgid "Ajax on scroll down"
-msgstr "Ajax en défilant vers la bas"
+msgstr "Ajax при скролі вниз"
 
 #: admin/functions.php:402
 msgid "Ajax on button clicked"
-msgstr "Ajax au clic"
+msgstr "Ajax при кліку на кнопку"
 
 #: admin/functions.php:403
 msgid "WordPress classic pagination"
-msgstr "Pagination classique WordPress"
+msgstr "WordPress класичний поділ на сорінки"
 
 #~ msgid "Header Menu Right"
-#~ msgstr "Haut de page droite"
-
-#~ msgid "Blog page post type"
-#~ msgstr "Type de d'article de  blog"
+#~ msgstr "Заголовок правого меню"
 
 #~ msgid "Posts"
-#~ msgstr "Articles"
+#~ msgstr "Публікацій"
+
+#~ msgid "Blog page post type"
+#~ msgstr "Тип публікації сторінки блогу"
 
 #~ msgid "Leave a comment"
-#~ msgstr "Laissez un commentaire"
+#~ msgstr "Залиш коментар"
 
 #~ msgid "1 Comment"
-#~ msgstr "1 Commentaire"
+#~ msgstr "1 Коментар"
 
 #~ msgid "% Comments"
-#~ msgstr "% Commentaires"
+#~ msgstr "% Коментарі"
 
 #~ msgid ""
-#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-left"
-#~ "\"></i> Previous</span>"
+#~ "<span class=\"span3\"><i class=\"icon-chevron-left\"></i> Previous</span>"
 #~ msgstr ""
-#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-left"
-#~ "\"></i> Precedent</span>"
+#~ "<span class=\"span3\"><i class=\"icon-chevron-left\"></i> Попередні</span>"
 
 #~ msgid ""
-#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-right"
-#~ "\"></i> Next</span>"
+#~ "<span class=\"span3\"><i class=\"icon-chevron-right\"></i> Next</span>"
 #~ msgstr ""
-#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-right"
-#~ "\"></i> Suivant</span>"
+#~ "<span class=\"span3\"><i class=\"icon-chevron-right\"></i> Наступні</span>"
 
 #~ msgid "Jet black and electric blue."
-#~ msgstr "Noir et bleu electrique."
+#~ msgstr "Чорне і синє"
 
 #~ msgid "Shades of gunmetal gray."
-#~ msgstr "Nuances de gris métal."
+#~ msgstr "Відтінки сірості"
 
 #~ msgid "Camping in the woods."
-#~ msgstr "Camping dans les bois."
+#~ msgstr "Ліс"
 
 #~ msgid "A special theme for April Fools' Day"
-#~ msgstr "Un theme spécial pour le 1er Avril!"
+#~ msgstr "Тема для дня дурака"
 
 #~ msgid "Default Theme"
-#~ msgstr "Theme par default"
+#~ msgstr "Тема по замовчуванню"
 
 #~ msgid "By"
-#~ msgstr "Par"
+#~ msgstr "через"
