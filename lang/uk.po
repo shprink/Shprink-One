@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 01:12+0100\n"
-"PO-Revision-Date: 2013-11-14 01:15+0100\n"
+"POT-Creation-Date: 2013-11-14 23:02+0100\n"
+"PO-Revision-Date: 2013-11-14 23:02+0100\n"
 "Last-Translator: shprink <contact@julienrenaux.fr>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: fr\n"
@@ -375,7 +375,7 @@ msgstr "Підписатися на RSS"
 
 #: admin/functions.php:22
 msgid "Header"
-msgstr ""
+msgstr "Заголовок"
 
 #: admin/functions.php:23
 msgid "Slideshow"
@@ -412,15 +412,15 @@ msgstr "Позиція"
 
 #: admin/functions.php:119
 msgid "Display RSS"
-msgstr ""
+msgstr "Показати RSS"
 
 #: admin/functions.php:122
 msgid "Display search box"
-msgstr ""
+msgstr "Показати пошукове поле"
 
 #: admin/functions.php:125
 msgid "Display home icon"
-msgstr ""
+msgstr "Показати домашню іконку"
 
 #: admin/functions.php:143
 msgid "Colors"
