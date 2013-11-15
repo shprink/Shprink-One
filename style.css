@@ -642,3 +642,17 @@ body.theme-journal #comments .trackback,
 body.theme-journal #comments .pingback {
 	padding-top: 70px;
 }
+
+
+/* YARPP plugin support */
+.yarpp-template{
+	
+}
+
+.yarpp-template a{
+	text-decoration: none;
+}
+
+.yarpp-template .thumbnail{
+	margin-bottom: 20px;
+}
