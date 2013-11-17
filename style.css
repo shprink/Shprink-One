@@ -13,8 +13,6 @@ License URI: http://opensource.org/licenses/MIT
 @import url('css/font-awesome.min.css');
 @import url('css/jquery.sidr.light.css');
 
-@CHARSET "UTF-8";
-
 /* HEADER */
 
 body.admin-bar .navbar-fixed-top{
@@ -646,13 +644,48 @@ body.theme-journal #comments .pingback {
 
 /* YARPP plugin support */
 .yarpp-template{
-	
+	padding-bottom: 0px;
 }
 
-.yarpp-template a{
-	text-decoration: none;
-}
-
-.yarpp-template .thumbnail{
+.yarpp-template a.thumbnail{
 	margin-bottom: 20px;
+	text-decoration: none;
+	height: 230px;
+	overflow: hidden;
+	position: relative;
+}
+
+.yarpp-template a.thumbnail:hover img{
+	display: none;
+}
+
+.yarpp-template h3{
+	font-size: 15px;
+	margin-top: 0px;
+	line-height: 20px;
+	font-weight: 600;
+}
+
+.yarpp-template p{
+	font-size: 12px;
+}
+
+.yarpp-template .caption{
+	height: 50px;
+}
+
+.yarpp-template .caption:after{
+	background: rgba(255, 255, 255, 0);
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+	background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+	height: 20px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	content: "";
+	display: block;
 }

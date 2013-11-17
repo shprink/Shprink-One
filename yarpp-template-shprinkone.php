@@ -12,13 +12,14 @@
 	<div class="well yarpp-template">
 		<div class="row">
 			<?php while (have_posts()) : the_post(); ?>
-				<div class="col-lg-3 col-md-3">
+				<div class="col-lg-3 col-md-3 col-sm-6">
 					<a href="<?php echo get_permalink() ?>" class="thumbnail">
 						<?php if (has_post_thumbnail()): ?>
 							<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-responsive')); ?>
 						<?php endif; ?>
 						<div class="caption">
-							<p><?php echo get_the_title() ?></p>
+							<h3><?php echo get_the_title() ?></h3>
+							<p><?php echo get_the_excerpt() ?></p>
 						</div>
 					</a>
 				</div>
