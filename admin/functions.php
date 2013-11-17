@@ -140,7 +140,7 @@ function shprinkone_settings_field_template() {
 	echo '<table class="widefat">';
 	echo '<thead><tr>';
 	echo '<th style="width:10px;"></th>';
-	echo '<th>' . __('Colors', 'shprinkone') . '<br/>[@navbarBackground, @bodyBackground, @linkColor, @textColor]</th>';
+	echo '<th>' . __('Colors', 'shprinkone') . '</th>';
 	echo '<th>' . __('Name', 'shprinkone') . '</th>';
 	echo '<th>' . __('Description', 'shprinkone') . '</th>';
 	echo '<th>' . __('Author', 'shprinkone') . '</th>';
@@ -181,9 +181,9 @@ function shprinkone_settings_field_posts() {
 		echo '<option value="' . $value . '" ' . $selected . '>' . $title . '</option>';
 	}
 	echo '</select><br/>';
-	echo '<label for="posts_meta">' . __('Adding meta on each post', 'shprinkone') . '</label> ';
-	$checked = (isset($posts_option['meta']) && $posts_option['meta'] == 'on') ? 'checked="checked"' : '';
+	$checked = (isset($posts_option['meta']) && $posts_option['meta']) ? 'checked="checked"' : '';
 	echo '<input id="posts_meta" type="checkbox" name="shprinkone_theme_options[theme_posts][meta]" ' . $checked . '>';
+	echo ' <label for="posts_meta">' . __('Adding meta on each post', 'shprinkone') . '</label> ';
 }
 
 /**
@@ -205,9 +205,10 @@ function shprinkone_settings_field_slideshow() {
 		echo '<option value="' . $index . '" ' . $selected . '>' . $index . '</option>';
 	}
 	echo '</select><br/>';
-	echo '<label for="slideshow_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
-	$checked = (isset($slideshow_option['copy_within_content']) && $slideshow_option['copy_within_content'] == 'on') ? 'checked="checked"' : '';
+	$checked = (isset($slideshow_option['copy_within_content']) && $slideshow_option['copy_within_content']) ? 'checked="checked"' : '';
 	echo '<input id="slideshow_copy_within_content" type="checkbox" name="shprinkone_theme_options[theme_slideshow][copy_within_content]" ' . $checked . '>';
+	echo ' <label for="slideshow_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
+	
 }
 
 function shprinkone_format_template_colors($colors) {
@@ -230,10 +231,9 @@ function shprinkone_format_template_colors($colors) {
  * @since   1.0
  */
 function shprinkone_get_theme_options() {
-	if (get_option( 'shprinkone_theme_options')){
-		return array_merge(shprinkone_get_theme_default(), get_option( 'shprinkone_theme_options'));
-	}
-	else{
+	if (get_option('shprinkone_theme_options')) {
+		return array_merge(shprinkone_get_theme_default(), get_option('shprinkone_theme_options'));
+	} else {
 		return shprinkone_get_theme_default();
 	}
 }
@@ -249,13 +249,14 @@ function shprinkone_get_theme_default() {
 		'theme_layout' => 'content-sidebar',
 		'theme_template' => 'flaty',
 		'theme_posts' => array(
-			'meta' => 'on',
+			'meta' => true,
 			'type' => 'ajax_scroll'
 		),
 		'theme_slideshow' => array(
-			'posts' => 3
+			'posts' => 3,
+			'copy_within_content' => true
 		),
-		'theme_header' => array (
+		'theme_header' => array(
 			'rss' => true,
 			'search' => true,
 			'icon-home' => true
@@ -423,38 +424,16 @@ function shprinkone_theme_options_validate($input) {
 
 	if (isset($input['theme_slideshow']))
 		$output['theme_slideshow'] = $input['theme_slideshow'];
-	
+	$output['theme_slideshow']['copy_within_content'] = (isset($input['theme_slideshow']['copy_within_content'])) ? true : false;
 
-	if (isset($input['theme_posts'])) {
-		if (isset($input['theme_posts']['type']) && array_key_exists($input['theme_posts']['type'], shprinkone_get_theme_posts())) {
-			$output['theme_posts']['type'] = $input['theme_posts']['type'];
-		}
-		if (isset($input['theme_posts']['meta'])) {
-			$output['theme_posts']['meta'] = $input['theme_posts']['meta'];
-		}
-		else{
-			$output['theme_posts']['meta'] = false;
-		}
+	if (isset($input['theme_posts']['type']) && array_key_exists($input['theme_posts']['type'], shprinkone_get_theme_posts())) {
+		$output['theme_posts']['type'] = $input['theme_posts']['type'];
 	}
+	$output['theme_posts']['meta'] = (isset($input['theme_posts']['meta'])) ? true : false;
 
-	if (isset($input['theme_header']['rss'])) {
-		$output['theme_header']['rss'] = true;
-	}
-	else{
-		$output['theme_header']['rss'] = false;
-	}
-	if (isset($input['theme_header']['search'])) {
-		$output['theme_header']['search'] = true;
-	}
-	else{
-		$output['theme_header']['search'] = false;
-	}
-	if (isset($input['theme_header']['icon-home'])) {
-		$output['theme_header']['icon-home'] = true;
-	}
-	else{
-		$output['theme_header']['icon-home'] = false;
-	}
+	$output['theme_header']['rss'] = (isset($input['theme_header']['rss'])) ? true : false;
+	$output['theme_header']['search'] = (isset($input['theme_header']['search'])) ? true : false;
+	$output['theme_header']['icon-home'] = (isset($input['theme_header']['icon-home'])) ? true : false;
 
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);
 }
