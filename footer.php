@@ -81,6 +81,7 @@ $condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('foote
 			// opening the one you clicked on
 			$(this).parent().addClass('open');
 		});
+		$('.bttrlazyloading').bttrlazyloading({});
 	});
 </script>
 </body>

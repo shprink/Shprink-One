@@ -16,6 +16,7 @@ function shprinkone_enqueue_script_and_style() {
 
 	wp_register_script('bootstrap', $js_path . 'bootstrap.min.js');
 	wp_register_script('infinitescroll', $js_path . 'jquery.infinitescroll.min.js');
+	wp_register_script('bttrlazyloading', $js_path . 'bttrlazyloading.min.js');
 	wp_register_script('sidr', $js_path . 'jquery.sidr.min.js');
 
 	// Customize theme via URL
@@ -33,10 +34,12 @@ function shprinkone_enqueue_script_and_style() {
 
 	wp_enqueue_style('shprinkone-theme', $directory_uri . $selectedTemplate['path'], array(), '2013-10-08');
 	wp_enqueue_style('shprinkone-style', get_stylesheet_uri(), array(), '2013-10-08');
+	wp_enqueue_style('bttrlazyloading', $directory_uri . '/css/bttrlazyloading.min.css', array(), '2013-10-08');
 
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('bootstrap');
 	wp_enqueue_script('infinitescroll');
+	wp_enqueue_script('bttrlazyloading');
 	wp_enqueue_script('sidr');
 	wp_enqueue_script('jquery-masonry');
 }
@@ -280,6 +283,10 @@ function shprinkone_setup() {
 	add_image_size('post-image-mansory', 268, 268, true);
 	add_image_size('post-image-width9', 860, 200, true);
 	add_image_size('post-image-width12', 1170, 200, true);
+	add_image_size('post-image-xs', 738, 200, true);
+	add_image_size('post-image-sm', 738, 200, true);
+	add_image_size('post-image-md', 960, 200, true);
+	add_image_size('post-image-lg', 1170, 250, true);
 
 	// Translation
 	load_theme_textdomain('shprinkone', get_template_directory() . '/lang');

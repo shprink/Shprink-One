@@ -6,6 +6,11 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
+// Get the post thumbnail info
+list($srcxs, $widthxs, $heightxs) = wp_get_attachment_image_src(get_post_thumbnail_id(null), 'post-image-xs', false);
+list($srcsm, $widthsm, $heightsm) = wp_get_attachment_image_src(get_post_thumbnail_id(null), 'post-image-sm', false);
+list($srcmd, $widthmd, $heightmd) = wp_get_attachment_image_src(get_post_thumbnail_id(null), 'post-image-md', false);
+list($srclg, $widthlg, $heightlg) = wp_get_attachment_image_src(get_post_thumbnail_id(null), 'post-image-lg', false);
 ?>
 <?php get_header(); ?>
 <div class="container"> 
@@ -22,8 +27,22 @@
 							<div class="panel-body">
 								<?php if (has_post_thumbnail()): ?>
 									<div class="post-thumbnail img-thumbnail">
-										<?php the_post_thumbnail('post-image-' . shprinkone_get_imagespan(), array('class' => 'img-responsive')); ?>
+										<img class="bttrlazyloading"
+											 data-bttrlazyloading-xs-width="<?php echo $widthxs; ?>"
+											 data-bttrlazyloading-xs-height="<?php echo $heightxs; ?>"
+											 data-bttrlazyloading-xs-src="<?php echo $srcxs; ?>"
+											 data-bttrlazyloading-sm-width="<?php echo $widthsm; ?>"
+											 data-bttrlazyloading-sm-height="<?php echo $heightsm; ?>"
+											 data-bttrlazyloading-sm-src="<?php echo $srcsm; ?>"
+											 data-bttrlazyloading-md-width="<?php echo $widthmd; ?>"
+											 data-bttrlazyloading-md-height="<?php echo $heightmd; ?>"
+											 data-bttrlazyloading-md-src="<?php echo $srcmd; ?>"
+											 data-bttrlazyloading-lg-width="<?php echo $widthlg; ?>"
+											 data-bttrlazyloading-lg-height="<?php echo $heightlg; ?>"
+											 data-bttrlazyloading-lg-src="<?php echo $srclg; ?>"
+											 />
 									</div>
+									<?php ?>
 								<?php endif; ?>
 								<div class="page-header">
 									<h1 id="post-title" class="post-title">
