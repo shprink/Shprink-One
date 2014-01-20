@@ -131,6 +131,22 @@ function shprinkone_get_custom_css() {
 }
 
 /**
+ * Inject custom CSS
+ *
+ * @return  void
+ * @since   2.1.0
+ */
+function shprinkone_inject_custom_css()
+{
+    ?>
+         <style type="text/css">
+            <?php echo shprinkone_get_custom_css(); ?>
+         </style>
+    <?php
+}
+add_action( 'wp_head', 'shprinkone_inject_custom_css');
+
+/**
  * Register widget location within the template
  *
  * @return  void

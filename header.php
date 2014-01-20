@@ -8,7 +8,6 @@
  */
 $selectedTemplate = shprinkone_get_selected_template();
 $headerOptions = shprinkone_get_header_options();
-$customCss = shprinkone_get_custom_css();
 global $page, $paged;
 ?>
 <!DOCTYPE html>
@@ -32,9 +31,6 @@ global $page, $paged;
 		 */
 		wp_head();
 		?>
-                <style>
-                    <?php echo $customCss; ?>
-                </style>
 		<script type="text/javascript">
 			var $ = jQuery;
 		</script>
