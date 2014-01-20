@@ -24,6 +24,7 @@ function shprinkone_theme_options_init() {
 	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'general');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'general');
 	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'general');
+	add_settings_field('css', __('Css overwrite', 'shprinkone'), 'shprinkone_settings_field_css', 'theme_options', 'general');
 }
 
 add_action('admin_init', 'shprinkone_theme_options_init');
@@ -136,30 +137,34 @@ function shprinkone_settings_field_template() {
 	if (!isset($options['theme_template'])) {
 		return;
 	}
-	// Template selection
-	echo '<table class="widefat">';
-	echo '<thead><tr>';
-	echo '<th style="width:10px;"></th>';
-	echo '<th>' . __('Colors', 'shprinkone') . '</th>';
-	echo '<th>' . __('Name', 'shprinkone') . '</th>';
-	echo '<th>' . __('Description', 'shprinkone') . '</th>';
-	echo '<th>' . __('Author', 'shprinkone') . '</th>';
-	echo '</tr></thead>';
-	echo '<tbody>';
-	$i = 0;
+        echo '<fieldset id="color-picker" class="scheme-list">';
+        $i = 0;
 	foreach (shprinkone_get_theme_templates() as $key => $template) {
-		$checked = ($options['theme_template'] == $key) ? 'checked="checked"' : '';
-		echo ($i % 2 == 0) ? '<tr>' : '<tr class="alternate">';
-		echo '<td><input type="radio" name="shprinkone_theme_options[theme_template]" value="' . $template['value'] . '" ' . $checked . '></td>';
-		echo '<td>' . shprinkone_format_template_colors($template['colors']) . '</td>';
-		echo '<td>' . $template['name'] . '</td>';
-		echo '<td>' . $template['description'] . '</td>';
-		echo '<td>' . $template['author'] . '</td>';
-		echo '</tr>';
+                $checked = ($options['theme_template'] == $key) ? 'checked="checked"' : '';
+		$selected = ($options['theme_template'] == $key) ? 'selected' : '';
+                echo '<div class="color-option ' . $selected .'">';
+		echo '<input class="tog" type="radio" name="shprinkone_theme_options[theme_template]" value="' . $template['value'] . '" ' . $checked . '>';
+		echo '<label>' . $template['name'] . '</label>';
+                echo shprinkone_format_template_colors($template['colors']);
+		echo '</div>';
 		$i++;
 	}
-	echo '<tbody>';
-	echo '</table>';
+        echo '</fieldset>';
+        echo '<span class="description alignright">Themes by <a href="http://bootswatch.com" target="_blank">Bootswatch</a></span>';
+}
+
+/**
+ * Set CSS filed
+ *
+ * @return  void
+ * @since   2.1.0
+ */
+function shprinkone_settings_field_css() {
+    $options = shprinkone_get_theme_options();
+    if (!isset($options['theme_css'])) {
+        return;
+    }
+    echo '<textarea name="shprinkone_theme_options[theme_css]" rows="20" style="width: 100%;">' . $options['theme_css'] . '</textarea>';
 }
 
 /**
@@ -216,9 +221,9 @@ function shprinkone_format_template_colors($colors) {
 	if (!is_array($colors)) {
 		return $html;
 	}
-	$html .= '<table><tbody><tr>';
+	$html .= '<table class="color-palette"><tbody><tr>';
 	foreach ($colors as $color) {
-		$html .= '<td style="height: 5px; width: 5px; background-color:' . $color . '; border:none;"></td>';
+		$html .= '<td style="background-color:' . $color . ';">&nbsp;</td>';
 	}
 	$html .= '</tbody></tr></table>';
 	return $html;
@@ -248,6 +253,7 @@ function shprinkone_get_theme_default() {
 	$default_theme_options = array(
 		'theme_layout' => 'content-sidebar',
 		'theme_template' => 'flaty',
+		'theme_css' => '/* INCLUDE YOUR CSS HERE */',
 		'theme_posts' => array(
 			'meta' => true,
 			'type' => 'ajax_scroll'
@@ -389,7 +395,7 @@ function shprinkone_get_theme_templates() {
 		'description' => __('A friendly foundation.', 'shprinkone')
 	);
 	$templateList['custom'] = array(
-		'name' => 'Custom',
+		'name' => 'Custom (only for legacy purpose)',
 		'value' => 'custom',
 		'author' => 'none',
 		'path' => '/css/custom.css',
@@ -426,6 +432,9 @@ function shprinkone_theme_options_validate($input) {
 	// Theme layout must be in our array of theme layout options
 	if (isset($input['theme_layout']) && array_key_exists($input['theme_layout'], shprinkone_get_theme_layouts()))
 		$output['theme_layout'] = $input['theme_layout'];
+
+	if (isset($input['theme_css']))
+		$output['theme_css'] = $input['theme_css'];
 
 	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates()))
 		$output['theme_template'] = $input['theme_template'];
