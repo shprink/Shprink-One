@@ -380,6 +380,14 @@ function shprinkone_get_theme_templates() {
 		'colors' => array('#FFFFFF', '#FFFFFF', '#777777', '#777777'),
 		'description' => __('Crisp like a new sheet of paper.', 'shprinkone')
 	);
+	$templateList['yeti'] = array(
+		'name' => 'Yeti',
+		'value' => 'yeti',
+		'author' => 'http://bootswatch.com/',
+		'path' => '/css/yeti.bootswatch.min.css',
+		'colors' => array('#222222', '#FFFFFF', '#008cba', '#222222'),
+		'description' => __('A friendly foundation.', 'shprinkone')
+	);
 	$templateList['custom'] = array(
 		'name' => 'Custom',
 		'value' => 'custom',
