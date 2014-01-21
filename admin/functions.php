@@ -58,15 +58,38 @@ add_action('admin_menu', 'shprinkone_add_theme_page');
  */
 function shprinkone_theme_options_render() {
 	$theme_name = wp_get_theme();
-	echo '<div class="wrap">';
+	echo '<div class="wrap has-right-sidebar">';
 	screen_icon();
 	echo '<h2>' . sprintf(__('%s Theme Options', 'shprinkone'), $theme_name) . '</h2>';
 	settings_errors();
+ 
+        echo '<div id="side-info-column" class="inner-sidebar">';
+        echo '<div class="postbox">';
+	echo '<h3>ShprinkOne ' . $theme_name->get( 'Version' ) . '</h3>';
+	echo '<div class="inside">';
+	echo '<p>Author : Julien Renaux</p>';
+	echo '<p>Email : <a href="mailto:contact@julienrenaux.fr" target="_blank">contact@julienrenaux.fr</a></p>';
+	echo '<p>Blog : <a href="http://julienrenaux.fr/" target="_blank">julienrenaux.fr</a></p>';
+	echo '<h4>' . __('Keep in touch with ShprinkOne updates!', 'shprinkone') . '</h4>';
+        echo '<iframe src="http://ghbtns.com/github-btn.html?user=shprink&repo=Shprink-One&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>';
+	echo '<p>Twitter : <a href="http://twitter.com/julienrenaux" target="_blank">@julienrenaux</a></p>';
+	echo '<p>Facebook : <a href="https://www.facebook.com/julienrenauxblog" target="_blank">julienrenauxblog</a></p>';
+	echo '</div>';
+	echo '</div>';
+
+	echo'</div>';
+
+        echo '<div id="post-body">';
+	echo '<div id="post-body-content">';
 	echo '<form method="post" action="options.php">';
 	settings_fields('shprinkone_options');
 	do_settings_sections('theme_options');
 	submit_button();
-	echo'</form></div>';
+	echo'</form>';
+	echo'</div>';
+	echo'</div>';
+	echo'</div>';
 }
 
 /**
