@@ -120,6 +120,33 @@ function shprinkone_get_header_options() {
 }
 
 /**
+ * Get the custom CSS
+ *
+ * @return  string  css
+ * @since   2.1.0
+ */
+function shprinkone_get_custom_css() {
+	$options = shprinkone_get_theme_options();
+	return $options['theme_css'];
+}
+
+/**
+ * Inject custom CSS
+ *
+ * @return  void
+ * @since   2.1.0
+ */
+function shprinkone_inject_custom_css()
+{
+    ?>
+         <style type="text/css">
+            <?php echo shprinkone_get_custom_css(); ?>
+         </style>
+    <?php
+}
+add_action( 'wp_head', 'shprinkone_inject_custom_css');
+
+/**
  * Register widget location within the template
  *
  * @return  void

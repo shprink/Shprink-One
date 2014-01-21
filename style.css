@@ -4,7 +4,7 @@ Theme URI: http://julienrenaux.fr/shprinkone
 Description: ShprinkOne is a Bootstrap 3 responsive theme that can fit any screen (mobile phone, tablet, laptop, desktop). Features a theme picker (10 choices), a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget, Menu positions and multi language support. ShprinkOne is an Open Source project that can be forked on GitHub https://github.com/shprink/Shprink-One 
 Author: shprink
 Author URI: http://julienrenaux.fr
-Version: 2.1.0
+Version: 2.2.0
 Tags: one-column, two-columns, white, gray, fixed-width, custom-menu, featured-image-header, featured-images, microformats, theme-options, threaded-comments, translation-ready
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -100,7 +100,6 @@ ul.pager li a span{
 	background: -ms-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #3f4c6b 0%,#3f4c6b 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
-
 }
 
 #slideshow {
@@ -588,13 +587,15 @@ body.theme-united{padding-top: 60px;}
 body.theme-spacelab{padding-top: 70px;}
 body.theme-simplex{padding-top: 60px;}
 body.theme-journal{padding-top: 75px;}
+body.theme-yeti{background-color: #f7f7f7; padding-top: 60px;}
 body.theme-custom{}
 
 body.theme-cosmo .container-slideshow,
 body.theme-amelia .container-slideshow,
 body.theme-united .container-slideshow,
 body.theme-spacelab .container-slideshow,
-body.theme-readable .container-slideshow{
+body.theme-readable .container-slideshow,
+body.theme-yeti .container-slideshow{
 	padding-top: 30px;
 }
 
@@ -619,7 +620,10 @@ body.theme-united #comments .trackback,
 body.theme-united #comments .pingback,
 body.theme-simplex #comments .comment,
 body.theme-simplex #comments .trackback,
-body.theme-simplex #comments .pingback{
+body.theme-simplex #comments .pingback,
+body.theme-yeti #comments .comment,
+body.theme-yeti #comments .trackback,
+body.theme-yeti #comments .pingback{
 	padding-top: 60px;
 }
 
@@ -639,6 +643,17 @@ body.theme-journal #comments .comment,
 body.theme-journal #comments .trackback,
 body.theme-journal #comments .pingback {
 	padding-top: 70px;
+}
+
+body.theme-yeti .container-slideshow {
+background: #007196;
+background: -moz-linear-gradient(top,  #007196 0%, #008cba 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#007196), color-stop(100%,#008cba));
+background: -webkit-linear-gradient(top,  #007196 0%,#008cba 100%);
+background: -o-linear-gradient(top,  #007196 0%,#008cba 100%);
+background: -ms-linear-gradient(top,  #007196 0%,#008cba 100%);
+background: linear-gradient(to bottom,  #007196 0%,#008cba 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007196', endColorstr='#008cba',GradientType=0 );
 }
 
 
