@@ -16,15 +16,21 @@ function shprinkone_theme_options_init() {
 	);
 	// Register our settings field group
 	add_settings_section(
-			'general', '', '__return_false', 'theme_options'
+			'general', __('General', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
+			'homepage', __('Homepage', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
+			'style', __('CSS and Layout', 'shprinkone'), '__return_false', 'theme_options'
 	);
 
 	add_settings_field('header', __('Header', 'shprinkone'), 'shprinkone_settings_field_header', 'theme_options', 'general');
-	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'general');
-	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'general');
-	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'general');
-	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'general');
-	add_settings_field('css', __('Css overwrite', 'shprinkone'), 'shprinkone_settings_field_css', 'theme_options', 'general');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'homepage');
+	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'homepage');
+	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'style');
+	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'style');
+	add_settings_field('css', __('Css overwrite', 'shprinkone'), 'shprinkone_settings_field_css', 'theme_options', 'style');
 }
 
 add_action('admin_init', 'shprinkone_theme_options_init');
@@ -62,7 +68,7 @@ function shprinkone_theme_options_render() {
 	screen_icon();
 	echo '<h2>' . sprintf(__('%s Theme Options', 'shprinkone'), $theme_name) . '</h2>';
 	settings_errors();
- 
+
         echo '<div id="side-info-column" class="inner-sidebar">';
         echo '<div class="postbox">';
 	echo '<h3>ShprinkOne ' . $theme_name->get( 'Version' ) . '</h3>';
@@ -236,7 +242,7 @@ function shprinkone_settings_field_slideshow() {
 	$checked = (isset($slideshow_option['copy_within_content']) && $slideshow_option['copy_within_content']) ? 'checked="checked"' : '';
 	echo '<input id="slideshow_copy_within_content" type="checkbox" name="shprinkone_theme_options[theme_slideshow][copy_within_content]" ' . $checked . '>';
 	echo ' <label for="slideshow_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
-	
+
 }
 
 function shprinkone_format_template_colors($colors) {
