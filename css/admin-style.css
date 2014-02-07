@@ -1,0 +1,11 @@
+#post-body .toggle-container{
+	display: inline-block;
+}
+
+#post-body .toggle-container{
+	display: inline-block;
+}
+
+#post-body input[type=checkbox]{
+	display: none;
+}

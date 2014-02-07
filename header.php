@@ -8,6 +8,8 @@
  */
 $selectedTemplate = shprinkone_get_selected_template();
 $headerOptions = shprinkone_get_header_options();
+$isContainerFluid = true;
+$bodyClass = ($isContainerFluid)? 'body-fluid' : '';
 global $page, $paged;
 ?>
 <!DOCTYPE html>
@@ -35,10 +37,10 @@ global $page, $paged;
 			var $ = jQuery;
 		</script>
 	</head>
-	<body <?php body_class('theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
+	<body <?php body_class($bodyClass . ' theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">
 			<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-				<div class="container">
+				<div class="<?php echo ($isContainerFluid)? 'container-fluid' : 'container' ?>">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

@@ -9,21 +9,23 @@
  */
 $options = shprinkone_get_theme_options();
 $page_on_front = !(!get_option('page_on_front'));
+$fluidity = shprinkone_get_fluidity_options();
+$isContainerFluid = $fluidity['front'];
 ?>
 <?php if (!$page_on_front): ?>
 	<?php get_header(); ?>
 	<?php if (isset($options['theme_slideshow']['posts']) && $options['theme_slideshow']['posts'] > 0 && have_posts()) : ?>	
 		<?php get_template_part('loop_home'); ?>
 	<?php endif; ?>
-	<div class="container">
+	<div class="<?php echo ($isContainerFluid)? 'container-fluid' : 'container' ?>">
 		<?php if (is_active_sidebar('before-content-widget')) : ?>
 			<?php dynamic_sidebar('before-content-widget'); ?>
 		<?php endif; ?>
 		<!-- container start -->
-		<div id="content">
+		<div id="container-content">
 			<div class="row">
 				<?php shprinkone_get_sidebar('left'); ?>
-				<div class="<?php echo shprinkone_get_contentspan(); ?>">
+				<div id="content" class="<?php echo shprinkone_get_contentspan(); ?>">
 					<?php get_template_part('loop'); ?>
 				</div>
 				<?php shprinkone_get_sidebar('right'); ?>

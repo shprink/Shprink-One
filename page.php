@@ -6,17 +6,19 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
+$fluidity = shprinkone_get_fluidity_options();
+$isContainerFluid = $fluidity['page'];
 ?>
 <?php get_header(); ?>
-<div class="container">
+<div class="<?php echo ($isContainerFluid)? 'container-fluid' : 'container' ?>"> 
 	<?php if (is_active_sidebar('before-content-widget')) : ?>
 		<?php dynamic_sidebar('before-content-widget'); ?>
 	<?php endif; ?>
 	<!-- container start -->
-	<div id="content">
+	<div id="container-content">
 		<div class="row">
 			<?php shprinkone_get_sidebar('left'); ?>
-			<div class="<?php echo shprinkone_get_contentspan(); ?>">
+			<div id="content" class="<?php echo shprinkone_get_contentspan(); ?>">
 				<?php if (have_posts()) while (have_posts()) : the_post(); ?>
 						<div id="page-<?php the_ID(); ?>" class="panel panel-default">
 							<div class="panel-body">

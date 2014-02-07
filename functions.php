@@ -120,6 +120,17 @@ function shprinkone_get_header_options() {
 }
 
 /**
+ * Get fluidity options
+ *
+ * @return  array  header options
+ * @since   2.2.0
+ */
+function shprinkone_get_fluidity_options() {
+	$options = shprinkone_get_theme_options();
+	return $options['theme_fluidity'];
+}
+
+/**
  * Get the custom CSS
  *
  * @return  string  css
