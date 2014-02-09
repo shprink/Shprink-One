@@ -7,6 +7,14 @@
  * @since       1.0
  */
 $condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('footer-widget-middle-left') || is_active_sidebar('footer-widget-middle-right') || is_active_sidebar('footer-widget-right');
+$selectedTemplate = shprinkone_get_selected_template();
+if ($selectedTemplate['value'] == 'cupid') {
+	$copyright = __('All You Need Is %s | by %s', 'shprinkone');
+	$copyrightIcon = '<i class="icon-heart"></i>';
+} else {
+	$copyright = __('%s Theme created by %s', 'shprinkone');
+	$copyrightIcon = '<i class="icon-certificate icon-white"></i>';
+}
 ?>
 <?php if ($condition) : ?>
 	<footer id="footer" class="well well-small">
@@ -52,8 +60,7 @@ $condition = is_active_sidebar('footer-widget-left') || is_active_sidebar('foote
 					</div>
 
 					<div class="pull-right">
-						<i class="icon-certificate icon-white"></i> Theme created by <a
-							href="http://julienrenaux.fr/shprinkone" target="_blank">Shprink.</a>
+						<?php printf($copyright, $copyrightIcon, '<a href="http://julienrenaux.fr" target="_blank">@julienrenaux</a>') ?>
 					</div>
 					<?php if (is_active_sidebar('footer-widget-bottom')) : ?>
 						<?php dynamic_sidebar('footer-widget-bottom'); ?>

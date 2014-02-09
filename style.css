@@ -4,7 +4,7 @@ Theme URI: http://julienrenaux.fr/shprinkone
 Description: ShprinkOne is a Bootstrap 3 responsive theme that can fit any screen (mobile phone, tablet, laptop, desktop). Features a theme picker (10 choices), a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget, Menu positions and multi language support. ShprinkOne is an Open Source project that can be forked on GitHub https://github.com/shprink/Shprink-One 
 Author: shprink
 Author URI: http://julienrenaux.fr
-Version: 2.2.0
+Version: 2.3.0
 Tags: one-column, two-columns, white, gray, fixed-width, custom-menu, featured-image-header, featured-images, microformats, theme-options, threaded-comments, translation-ready
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -320,6 +320,7 @@ ul.pager li a span{
 	background-image: -o-linear-gradient(top, #222222, #111111);
 	background-image: linear-gradient(to bottom, #222222, #111111);
 	background-repeat: repeat-x;
+	margin-top: 10px;
 }
 
 #credit a {
@@ -588,6 +589,7 @@ body.theme-spacelab{padding-top: 70px;}
 body.theme-simplex{padding-top: 60px;}
 body.theme-journal{padding-top: 75px;}
 body.theme-yeti{background-color: #f7f7f7; padding-top: 60px;}
+body.theme-cupid{padding-top: 80px;}
 body.theme-custom{}
 
 body.theme-cosmo .container-slideshow,
@@ -595,7 +597,8 @@ body.theme-amelia .container-slideshow,
 body.theme-united .container-slideshow,
 body.theme-spacelab .container-slideshow,
 body.theme-readable .container-slideshow,
-body.theme-yeti .container-slideshow{
+body.theme-yeti .container-slideshow,
+body.theme-cupid .container-slideshow{
 	padding-top: 30px;
 }
 
@@ -627,6 +630,12 @@ body.theme-yeti #comments .pingback{
 	padding-top: 60px;
 }
 
+body.theme-cupid #comments .pingback,
+body.theme-cupid #comments .comment,
+body.theme-cupid #comments .trackback{
+	padding-top: 80px;
+}
+
 body.theme-flaty #comments .comment,
 body.theme-flaty #comments .trackback,
 body.theme-flaty #comments .pingback,
@@ -635,10 +644,7 @@ body.theme-readable #comments .trackback,
 body.theme-readable #comments .pingback,
 body.theme-spacelab #comments .comment,
 body.theme-spacelab #comments .trackback,
-body.theme-spacelab #comments .pingback {
-	padding-top: 70px;
-}
-
+body.theme-spacelab #comments .pingback,
 body.theme-journal #comments .comment,
 body.theme-journal #comments .trackback,
 body.theme-journal #comments .pingback {
@@ -646,14 +652,52 @@ body.theme-journal #comments .pingback {
 }
 
 body.theme-yeti .container-slideshow {
-background: #007196;
-background: -moz-linear-gradient(top,  #007196 0%, #008cba 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#007196), color-stop(100%,#008cba));
-background: -webkit-linear-gradient(top,  #007196 0%,#008cba 100%);
-background: -o-linear-gradient(top,  #007196 0%,#008cba 100%);
-background: -ms-linear-gradient(top,  #007196 0%,#008cba 100%);
-background: linear-gradient(to bottom,  #007196 0%,#008cba 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007196', endColorstr='#008cba',GradientType=0 );
+	background: #007196;
+	background: -moz-linear-gradient(top,  #007196 0%, #008cba 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#007196), color-stop(100%,#008cba));
+	background: -webkit-linear-gradient(top,  #007196 0%,#008cba 100%);
+	background: -o-linear-gradient(top,  #007196 0%,#008cba 100%);
+	background: -ms-linear-gradient(top,  #007196 0%,#008cba 100%);
+	background: linear-gradient(to bottom,  #007196 0%,#008cba 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007196', endColorstr='#008cba',GradientType=0 );
+}
+
+/* Fix https://twitter.com/julienrenaux/status/432204351810314240 */
+body.theme-cupid .alert h1,
+body.theme-cupid .panel h1,
+body.theme-cupid .alert h2,
+body.theme-cupid .panel h2{
+	background-color: #f49ac0;
+	padding: 0.2em 1.2em;
+	margin-right: 50px;
+}
+
+body.theme-cupid h1:before, body.theme-cupid h2:before {
+	top: -0.05em;
+}
+body.theme-cupid .container-slideshow h2.post-title,
+body.theme-cupid .container-slideshow h2.post-title:after,
+body.theme-cupid .container-slideshow h2.post-title:before,
+body.theme-cupid .sidr h2:before,
+body.theme-cupid .sidr h2:after{
+	background-color: transparent;
+	content: ' ';
+	border: none;
+}
+
+body.theme-cupid .sidr h2{
+	background-color: transparent;
+	padding: 0px;
+}
+
+body.theme-cupid #credit{
+	background-color: #f0569f;
+	background-image: none;
+	color: #000;
+}
+
+body.theme-cupid .yarpp-template a.thumbnail{
+	background-color: white;
 }
 
 

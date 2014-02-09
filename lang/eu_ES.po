@@ -1,0 +1,572 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shprinkone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-14 01:19+0100\n"
+"PO-Revision-Date: 2014-02-04 17:10+0100\n"
+"Last-Translator: Josu Waliño <j.walino@gmail.com>\n"
+"Language-Team: shprink <contact@julienrenaux.fr>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;_n\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: tag.php:21
+msgid "Tag"
+msgstr "Etiketa"
+
+#: loop.php:41 single.php:76 single.php:94 loop_home.php:48
+msgid "Read more"
+msgstr "Gehiago irakurri"
+
+#: loop.php:100 loop.php:134
+msgid "No more pages to load."
+msgstr "Ez daude orri gehiago."
+
+#: loop.php:102 loop.php:136
+msgid "Loading the next set of posts..."
+msgstr "Hurrengo artikuluak kargatzen..."
+
+#: loop.php:127 loop.php:196
+msgid "Older posts"
+msgstr "Aurreko artikuluak"
+
+#: loop.php:202
+msgid "Newer posts"
+msgstr "Hurrengo artikuluak"
+
+#: single.php:50
+#, php-format
+msgid "About %s"
+msgstr "%s (e)ri buruz"
+
+#: single.php:57
+#, php-format
+msgid "View all posts by %s"
+msgstr "%s (e)ri buruzko artikulu guztiak ikusi"
+
+#: comments.php:13
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Artikulu hau pasahitz bidez babestuta dago. Sartu pasahitza iruzkinak "
+"ikusteko."
+
+#: comments.php:30
+#, php-format
+msgid "%1$s Responses to <i>%2$s</i>"
+msgstr "%1$s Iruzkin honi buruz: <i>%2$s</i>"
+
+#: comments.php:32
+#, php-format
+msgid "One Response to <i>%s</i>"
+msgstr "Iruzkin bat honi buruz: <i>%s</i>"
+
+#: comments.php:42
+msgid "<i class=\"icon-chevron-left\"></i> Older Comments"
+msgstr "<i class=\"icon-chevron-left\"></i> Iruzkin zaharragoak"
+
+#: comments.php:44
+msgid "Newer Comments <i class=\"icon-chevron-right\"></i>"
+msgstr "Iruzkin berriagoak <i class=\"icon-chevron-right\"></i>"
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "Ez dira iruzkinak onartzen."
+
+#: image.php:30
+#, php-format
+msgid ""
+"<div class=\"post-meta\">Full size: <a href=\"%1$s\" title=\"Link to full-"
+"size image\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title=\"Return to %5$s"
+"\" rel=\"gallery\">%6$s</a></div>"
+msgstr ""
+"<div class=\"post-meta\">Tamaina osoa: <a href=\"%1$s\" title=\"Tamaina "
+"osoko irudira lotura\">%2$s &times; %3$s</a> hemen  <a href=\"%4$s\" title="
+"\"Hona itzuli: %5$s\" rel=\"gallery\">%6$s</a></div>"
+
+#: image.php:33
+msgid "Edit"
+msgstr "Editatu"
+
+#: image.php:73
+msgid "Previous"
+msgstr "Aurrekoa"
+
+#: image.php:76
+msgid "Next"
+msgstr "Hurrengoa"
+
+#: 404.php:18
+msgid "404... Oups something went wrong..."
+msgstr "404... Aiba! Zerbait gaizki atera da..."
+
+#: 404.php:21
+msgid ""
+"We are sorry but we cannot reach the page you are looking for... Perhaps you "
+"should try to:"
+msgstr ""
+"Sentitzen dugu baina bila zabiltzan orria ez dago erabilgarri... Agian beste "
+"honekin saia zaitezke:"
+
+#: 404.php:36
+msgid "Search for it: "
+msgstr "Bilatu:"
+
+#: 404.php:44
+msgid "Check Out The "
+msgstr "Begiratu hau: "
+
+#: 404.php:50
+msgid "Check Out The Most Used Categories"
+msgstr "Gehien erabilitako kategoriak begiratu"
+
+#: category.php:23
+msgid "Category"
+msgstr "Kategoria"
+
+#: loop_home.php:35
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Esteka iraunkorra: %s"
+
+#: footer.php:50
+msgid "All rights reserved."
+msgstr "Eskubide guztiak erreserbatuta."
+
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Bilaketaren emaitzak: %s"
+
+#: functions.php:79
+#, php-format
+msgid "Page %s"
+msgstr "Orrialdea: %s"
+
+#: functions.php:131 functions.php:135
+msgid "Sidebar Widget Top"
+msgstr "Alboko barrako goialdeko Widget-a"
+
+#: functions.php:142 functions.php:146
+msgid "Sidebar Widget Middle"
+msgstr "Alboko barrako erdialdeko Widget-a"
+
+#: functions.php:153 functions.php:157
+msgid "Sidebar Widget Bottom"
+msgstr "Alboko barrako behealdeko Widget-a"
+
+#: functions.php:164 functions.php:168
+msgid "Footer Widget Left"
+msgstr "Oineko ezker Widget-a"
+
+#: functions.php:175 functions.php:179
+msgid "Footer Widget Middle Left"
+msgstr "Oineko erdialdeko ezker Widget-a"
+
+#: functions.php:186 functions.php:190
+msgid "Footer Widget Middle Right"
+msgstr "Oineko erdialdeko eskuin Widget-a"
+
+#: functions.php:197 functions.php:201
+msgid "Footer Widget Right"
+msgstr "Oineko eskuin Widget-a"
+
+#: functions.php:208 functions.php:212
+msgid "Footer Widget Bottom"
+msgstr "Oineko Widget-a"
+
+#: functions.php:219 functions.php:223
+msgid "Before Content"
+msgstr "Edukiaren aurretik"
+
+#: functions.php:230 functions.php:234
+msgid "After Content"
+msgstr "Edukiaren ondoren"
+
+#: functions.php:252
+msgid "Menu Top"
+msgstr "Goiko menua"
+
+#: functions.php:253
+msgid "Sidebar Menu Top"
+msgstr "Alboko goi-menua"
+
+#: functions.php:254
+msgid "Sidebar Menu Middle"
+msgstr "Alboko erdiko menua"
+
+#: functions.php:255
+msgid "Sidebar Menu Bottom"
+msgstr "Alboko behe-menua"
+
+#: functions.php:429
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">dio:</span>"
+
+#: functions.php:432
+msgid "Your comment is awaiting moderation."
+msgstr "Zure iruzkina moderazio zain dago."
+
+#: functions.php:441
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s  %2$s"
+
+#: functions.php:444
+msgid "(Edit)"
+msgstr "(Editatu)"
+
+#: functions.php:488 functions.php:546
+msgid "M d, Y"
+msgstr "Y, M d"
+
+#: functions.php:500 author.php:27
+#, php-format
+msgid "Posts by %s"
+msgstr "%s (r)en artikuluak"
+
+#: functions.php:502
+#, php-format
+msgid "By: %s"
+msgstr "Egilea: %s"
+
+#: functions.php:514
+#, php-format
+msgid "%d Comments"
+msgstr "%d Iruzkin"
+
+#: functions.php:516
+#, php-format
+msgid "%d Comment"
+msgstr "%d Iruzkin"
+
+#: functions.php:540 functions.php:542
+msgid "Featured"
+msgstr "Nabarmendua"
+
+#: functions.php:548
+msgid "Published on"
+msgstr "Argitalpen-data: "
+
+#: functions.php:556 admin/functions.php:146
+msgid "Author"
+msgstr "Egilea"
+
+#: functions.php:569
+msgid "Categories"
+msgstr "Kategoriak"
+
+#: functions.php:571
+#, php-format
+msgid "Category: %s"
+msgstr "Kategoria: %s"
+
+#: functions.php:583
+msgid "Tags"
+msgstr "Etiketak"
+
+#: functions.php:585
+msgid "Tag:  "
+msgstr "Etiketa:  "
+
+#: functions.php:592
+msgid "Comments"
+msgstr "Iruzkinak"
+
+#: functions.php:688
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sentitzen dut, baina zure bilaketak ez du emaitzarik eman."
+
+#: functions.php:721 admin/functions.php:144
+msgid "Name"
+msgstr "Izena"
+
+#: functions.php:722
+msgid "Email"
+msgstr "Helbide-elektronikoa"
+
+#: functions.php:723
+msgid "Website"
+msgstr "Web gunea"
+
+#: functions.php:726
+#, php-format
+msgid "Required fields are marked %s"
+msgstr "Markatutako eremuak derrigorrezkoak dira %s"
+
+#: functions.php:729
+msgid "Comment"
+msgstr "Iruzkina"
+
+#: functions.php:730
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "<a href=\"%s\">Konektatu</a> iruzkin bat egiteko."
+
+#: functions.php:731
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"Konektatuta: <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Kontutik "
+"irten\">Irten?</a>"
+
+#: functions.php:732
+msgid "Your email address will not be published."
+msgstr "Zure helbide-elektronikoa ez da argitaratuko."
+
+#: functions.php:736
+msgid "Leave a Reply"
+msgstr "Iruzkin bat egin"
+
+#: functions.php:737
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Hau iruzkindu: %s"
+
+#: functions.php:738
+msgid "Cancel reply"
+msgstr "Iruzkina bertan behera utzi"
+
+#: functions.php:739
+msgid "Post Comment"
+msgstr "Iruzkina argitaratu"
+
+#: functions.php:803
+msgid "Next page"
+msgstr "Hurrengo orria"
+
+#: functions.php:804
+msgid "Previous page"
+msgstr "Aurreko orria"
+
+#: author.php:38
+msgid "Website:"
+msgstr "Web gunea:"
+
+#: author.php:44
+msgid "AIM:"
+msgstr "AIM:"
+
+#: author.php:48
+msgid "Yahoo IM:"
+msgstr "Yahoo IM:"
+
+#: author.php:52
+msgid "Jabber / Google Talk:"
+msgstr "Jabber / Google Talk:"
+
+#: author.php:56
+msgid "Google+:"
+msgstr "Google+:"
+
+#: author.php:59
+#, php-format
+msgid "%s on Google+"
+msgstr "%s Google+"
+
+#: header.php:77
+msgid "Subscribe to the RSS feed"
+msgstr "RSS iturrira harpidetu"
+
+#: admin/functions.php:22
+msgid "Header"
+msgstr "Goiburua"
+
+#: admin/functions.php:23
+msgid "Slideshow"
+msgstr "Diaporama"
+
+#: admin/functions.php:24
+msgid "Post layout on blog, category, tag and author page."
+msgstr "Egitura argitaratu blogean, kategoria, etiketa eta egilearen orria."
+
+#: admin/functions.php:25
+msgid "Layout"
+msgstr "Egitura"
+
+#: admin/functions.php:26
+msgid "Theme"
+msgstr "Itxura"
+
+#: admin/functions.php:39 admin/functions.php:40
+msgid "Theme Options"
+msgstr "Itxuraren aukerak"
+
+#: admin/functions.php:62
+#, php-format
+msgid "%s Theme Options"
+msgstr "%s Itxuraren aukerak"
+
+#: admin/functions.php:85
+msgid "Thumbnail"
+msgstr "Irudi-txikia"
+
+#: admin/functions.php:86
+msgid "Position"
+msgstr "Kokapena"
+
+#: admin/functions.php:119
+msgid "Display RSS"
+msgstr "Erakutsi RSS"
+
+#: admin/functions.php:122
+msgid "Display search box"
+msgstr "Bilaketa-eremua erakutsi"
+
+#: admin/functions.php:125
+msgid "Display home icon"
+msgstr "Etxeko ikonoa erakutsi"
+
+#: admin/functions.php:143
+msgid "Colors"
+msgstr "Koloreak"
+
+#: admin/functions.php:145
+msgid "Description"
+msgstr "Deskribapena"
+
+#: admin/functions.php:177
+msgid "Posts loading type"
+msgstr "Artikuluak kargatzeko modua"
+
+#: admin/functions.php:184
+msgid "Adding meta on each post"
+msgstr "Artikulu bakoitzari metadatuak gehitu"
+
+#: admin/functions.php:201
+msgid "Number of post"
+msgstr "Artikulu kopurua"
+
+#: admin/functions.php:208
+msgid "Duplicate slideshow posts within the content"
+msgstr "Diaporamako artikuluak edukian bikoiztu"
+
+#: admin/functions.php:278
+msgid "Content on left"
+msgstr "Edukia ezkerraldean"
+
+#: admin/functions.php:283
+msgid "Content on right"
+msgstr "Edukia eskuinaldean"
+
+#: admin/functions.php:288
+msgid "One-column, no sidebar"
+msgstr "Zutabe bakarra, alboko barrarik gabe"
+
+#: admin/functions.php:308
+msgid ""
+"Sleek, intuitive, and powerful front-end framework for faster and easier web "
+"development."
+msgstr ""
+"Web garapen azkar eta errazerako front-end framework erraz, boteretsu eta "
+"intuitiboa."
+
+#: admin/functions.php:316
+msgid "Flat and clean."
+msgstr "Garbi eta txukuna"
+
+#: admin/functions.php:324
+msgid "A calm, blue sky."
+msgstr "Zeru urdin argi bat."
+
+#: admin/functions.php:332
+msgid "An ode to Metro."
+msgstr "Metro estiloari bertso bat."
+
+#: admin/functions.php:340
+msgid "Sweet and cheery."
+msgstr "Gozo eta dibertigarria."
+
+#: admin/functions.php:348
+msgid "Optimized for legibility."
+msgstr "Erraz irakurtzeko prestatua."
+
+#: admin/functions.php:356
+msgid "Ubuntu orange and unique font."
+msgstr "Ubuntu laranja eta letra-mota bakarra."
+
+#: admin/functions.php:364
+msgid "Silvery and sleek."
+msgstr "Zilar kolorekoa eta txukuna."
+
+#: admin/functions.php:372
+msgid "Mini and minimalist."
+msgstr "Mini eta minimalista."
+
+#: admin/functions.php:380
+msgid "Crisp like a new sheet of paper."
+msgstr "Paper-orri berri bat bezain kraskaria."
+
+#: admin/functions.php:388
+msgid "An empty CSS file that you can modify as you like."
+msgstr "Zure gustora egokitu dezakezun CSS fitxategi hutsa."
+
+#: admin/functions.php:401
+msgid "Ajax on scroll down"
+msgstr "Ajax-en oinarritutako scrolla"
+
+#: admin/functions.php:402
+msgid "Ajax on button clicked"
+msgstr "Ajax-en oinarritutako botoiak"
+
+#: admin/functions.php:403
+msgid "WordPress classic pagination"
+msgstr "WordPress-en ohiko paginazioa"
+
+#~ msgid "Header Menu Right"
+#~ msgstr "Haut de page droite"
+
+#~ msgid "Blog page post type"
+#~ msgstr "Type de d'article de  blog"
+
+#~ msgid "Posts"
+#~ msgstr "Articles"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Laissez un commentaire"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Commentaire"
+
+#~ msgid "% Comments"
+#~ msgstr "% Commentaires"
+
+#~ msgid ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-left"
+#~ "\"></i> Previous</span>"
+#~ msgstr ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-left"
+#~ "\"></i> Precedent</span>"
+
+#~ msgid ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-right"
+#~ "\"></i> Next</span>"
+#~ msgstr ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-right"
+#~ "\"></i> Suivant</span>"
+
+#~ msgid "Jet black and electric blue."
+#~ msgstr "Noir et bleu electrique."
+
+#~ msgid "Shades of gunmetal gray."
+#~ msgstr "Nuances de gris métal."
+
+#~ msgid "Camping in the woods."
+#~ msgstr "Camping dans les bois."
+
+#~ msgid "A special theme for April Fools' Day"
+#~ msgstr "Un theme spécial pour le 1er Avril!"
+
+#~ msgid "Default Theme"
+#~ msgstr "Theme par default"
+
+#~ msgid "By"
+#~ msgstr "Par"

@@ -16,7 +16,3 @@ Once you get there there are two ways to install ShprinkOne.
 1. Go to Admin -> Appearance -> Install Themes tab -> Upload section
 2. Click on "Browse" and upload the .zip
 3. Activate it via the Admin -> Appearance -> Manage Themes tab 
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shprink/shprink-one/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

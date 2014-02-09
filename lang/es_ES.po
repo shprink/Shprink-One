@@ -1,0 +1,574 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shprinkone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-14 01:19+0100\n"
+"PO-Revision-Date: 2014-02-04 17:17+0100\n"
+"Last-Translator: Josu Waliño <j.walino@gmail.com>\n"
+"Language-Team: shprink <contact@julienrenaux.fr>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;_n\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: tag.php:21
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: loop.php:41 single.php:76 single.php:94 loop_home.php:48
+msgid "Read more"
+msgstr "Seguir leyendo"
+
+#: loop.php:100 loop.php:134
+msgid "No more pages to load."
+msgstr "No hay más páginas para cargar."
+
+#: loop.php:102 loop.php:136
+msgid "Loading the next set of posts..."
+msgstr "Cargando los siguientes artículos..."
+
+#: loop.php:127 loop.php:196
+msgid "Older posts"
+msgstr "Artículos antiguos"
+
+#: loop.php:202
+msgid "Newer posts"
+msgstr "Artículos recientes"
+
+#: single.php:50
+#, php-format
+msgid "About %s"
+msgstr "Sobre %s"
+
+#: single.php:57
+#, php-format
+msgid "View all posts by %s"
+msgstr "Ver todos los artículos de %s"
+
+#: comments.php:13
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Este artículo está protegido con contraseña. Introduce la contraseña para "
+"ver los comentarios."
+
+#: comments.php:30
+#, php-format
+msgid "%1$s Responses to <i>%2$s</i>"
+msgstr "%1$s Comentarios a <i>%2$s</i>"
+
+#: comments.php:32
+#, php-format
+msgid "One Response to <i>%s</i>"
+msgstr "Un comentario a <i>%s</i>"
+
+#: comments.php:42
+msgid "<i class=\"icon-chevron-left\"></i> Older Comments"
+msgstr "<i class=\"icon-chevron-left\"></i> Comentarios antiguos"
+
+#: comments.php:44
+msgid "Newer Comments <i class=\"icon-chevron-right\"></i>"
+msgstr "Comentarios recientes <i class=\"icon-chevron-right\"></i>"
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "No se permiten comentarios."
+
+#: image.php:30
+#, php-format
+msgid ""
+"<div class=\"post-meta\">Full size: <a href=\"%1$s\" title=\"Link to full-"
+"size image\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title=\"Return to %5$s"
+"\" rel=\"gallery\">%6$s</a></div>"
+msgstr ""
+"<div class=\"post-meta\">Tamaño completo: <a href=\"%1$s\" title=\"Link to "
+"full-size image\">%2$s &times; %3$s</a> en  <a href=\"%4$s\" title="
+"\"Regresar a %5$s\" rel=\"gallery\">%6$s</a></div>"
+
+#: image.php:33
+msgid "Edit"
+msgstr "Editar"
+
+#: image.php:73
+msgid "Previous"
+msgstr "Anterior"
+
+#: image.php:76
+msgid "Next"
+msgstr "Siguiente"
+
+#: 404.php:18
+msgid "404... Oups something went wrong..."
+msgstr "404... Ops! Algo salió mal..."
+
+#: 404.php:21
+msgid ""
+"We are sorry but we cannot reach the page you are looking for... Perhaps you "
+"should try to:"
+msgstr ""
+"Lo sentimos pero no podemos cargar la página que estás buscando. Tal vez "
+"deberías intentar:"
+
+#: 404.php:36
+msgid "Search for it: "
+msgstr "Buscar:"
+
+#: 404.php:44
+msgid "Check Out The "
+msgstr "Comprobar "
+
+#: 404.php:50
+msgid "Check Out The Most Used Categories"
+msgstr "Comprobar las categorías más utilizadas"
+
+#: category.php:23
+msgid "Category"
+msgstr "Categoría"
+
+#: loop_home.php:35
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Link permanente a %s"
+
+#: footer.php:50
+msgid "All rights reserved."
+msgstr "Todos los derechos reservados."
+
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Resultados de búsqueda para: %s"
+
+#: functions.php:79
+#, php-format
+msgid "Page %s"
+msgstr "Página %s"
+
+#: functions.php:131 functions.php:135
+msgid "Sidebar Widget Top"
+msgstr "Widget de barra lateral superior"
+
+#: functions.php:142 functions.php:146
+msgid "Sidebar Widget Middle"
+msgstr "Widget  de barra lateral medio"
+
+#: functions.php:153 functions.php:157
+msgid "Sidebar Widget Bottom"
+msgstr "Widget de barra lateral inferior"
+
+#: functions.php:164 functions.php:168
+msgid "Footer Widget Left"
+msgstr "Widget inferior izquierdo"
+
+#: functions.php:175 functions.php:179
+msgid "Footer Widget Middle Left"
+msgstr "Widget inferior centro izquierda"
+
+#: functions.php:186 functions.php:190
+msgid "Footer Widget Middle Right"
+msgstr "Widget inferior centro derecha"
+
+#: functions.php:197 functions.php:201
+msgid "Footer Widget Right"
+msgstr "Widget inferior derecha"
+
+#: functions.php:208 functions.php:212
+msgid "Footer Widget Bottom"
+msgstr "Widget inferior"
+
+#: functions.php:219 functions.php:223
+msgid "Before Content"
+msgstr "Antes del contenido"
+
+#: functions.php:230 functions.php:234
+msgid "After Content"
+msgstr "Después del contenido"
+
+#: functions.php:252
+msgid "Menu Top"
+msgstr " Menu superior"
+
+#: functions.php:253
+msgid "Sidebar Menu Top"
+msgstr " Menu lateral superior"
+
+#: functions.php:254
+msgid "Sidebar Menu Middle"
+msgstr " Menu lateral intermedio"
+
+#: functions.php:255
+msgid "Sidebar Menu Bottom"
+msgstr " Menu lateral inferior"
+
+#: functions.php:429
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">dice:</span>"
+
+#: functions.php:432
+msgid "Your comment is awaiting moderation."
+msgstr "Tu comentario está a la espera de moderación"
+
+#: functions.php:441
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s a %2$s"
+
+#: functions.php:444
+msgid "(Edit)"
+msgstr "(Editar)"
+
+#: functions.php:488 functions.php:546
+msgid "M d, Y"
+msgstr "d M, Y"
+
+#: functions.php:500 author.php:27
+#, php-format
+msgid "Posts by %s"
+msgstr "Artículos de %s"
+
+#: functions.php:502
+#, php-format
+msgid "By: %s"
+msgstr "Por: %s"
+
+#: functions.php:514
+#, php-format
+msgid "%d Comments"
+msgstr "%d Comentarios"
+
+#: functions.php:516
+#, php-format
+msgid "%d Comment"
+msgstr "%d Comentario"
+
+#: functions.php:540 functions.php:542
+msgid "Featured"
+msgstr "Destacada"
+
+#: functions.php:548
+msgid "Published on"
+msgstr "Publicado: "
+
+#: functions.php:556 admin/functions.php:146
+msgid "Author"
+msgstr "Autor"
+
+#: functions.php:569
+msgid "Categories"
+msgstr "Categorías"
+
+#: functions.php:571
+#, php-format
+msgid "Category: %s"
+msgstr "Categoría: %s"
+
+#: functions.php:583
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: functions.php:585
+msgid "Tag:  "
+msgstr "Etiqueta:  "
+
+#: functions.php:592
+msgid "Comments"
+msgstr "Comentarios"
+
+#: functions.php:688
+msgid "Sorry, no posts matched your criteria."
+msgstr "Lo siento, ningún artículo coincide con tu búsqueda."
+
+#: functions.php:721 admin/functions.php:144
+msgid "Name"
+msgstr "Nombre"
+
+#: functions.php:722
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: functions.php:723
+msgid "Website"
+msgstr "Sitio web"
+
+#: functions.php:726
+#, php-format
+msgid "Required fields are marked %s"
+msgstr "Los campos obligatorios están indicados %s"
+
+#: functions.php:729
+msgid "Comment"
+msgstr "Comentario"
+
+#: functions.php:730
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+"Tienes que estar <a href=\"%s\">conectado</a> para realizar un comentario."
+
+#: functions.php:731
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"Conectado como <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title="
+"\"Desconectar\">Desconectar?</a>"
+
+#: functions.php:732
+msgid "Your email address will not be published."
+msgstr "Tu dirección de correo electrónico no será publicada."
+
+#: functions.php:736
+msgid "Leave a Reply"
+msgstr "Dejar un comentario"
+
+#: functions.php:737
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Comentar %s"
+
+#: functions.php:738
+msgid "Cancel reply"
+msgstr "Cancelar comentario"
+
+#: functions.php:739
+msgid "Post Comment"
+msgstr "Comentar"
+
+#: functions.php:803
+msgid "Next page"
+msgstr "Próxima página"
+
+#: functions.php:804
+msgid "Previous page"
+msgstr "Página anterior"
+
+#: author.php:38
+msgid "Website:"
+msgstr "Sitio Web:"
+
+#: author.php:44
+msgid "AIM:"
+msgstr "AIM:"
+
+#: author.php:48
+msgid "Yahoo IM:"
+msgstr "Yahoo IM:"
+
+#: author.php:52
+msgid "Jabber / Google Talk:"
+msgstr "Jabber / Google Talk:"
+
+#: author.php:56
+msgid "Google+:"
+msgstr "Google+:"
+
+#: author.php:59
+#, php-format
+msgid "%s on Google+"
+msgstr "%s en Google+"
+
+#: header.php:77
+msgid "Subscribe to the RSS feed"
+msgstr "Suscribirse al feed RSS"
+
+#: admin/functions.php:22
+msgid "Header"
+msgstr "Encabezado"
+
+#: admin/functions.php:23
+msgid "Slideshow"
+msgstr "Diaporama"
+
+#: admin/functions.php:24
+msgid "Post layout on blog, category, tag and author page."
+msgstr ""
+"Contenido del artículo en el blog, categoría, etiqueta y página de autor."
+
+#: admin/functions.php:25
+msgid "Layout"
+msgstr "Estructura"
+
+#: admin/functions.php:26
+msgid "Theme"
+msgstr "Tema"
+
+#: admin/functions.php:39 admin/functions.php:40
+msgid "Theme Options"
+msgstr "Opciones de Tema"
+
+#: admin/functions.php:62
+#, php-format
+msgid "%s Theme Options"
+msgstr "%s Opciones de Tema"
+
+#: admin/functions.php:85
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: admin/functions.php:86
+msgid "Position"
+msgstr "Posición"
+
+#: admin/functions.php:119
+msgid "Display RSS"
+msgstr "Mostrar RSS"
+
+#: admin/functions.php:122
+msgid "Display search box"
+msgstr "Mostrar campo de búsqueda"
+
+#: admin/functions.php:125
+msgid "Display home icon"
+msgstr "Mostrar el icono Home"
+
+#: admin/functions.php:143
+msgid "Colors"
+msgstr "Colores"
+
+#: admin/functions.php:145
+msgid "Description"
+msgstr "Descripción"
+
+#: admin/functions.php:177
+msgid "Posts loading type"
+msgstr "Modo de carga de artículos"
+
+#: admin/functions.php:184
+msgid "Adding meta on each post"
+msgstr "Añadir metadatos a cada artículo"
+
+#: admin/functions.php:201
+msgid "Number of post"
+msgstr "Número de artículos"
+
+#: admin/functions.php:208
+msgid "Duplicate slideshow posts within the content"
+msgstr "Duplicar artículos de diaporama en el contenido"
+
+#: admin/functions.php:278
+msgid "Content on left"
+msgstr "Contenido a la izquierda"
+
+#: admin/functions.php:283
+msgid "Content on right"
+msgstr "Contenido a la derecha"
+
+#: admin/functions.php:288
+msgid "One-column, no sidebar"
+msgstr "Una columna, sin barra lateral"
+
+#: admin/functions.php:308
+msgid ""
+"Sleek, intuitive, and powerful front-end framework for faster and easier web "
+"development."
+msgstr ""
+"Framework front-end elegante, intuitivo y potente para un desarrollo web más "
+"rápido y más sencillo."
+
+#: admin/functions.php:316
+msgid "Flat and clean."
+msgstr "Plano y limpio."
+
+#: admin/functions.php:324
+msgid "A calm, blue sky."
+msgstr "Un cielo azul y limpio."
+
+#: admin/functions.php:332
+msgid "An ode to Metro."
+msgstr "Una oda al estilo Metro."
+
+#: admin/functions.php:340
+msgid "Sweet and cheery."
+msgstr "Dulce y divertido."
+
+#: admin/functions.php:348
+msgid "Optimized for legibility."
+msgstr "Optimizado para lectura fácil."
+
+#: admin/functions.php:356
+msgid "Ubuntu orange and unique font."
+msgstr "Naranja Ubuntu y fuente única."
+
+#: admin/functions.php:364
+msgid "Silvery and sleek."
+msgstr "Plateado y pulcro."
+
+#: admin/functions.php:372
+msgid "Mini and minimalist."
+msgstr "Mini y minimalista."
+
+#: admin/functions.php:380
+msgid "Crisp like a new sheet of paper."
+msgstr "Crujiente como una hoja de papel nueva."
+
+#: admin/functions.php:388
+msgid "An empty CSS file that you can modify as you like."
+msgstr "Un archivo CSS vacío que puedes modificar a tu gusto."
+
+#: admin/functions.php:401
+msgid "Ajax on scroll down"
+msgstr "Scroll basado en Ajax"
+
+#: admin/functions.php:402
+msgid "Ajax on button clicked"
+msgstr "Click basado en Ajax"
+
+#: admin/functions.php:403
+msgid "WordPress classic pagination"
+msgstr "Paginación clásica de WordPress"
+
+#~ msgid "Header Menu Right"
+#~ msgstr "Haut de page droite"
+
+#~ msgid "Blog page post type"
+#~ msgstr "Type de d'article de  blog"
+
+#~ msgid "Posts"
+#~ msgstr "Articles"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Laissez un commentaire"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Commentaire"
+
+#~ msgid "% Comments"
+#~ msgstr "% Commentaires"
+
+#~ msgid ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-left"
+#~ "\"></i> Previous</span>"
+#~ msgstr ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-left"
+#~ "\"></i> Precedent</span>"
+
+#~ msgid ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-right"
+#~ "\"></i> Next</span>"
+#~ msgstr ""
+#~ "<span class=\"col-sm-3 col-md-3 col-lg-3\"><i class=\"icon-chevron-right"
+#~ "\"></i> Suivant</span>"
+
+#~ msgid "Jet black and electric blue."
+#~ msgstr "Noir et bleu electrique."
+
+#~ msgid "Shades of gunmetal gray."
+#~ msgstr "Nuances de gris métal."
+
+#~ msgid "Camping in the woods."
+#~ msgstr "Camping dans les bois."
+
+#~ msgid "A special theme for April Fools' Day"
+#~ msgstr "Un theme spécial pour le 1er Avril!"
+
+#~ msgid "Default Theme"
+#~ msgstr "Theme par default"
+
+#~ msgid "By"
+#~ msgstr "Par"
