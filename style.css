@@ -590,6 +590,7 @@ body.theme-simplex{padding-top: 60px;}
 body.theme-journal{padding-top: 75px;}
 body.theme-yeti{background-color: #f7f7f7; padding-top: 60px;}
 body.theme-cupid{padding-top: 80px;}
+body.theme-lumen{background-color: #f7f7f7; padding-top: 65px;}
 body.theme-custom{}
 
 body.theme-cosmo .container-slideshow,
@@ -598,7 +599,8 @@ body.theme-united .container-slideshow,
 body.theme-spacelab .container-slideshow,
 body.theme-readable .container-slideshow,
 body.theme-yeti .container-slideshow,
-body.theme-cupid .container-slideshow{
+body.theme-cupid .container-slideshow,
+body.theme-lumen .container-slideshow{
 	padding-top: 30px;
 }
 
@@ -626,7 +628,10 @@ body.theme-simplex #comments .trackback,
 body.theme-simplex #comments .pingback,
 body.theme-yeti #comments .comment,
 body.theme-yeti #comments .trackback,
-body.theme-yeti #comments .pingback{
+body.theme-yeti #comments .pingback,
+body.theme-lumen #comments .comment,
+body.theme-lumen #comments .trackback,
+body.theme-lumen #comments .pingback{
 	padding-top: 60px;
 }
 

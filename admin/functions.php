@@ -432,6 +432,15 @@ function shprinkone_get_theme_templates() {
 		'colors' => array('#F0569F', '#FCE0EC', '#56CAEF', '#F0569F'),
 		'description' => __('Pretty in pink.', 'shprinkone')
 	);
+	$templateList['lumen'] = array(
+		'name' => 'Lumen',
+		'value' => 'lumen',
+		'author' => 'http://bootswatch.com/',
+		'path' => '/css/lumen.bootswatch.min.css',
+		// @navbar-default-bg @body-bg @link-color @text-color
+		'colors' => array('#f8f8f8', '#f7f7f7', '#158CBA', '#555'),
+		'description' => __('Light and shadow.', 'shprinkone')
+	);
 	$templateList['custom'] = array(
 		'name' => 'Custom (only for legacy purpose)',
 		'value' => 'custom',
