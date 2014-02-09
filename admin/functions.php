@@ -423,6 +423,15 @@ function shprinkone_get_theme_templates() {
 		'colors' => array('#222222', '#FFFFFF', '#008cba', '#222222'),
 		'description' => __('A friendly foundation.', 'shprinkone')
 	);
+	$templateList['cupid'] = array(
+		'name' => 'Cupid',
+		'value' => 'cupid',
+		'author' => 'http://bootswatch.com/',
+		'path' => '/css/cupid.bootswatch.min.css',
+		// @navbar-default-bg @body-bg @link-color @text-color
+		'colors' => array('#F0569F', '#FCE0EC', '#56CAEF', '#F0569F'),
+		'description' => __('Pretty in pink.', 'shprinkone')
+	);
 	$templateList['custom'] = array(
 		'name' => 'Custom (only for legacy purpose)',
 		'value' => 'custom',
