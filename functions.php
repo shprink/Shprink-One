@@ -3,7 +3,6 @@
  * This file basically acts like a plugin, and if it is present in the theme you are using,
  * it is automatically loaded during WordPress initialization (both for admin pages and external pages).
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */
