@@ -2,7 +2,6 @@
 /**
  * Template file used to render the sidebar.
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */

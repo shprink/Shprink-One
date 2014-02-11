@@ -2,7 +2,6 @@
 /**
  * Template search form
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */

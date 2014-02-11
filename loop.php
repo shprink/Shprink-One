@@ -2,7 +2,6 @@
 /**
  * Default Loop
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */

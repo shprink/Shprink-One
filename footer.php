@@ -2,7 +2,6 @@
 /**
  * Template footer
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */
