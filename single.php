@@ -2,7 +2,6 @@
 /**
  * Template file used to render a single post page.
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */

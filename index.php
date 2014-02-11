@@ -2,7 +2,6 @@
 /**
  * Template file used to include other template files
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */

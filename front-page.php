@@ -3,7 +3,6 @@
  * Template file used to render the Blog Posts Index, whether on the site front page or on a static page.
  * Note: on the Site Front Page, the Front Page template takes precedence over the Blog Posts Index (Home) template.
  *
- * @package     WordPress
  * @subpackage  shprink_one
  * @since       1.0
  */
