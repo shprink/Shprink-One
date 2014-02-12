@@ -320,7 +320,6 @@ ul.pager li a span{
 	background-image: -o-linear-gradient(top, #222222, #111111);
 	background-image: linear-gradient(to bottom, #222222, #111111);
 	background-repeat: repeat-x;
-	margin-top: 10px;
 }
 
 #credit a {
