@@ -637,7 +637,7 @@ function shprinkone_setup() {
 
 			$menu = wp_get_nav_menu_object($locations[$theme_location]);
 
-			return $menu->slug;
+			return $menu->name;
 		}
 
 		/**
