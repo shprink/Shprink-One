@@ -61,7 +61,7 @@ global $page, $paged;
 							'depth' => 3,
 							'container' => false,
 							'menu_class' => 'nav navbar-nav',
-							'walker' => new Bootstrap_Walker_Nav_Menu(),
+							'walker' => new Shprinkone_Walker_Nav_Menu(),
 							'fallback_cb' => null
 						));
 						?>

@@ -763,3 +763,17 @@ body.theme-cupid .yarpp-template a.thumbnail{
 	content: "";
 	display: block;
 }
+
+/* Widget style */
+
+.widget_tag_cloud .shprinkone-tagcloud a{
+    /*font-size: 10pt;*/
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.widget_tag_cloud .shprinkone-tagcloud a i{
+    color: #eee;
+}
