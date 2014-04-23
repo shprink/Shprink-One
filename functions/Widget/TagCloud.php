@@ -3,6 +3,8 @@
 class Shprinkone_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud
 {
 
+    protected $className = 'shprinkone-tagcloud well';
+
     function __construct()
     {
         parent::__construct();
@@ -10,26 +12,8 @@ class Shprinkone_Widget_Tag_Cloud extends WP_Widget_Tag_Cloud
 
     function widget($args, $instance)
     {
-        extract($args);
-        $current_taxonomy = $this->_get_current_taxonomy($instance);
-        if (!empty($instance['title'])) {
-            $title = $instance['title'];
-        } else {
-            if ('post_tag' == $current_taxonomy) {
-                $title = __('Tags');
-            } else {
-                $tax = get_taxonomy($current_taxonomy);
-                $title = $tax->labels->name;
-            }
-        }
-        $title = apply_filters('widget_title', $title, $instance, $this->id_base);
-
-        echo $before_widget;
-        if ($title) echo $before_title . $title . $after_title;
-        echo '<div class="tagcloud shprinkone-tagcloud well">';
-        wp_tag_cloud(apply_filters('widget_tag_cloud_args', array('taxonomy' => $current_taxonomy)));
-        echo "</div>\n";
-        echo $after_widget;
+        $args['before_widget'] = preg_replace('/class="[^"]*/', '$0 ' . $this->className, $args['before_widget']);
+        return parent::widget($args, $instance);
     }
 }
 
@@ -71,12 +55,3 @@ function shprinkone_wp_generate_tag_cloud($taglinks, $tags, $args)
     }
     return join(' ', $a);
 }
-
-function shprinkone_tag_cloud_widgets_init()
-{
-    unregister_widget('WP_Widget_Tag_Cloud');
-    register_widget('Shprinkone_Widget_Tag_Cloud');
-    add_filter('widget_tag_cloud_args', 'shprinkone_widget_tag_cloud_args');
-    add_filter('wp_generate_tag_cloud', 'shprinkone_wp_generate_tag_cloud', 10, 3);
-}
-add_action('widgets_init', 'shprinkone_tag_cloud_widgets_init');

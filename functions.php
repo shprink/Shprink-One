@@ -8,12 +8,58 @@
  */
 require( get_template_directory() . '/admin/functions.php' );
 
-// include widget overwrite
+include_once( 'functions/Widget/RecentPosts.php' );
 include_once( 'functions/Widget/TagCloud.php' );
+include_once( 'functions/Widget/NavMenu.php' );
+include_once( 'functions/Widget/Archives.php' );
+include_once( 'functions/Widget/Calendar.php' );
+include_once( 'functions/Widget/Categories.php' );
+include_once( 'functions/Widget/Links.php' );
+include_once( 'functions/Widget/Meta.php' );
+include_once( 'functions/Widget/Pages.php' );
+include_once( 'functions/Widget/RSS.php' );
+include_once( 'functions/Widget/RecentComments.php' );
+include_once( 'functions/Widget/Search.php' );
+include_once( 'functions/Widget/Text.php' );
 
 // include Walker overwrite
 include_once( 'functions/Walker/NavMenu.php' );
 include_once( 'functions/Walker/Comment.php' );
+
+function shprinkone_tag_cloud_widgets_init()
+{
+    unregister_widget('WP_Widget_Tag_Cloud');
+    unregister_widget('WP_Widget_Recent_Posts');
+    unregister_widget('WP_Nav_Menu_Widget');
+    unregister_widget('WP_Widget_Archives');
+    unregister_widget('WP_Widget_Calendar');
+    unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Links');
+    unregister_widget('WP_Widget_Meta');
+    unregister_widget('WP_Widget_Pages');
+    unregister_widget('WP_Widget_RSS');
+    unregister_widget('WP_Widget_Recent_Comments');
+    unregister_widget('WP_Widget_Search');
+    unregister_widget('WP_Widget_Text');
+
+    register_widget('Shprinkone_Widget_Tag_Cloud');
+    register_widget('Shprinkone_Widget_Recent_Posts');
+    register_widget('Shprinkone_Widget_Nav_Menu');
+    register_widget('Shprinkone_Widget_Archives');
+    register_widget('Shprinkone_Widget_Calendar');
+    register_widget('Shprinkone_Widget_Categories');
+    register_widget('Shprinkone_Widget_Links');
+    register_widget('Shprinkone_Widget_Meta');
+    register_widget('Shprinkone_Widget_Pages');
+    register_widget('Shprinkone_Widget_RSS');
+    register_widget('Shprinkone_Widget_Recent_Comments');
+    register_widget('Shprinkone_Widget_Search');
+    register_widget('Shprinkone_Widget_Text');
+
+    add_filter('widget_tag_cloud_args', 'shprinkone_widget_tag_cloud_args');
+    add_filter('wp_generate_tag_cloud', 'shprinkone_wp_generate_tag_cloud', 10, 3);
+}
+add_action('widgets_init', 'shprinkone_tag_cloud_widgets_init');
 
 function shprinkone_enqueue_script_and_style() {
 	$directory_uri = get_template_directory_uri();

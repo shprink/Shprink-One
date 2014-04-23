@@ -766,7 +766,7 @@ body.theme-cupid .yarpp-template a.thumbnail{
 
 /* Widget style */
 
-.widget_tag_cloud .shprinkone-tagcloud a{
+.widget_tag_cloud.shprinkone-tagcloud a{
     /*font-size: 10pt;*/
     text-align: center;
     display: inline-block;
@@ -774,6 +774,6 @@ body.theme-cupid .yarpp-template a.thumbnail{
     font-weight: bold;
     text-transform: capitalize;
 }
-.widget_tag_cloud .shprinkone-tagcloud a i{
+.widget_tag_cloud.shprinkone-tagcloud a i{
     color: #eee;
 }
