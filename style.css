@@ -324,6 +324,17 @@ ul.pager li a span{
 	margin-top: 10px;
 }
 
+#footer .well{
+    background-color: transparent;
+    border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 /* CREDIT */
 #credit {
 	text-align: center;
