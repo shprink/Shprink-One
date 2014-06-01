@@ -42,6 +42,11 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 						</a>
 					<?php endif; ?>
 					<div class="panel-body">
+                        <div class="calendar-wrapper panel panel-default">
+                            <div class="panel-body">
+                            <?php shprinkone_get_calendar(); ?>
+                            </div>
+                        </div>
 						<h3 class="post-title">
 							<?php $hasTitle = the_title(null, null, false) !== null ?>
 							<a href="<?php the_permalink() ?>"
@@ -54,7 +59,7 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 						</div>
 						<?php if ($displayMeta): ?>
 							<div class="well well-sm">
-								<?php echo shprinkone_get_post_meta(true, true, true, true, true, true, true, true) ?>
+								<?php echo shprinkone_get_post_meta(true, true, false, true, true, true, true, true) ?>
 							</div>
 						<?php endif; ?>
 					</div>

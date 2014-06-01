@@ -360,11 +360,15 @@ add_action('after_setup_theme', 'shprinkone_setup');
 		 * @return  void
 		 * @since   1.0
 		 */
-		function shprinkone_get_calendar() {
-			$format = '<div class="calendar-outer btn-inverse"><div class="calendar-inner"><div class="calendar-date"><i class="icon-calendar icon-white"></i> %s</div></div></div>';
-			$arg = get_the_date(__('M d, Y', 'shprinkone'));
-			printf($format, $arg);
-		}
+        function shprinkone_get_calendar() {
+            $calendar = '<div class="calendar">';
+            $calendar .= '<div class="calendar-month"> %1$s</div>';
+            $calendar .= '<div class="calendar-day"> %2$s</div>';
+            $calendar .= '<div class="calendar-year"> %3$s</div>';
+            $calendar .= '</div>';
+            $calendar = sprintf($calendar, get_the_date('M'), get_the_date('d'), get_the_date('Y'));
+            echo $calendar;
+        }
 
 		/**
 		 * Get the author post link

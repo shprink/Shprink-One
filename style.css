@@ -56,7 +56,8 @@ h2{
 .comment-body,
 .post-meta,
 .sidr a,
-.sidr p{
+.sidr p,
+#slideshow .post-title a{
 	word-wrap: break-word;
 	-ms-word-wrap: break-word;
 	-webkit-hyphens: auto;
@@ -123,6 +124,7 @@ ul.pager li a span{
 
 #slideshow .post-thumbnail {
 	margin-right: 30px;
+    float: left;
 }
 
 #slideshow.carousel {
@@ -210,10 +212,15 @@ ul.pager li a span{
 	margin-left: -1px;
 }
 
+.masonry .box .panel-body{
+	padding: 25px;
+    position: relative;
+}
+
 .masonry .box .panel-body .well{
-	margin-left: -15px;
-	margin-right: -15px;
-	margin-bottom: -15px;
+	margin-left: -25px;
+	margin-right: -25px;
+	margin-bottom: -25px;
 	text-align: center;
 	border: none;
 	border-radius: 0px;
@@ -356,10 +363,8 @@ ul.pager li a span{
 	.affix {
 		top: 0px;
 	}
-	#slideshow .post-thumbnail{
-		width: 100%;
-		display: block;
-		text-align: center;
+	#slideshow .post-thumbnail img{
+        width: 200px;
 	}
 	.container-slideshow {
 		padding-left: 0px;
@@ -386,10 +391,8 @@ ul.pager li a span{
 	#slideshow{
 		font-size: 0.9em;
 	}
-	#slideshow .post-thumbnail{
-		width: 100%;
-		display: block;
-		text-align: center;
+	#slideshow .post-thumbnail img{
+        width: 100px;
 	}
 	#slideshow h2.post-title{
 		font-size: 20px;
@@ -398,6 +401,20 @@ ul.pager li a span{
 	#slideshow .post-meta ul{
 		margin-bottom: 0px;
 	}
+    #slideshow .carousel-inner{
+        height: 300px;
+    }
+    #slideshow .title-wrapper{
+        margin-bottom: 10px;
+    }
+    #slideshow .title-wrapper:before,
+    #slideshow .title-wrapper:after{
+        display: table;
+        content: " ";
+    }
+    #slideshow .title-wrapper:after{
+        clear: both;
+    }
 	.carousel-control .icon-prev,
 	.carousel-control .icon-next{
 		font-size:5em;
@@ -415,25 +432,19 @@ ul.pager li a span{
 		font-size: 40px;
 		line-height: 40px;
 	}
-	#slideshow .carousel-control i{
-		/*		right: 0px;
-				margin-right: 10px;*/
-	}
+    #slideshow .post-thumbnail{
+        display: none;
+    }
 }
 
 @media ( min-width : 980px) {
 	.affix {
 		top: 45px;
 	}
-	#slideshow .post-thumbnail{
-		float: left;
-	}
 }
 
 @media ( min-width : 1200px) {
-	#slideshow .post-thumbnail{
-		float: left;
-	}
+
 }
 
 /* WP mendatory styles */
@@ -572,6 +583,58 @@ body .syntaxhighlighter textarea{
 
 .widget.widget_twitter .intent-meta a{
 	margin-right: 5px;
+}
+
+.calendar-wrapper{
+    position: absolute;
+    left: -20px;
+}
+.calendar-wrapper + h3{
+    /*margin-left: 40px;*/
+}
+
+.masonry .box .calendar-wrapper .panel-body{
+    padding: 0px;
+}
+
+.calendar {
+    position: relative;
+    /*left: -5px;*/
+    /*top: 20px;*/
+    width:40px;
+    height:60px;
+    /*background: white;*/
+    /*border: 5px solid #fff;*/
+    text-align: center;
+}
+.calendar > div{
+    width:40px;
+    cursor: default;
+}
+.calendar > div:first-of-type:after{
+    content:" ";
+    width:40px;
+    height:25px;
+    position:absolute;
+    z-index:2;
+    background:rgba(0,0,0,0.1);
+    left:0px;
+}
+.calendar .calendar-day{
+    font-size:25px;
+    font-weight:bold;
+    line-height:25px;
+    padding:0;
+}
+.calendar .calendar-month {
+    font-size: 10px;
+    font-weight: bold;
+    top:8px;
+}
+.calendar .calendar-year {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -3px;
 }
 
 /*

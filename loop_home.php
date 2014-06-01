@@ -29,19 +29,21 @@ if (is_category()){
 						<div class="container">
 							<div class="carousel-caption">
 								<div class="media">
-									<?php if (has_post_thumbnail()): ?>
-										<a class="post-thumbnail" href="<?php the_permalink() ?>">
-											<?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
-										</a>
-									<?php endif; ?>
 									<div class="media-body">
+                                        <div class="title-wrapper">
+                                        <?php if (has_post_thumbnail()): ?>
+                                            <a class="post-thumbnail" href="<?php the_permalink() ?>">
+                                                <?php the_post_thumbnail('post-image-mansory', array('class' => 'img-thumbnail img-responsive')); ?>
+                                            </a>
+                                        <?php endif; ?>
 										<h2 class="post-title media-heading">
 											<a href="<?php the_permalink() ?>"
 											   title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
 											</a>
-
 										</h2>
-										<?php echo shprinkone_get_post_meta(true, true, true, false, false, true, true) ?>
+                                        <?php echo shprinkone_get_post_meta(true, true, true, false, false, true, true) ?>
+                                        </div>
+
 
 										<div class="post-content hidden-xs">
 											<?php the_excerpt(); ?>
