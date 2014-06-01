@@ -28,6 +28,9 @@ function shprinkone_theme_options_init() {
 			'tag', __('Tag', 'shprinkone'), '__return_false', 'theme_options'
 	);
 	add_settings_section(
+			'loop', __('Loop', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
 			'style', __('CSS and Layout', 'shprinkone'), '__return_false', 'theme_options'
 	);
 
@@ -35,6 +38,7 @@ function shprinkone_theme_options_init() {
 	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_frontpage', 'theme_options', 'homepage');
 	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_category', 'theme_options', 'category');
 	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_tag', 'theme_options', 'tag');
+	add_settings_field('display', __('Display', 'shprinkone'), 'shprinkone_settings_field_loop', 'theme_options', 'loop');
 	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'homepage');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'style');
 	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'style');
@@ -147,9 +151,6 @@ function shprinkone_settings_field_layout() {
  */
 function shprinkone_settings_field_header() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_header'])) {
-		$options = shprinkone_get_theme_default();
-	}
 	$posts_option = $options['theme_header'];
 
 	$checked = (isset($posts_option['rss']) && $posts_option['rss'] == true) ? 'checked="checked"' : '';
@@ -198,9 +199,6 @@ function shprinkone_settings_field_template() {
  */
 function shprinkone_settings_field_css() {
     $options = shprinkone_get_theme_options();
-    if (!isset($options['theme_css'])) {
-        return;
-    }
     echo '<textarea name="shprinkone_theme_options[theme_css]" rows="20" style="width: 100%;">' . $options['theme_css'] . '</textarea>';
 }
 
@@ -212,9 +210,6 @@ function shprinkone_settings_field_css() {
  */
 function shprinkone_settings_field_posts() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_posts'])) {
-		$options = shprinkone_get_theme_default();
-	}
 	$posts_option = $options['theme_posts'];
 	echo '<label for="posts_type">' . __('Posts loading type', 'shprinkone') . '</label> ';
 	echo '<select id="posts_type" name="shprinkone_theme_options[theme_posts][type]" value="' . $posts_option['type'] . '">';
@@ -226,6 +221,23 @@ function shprinkone_settings_field_posts() {
 	$checked = (isset($posts_option['meta']) && $posts_option['meta']) ? 'checked="checked"' : '';
 	echo '<input id="posts_meta" type="checkbox" name="shprinkone_theme_options[theme_posts][meta]" ' . $checked . '>';
 	echo ' <label for="posts_meta">' . __('Adding meta on each post', 'shprinkone') . '</label> ';
+}
+
+/**
+ * Set posts loop
+ *
+ * @return  void
+ * @since   2.3.2
+ */
+function shprinkone_settings_field_loop() {
+	$options = shprinkone_get_theme_options();
+	$option_loop = $options['theme_loop'];
+	$checked = (isset($option_loop['date']) && $option_loop['date']) ? 'checked="checked"' : '';
+	echo '<input id="loop_date" type="checkbox" name="shprinkone_theme_options[theme_loop][date]" ' . $checked . '>';
+	echo ' <label for="loop_date">' . __('Date', 'shprinkone') . '</label><br/>';
+	$checked = (isset($option_loop['comment']) && $option_loop['comment']) ? 'checked="checked"' : '';
+	echo '<input id="loop_comment" type="checkbox" name="shprinkone_theme_options[theme_loop][comment]" ' . $checked . '>';
+	echo ' <label for="loop_comment">' . __('Comment', 'shprinkone') . '</label> ';
 }
 
 /**
@@ -286,10 +298,39 @@ function shprinkone_format_template_colors($colors) {
  */
 function shprinkone_get_theme_options() {
 	if (get_option('shprinkone_theme_options')) {
-		return array_merge(shprinkone_get_theme_default(), get_option('shprinkone_theme_options'));
+		return shprinkone_array_merge_deep(array(shprinkone_get_theme_default(), get_option('shprinkone_theme_options')));
 	} else {
 		return shprinkone_get_theme_default();
 	}
+}
+
+/**
+ * array_merge_deep from drupal
+ *
+ * @return  array
+ * @since   2.3.2
+ */
+function shprinkone_array_merge_deep($arrays) {
+  $result = array();
+  foreach ($arrays as $array) {
+    foreach ($array as $key => $value) {
+      // Renumber integer keys as array_merge_recursive() does. Note that PHP
+      // automatically converts array keys that are integer strings (e.g., '1')
+      // to integers.
+      if (is_integer($key)) {
+        $result[] = $value;
+      }
+      // Recurse when both values are arrays.
+      elseif (isset($result[$key]) && is_array($result[$key]) && is_array($value)) {
+        $result[$key] = shprinkone_array_merge_deep(array($result[$key], $value));
+      }
+      // Otherwise, use the latter value, overriding any previous value.
+      else {
+        $result[$key] = $value;
+      }
+    }
+  }
+  return $result;
 }
 
 /**
@@ -305,7 +346,11 @@ function shprinkone_get_theme_default() {
 		'theme_css' => '/* INCLUDE YOUR CSS HERE */',
 		'theme_posts' => array(
 			'meta' => true,
-			'type' => 'ajax_scroll'
+			'type' => 'ajax_scroll',
+		),
+		'theme_loop' => array(
+            'date' => false,
+            'comment' => false
 		),
 		'theme_slideshow' => array(
 			'posts' => 3,
@@ -540,6 +585,9 @@ function shprinkone_theme_options_validate($input) {
 	$output['theme_header']['rss'] = (isset($input['theme_header']['rss'])) ? true : false;
 	$output['theme_header']['search'] = (isset($input['theme_header']['search'])) ? true : false;
 	$output['theme_header']['icon-home'] = (isset($input['theme_header']['icon-home'])) ? true : false;
+
+	$output['theme_loop']['date'] = (isset($input['theme_loop']['date'])) ? true : false;
+    $output['theme_loop']['comment'] = (isset($input['theme_loop']['comment'])) ? true : false;
 
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);
 }

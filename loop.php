@@ -6,6 +6,7 @@
  * @since       1.0
  */
 $options = shprinkone_get_theme_options();
+$option_loop = shprinkone_get_theme_option('theme_loop');
 if (is_category()){
     $option_slideshow = shprinkone_get_theme_option('theme_slideshow_category');
 } else if (is_tag()){
@@ -34,6 +35,11 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-6 col-md-6 col-lg-4 box') ?>>
 				<div class="panel panel-default">
+                    <?php if ($option_loop['comment']): ?>
+                        <a class="post-comments label <?php echo get_comments_number()? 'label-danger' : 'label-default' ?>" href="<?php comments_link(); ?>">
+                            <?php comments_number( '0', '1', '%' ); ?>
+                        </a>
+                    <?php endif; ?>
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
@@ -42,15 +48,17 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 						</a>
 					<?php endif; ?>
 					<div class="panel-body">
+                        <?php if ($option_loop['date']): ?>
                         <div class="calendar-wrapper panel panel-default">
                             <div class="panel-body">
                             <?php shprinkone_get_calendar(); ?>
                             </div>
                         </div>
+                        <?php endif; ?>
 						<h3 class="post-title">
 							<?php $hasTitle = the_title(null, null, false) !== null ?>
 							<a href="<?php the_permalink() ?>"
-							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php echo $hasTitle ? the_title(null, null, true) : __('Read more', 'shprinkone'); ?>
+							   title="<?php echo the_title_attribute(); ?>"><?php echo $hasTitle ? the_title(null, null, true) : __('Read more', 'shprinkone'); ?>
 							</a>
 						</h3>
 
@@ -59,7 +67,7 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 						</div>
 						<?php if ($displayMeta): ?>
 							<div class="well well-sm">
-								<?php echo shprinkone_get_post_meta(true, true, false, true, true, true, true, true) ?>
+								<?php echo shprinkone_get_post_meta(true, true, false, true, true, false, true, true) ?>
 							</div>
 						<?php endif; ?>
 					</div>

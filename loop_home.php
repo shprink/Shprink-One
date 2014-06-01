@@ -38,7 +38,7 @@ if (is_category()){
                                         <?php endif; ?>
 										<h2 class="post-title media-heading">
 											<a href="<?php the_permalink() ?>"
-											   title="<?php echo sprintf(__('Permanent Link to %s', 'shprinkone'), the_title_attribute()); ?>"><?php the_title(); ?>
+											   title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?>
 											</a>
 										</h2>
                                         <?php echo shprinkone_get_post_meta(true, true, true, false, false, true, true) ?>

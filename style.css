@@ -212,15 +212,23 @@ ul.pager li a span{
 	margin-left: -1px;
 }
 
+.masonry .box .post-comments.label{
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .masonry .box .panel-body{
-	padding: 25px;
+	padding: 15px 35px;
     position: relative;
 }
 
 .masonry .box .panel-body .well{
-	margin-left: -25px;
-	margin-right: -25px;
-	margin-bottom: -25px;
+	margin-left: -35px;
+	margin-right: -35px;
+	margin-bottom: -15px;
 	text-align: center;
 	border: none;
 	border-radius: 0px;
@@ -587,7 +595,7 @@ body .syntaxhighlighter textarea{
 
 .calendar-wrapper{
     position: absolute;
-    left: -20px;
+    left: -10px;
 }
 .calendar-wrapper + h3{
     /*margin-left: 40px;*/
