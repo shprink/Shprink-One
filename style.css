@@ -607,10 +607,7 @@ body .syntaxhighlighter textarea{
 
 .calendar-wrapper{
     position: absolute;
-    left: -10px;
-}
-.calendar-wrapper + h3{
-    /*margin-left: 40px;*/
+    left: -15px;
 }
 
 .masonry .box .calendar-wrapper .panel-body{
