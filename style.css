@@ -218,6 +218,7 @@ ul.pager li a span{
     top: -10px;
     font-size: 20px;
     font-weight: bold;
+    z-index: 2;
 }
 
 .masonry .box .panel-body{
