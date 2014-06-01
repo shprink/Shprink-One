@@ -6,13 +6,21 @@
  * @since       1.0
  */
 $options = shprinkone_get_theme_options();
+if (is_category()){
+    $option_slideshow = shprinkone_get_theme_option('theme_slideshow_category');
+} else if (is_tag()){
+    $option_slideshow = shprinkone_get_theme_option('theme_slideshow_tag');
+} else if (is_front_page()){
+    $option_slideshow = shprinkone_get_theme_option('theme_slideshow');
+}
+
 if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	for ($index = 0; $index < DISPLAYEDONSLIDESHOW; $index++) {
 		$wp_query->next_post();
 	}
 }
 
-if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])) {
+if (defined('DISPLAYEDONSLIDESHOW') && isset($option_slideshow['copy_within_content']) && $option_slideshow['copy_within_content']) {
 	$wp_query->rewind_posts();
 }
 

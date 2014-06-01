@@ -22,11 +22,19 @@ function shprinkone_theme_options_init() {
 			'homepage', __('Homepage', 'shprinkone'), '__return_false', 'theme_options'
 	);
 	add_settings_section(
+			'category', __('Category', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
+			'tag', __('Tag', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
 			'style', __('CSS and Layout', 'shprinkone'), '__return_false', 'theme_options'
 	);
 
 	add_settings_field('header', __('Header', 'shprinkone'), 'shprinkone_settings_field_header', 'theme_options', 'general');
-	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'homepage');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_frontpage', 'theme_options', 'homepage');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_category', 'theme_options', 'category');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_tag', 'theme_options', 'tag');
 	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'homepage');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'style');
 	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'style');
@@ -226,23 +234,35 @@ function shprinkone_settings_field_posts() {
  * @return  void
  * @since   1.0.5
  */
-function shprinkone_settings_field_slideshow() {
+function shprinkone_settings_field_slideshow($optionName = '') {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_slideshow'])) {
+	if (!isset($options[$optionName])) {
 		return;
 	}
-	$slideshow_option = $options['theme_slideshow'];
+	$slideshow_option = $options[$optionName];
 	echo '<label for="slideshow_posts">' . __('Number of post', 'shprinkone') . '</label> ';
-	echo '<select id="slideshow_posts" name="shprinkone_theme_options[theme_slideshow][posts]" value="' . $slideshow_option['posts'] . '">';
+	echo '<select id="slideshow_posts" name="shprinkone_theme_options[' . $optionName . '][posts]" value="' . $slideshow_option['posts'] . '">';
 	for ($index = 0; $index <= 5; $index++) {
 		$selected = ((int) $slideshow_option['posts'] === $index) ? 'selected="selected"' : '';
 		echo '<option value="' . $index . '" ' . $selected . '>' . $index . '</option>';
 	}
 	echo '</select><br/>';
 	$checked = (isset($slideshow_option['copy_within_content']) && $slideshow_option['copy_within_content']) ? 'checked="checked"' : '';
-	echo '<input id="slideshow_copy_within_content" type="checkbox" name="shprinkone_theme_options[theme_slideshow][copy_within_content]" ' . $checked . '>';
-	echo ' <label for="slideshow_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
+	echo '<input id="' . $optionName . '_copy_within_content" type="checkbox" name="shprinkone_theme_options[' . $optionName . '][copy_within_content]" ' . $checked . '>';
+	echo ' <label for="' . $optionName . '_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
+}
 
+
+function shprinkone_settings_field_slideshow_tag() {
+    shprinkone_settings_field_slideshow('theme_slideshow_tag');
+}
+
+function shprinkone_settings_field_slideshow_category() {
+    shprinkone_settings_field_slideshow('theme_slideshow_category');
+}
+
+function shprinkone_settings_field_slideshow_frontpage() {
+    shprinkone_settings_field_slideshow('theme_slideshow');
 }
 
 function shprinkone_format_template_colors($colors) {
@@ -289,6 +309,14 @@ function shprinkone_get_theme_default() {
 		),
 		'theme_slideshow' => array(
 			'posts' => 3,
+			'copy_within_content' => true
+		),
+		'theme_slideshow_category' => array(
+			'posts' => 0,
+			'copy_within_content' => true
+		),
+		'theme_slideshow_tag' => array(
+			'posts' => 0,
 			'copy_within_content' => true
 		),
 		'theme_header' => array(
@@ -477,18 +505,32 @@ function shprinkone_theme_options_validate($input) {
 	$output = $defaults = shprinkone_get_theme_default();
 
 	// Theme layout must be in our array of theme layout options
-	if (isset($input['theme_layout']) && array_key_exists($input['theme_layout'], shprinkone_get_theme_layouts()))
+	if (isset($input['theme_layout']) && array_key_exists($input['theme_layout'], shprinkone_get_theme_layouts())){
 		$output['theme_layout'] = $input['theme_layout'];
+    }
 
-	if (isset($input['theme_css']))
+	if (isset($input['theme_css'])){
 		$output['theme_css'] = $input['theme_css'];
+    }
 
-	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates()))
+	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates())){
 		$output['theme_template'] = $input['theme_template'];
+    }
 
-	if (isset($input['theme_slideshow']))
+	if (isset($input['theme_slideshow'])){
 		$output['theme_slideshow'] = $input['theme_slideshow'];
+    }
 	$output['theme_slideshow']['copy_within_content'] = (isset($input['theme_slideshow']['copy_within_content'])) ? true : false;
+
+	if (isset($input['theme_slideshow_category'])){
+		$output['theme_slideshow_category'] = $input['theme_slideshow_category'];
+    }
+	$output['theme_slideshow_category']['copy_within_content'] = (isset($input['theme_slideshow_category']['copy_within_content'])) ? true : false;
+
+	if (isset($input['theme_slideshow_tag'])){
+		$output['theme_slideshow_tag'] = $input['theme_slideshow_tag'];
+    }
+	$output['theme_slideshow_tag']['copy_within_content'] = (isset($input['theme_slideshow_tag']['copy_within_content'])) ? true : false;
 
 	if (isset($input['theme_posts']['type']) && array_key_exists($input['theme_posts']['type'], shprinkone_get_theme_posts())) {
 		$output['theme_posts']['type'] = $input['theme_posts']['type'];

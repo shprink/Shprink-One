@@ -6,7 +6,7 @@
  * @since       1.0
  */
 $selectedTemplate = shprinkone_get_selected_template();
-$headerOptions = shprinkone_get_header_options();
+$headerOptions = shprinkone_get_theme_option('theme_header');
 global $page, $paged;
 ?>
 <!DOCTYPE html>

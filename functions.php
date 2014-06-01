@@ -155,31 +155,20 @@ add_action('init', 'shprinkone_add_editor_styles');
  * @since   1.0.2
  */
 function shprinkone_get_selected_template() {
-	$options = shprinkone_get_theme_options();
+	$option_template = shprinkone_get_theme_option('theme_template');
 	$templates = shprinkone_get_theme_templates();
-	return $templates[$options['theme_template']];
+	return $templates[$option_template];
 }
 
 /**
- * Get the selected header options
- *
- * @return  array  header options
- * @since   2.0.1
- */
-function shprinkone_get_header_options() {
-	$options = shprinkone_get_theme_options();
-	return $options['theme_header'];
-}
-
-/**
- * Get the custom CSS
+ * Get a specific option
  *
  * @return  string  css
- * @since   2.1.0
+ * @since   2.3.2
  */
-function shprinkone_get_custom_css() {
+function shprinkone_get_theme_option($key = '') {
 	$options = shprinkone_get_theme_options();
-	return $options['theme_css'];
+	return $options[$key];
 }
 
 /**
@@ -192,7 +181,7 @@ function shprinkone_inject_custom_css()
 {
     ?>
          <style type="text/css">
-            <?php echo shprinkone_get_custom_css(); ?>
+            <?php echo shprinkone_get_theme_option('theme_css'); ?>
          </style>
     <?php
 }
