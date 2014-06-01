@@ -77,7 +77,7 @@ if ($selectedTemplate['value'] == 'cupid') {
 		$('footer .widget ul').addClass('nav nav-pills nav-stacked');
 		$('.widget_recent_comments ul').removeClass('nav nav-tabs nav-pills nav-stacked').addClass('list-unstyled');
 		$('[data-toggle=tooltip]').tooltip()
-		$('#header ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+		$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
 			// Avoid following the href location when clicking
 			event.preventDefault();
 			// Avoid having the menu to close when clicking
