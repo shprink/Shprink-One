@@ -109,7 +109,8 @@ ul.pager li a span{
 }
 
 #slideshow .carousel-inner{
-	min-height: 360px;
+	height: 360px;
+    overflow: hidden;
 }
 
 #slideshow a{
