@@ -13,6 +13,7 @@ if (is_category()){
 } else if (is_front_page()){
     $option_slideshow = shprinkone_get_theme_option('theme_slideshow');
 }
+$postCount = count($wp_query->get_posts());
 ?>
 <?php if (have_posts() && get_query_var('paged') < 2) : ?>
 	<div class="container-slideshow">
@@ -52,7 +53,6 @@ if (is_category()){
 											<?php $excerpt = get_the_excerpt() ?>
 											<?php echo ( $excerpt != '' ) ? substr($excerpt, 0, 150) . ' [...]' : '' ?>
 										</div>
-										<!--<a href="<?php the_permalink() ?>" class="btn btn-primary"><?php _e('Read more', 'shprinkone') ?></a>-->
 									</div>
 								</div>
 							</div>
@@ -62,14 +62,14 @@ if (is_category()){
 				<?php endwhile; ?>
 			</div>
 
-			<?php if ($option_slideshow['posts'] > 1): ?>
+			<?php if ($option_slideshow['posts'] > 1 && $postCount > 1): ?>
 				<ol class="carousel-indicators">
 					<?php for ($index = 0; $index < $displayedOnSlideshow; $index++): ?>
 						<li data-target="#slideshow" data-slide-to="<?php echo $index ?>" class="<?php echo ($index === 0) ? 'active' : '' ?>"></li>
 					<?php endfor; ?>
 				</ol>
 			<?php endif; ?>
-			<?php if ($option_slideshow['posts'] > 1): ?>
+			<?php if ($option_slideshow['posts'] > 1 && $postCount > 1): ?>
 				<!-- Carousel nav -->
 				<a class="carousel-control left" href="#slideshow" data-slide="prev"><i class="icon-chevron-left"></i></a>
 				<a class="carousel-control right" href="#slideshow" data-slide="next"><i class="icon-chevron-right"></i></a>
