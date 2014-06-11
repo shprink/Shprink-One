@@ -5,7 +5,7 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-$option_slideshow = shprinkone_get_theme_option('theme_slideshow');
+$option_slideshow = shprinkone_get_theme_option('theme_slideshow_tag');
 ?>
 <?php get_header(); ?>
 <?php if (isset($option_slideshow['posts']) && $option_slideshow['posts'] > 0 && have_posts()) : ?>
