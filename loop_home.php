@@ -13,7 +13,7 @@ if (is_category()){
 } else if (is_front_page()){
     $option_slideshow = shprinkone_get_theme_option('theme_slideshow');
 }
-$postCount = count($wp_query->get_posts());
+$posts = $wp_query->get_posts();
 ?>
 <?php if (have_posts() && get_query_var('paged') < 2) : ?>
 	<div class="container-slideshow">
@@ -21,7 +21,8 @@ $postCount = count($wp_query->get_posts());
 			<!-- Carousel items -->
 			<div class="carousel-inner">
 				<!-- Start the Loop. -->
-				<?php while (have_posts() && $displayedOnSlideshow < $option_slideshow['posts']) : the_post(); ?>
+                <?php foreach ($posts as $post) : ?>
+				<?php if ($displayedOnSlideshow >= $option_slideshow['posts']) break; ?>
 					<div <?php
 					$classes = 'item';
 					if ($displayedOnSlideshow === 0)
@@ -58,18 +59,18 @@ $postCount = count($wp_query->get_posts());
 							</div>
 						</div>
 					</div>
-					<?php $displayedOnSlideshow++; ?>
-				<?php endwhile; ?>
+					<?php  $displayedOnSlideshow++; ?>
+				<?php endforeach; ?>
 			</div>
 
-			<?php if ($option_slideshow['posts'] > 1 && $postCount > 1): ?>
+			<?php if ($option_slideshow['posts'] > 1 && count($posts) > 1): ?>
 				<ol class="carousel-indicators">
 					<?php for ($index = 0; $index < $displayedOnSlideshow; $index++): ?>
 						<li data-target="#slideshow" data-slide-to="<?php echo $index ?>" class="<?php echo ($index === 0) ? 'active' : '' ?>"></li>
 					<?php endfor; ?>
 				</ol>
 			<?php endif; ?>
-			<?php if ($option_slideshow['posts'] > 1 && $postCount > 1): ?>
+			<?php if ($option_slideshow['posts'] > 1 && count($posts) > 1): ?>
 				<!-- Carousel nav -->
 				<a class="carousel-control left" href="#slideshow" data-slide="prev"><i class="icon-chevron-left"></i></a>
 				<a class="carousel-control right" href="#slideshow" data-slide="next"><i class="icon-chevron-right"></i></a>
