@@ -342,7 +342,7 @@ function shprinkone_array_merge_deep($arrays) {
 function shprinkone_get_theme_default() {
 	$default_theme_options = array(
 		'theme_layout' => 'content-sidebar',
-		'theme_template' => 'flaty',
+		'theme_template' => 'lumen',
 		'theme_css' => '/* INCLUDE YOUR CSS HERE */',
 		'theme_posts' => array(
 			'meta' => true,
@@ -591,4 +591,3 @@ function shprinkone_theme_options_validate($input) {
 
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);
 }
-
