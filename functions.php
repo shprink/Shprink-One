@@ -8,6 +8,59 @@
  */
 require( get_template_directory() . '/admin/functions.php' );
 
+include_once( 'functions/Widget/RecentPosts.php' );
+include_once( 'functions/Widget/TagCloud.php' );
+include_once( 'functions/Widget/NavMenu.php' );
+include_once( 'functions/Widget/Archives.php' );
+include_once( 'functions/Widget/Calendar.php' );
+include_once( 'functions/Widget/Categories.php' );
+include_once( 'functions/Widget/Links.php' );
+include_once( 'functions/Widget/Meta.php' );
+include_once( 'functions/Widget/Pages.php' );
+include_once( 'functions/Widget/RSS.php' );
+include_once( 'functions/Widget/RecentComments.php' );
+include_once( 'functions/Widget/Search.php' );
+include_once( 'functions/Widget/Text.php' );
+
+// include Walker overwrite
+include_once( 'functions/Walker/NavMenu.php' );
+include_once( 'functions/Walker/Comment.php' );
+
+function shprinkone_tag_cloud_widgets_init()
+{
+    unregister_widget('WP_Widget_Tag_Cloud');
+    unregister_widget('WP_Widget_Recent_Posts');
+    unregister_widget('WP_Nav_Menu_Widget');
+    unregister_widget('WP_Widget_Archives');
+    unregister_widget('WP_Widget_Calendar');
+    unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Links');
+    unregister_widget('WP_Widget_Meta');
+    unregister_widget('WP_Widget_Pages');
+    unregister_widget('WP_Widget_RSS');
+    unregister_widget('WP_Widget_Recent_Comments');
+    unregister_widget('WP_Widget_Search');
+    unregister_widget('WP_Widget_Text');
+
+    register_widget('Shprinkone_Widget_Tag_Cloud');
+    register_widget('Shprinkone_Widget_Recent_Posts');
+    register_widget('Shprinkone_Widget_Nav_Menu');
+    register_widget('Shprinkone_Widget_Archives');
+    register_widget('Shprinkone_Widget_Calendar');
+    register_widget('Shprinkone_Widget_Categories');
+    register_widget('Shprinkone_Widget_Links');
+    register_widget('Shprinkone_Widget_Meta');
+    register_widget('Shprinkone_Widget_Pages');
+    register_widget('Shprinkone_Widget_RSS');
+    register_widget('Shprinkone_Widget_Recent_Comments');
+    register_widget('Shprinkone_Widget_Search');
+    register_widget('Shprinkone_Widget_Text');
+
+    add_filter('widget_tag_cloud_args', 'shprinkone_widget_tag_cloud_args');
+    add_filter('wp_generate_tag_cloud', 'shprinkone_wp_generate_tag_cloud', 10, 3);
+}
+add_action('widgets_init', 'shprinkone_tag_cloud_widgets_init');
+
 function shprinkone_enqueue_script_and_style() {
 	$directory_uri = get_template_directory_uri();
 	$js_path = $directory_uri . '/js/';
@@ -102,31 +155,20 @@ add_action('init', 'shprinkone_add_editor_styles');
  * @since   1.0.2
  */
 function shprinkone_get_selected_template() {
-	$options = shprinkone_get_theme_options();
+	$option_template = shprinkone_get_theme_option('theme_template');
 	$templates = shprinkone_get_theme_templates();
-	return $templates[$options['theme_template']];
+	return $templates[$option_template];
 }
 
 /**
- * Get the selected header options
- *
- * @return  array  header options
- * @since   2.0.1
- */
-function shprinkone_get_header_options() {
-	$options = shprinkone_get_theme_options();
-	return $options['theme_header'];
-}
-
-/**
- * Get the custom CSS
+ * Get a specific option
  *
  * @return  string  css
- * @since   2.1.0
+ * @since   2.3.2
  */
-function shprinkone_get_custom_css() {
+function shprinkone_get_theme_option($key = '') {
 	$options = shprinkone_get_theme_options();
-	return $options['theme_css'];
+	return $options[$key];
 }
 
 /**
@@ -139,7 +181,7 @@ function shprinkone_inject_custom_css()
 {
     ?>
          <style type="text/css">
-            <?php echo shprinkone_get_custom_css(); ?>
+            <?php echo shprinkone_get_theme_option('theme_css'); ?>
          </style>
     <?php
 }
@@ -291,217 +333,26 @@ add_action('init', 'shprinkone_menus_init');
  * @return  void
  * @since   1.0
  */
-function shprinkone_setup() {
+function shprinkone_setup(){
 
-	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-	// TODO
-	// add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status', 'video' ) );
-	// This theme uses post thumbnails
-	add_theme_support('post-thumbnails');
+    // Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
+    // TODO
+    // add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status', 'video' ) );
+    // This theme uses post thumbnails
+    add_theme_support('post-thumbnails');
 
-	// Add default posts and comments RSS feed links to head
-	add_theme_support('automatic-feed-links');
+    // Add default posts and comments RSS feed links to head
+    add_theme_support('automatic-feed-links');
 
-	// Image size
-	add_image_size('post-image-mansory', 268, 268, true);
-	add_image_size('post-image-width9', 860, 200, true);
-	add_image_size('post-image-width12', 1170, 200, true);
+    // Image size
+    add_image_size('post-image-mansory', 268, 268, true);
+    add_image_size('post-image-width9', 860, 200, true);
+    add_image_size('post-image-width12', 1170, 200, true);
 
-	// Translation
-	load_theme_textdomain('shprinkone', get_template_directory() . '/lang');
-
-	// https://gist.github.com/1597994
-	class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
-
-		function start_lvl(&$output, $depth = 0, $args = array()) {
-			$indent = str_repeat("\t", $depth);
-			$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
-		}
-
-		function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-
-			$indent = ( $depth ) ? str_repeat("\t", $depth) : '';
-
-
-			$li_attributes = '';
-			$class_names = $value = '';
-
-			$classes = empty($item->classes) ? array() : (array) $item->classes;
-			$classes[] = ($args->has_children) ? 'dropdown' : '';
-			$classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
-			$classes[] = 'menu-item-' . $item->ID;
-
-
-			$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-
-			if ($depth == 1 && $args->has_children) {
-				$class_names .= ' dropdown-submenu';
-			}
-			$class_names = ' class="' . esc_attr($class_names) . '"';
-
-			$id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
-			$id = strlen($id) ? ' id="' . esc_attr($id) . '"' : '';
-
-			$output .= $indent . '<li' . $id . $value . $class_names . $li_attributes . '>';
-
-			$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
-			$attributes .=!empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
-			$attributes .=!empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-			$attributes .=!empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-			$attributes .= ($args->has_children) ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
-
-			$item_output = $args->before;
-			$item_output .= '<a tabindex="-1" ' . $attributes . '>';
-			$item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-
-			$item_output .= ($depth == 0 && $args->has_children) ? ' <b class="caret"></b></a>' : '</a>';
-			$item_output .= $args->after;
-
-			$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-		}
-
-		function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-
-			if (!$element)
-				return;
-
-			$id_field = $this->db_fields['id'];
-
-			//display this element
-			if (is_array($args[0]))
-				$args[0]['has_children'] = !empty($children_elements[$element->$id_field]);
-			else if (is_object($args[0]))
-				$args[0]->has_children = !empty($children_elements[$element->$id_field]);
-			$cb_args = array_merge(array(&$output, $element, $depth), $args);
-			call_user_func_array(array(&$this, 'start_el'), $cb_args);
-
-			$id = $element->$id_field;
-
-			// descend only when the depth is right and there are childrens for this element
-			if (($max_depth == 0 || $max_depth > $depth + 1 ) && isset($children_elements[$id])) {
-				foreach ($children_elements[$id] as $child) {
-					if (!isset($newlevel)) {
-						$newlevel = true;
-						//start the child delimiter
-						$cb_args = array_merge(array(&$output, $depth), $args);
-						call_user_func_array(array(&$this, 'start_lvl'), $cb_args);
-					}
-					$this->display_element($child, $children_elements, $max_depth, $depth + 1, $args, $output);
-				}
-				unset($children_elements[$id]);
-			}
-
-			if (isset($newlevel) && $newlevel) {
-				//end the child delimiter
-				$cb_args = array_merge(array(&$output, $depth), $args);
-				call_user_func_array(array(&$this, 'end_lvl'), $cb_args);
-			}
-
-			//end this element
-			$cb_args = array_merge(array(&$output, $element, $depth), $args);
-			call_user_func_array(array(&$this, 'end_el'), $cb_args);
-		}
-
-	}
-
-	class ShprinkOne_Walker_Comment extends Walker_Comment {
-
-		/**
-		 * @see Walker::start_lvl()
-		 * @since 2.7.0
-		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param int $depth Depth of comment.
-		 * @param array $args Uses 'style' argument for type of HTML list.
-		 */
-		function start_lvl(&$output, $depth = 0, $args = array()) {
-			$GLOBALS['comment_depth'] = $depth + 1;
-		}
-
-		/**
-		 * @see Walker::end_lvl()
-		 * @since 2.7.0
-		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param int $depth Depth of comment.
-		 * @param array $args Will only append content if style argument value is 'ol' or 'ul'.
-		 */
-		function end_lvl(&$output, $depth = 0, $args = array()) {
-			$GLOBALS['comment_depth'] = $depth + 1;
-		}
-
-		/**
-		 * @see Walker::start_el()
-		 * @since 2.7.0
-		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param object $comment Comment data object.
-		 * @param int $depth Depth of comment in reference to parents.
-		 * @param array $args
-		 */
-		function start_el(&$output, $comment, $depth = 0, $args = array(), $id = 0) {
-			$depth++;
-			$GLOBALS['comment_depth'] = $depth;
-			$GLOBALS['comment'] = $comment;
-
-			extract($args, EXTR_SKIP);
-			?>
-			<div class="media <?php echo join(' ', get_comment_class()); ?>"
-				 id="comment-<?php comment_ID(); ?>">
-				<a class="pull-left" href="#"> <?php echo get_avatar($comment, 40); ?>
-				</a>
-				<div class="media-body">
-					<h4 class="media-heading">
-						<?php printf(__('%s <span class="says">says:</span>', 'shprinkone'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link())); ?>
-					</h4>
-					<?php if ($comment->comment_approved == '0') : ?>
-						<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'shprinkone'); ?>
-						</em> <br />
-					<?php endif; ?>
-
-					<div class="comment-meta commentmetadata">
-						<a
-							href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
-								<?php
-								/* translators: 1: date, 2: time */
-								printf(__('%1$s at %2$s', 'shprinkone'), get_comment_date(), get_comment_time());
-								?>
-						</a>
-						<?php edit_comment_link(__('(Edit)', 'shprinkone'), ' ');
-						?>
-					</div>
-					<!-- .comment-meta .commentmetadata -->
-
-					<div class="comment-body">
-						<?php comment_text(); ?>
-					</div>
-
-					<div class="reply">
-						<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-					</div>
-					<?php
-				}
-
-				/**
-				 * @see Walker::end_el()
-				 * @since 2.7.0
-				 *
-				 * @param string $output Passed by reference. Used to append additional content.
-				 * @param object $comment
-				 * @param int $depth Depth of comment.
-				 * @param array $args
-				 */
-				function end_el(&$output, $comment, $depth = 0, $args = array()) {
-					echo "</div></div>\n";
-					if ($depth == 0)
-						echo "\n";
-				}
-
-			}
-
-		}
-
-		add_action('after_setup_theme', 'shprinkone_setup');
+    // Translation
+    load_theme_textdomain('shprinkone', get_template_directory() . '/lang');
+}
+add_action('after_setup_theme', 'shprinkone_setup');
 
 		/**
 		 * Get Calendar for masonry items
@@ -509,11 +360,15 @@ function shprinkone_setup() {
 		 * @return  void
 		 * @since   1.0
 		 */
-		function shprinkone_get_calendar() {
-			$format = '<div class="calendar-outer btn-inverse"><div class="calendar-inner"><div class="calendar-date"><i class="icon-calendar icon-white"></i> %s</div></div></div>';
-			$arg = get_the_date(__('M d, Y', 'shprinkone'));
-			printf($format, $arg);
-		}
+        function shprinkone_get_calendar() {
+            $calendar = '<div class="calendar">';
+            $calendar .= '<div class="calendar-month"> %1$s</div>';
+            $calendar .= '<div class="calendar-day"> %2$s</div>';
+            $calendar .= '<div class="calendar-year"> %3$s</div>';
+            $calendar .= '</div>';
+            $calendar = sprintf($calendar, get_the_date('M'), get_the_date('d'), get_the_date('Y'));
+            echo $calendar;
+        }
 
 		/**
 		 * Get the author post link
@@ -637,7 +492,7 @@ function shprinkone_setup() {
 
 			$menu = wp_get_nav_menu_object($locations[$theme_location]);
 
-			return $menu->slug;
+			return $menu->name;
 		}
 
 		/**

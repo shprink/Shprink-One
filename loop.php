@@ -6,13 +6,22 @@
  * @since       1.0
  */
 $options = shprinkone_get_theme_options();
+$option_loop = shprinkone_get_theme_option('theme_loop');
+if (is_category()){
+    $option_slideshow = shprinkone_get_theme_option('theme_slideshow_category');
+} else if (is_tag()){
+    $option_slideshow = shprinkone_get_theme_option('theme_slideshow_tag');
+} else if (is_front_page()){
+    $option_slideshow = shprinkone_get_theme_option('theme_slideshow');
+}
+
 if (defined('DISPLAYEDONSLIDESHOW') && !in_the_loop()) {
 	for ($index = 0; $index < DISPLAYEDONSLIDESHOW; $index++) {
 		$wp_query->next_post();
 	}
 }
 
-if (defined('DISPLAYEDONSLIDESHOW') && isset($options['theme_slideshow']['copy_within_content'])) {
+if (defined('DISPLAYEDONSLIDESHOW') && isset($option_slideshow['copy_within_content']) && $option_slideshow['copy_within_content']) {
 	$wp_query->rewind_posts();
 }
 
@@ -26,6 +35,11 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('col-sm-6 col-md-6 col-lg-4 box') ?>>
 				<div class="panel panel-default">
+                    <?php if ($option_loop['comment']): ?>
+                        <a class="post-comments label <?php echo get_comments_number()? 'label-danger' : 'label-default' ?>" href="<?php comments_link(); ?>">
+                            <?php comments_number( '0', '1', '%' ); ?>
+                        </a>
+                    <?php endif; ?>
 					<?php if (has_post_thumbnail()): ?>
 						<a href="<?php the_permalink() ?>">
 							<div class="post-thumbnail">
@@ -34,10 +48,17 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 						</a>
 					<?php endif; ?>
 					<div class="panel-body">
+                        <?php if ($option_loop['date']): ?>
+                        <div class="calendar-wrapper panel panel-default">
+                            <div class="panel-body">
+                            <?php shprinkone_get_calendar(); ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
 						<h3 class="post-title">
 							<?php $hasTitle = the_title(null, null, false) !== null ?>
 							<a href="<?php the_permalink() ?>"
-							   title="Permanent Link to <?php the_title_attribute(); ?>"><?php echo $hasTitle ? the_title(null, null, true) : __('Read more', 'shprinkone'); ?>
+							   title="<?php echo the_title_attribute(); ?>"><?php echo $hasTitle ? the_title(null, null, true) : __('Read more', 'shprinkone'); ?>
 							</a>
 						</h3>
 
@@ -46,7 +67,7 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 						</div>
 						<?php if ($displayMeta): ?>
 							<div class="well well-sm">
-								<?php echo shprinkone_get_post_meta(true, true, true, true, true, true, true, true) ?>
+								<?php echo shprinkone_get_post_meta(true, true, false, true, true, false, true, true) ?>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -69,6 +90,18 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 				placement: 'top',
 				container: 'body'
 			});
+
+            // Disqus support
+			if (typeof DISQUSWIDGETS !== 'undefined') {
+                $.each(el.find('.dsq-postid'), function(i, node){
+                    var $node= $(node),
+                    $link = $node.parent('a'),
+					url = $link.attr('href').split('#', 1);
+                    $link.attr('data-disqus-identifier', $node.attr('rel'));
+					$link.attr('href', ((url.length === 1)? url[0] : url[1]) + '#disqus_thread');
+                });
+				DISQUSWIDGETS.getCount();
+			}
 		};
 
 		onAfterLoaded($container.find('.box'));

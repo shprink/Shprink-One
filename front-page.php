@@ -6,12 +6,12 @@
  * @subpackage  shprink_one
  * @since       1.0
  */
-$options = shprinkone_get_theme_options();
+$option_slideshow = shprinkone_get_theme_option('theme_slideshow');
 $page_on_front = !(!get_option('page_on_front'));
 ?>
 <?php if (!$page_on_front): ?>
 	<?php get_header(); ?>
-	<?php if (isset($options['theme_slideshow']['posts']) && $options['theme_slideshow']['posts'] > 0 && have_posts()) : ?>	
+	<?php if (isset($option_slideshow['posts']) && $option_slideshow['posts'] > 0 && have_posts()) : ?>
 		<?php get_template_part('loop_home'); ?>
 	<?php endif; ?>
 	<div class="container">

@@ -22,11 +22,23 @@ function shprinkone_theme_options_init() {
 			'homepage', __('Homepage', 'shprinkone'), '__return_false', 'theme_options'
 	);
 	add_settings_section(
+			'category', __('Category', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
+			'tag', __('Tag', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
+			'loop', __('Loop', 'shprinkone'), '__return_false', 'theme_options'
+	);
+	add_settings_section(
 			'style', __('CSS and Layout', 'shprinkone'), '__return_false', 'theme_options'
 	);
 
 	add_settings_field('header', __('Header', 'shprinkone'), 'shprinkone_settings_field_header', 'theme_options', 'general');
-	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow', 'theme_options', 'homepage');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_frontpage', 'theme_options', 'homepage');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_category', 'theme_options', 'category');
+	add_settings_field('slideshow', __('Slideshow', 'shprinkone'), 'shprinkone_settings_field_slideshow_tag', 'theme_options', 'tag');
+	add_settings_field('display', __('Display', 'shprinkone'), 'shprinkone_settings_field_loop', 'theme_options', 'loop');
 	add_settings_field('posts', __('Post layout on blog, category, tag and author page.', 'shprinkone'), 'shprinkone_settings_field_posts', 'theme_options', 'homepage');
 	add_settings_field('layout', __('Layout', 'shprinkone'), 'shprinkone_settings_field_layout', 'theme_options', 'style');
 	add_settings_field('template', __('Theme', 'shprinkone'), 'shprinkone_settings_field_template', 'theme_options', 'style');
@@ -139,9 +151,6 @@ function shprinkone_settings_field_layout() {
  */
 function shprinkone_settings_field_header() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_header'])) {
-		$options = shprinkone_get_theme_default();
-	}
 	$posts_option = $options['theme_header'];
 
 	$checked = (isset($posts_option['rss']) && $posts_option['rss'] == true) ? 'checked="checked"' : '';
@@ -190,9 +199,6 @@ function shprinkone_settings_field_template() {
  */
 function shprinkone_settings_field_css() {
     $options = shprinkone_get_theme_options();
-    if (!isset($options['theme_css'])) {
-        return;
-    }
     echo '<textarea name="shprinkone_theme_options[theme_css]" rows="20" style="width: 100%;">' . $options['theme_css'] . '</textarea>';
 }
 
@@ -204,9 +210,6 @@ function shprinkone_settings_field_css() {
  */
 function shprinkone_settings_field_posts() {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_posts'])) {
-		$options = shprinkone_get_theme_default();
-	}
 	$posts_option = $options['theme_posts'];
 	echo '<label for="posts_type">' . __('Posts loading type', 'shprinkone') . '</label> ';
 	echo '<select id="posts_type" name="shprinkone_theme_options[theme_posts][type]" value="' . $posts_option['type'] . '">';
@@ -221,28 +224,57 @@ function shprinkone_settings_field_posts() {
 }
 
 /**
+ * Set posts loop
+ *
+ * @return  void
+ * @since   2.3.2
+ */
+function shprinkone_settings_field_loop() {
+	$options = shprinkone_get_theme_options();
+	$option_loop = $options['theme_loop'];
+	$checked = (isset($option_loop['date']) && $option_loop['date']) ? 'checked="checked"' : '';
+	echo '<input id="loop_date" type="checkbox" name="shprinkone_theme_options[theme_loop][date]" ' . $checked . '>';
+	echo ' <label for="loop_date">' . __('Date', 'shprinkone') . '</label><br/>';
+	$checked = (isset($option_loop['comment']) && $option_loop['comment']) ? 'checked="checked"' : '';
+	echo '<input id="loop_comment" type="checkbox" name="shprinkone_theme_options[theme_loop][comment]" ' . $checked . '>';
+	echo ' <label for="loop_comment">' . __('Comment', 'shprinkone') . '</label> ';
+}
+
+/**
  * Set field slideshow
  *
  * @return  void
  * @since   1.0.5
  */
-function shprinkone_settings_field_slideshow() {
+function shprinkone_settings_field_slideshow($optionName = '') {
 	$options = shprinkone_get_theme_options();
-	if (!isset($options['theme_slideshow'])) {
+	if (!isset($options[$optionName])) {
 		return;
 	}
-	$slideshow_option = $options['theme_slideshow'];
+	$slideshow_option = $options[$optionName];
 	echo '<label for="slideshow_posts">' . __('Number of post', 'shprinkone') . '</label> ';
-	echo '<select id="slideshow_posts" name="shprinkone_theme_options[theme_slideshow][posts]" value="' . $slideshow_option['posts'] . '">';
+	echo '<select id="slideshow_posts" name="shprinkone_theme_options[' . $optionName . '][posts]" value="' . $slideshow_option['posts'] . '">';
 	for ($index = 0; $index <= 5; $index++) {
 		$selected = ((int) $slideshow_option['posts'] === $index) ? 'selected="selected"' : '';
 		echo '<option value="' . $index . '" ' . $selected . '>' . $index . '</option>';
 	}
 	echo '</select><br/>';
 	$checked = (isset($slideshow_option['copy_within_content']) && $slideshow_option['copy_within_content']) ? 'checked="checked"' : '';
-	echo '<input id="slideshow_copy_within_content" type="checkbox" name="shprinkone_theme_options[theme_slideshow][copy_within_content]" ' . $checked . '>';
-	echo ' <label for="slideshow_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
+	echo '<input id="' . $optionName . '_copy_within_content" type="checkbox" name="shprinkone_theme_options[' . $optionName . '][copy_within_content]" ' . $checked . '>';
+	echo ' <label for="' . $optionName . '_copy_within_content">' . __('Duplicate slideshow posts within the content', 'shprinkone') . '</label> ';
+}
 
+
+function shprinkone_settings_field_slideshow_tag() {
+    shprinkone_settings_field_slideshow('theme_slideshow_tag');
+}
+
+function shprinkone_settings_field_slideshow_category() {
+    shprinkone_settings_field_slideshow('theme_slideshow_category');
+}
+
+function shprinkone_settings_field_slideshow_frontpage() {
+    shprinkone_settings_field_slideshow('theme_slideshow');
 }
 
 function shprinkone_format_template_colors($colors) {
@@ -266,10 +298,39 @@ function shprinkone_format_template_colors($colors) {
  */
 function shprinkone_get_theme_options() {
 	if (get_option('shprinkone_theme_options')) {
-		return array_merge(shprinkone_get_theme_default(), get_option('shprinkone_theme_options'));
+		return shprinkone_array_merge_deep(array(shprinkone_get_theme_default(), get_option('shprinkone_theme_options')));
 	} else {
 		return shprinkone_get_theme_default();
 	}
+}
+
+/**
+ * array_merge_deep from drupal
+ *
+ * @return  array
+ * @since   2.3.2
+ */
+function shprinkone_array_merge_deep($arrays) {
+  $result = array();
+  foreach ($arrays as $array) {
+    foreach ($array as $key => $value) {
+      // Renumber integer keys as array_merge_recursive() does. Note that PHP
+      // automatically converts array keys that are integer strings (e.g., '1')
+      // to integers.
+      if (is_integer($key)) {
+        $result[] = $value;
+      }
+      // Recurse when both values are arrays.
+      elseif (isset($result[$key]) && is_array($result[$key]) && is_array($value)) {
+        $result[$key] = shprinkone_array_merge_deep(array($result[$key], $value));
+      }
+      // Otherwise, use the latter value, overriding any previous value.
+      else {
+        $result[$key] = $value;
+      }
+    }
+  }
+  return $result;
 }
 
 /**
@@ -281,14 +342,26 @@ function shprinkone_get_theme_options() {
 function shprinkone_get_theme_default() {
 	$default_theme_options = array(
 		'theme_layout' => 'content-sidebar',
-		'theme_template' => 'flaty',
+		'theme_template' => 'lumen',
 		'theme_css' => '/* INCLUDE YOUR CSS HERE */',
 		'theme_posts' => array(
 			'meta' => true,
-			'type' => 'ajax_scroll'
+			'type' => 'ajax_scroll',
+		),
+		'theme_loop' => array(
+            'date' => false,
+            'comment' => false
 		),
 		'theme_slideshow' => array(
 			'posts' => 3,
+			'copy_within_content' => true
+		),
+		'theme_slideshow_category' => array(
+			'posts' => 0,
+			'copy_within_content' => true
+		),
+		'theme_slideshow_tag' => array(
+			'posts' => 0,
 			'copy_within_content' => true
 		),
 		'theme_header' => array(
@@ -432,6 +505,15 @@ function shprinkone_get_theme_templates() {
 		'colors' => array('#F0569F', '#FCE0EC', '#56CAEF', '#F0569F'),
 		'description' => __('Pretty in pink.', 'shprinkone')
 	);
+	$templateList['lumen'] = array(
+		'name' => 'Lumen',
+		'value' => 'lumen',
+		'author' => 'http://bootswatch.com/',
+		'path' => '/css/lumen.bootswatch.min.css',
+		// @navbar-default-bg @body-bg @link-color @text-color
+		'colors' => array('#f8f8f8', '#f7f7f7', '#158CBA', '#555'),
+		'description' => __('Light and shadow.', 'shprinkone')
+	);
 	$templateList['custom'] = array(
 		'name' => 'Custom (only for legacy purpose)',
 		'value' => 'custom',
@@ -468,18 +550,32 @@ function shprinkone_theme_options_validate($input) {
 	$output = $defaults = shprinkone_get_theme_default();
 
 	// Theme layout must be in our array of theme layout options
-	if (isset($input['theme_layout']) && array_key_exists($input['theme_layout'], shprinkone_get_theme_layouts()))
+	if (isset($input['theme_layout']) && array_key_exists($input['theme_layout'], shprinkone_get_theme_layouts())){
 		$output['theme_layout'] = $input['theme_layout'];
+    }
 
-	if (isset($input['theme_css']))
+	if (isset($input['theme_css'])){
 		$output['theme_css'] = $input['theme_css'];
+    }
 
-	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates()))
+	if (isset($input['theme_template']) && array_key_exists($input['theme_template'], shprinkone_get_theme_templates())){
 		$output['theme_template'] = $input['theme_template'];
+    }
 
-	if (isset($input['theme_slideshow']))
+	if (isset($input['theme_slideshow'])){
 		$output['theme_slideshow'] = $input['theme_slideshow'];
+    }
 	$output['theme_slideshow']['copy_within_content'] = (isset($input['theme_slideshow']['copy_within_content'])) ? true : false;
+
+	if (isset($input['theme_slideshow_category'])){
+		$output['theme_slideshow_category'] = $input['theme_slideshow_category'];
+    }
+	$output['theme_slideshow_category']['copy_within_content'] = (isset($input['theme_slideshow_category']['copy_within_content'])) ? true : false;
+
+	if (isset($input['theme_slideshow_tag'])){
+		$output['theme_slideshow_tag'] = $input['theme_slideshow_tag'];
+    }
+	$output['theme_slideshow_tag']['copy_within_content'] = (isset($input['theme_slideshow_tag']['copy_within_content'])) ? true : false;
 
 	if (isset($input['theme_posts']['type']) && array_key_exists($input['theme_posts']['type'], shprinkone_get_theme_posts())) {
 		$output['theme_posts']['type'] = $input['theme_posts']['type'];
@@ -490,6 +586,8 @@ function shprinkone_theme_options_validate($input) {
 	$output['theme_header']['search'] = (isset($input['theme_header']['search'])) ? true : false;
 	$output['theme_header']['icon-home'] = (isset($input['theme_header']['icon-home'])) ? true : false;
 
+	$output['theme_loop']['date'] = (isset($input['theme_loop']['date'])) ? true : false;
+    $output['theme_loop']['comment'] = (isset($input['theme_loop']['comment'])) ? true : false;
+
 	return apply_filters('shprinkone_theme_options_validate', $output, $input, $defaults);
 }
-

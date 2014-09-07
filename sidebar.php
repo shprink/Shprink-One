@@ -13,7 +13,7 @@
 wp_nav_menu(array(
 'theme_location' => 'sidebar-menu-top',
 'menu_class' => 'nav nav-pills nav-stacked',
-'walker' => new Bootstrap_Walker_Nav_Menu(),
+'walker' => new Shprinkone_Walker_Nav_Menu(),
 'depth' => 3,
 'items_wrap' => '<h4>' . shprinkone_get_menu_title('sidebar-menu-top') . '</h4><ul id="%1$s" class="%2$s">%3$s</ul>'));
 ?>
@@ -27,7 +27,7 @@ wp_nav_menu(array(
 wp_nav_menu(array(
 'theme_location' => 'sidebar-menu-middle',
 'menu_class' => 'nav nav-pills nav-stacked',
-'walker' => new Bootstrap_Walker_Nav_Menu(),
+'walker' => new Shprinkone_Walker_Nav_Menu(),
 'depth' => 3,
 'items_wrap' => '<h4>' . shprinkone_get_menu_title('sidebar-menu-middle') . '</h4><ul id="%1$s" class="%2$s">%3$s</ul>'));
 ?>
@@ -41,7 +41,7 @@ wp_nav_menu(array(
 wp_nav_menu(array(
 'theme_location' => 'sidebar-menu-bottom',
 'menu_class' => 'nav nav-pills nav-stacked',
-'walker' => new Bootstrap_Walker_Nav_Menu(),
+'walker' => new Shprinkone_Walker_Nav_Menu(),
 'depth' => 3,
 'items_wrap' => '<h4>' . shprinkone_get_menu_title('sidebar-menu-bottom') . '</h4><ul id="%1$s" class="%2$s">%3$s</ul>'));
 ?><?php endif; ?>

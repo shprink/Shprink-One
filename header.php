@@ -6,7 +6,7 @@
  * @since       1.0
  */
 $selectedTemplate = shprinkone_get_selected_template();
-$headerOptions = shprinkone_get_header_options();
+$headerOptions = shprinkone_get_theme_option('theme_header');
 global $page, $paged;
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ global $page, $paged;
 							'depth' => 3,
 							'container' => false,
 							'menu_class' => 'nav navbar-nav',
-							'walker' => new Bootstrap_Walker_Nav_Menu(),
+							'walker' => new Shprinkone_Walker_Nav_Menu(),
 							'fallback_cb' => null
 						));
 						?>

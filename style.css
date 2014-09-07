@@ -4,7 +4,7 @@ Theme URI: http://julienrenaux.fr/shprinkone
 Description: ShprinkOne is a Bootstrap 3 responsive theme that can fit any screen (mobile phone, tablet, laptop, desktop). Features a theme picker (10 choices), a slideshow on the home page, posts as pins(masonry), infinite posts scroll, several Widget, Menu positions and multi language support. ShprinkOne is an Open Source project that can be forked on GitHub https://github.com/shprink/Shprink-One 
 Author: shprink
 Author URI: http://julienrenaux.fr
-Version: 2.3.2
+Version: 2.4.0
 Tags: one-column, two-columns, white, gray, fixed-layout, custom-menu, featured-image-header, featured-images, microformats, theme-options, threaded-comments, translation-ready
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -56,7 +56,8 @@ h2{
 .comment-body,
 .post-meta,
 .sidr a,
-.sidr p{
+.sidr p,
+#slideshow .post-title a{
 	word-wrap: break-word;
 	-ms-word-wrap: break-word;
 	-webkit-hyphens: auto;
@@ -109,7 +110,8 @@ ul.pager li a span{
 }
 
 #slideshow .carousel-inner{
-	min-height: 360px;
+	height: 360px;
+    overflow: hidden;
 }
 
 #slideshow a{
@@ -122,6 +124,7 @@ ul.pager li a span{
 
 #slideshow .post-thumbnail {
 	margin-right: 30px;
+    float: left;
 }
 
 #slideshow.carousel {
@@ -209,9 +212,23 @@ ul.pager li a span{
 	margin-left: -1px;
 }
 
+.masonry .box .post-comments.label{
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.masonry .box .panel-body{
+	padding: 15px 35px;
+    position: relative;
+}
+
 .masonry .box .panel-body .well{
-	margin-left: -15px;
-	margin-right: -15px;
+	margin-left: -35px;
+	margin-right: -35px;
 	margin-bottom: -15px;
 	text-align: center;
 	border: none;
@@ -307,6 +324,17 @@ ul.pager li a span{
 	margin-top: 10px;
 }
 
+#footer .well{
+    background-color: transparent;
+    border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 /* CREDIT */
 #credit {
 	text-align: center;
@@ -320,7 +348,6 @@ ul.pager li a span{
 	background-image: -o-linear-gradient(top, #222222, #111111);
 	background-image: linear-gradient(to bottom, #222222, #111111);
 	background-repeat: repeat-x;
-	margin-top: 10px;
 }
 
 #credit a {
@@ -356,10 +383,8 @@ ul.pager li a span{
 	.affix {
 		top: 0px;
 	}
-	#slideshow .post-thumbnail{
-		width: 100%;
-		display: block;
-		text-align: center;
+	#slideshow .post-thumbnail img{
+        width: 200px;
 	}
 	.container-slideshow {
 		padding-left: 0px;
@@ -386,10 +411,8 @@ ul.pager li a span{
 	#slideshow{
 		font-size: 0.9em;
 	}
-	#slideshow .post-thumbnail{
-		width: 100%;
-		display: block;
-		text-align: center;
+	#slideshow .post-thumbnail img{
+        width: 100px;
 	}
 	#slideshow h2.post-title{
 		font-size: 20px;
@@ -398,6 +421,20 @@ ul.pager li a span{
 	#slideshow .post-meta ul{
 		margin-bottom: 0px;
 	}
+    #slideshow .carousel-inner{
+        height: 300px;
+    }
+    #slideshow .title-wrapper{
+        margin-bottom: 10px;
+    }
+    #slideshow .title-wrapper:before,
+    #slideshow .title-wrapper:after{
+        display: table;
+        content: " ";
+    }
+    #slideshow .title-wrapper:after{
+        clear: both;
+    }
 	.carousel-control .icon-prev,
 	.carousel-control .icon-next{
 		font-size:5em;
@@ -415,25 +452,19 @@ ul.pager li a span{
 		font-size: 40px;
 		line-height: 40px;
 	}
-	#slideshow .carousel-control i{
-		/*		right: 0px;
-				margin-right: 10px;*/
-	}
+    #slideshow .post-thumbnail{
+        display: none;
+    }
 }
 
 @media ( min-width : 980px) {
 	.affix {
 		top: 45px;
 	}
-	#slideshow .post-thumbnail{
-		float: left;
-	}
 }
 
 @media ( min-width : 1200px) {
-	#slideshow .post-thumbnail{
-		float: left;
-	}
+
 }
 
 /* WP mendatory styles */
@@ -574,6 +605,55 @@ body .syntaxhighlighter textarea{
 	margin-right: 5px;
 }
 
+.calendar-wrapper{
+    position: absolute;
+    left: -15px;
+}
+
+.masonry .box .calendar-wrapper .panel-body{
+    padding: 0px;
+}
+
+.calendar {
+    position: relative;
+    /*left: -5px;*/
+    /*top: 20px;*/
+    width:40px;
+    height:60px;
+    /*background: white;*/
+    /*border: 5px solid #fff;*/
+    text-align: center;
+}
+.calendar > div{
+    width:40px;
+    cursor: default;
+}
+.calendar > div:first-of-type:after{
+    content:" ";
+    width:40px;
+    height:25px;
+    position:absolute;
+    z-index:2;
+    background:rgba(0,0,0,0.1);
+    left:0px;
+}
+.calendar .calendar-day{
+    font-size:25px;
+    font-weight:bold;
+    line-height:25px;
+    padding:0;
+}
+.calendar .calendar-month {
+    font-size: 10px;
+    font-weight: bold;
+    top:8px;
+}
+.calendar .calendar-year {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -3px;
+}
+
 /*
 Specific style for each theme
 */
@@ -590,6 +670,7 @@ body.theme-simplex{padding-top: 60px;}
 body.theme-journal{padding-top: 75px;}
 body.theme-yeti{background-color: #f7f7f7; padding-top: 60px;}
 body.theme-cupid{padding-top: 80px;}
+body.theme-lumen{background-color: #f7f7f7; padding-top: 65px;}
 body.theme-custom{}
 
 body.theme-cosmo .container-slideshow,
@@ -598,7 +679,8 @@ body.theme-united .container-slideshow,
 body.theme-spacelab .container-slideshow,
 body.theme-readable .container-slideshow,
 body.theme-yeti .container-slideshow,
-body.theme-cupid .container-slideshow{
+body.theme-cupid .container-slideshow,
+body.theme-lumen .container-slideshow{
 	padding-top: 30px;
 }
 
@@ -626,7 +708,10 @@ body.theme-simplex #comments .trackback,
 body.theme-simplex #comments .pingback,
 body.theme-yeti #comments .comment,
 body.theme-yeti #comments .trackback,
-body.theme-yeti #comments .pingback{
+body.theme-yeti #comments .pingback,
+body.theme-lumen #comments .comment,
+body.theme-lumen #comments .trackback,
+body.theme-lumen #comments .pingback{
 	padding-top: 60px;
 }
 
@@ -660,6 +745,17 @@ body.theme-yeti .container-slideshow {
 	background: -ms-linear-gradient(top,  #007196 0%,#008cba 100%);
 	background: linear-gradient(to bottom,  #007196 0%,#008cba 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007196', endColorstr='#008cba',GradientType=0 );
+}
+
+body.theme-cupid .container-slideshow {
+	background: rgb(179,40,106); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(179,40,106,1) 0%, rgba(179,40,106,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(179,40,106,1)), color-stop(100%,rgba(179,40,106,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(179,40,106,1) 0%,rgba(179,40,106,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(179,40,106,1) 0%,rgba(179,40,106,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(179,40,106,1) 0%,rgba(179,40,106,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(179,40,106,1) 0%,rgba(179,40,106,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3286a', endColorstr='#b3286a',GradientType=0 ); /* IE6-9 */
 }
 
 /* Fix https://twitter.com/julienrenaux/status/432204351810314240 */
@@ -747,4 +843,18 @@ body.theme-cupid .yarpp-template a.thumbnail{
 	position: absolute;
 	content: "";
 	display: block;
+}
+
+/* Widget style */
+
+.widget_tag_cloud.shprinkone-tagcloud a{
+    /*font-size: 10pt;*/
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.widget_tag_cloud.shprinkone-tagcloud a i{
+    color: #eee;
 }
