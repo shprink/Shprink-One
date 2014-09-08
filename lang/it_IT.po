@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: shprinkone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-02 23:13+0100\n"
-"PO-Revision-Date: 2014-06-02 23:13+0100\n"
-"Last-Translator: shprink <contact@julienrenaux.fr>\n"
+"PO-Revision-Date: 2014-09-08 11:09+0100\n"
+"Last-Translator: Stefano Melis <stefano.melis@gmail.com>\n"
 "Language-Team: shprink <contact@julienrenaux.fr>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__;_n\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: tag.php:24 admin/functions.php:28
@@ -21,15 +21,15 @@ msgstr "Tag"
 
 #: loop.php:61 single.php:75 single.php:93 loop_home.php:55
 msgid "Read more"
-msgstr "Leggi\t"
+msgstr "Leggi"
 
 #: loop.php:120 loop.php:154
 msgid "No more pages to load."
-msgstr "Fine pagine da caricare."
+msgstr "Tutte le pagine sono state caricate."
 
 #: loop.php:122 loop.php:156
 msgid "Loading the next set of posts..."
-msgstr "Carico i prossimi post..."
+msgstr "Caricamento post successivi..."
 
 #: loop.php:147 loop.php:216
 msgid "Older posts"
@@ -50,9 +50,8 @@ msgid "View all posts by %s"
 msgstr "Tutti i post di %s"
 
 #: yarpp-template-shprinkone.php:10
-#, fuzzy
 msgid "Related posts"
-msgstr "Post più vecchi"
+msgstr "Post simili"
 
 #: comments.php:12
 msgid ""
@@ -133,14 +132,14 @@ msgid "Category"
 msgstr "Categoria"
 
 #: footer.php:11
-#, php-format
+#, fuzzy, php-format
 msgid "All You Need Is %s | by %s"
-msgstr ""
+msgstr "All You Need Is %s | by %s"
 
 #: footer.php:14
 #, php-format
 msgid "%s Theme created by %s"
-msgstr ""
+msgstr "Tema %s creato da %s"
 
 #: footer.php:57
 msgid "All rights reserved."
@@ -386,20 +385,19 @@ msgstr "(Modifica)"
 
 #: admin/functions.php:19
 msgid "General"
-msgstr ""
+msgstr "Generale"
 
 #: admin/functions.php:22
 msgid "Homepage"
-msgstr ""
+msgstr "Homepage"
 
 #: admin/functions.php:31
 msgid "Loop"
-msgstr ""
+msgstr "Loop"
 
 #: admin/functions.php:34
-#, fuzzy
 msgid "CSS and Layout"
-msgstr "Layout"
+msgstr "CSS e layout"
 
 #: admin/functions.php:37
 msgid "Header"
@@ -410,9 +408,8 @@ msgid "Slideshow"
 msgstr "Slideshow"
 
 #: admin/functions.php:41
-#, fuzzy
 msgid "Display"
-msgstr "Mostra RSS"
+msgstr "Mostra"
 
 #: admin/functions.php:42
 msgid "Post layout on blog, category, tag and author page."
@@ -428,7 +425,7 @@ msgstr "Tema"
 
 #: admin/functions.php:45
 msgid "Css overwrite"
-msgstr ""
+msgstr "Sovrascrivi CSS"
 
 #: admin/functions.php:58 admin/functions.php:59
 msgid "Theme Options"
@@ -441,7 +438,7 @@ msgstr "%s opzioni tema"
 
 #: admin/functions.php:91
 msgid "Keep in touch with ShprinkOne updates!"
-msgstr ""
+msgstr "Segui gli aggiornamenti di ShprinkOne!"
 
 #: admin/functions.php:127
 msgid "Thumbnail"
@@ -473,7 +470,7 @@ msgstr "Aggiunta meta nei post"
 
 #: admin/functions.php:237
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: admin/functions.php:255
 msgid "Number of post"
@@ -541,15 +538,15 @@ msgstr "Pulito come un foglio intonso."
 
 #: admin/functions.php:497
 msgid "A friendly foundation."
-msgstr ""
+msgstr "Un framework amichevole."
 
 #: admin/functions.php:506
 msgid "Pretty in pink."
-msgstr ""
+msgstr "Rosa grazioso."
 
 #: admin/functions.php:515
 msgid "Light and shadow."
-msgstr ""
+msgstr "Luce ed ombra."
 
 #: admin/functions.php:523
 msgid "An empty CSS file that you can modify as you like."

@@ -30,9 +30,6 @@ global $page, $paged;
 		 */
 		wp_head();
 		?>
-		<script type="text/javascript">
-			var $ = jQuery;
-		</script>
 	</head>
 	<body <?php body_class('theme-' . $selectedTemplate['value']); ?> data-spy="scroll" data-target=".navbar">
 		<header id="header">

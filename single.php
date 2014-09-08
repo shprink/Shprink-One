@@ -7,7 +7,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container"> 
+<div class="container">
 	<?php if (is_active_sidebar('before-content-widget')) : ?>
 		<?php dynamic_sidebar('before-content-widget'); ?>
 	<?php endif; ?>
@@ -105,30 +105,5 @@
 		<?php dynamic_sidebar('after-content-widget'); ?>
 	<?php endif; ?>
 </div>
-<script>
-	jQuery(document).ready(function($) {
-		$('#previous-post').sidr({
-			name: 'sidr-previous-post',
-			source: function(name) {
-				return $('#previous-post-content').clone().html();
-			}
-		});
-		$('#next-post').sidr({
-			name: 'sidr-next-post',
-			source: function(name) {
-				return $('#next-post-content').clone().html();
-			},
-			side: 'right'
-		});
-
-		window.closePreviousSidr = function() {
-			$.sidr('close', 'sidr-previous-post')
-		}
-
-		window.closeNextSidr = function() {
-			$.sidr('close', 'sidr-next-post')
-		}
-	});
-</script>
 <!-- container end -->
 <?php get_footer(); ?>
