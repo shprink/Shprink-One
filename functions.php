@@ -65,10 +65,18 @@ function shprinkone_enqueue_script_and_style() {
 	$directory_uri = get_template_directory_uri();
 	$js_path = $directory_uri . '/js/';
 	$selectedTemplate = shprinkone_get_selected_template();
+    $options = shprinkone_get_theme_options();
+    $is_in_loop = is_home() || is_tag() || is_category();
 
 	wp_register_script('bootstrap', $js_path . 'bootstrap.min.js');
 	wp_register_script('infinitescroll', $js_path . 'jquery.infinitescroll.min.js');
 	wp_register_script('sidr', $js_path . 'jquery.sidr.min.js');
+    // basic Shprinkone script
+    wp_register_script('shprinkone_script', $js_path . 'shprinkone.script.js', array(), '1.0', true);
+    wp_register_script('shprinkone_single_sidr', $js_path . 'shprinkone.single_sidr.js', array(), '1.0', true);
+    wp_register_script('shprinkone_loop_default', $js_path . 'shprinkone.loop_default.js', array(), '1.0', true);
+    wp_register_script('shprinkone_loop_ajax_scroll', $js_path . 'shprinkone.loop_ajax_scroll.js', array(), '1.0', true);
+    wp_register_script('shprinkone_loop_ajax_button', $js_path . 'shprinkone.loop_ajax_button.js', array(), '1.0', true);
 
 	// Customize theme via URL
 	$templateList = shprinkone_get_theme_templates();
@@ -91,6 +99,28 @@ function shprinkone_enqueue_script_and_style() {
 	wp_enqueue_script('infinitescroll');
 	wp_enqueue_script('sidr');
 	wp_enqueue_script('jquery-masonry');
+    wp_enqueue_script('shprinkone_script');
+
+    if (is_single()){
+        wp_enqueue_script('shprinkone_single_sidr');
+    }
+    if ($is_in_loop){
+        wp_enqueue_script('shprinkone_loop_default');
+        $translation_array = array(
+            'finishedMsg' => __('No more pages to load.', 'shprinkone'),
+            'msgText' => __('Loading the next set of posts...', 'shprinkone'),
+            'error' => __('Something wrong happened :(', 'shprinkone'),
+            'img' => $directory_uri . '/img/loading.gif'
+            );
+        if (isset($options['theme_posts']['type']) && $options['theme_posts']['type'] == 'ajax_scroll'){
+            wp_localize_script( 'shprinkone_loop_ajax_scroll', 'trans', $translation_array );
+            wp_enqueue_script('shprinkone_loop_ajax_scroll');
+        } else if(isset($options['theme_posts']['type']) && $options['theme_posts']['type'] === 'ajax_button'){
+            wp_localize_script( 'shprinkone_loop_ajax_button', 'trans', $translation_array );
+            wp_enqueue_script('shprinkone_loop_ajax_button');
+        }
+    }
+
 }
 
 add_action('wp_enqueue_scripts', 'shprinkone_enqueue_script_and_style');

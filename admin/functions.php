@@ -188,7 +188,6 @@ function shprinkone_settings_field_template() {
 		$i++;
 	}
         echo '</fieldset>';
-        echo '<span class="description alignright">Themes by <a href="http://bootswatch.com" target="_blank">Bootswatch</a></span>';
 }
 
 /**
@@ -411,7 +410,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['bootstrap'] = array(
 		'name' => 'Bootstrap classic',
 		'value' => 'bootstrap',
-		'author' => 'http://twitter.github.com/bootstrap/',
 		'path' => '/css/bootstrap.min.css',
 		'colors' => array('#EEEEEE', '#FFFFFF', '#08c', '#333333'),
 		'description' => __('Sleek, intuitive, and powerful front-end framework for faster and easier web development.', 'shprinkone')
@@ -419,7 +417,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['flaty'] = array(
 		'name' => 'Flaty',
 		'value' => 'flaty',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/flaty.bootswatch.min.css',
 		'colors' => array('#2C3E50', '#FFFFFF', '#1ABC9C', '#2C3E50'),
 		'description' => __('Flat and clean.', 'shprinkone')
@@ -427,7 +424,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['cerulean'] = array(
 		'name' => 'Cerulean',
 		'value' => 'cerulean',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/cerulean.bootswatch.min.css',
 		'colors' => array('#2FA4E7', '#FFFFFF', '#2FA4E7', '#555555'),
 		'description' => __('A calm, blue sky.', 'shprinkone')
@@ -435,7 +431,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['cosmo'] = array(
 		'name' => 'Cosmo',
 		'value' => 'cosmo',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/cosmo.bootswatch.min.css',
 		'colors' => array('#080808', '#FFFFFF', '#007FFF', '#555555'),
 		'description' => __('An ode to Metro.', 'shprinkone')
@@ -443,7 +438,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['amelia'] = array(
 		'name' => 'Amelia',
 		'value' => 'amelia',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/amelia.bootswatch.min.css',
 		'colors' => array('#AD1D28', '#003F4D', '#DEBB27', '#FFFFFF'),
 		'description' => __('Sweet and cheery.', 'shprinkone')
@@ -451,7 +445,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['readable'] = array(
 		'name' => 'Readable',
 		'value' => 'readable',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/readable.bootswatch.min.css',
 		'colors' => array('#F6F6F6', '#F6F6F6', '#E78B24', '#333333'),
 		'description' => __('Optimized for legibility.', 'shprinkone')
@@ -459,7 +452,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['united'] = array(
 		'name' => 'United',
 		'value' => 'united',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/united.bootswatch.min.css',
 		'colors' => array('#DD4814', '#FFFFFF', '#DD4814', '#333333'),
 		'description' => __('Ubuntu orange and unique font.', 'shprinkone')
@@ -467,7 +459,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['spacelab'] = array(
 		'name' => 'Spacelab',
 		'value' => 'spacelab',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/spacelab.bootswatch.min.css',
 		'colors' => array('#EEEEEE', '#FFFFFF', '#09d', '#666666'),
 		'description' => __('Silvery and sleek.', 'shprinkone')
@@ -475,7 +466,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['simplex'] = array(
 		'name' => 'Simplex',
 		'value' => 'simplex',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/simplex.bootswatch.min.css',
 		'colors' => array('#fefefe', '#F7F7F7', '#D9230F', '#555555'),
 		'description' => __('Mini and minimalist.', 'shprinkone')
@@ -483,7 +473,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['journal'] = array(
 		'name' => 'Journal',
 		'value' => 'journal',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/journal.bootswatch.min.css',
 		'colors' => array('#FFFFFF', '#FFFFFF', '#777777', '#777777'),
 		'description' => __('Crisp like a new sheet of paper.', 'shprinkone')
@@ -491,7 +480,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['yeti'] = array(
 		'name' => 'Yeti',
 		'value' => 'yeti',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/yeti.bootswatch.min.css',
 		'colors' => array('#222222', '#FFFFFF', '#008cba', '#222222'),
 		'description' => __('A friendly foundation.', 'shprinkone')
@@ -499,7 +487,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['cupid'] = array(
 		'name' => 'Cupid',
 		'value' => 'cupid',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/cupid.bootswatch.min.css',
 		// @navbar-default-bg @body-bg @link-color @text-color
 		'colors' => array('#F0569F', '#FCE0EC', '#56CAEF', '#F0569F'),
@@ -508,7 +495,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['lumen'] = array(
 		'name' => 'Lumen',
 		'value' => 'lumen',
-		'author' => 'http://bootswatch.com/',
 		'path' => '/css/lumen.bootswatch.min.css',
 		// @navbar-default-bg @body-bg @link-color @text-color
 		'colors' => array('#f8f8f8', '#f7f7f7', '#158CBA', '#555'),
@@ -517,7 +503,6 @@ function shprinkone_get_theme_templates() {
 	$templateList['custom'] = array(
 		'name' => 'Custom (only for legacy purpose)',
 		'value' => 'custom',
-		'author' => 'none',
 		'path' => '/css/custom.css',
 		'colors' => array(),
 		'description' => __('An empty CSS file that you can modify as you like.', 'shprinkone')

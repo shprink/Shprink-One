@@ -78,148 +78,16 @@ if (isset($options['theme_posts']['meta']) && $options['theme_posts']['meta']) {
 		<?php echo shprinkone_get_no_result(); ?>
 	<?php endif; ?>
 </div>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		/* Masonry */
-		var $container = $('#masonry');
-
-		// Callback on After new masonry boxes load
-		window.onAfterLoaded = function(el) {
-			el.find('div.post-meta li').popover({
-				trigger: 'hover',
-				placement: 'top',
-				container: 'body'
-			});
-
-            // Disqus support
-			if (typeof DISQUSWIDGETS !== 'undefined') {
-                $.each(el.find('.dsq-postid'), function(i, node){
-                    var $node= $(node),
-                    $link = $node.parent('a'),
-					url = $link.attr('href').split('#', 1);
-                    $link.attr('data-disqus-identifier', $node.attr('rel'));
-					$link.attr('href', ((url.length === 1)? url[0] : url[1]) + '#disqus_thread');
-                });
-				DISQUSWIDGETS.getCount();
-			}
-		};
-
-		onAfterLoaded($container.find('.box'));
-
-		$container.imagesLoaded(function() {
-			$container.masonry({
-				itemSelector: '.box'
-			});
-
-			$(window).resize(function() {
-				$container.masonry('reload');
-			});
-		});
-	});
-</script>
 <?php if (isset($options['theme_posts']['type']) && $options['theme_posts']['type'] == 'ajax_scroll'): ?>
 	<div id="page-nav" style="display: none;">
 		<?php if ($wp_query->max_num_pages > 1) next_posts_link(); ?>
 	</div>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			var $container = $('#masonry');
-			$container.infinitescroll({
-				navSelector: '#page-nav', // selector for the paged navigation
-				nextSelector: '#page-nav a', // selector for the NEXT link (to page 2)
-				itemSelector: '.box', // selector for all items you'll retrieve,
-				loading: {
-					finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
-					img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif',
-					msgText: '<?php echo __('Loading the next set of posts...', 'shprinkone') ?>'
-				}
-			},
-			// trigger Masonry as a callback
-			function(newElements) {
-				// hide new items while they are loading
-				var $newElems = $(newElements).css({
-					opacity: 0});
-				// ensure that images load before adding to masonry layout
-				$newElems.imagesLoaded(function() {
-					// show elems now they're ready
-					$newElems.animate({
-						opacity: 1});
-					$container.masonry('appended', $newElems, true);
-				});
-				onAfterLoaded($newElems);
-			}
-			);
-		});
-	</script>
 <?php elseif (isset($options['theme_posts']['type']) && $options['theme_posts']['type'] === 'ajax_button'): ?>
-
 	<div id="page-nav">
-		<?php
-		if (get_next_posts_link()) {
-			echo '<a class="btn btn-primary btn-large btn-block" href="javascript:void(0)" data-href="' . next_posts($wp_query->max_num_pages, false) . '">' . __('Older posts', 'shprinkone') . '</a>';
-		}
-		?>
+		<?php if (get_next_posts_link()): ?>
+    		<a class="btn btn-primary btn-large btn-block" href="javascript:void(0)" data-href="<?php echo next_posts($wp_query->max_num_pages, false) ?>"><?php echo __('Older posts', 'shprinkone') ?></a>
+        <?php endif; ?>
 	</div>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			var loading = {
-				finishedMsg: '<?php echo __('No more pages to load.', 'shprinkone') ?>',
-				img: '<?php echo get_stylesheet_directory_uri(); ?>/img/loading.gif',
-				msgText: '<?php echo __('Loading the next set of posts...', 'shprinkone') ?>'
-			}
-
-			var $container = $('#masonry');
-			$('#page-nav a').click(function() {
-				$button = $(this);
-				if (typeof $button.data('href') === 'string' && $button.data('href') !== '') {
-					var buttonHtml = $button.html();
-					$button.attr('disabled', 'disabled');
-					$button.html('<i class="icon-spinner icon-spin"></i> ' + loading.msgText);
-					$.ajax($button.data('href'))
-							.done(function(data, textStatus, jqXHR) {
-						// Set the new page href
-						$button.data('href', $(data).find('#page-nav a').data('href'));
-
-						var $newElems = $(data).find('.box').css({
-							opacity: 0});
-						// ensure that images load before adding to masonry layout
-						$newElems.imagesLoaded(function() {
-							// show elems now they're ready
-							$newElems.animate({
-								opacity: 1});
-							$container.prepend($newElems);
-							$container.masonry('appended', $newElems, true);
-						});
-						onAfterLoaded($newElems);
-					})
-							.fail(function(jqXHR, textStatus, errorThrown) {
-						$error = $('<div class="alert alert-danger">Something wrong happened :(</div>');
-						$error.insertAfter($button);
-						$button.remove();
-						setTimeout(function() {
-							$error.remove()
-						}, 3000);
-					})
-							.always(function() {
-						$button.html(buttonHtml);
-						$button.removeAttr('disabled');
-					});
-				}
-				else {
-					$finish = $('<div class="alert alert-info">' + loading.finishedMsg + '</div>').hide();
-					$finish.insertAfter($button);
-					$finish.show(500);
-					$button.remove();
-					setTimeout(function() {
-						$finish.hide(500, function() {
-							$finish.remove()
-						});
-					}, 3000)
-				}
-
-			});
-		});
-	</script>
 <?php elseif (isset($options['theme_posts']['type']) && $options['theme_posts']['type'] === 'default'): ?>
 	<div id="page-nav">
 		<div class="row">

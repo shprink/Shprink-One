@@ -77,10 +77,4 @@ $postCount = count($wp_query->get_posts());
 		</div>
 	</div>
 	<?php define('DISPLAYEDONSLIDESHOW', $displayedOnSlideshow) ?>
-	<script>
-		jQuery(document).ready(function($) {
-			/* Slideshow */
-			$('#slideshow').carousel();
-		});
-	</script>
 <?php endif; ?>
